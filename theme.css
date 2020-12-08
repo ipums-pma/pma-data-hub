@@ -148,3 +148,7 @@ li>a {
     line-height: 38px;
     vertical-align: middle;
 }
+
+.algolia-autocomplete {
+  line-height: 25px;
+}

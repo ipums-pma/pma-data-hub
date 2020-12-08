@@ -15,7 +15,7 @@ draft: false
 ---
 
 ```{r setup, include=F}
-knitr::opts_chunk$set(echo = TRUE, eval = F)
+knitr::opts_chunk$set(echo = TRUE, eval = T)
 options(tibble.max_extra_cols = 5)
 load("../../data/bf2018a_nh.rda")
 ```
