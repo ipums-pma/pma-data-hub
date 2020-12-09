@@ -10,10 +10,15 @@
       }
     ],
     "date": "2020-12-09",
-    "categories": [],
+    "categories": [
+      "Shiny",
+      "Mapping",
+      "Contraceptive Stockouts",
+      "Serivce Delivery Points"
+    ],
     "contents": "\nPercentage of facilities experiencing a recent empty stock of each method, relative to the number of facilities in each region / province that normally provide the method (all survey years combined)\n\nA “recent” stockout includes any empty stock experienced within 3 months prior to the survey.\n\n\n\n\nMissing regions / provinces include those with no surveyed facilities and those where no surveyed facilities normally provide the method.\n\n\n\n",
     "preview": "posts/2020-12-09-mapping-contraceptive-stockouts/images/static-map.png",
-    "last_modified": "2020-12-09T10:20:05-06:00",
+    "last_modified": "2020-12-09T10:43:56-06:00",
     "input_file": {}
   },
   {

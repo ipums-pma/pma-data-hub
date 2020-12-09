@@ -21,6 +21,7 @@ navbar:
       menu: 
         - text: "Contributing guide"
         - text: "Code of conduct"
+          href: CODE_OF_CONDUCT.html
         - text: "License"
         - text: "GitHub"
     - text: "About"

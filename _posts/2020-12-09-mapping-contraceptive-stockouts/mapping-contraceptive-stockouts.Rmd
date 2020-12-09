@@ -2,6 +2,11 @@
 title: "Mapping contraceptive stockouts"
 description: |
   Build an interactive map showing the percentage of service providers reporting a recent stockout of contraceptive methods 
+categories:
+  - Shiny
+  - Mapping
+  - Contraceptive Stockouts
+  - Serivce Delivery Points
 author:
   - name: Matt Gunther
     affiliation: IPUMS PMA
@@ -11,6 +16,7 @@ output:
     self_contained: false
     toc: false
 preview: images/static-map.png
+slug: ShinyMapDemo
 ---
 
 Percentage of facilities experiencing a recent empty stock of each method, relative to the number of facilities in each region / province that normally provide the method (all survey years combined)
