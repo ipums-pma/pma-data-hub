@@ -1,7 +1,6 @@
 ---
 title: README
 output: github_document
-always_allow_html: true
 ---
 Welcome to the PMA Data Hub GitHub repository!
 

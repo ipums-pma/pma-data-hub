@@ -30,3 +30,4 @@ navbar:
 output: distill::distill_article
 theme: theme.css
 favicon: "images/favicon/favicon-32x32.png"
+exclude: ["*.md"]
