@@ -10,8 +10,19 @@ navbar:
     image: images/logo-white.png
     href: https://pma.ipums.org/pma/
   right:
-    - text: "Home"
+    - text: "Posts"
       href: index.html
+    - text: "R Tips"
+      menu: 
+        - text: "Beginner's guide"
+        - text: "IPUMS data: import an extract into R"
+        - text: "R packages: how to install and load" 
+    - text: "Community"
+      menu: 
+        - text: "Contributing guide"
+        - text: "Code of conduct"
+        - text: "License"
+        - text: "GitHub"
     - text: "About"
       href: about.html
   source_url: true

@@ -4,6 +4,7 @@ description: |
   How to build a rowwise function linking children to mothers in the 2018 Nutrition Surveys for Burkina Faso and Kenya.
 author:
   - name: Matt Gunther
+    affiliation: IPUMS PMA
 date: 12-08-2020
 output:
   distill::distill_article:

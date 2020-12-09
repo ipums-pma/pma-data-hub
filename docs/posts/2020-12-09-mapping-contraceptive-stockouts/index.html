@@ -86,39 +86,39 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 </style>
 
   <!--radix_placeholder_meta_tags-->
-<title>PMA Data Hub: Welcome to PMA Data Hub</title>
+<title>PMA Data Hub: Mapping contraceptive stockouts</title>
 
-<meta property="description" itemprop="description" content="Welcome to our new blog, PMA Data Hub. We hope you enjoy &#10;reading what we have to say!"/>
+<meta property="description" itemprop="description" content="Build an interactive map showing the percentage of service providers reporting a recent stockout of contraceptive methods"/>
 
 <link rel="icon" type="image/png" href="../../images/favicon/favicon-32x32.png"/>
 
 <!--  https://schema.org/Article -->
-<meta property="article:published" itemprop="datePublished" content="2020-12-08"/>
-<meta property="article:created" itemprop="dateCreated" content="2020-12-08"/>
-<meta name="article:author" content="Nora Jones"/>
+<meta property="article:published" itemprop="datePublished" content="2020-12-09"/>
+<meta property="article:created" itemprop="dateCreated" content="2020-12-09"/>
+<meta name="article:author" content="Matt Gunther"/>
 
 <!--  https://developers.facebook.com/docs/sharing/webmasters#markup -->
-<meta property="og:title" content="PMA Data Hub: Welcome to PMA Data Hub"/>
+<meta property="og:title" content="PMA Data Hub: Mapping contraceptive stockouts"/>
 <meta property="og:type" content="article"/>
-<meta property="og:description" content="Welcome to our new blog, PMA Data Hub. We hope you enjoy &#10;reading what we have to say!"/>
+<meta property="og:description" content="Build an interactive map showing the percentage of service providers reporting a recent stockout of contraceptive methods"/>
 <meta property="og:locale" content="en_US"/>
 <meta property="og:site_name" content="PMA Data Hub"/>
 
 <!--  https://dev.twitter.com/cards/types/summary -->
 <meta property="twitter:card" content="summary"/>
-<meta property="twitter:title" content="PMA Data Hub: Welcome to PMA Data Hub"/>
-<meta property="twitter:description" content="Welcome to our new blog, PMA Data Hub. We hope you enjoy &#10;reading what we have to say!"/>
+<meta property="twitter:title" content="PMA Data Hub: Mapping contraceptive stockouts"/>
+<meta property="twitter:description" content="Build an interactive map showing the percentage of service providers reporting a recent stockout of contraceptive methods"/>
 
 <!--/radix_placeholder_meta_tags-->
   <!--radix_placeholder_rmarkdown_metadata-->
 
 <script type="text/json" id="radix-rmarkdown-metadata">
-{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","author","date","output"]}},"value":[{"type":"character","attributes":{},"value":["Welcome to PMA Data Hub"]},{"type":"character","attributes":{},"value":["Welcome to our new blog, PMA Data Hub. We hope you enjoy \nreading what we have to say!"]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","url","affiliation","affiliation_url"]}},"value":[{"type":"character","attributes":{},"value":["Nora Jones"]},{"type":"character","attributes":{},"value":["https://example.com/norajones"]},{"type":"character","attributes":{},"value":["Spacely Sprockets"]},{"type":"character","attributes":{},"value":["https://example.com/spacelysprokets"]}]}]},{"type":"character","attributes":{},"value":["12-08-2020"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained"]}},"value":[{"type":"logical","attributes":{},"value":[false]}]}]}]}
+{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","author","date","output","preview"]}},"value":[{"type":"character","attributes":{},"value":["Mapping contraceptive stockouts"]},{"type":"character","attributes":{},"value":["Build an interactive map showing the percentage of service providers reporting a recent stockout of contraceptive methods"]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","affiliation"]}},"value":[{"type":"character","attributes":{},"value":["Matt Gunther"]},{"type":"character","attributes":{},"value":["IPUMS PMA"]}]}]},{"type":"character","attributes":{},"value":["12-09-2020"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained","toc"]}},"value":[{"type":"logical","attributes":{},"value":[false]},{"type":"logical","attributes":{},"value":[false]}]}]},{"type":"character","attributes":{},"value":["images/static-map.png"]}]}
 </script>
 <!--/radix_placeholder_rmarkdown_metadata-->
   
   <script type="text/json" id="radix-resource-manifest">
-  {"type":"character","attributes":{},"value":["welcome_files/anchor-4.2.2/anchor.min.js","welcome_files/bowser-1.9.3/bowser.min.js","welcome_files/distill-2.2.21/template.v2.js","welcome_files/jquery-1.11.3/jquery.min.js","welcome_files/webcomponents-2.0.0/webcomponents.js"]}
+  {"type":"character","attributes":{},"value":["images/static-map.png","mapping-contraceptive-stockouts_files/anchor-4.2.2/anchor.min.js","mapping-contraceptive-stockouts_files/bowser-1.9.3/bowser.min.js","mapping-contraceptive-stockouts_files/distill-2.2.21/template.v2.js","mapping-contraceptive-stockouts_files/jquery-1.11.3/jquery.min.js","mapping-contraceptive-stockouts_files/webcomponents-2.0.0/webcomponents.js"]}
   </script>
   <!--radix_placeholder_navigation_in_header-->
 <meta name="distill:offset" content="../.."/>
@@ -2228,6 +2228,12 @@ li>a {
 
 .algolia-autocomplete {
   line-height: 25px;
+}
+
+d-article iframe {
+    border: 0;
+    margin-bottom: 0;
+    width: 100%;
 }</style>
 <style type="text/css">
 /* base style */
@@ -2392,7 +2398,7 @@ d-appendix d-footnote-list a.footnote-backlink {
 <!--radix_placeholder_front_matter-->
 
 <script id="distill-front-matter" type="text/json">
-{"title":"Welcome to PMA Data Hub","description":"Welcome to our new blog, PMA Data Hub. We hope you enjoy \nreading what we have to say!","authors":[{"author":"Nora Jones","authorURL":"https://example.com/norajones","affiliation":"Spacely Sprockets","affiliationURL":"https://example.com/spacelysprokets","orcidID":""}],"publishedDate":"2020-12-08T00:00:00.000+00:00","citationText":"Jones, 2020"}
+{"title":"Mapping contraceptive stockouts","description":"Build an interactive map showing the percentage of service providers reporting a recent stockout of contraceptive methods","authors":[{"author":"Matt Gunther","authorURL":"#","affiliation":"IPUMS PMA","affiliationURL":"#","orcidID":""}],"publishedDate":"2020-12-09T00:00:00.000+00:00","citationText":"Gunther, 2020"}
 </script>
 
 <!--/radix_placeholder_front_matter-->
@@ -2407,7 +2413,32 @@ d-appendix d-footnote-list a.footnote-backlink {
 <input id="distill-search" class="nav-search hidden" type="text" placeholder="Search..."/>
 </div>
 <div class="nav-right">
-<a href="../../index.html">Home</a>
+<a href="../../index.html">Posts</a>
+<div class="nav-dropdown">
+<button class="nav-dropbtn">
+R Tips
+ 
+<span class="down-arrow">&#x25BE;</span>
+</button>
+<div class="nav-dropdown-content">
+<span class="nav-dropdown-header">Beginner's guide</span>
+<span class="nav-dropdown-header">IPUMS data: import an extract into R</span>
+<span class="nav-dropdown-header">R packages: how to install and load</span>
+</div>
+</div>
+<div class="nav-dropdown">
+<button class="nav-dropbtn">
+Community
+ 
+<span class="down-arrow">&#x25BE;</span>
+</button>
+<div class="nav-dropdown-content">
+<span class="nav-dropdown-header">Contributing guide</span>
+<span class="nav-dropdown-header">Code of conduct</span>
+<span class="nav-dropdown-header">License</span>
+<span class="nav-dropdown-header">GitHub</span>
+</div>
+</div>
 <a href="../../about.html">About</a>
 <a href="https://github.com/matt-gunther/ipumsPMA.blog" aria-label="Link to source">
 <i class="fab fa-github" aria-hidden="true"></i>
@@ -2421,26 +2452,28 @@ d-appendix d-footnote-list a.footnote-backlink {
 <!--/radix_placeholder_site_before_body-->
 
 <div class="d-title">
-<h1>Welcome to PMA Data Hub</h1>
+<h1>Mapping contraceptive stockouts</h1>
 <!--radix_placeholder_categories-->
 <!--/radix_placeholder_categories-->
-<p><p>Welcome to our new blog, PMA Data Hub. We hope you enjoy reading what we have to say!</p></p>
+<p><p>Build an interactive map showing the percentage of service providers reporting a recent stockout of contraceptive methods</p></p>
 </div>
 
 <div class="d-byline">
-  Nora Jones <a href="https://example.com/norajones" class="uri">https://example.com/norajones</a> (Spacely Sprockets)<a href="https://example.com/spacelysprokets" class="uri">https://example.com/spacelysprokets</a>
+  Matt Gunther  (IPUMS PMA)
   
-<br/>12-08-2020
+<br/>12-09-2020
 </div>
 
 <div class="d-article">
-<h1 id="h1">h1</h1>
-<h2 id="h2">h2</h2>
-<h3 id="h3">h3</h3>
-<h4 id="h4">h4</h4>
-<h5 id="h5">h5</h5>
-<h5 id="h6">h6</h5>
-<p>normal <em>italics</em> <strong>bold</strong></p>
+<p>Percentage of facilities experiencing a recent empty stock of each method, relative to the number of facilities in each region / province that normally provide the method (all survey years combined)</p>
+<aside>
+A “recent” stockout includes any empty stock experienced within 3 months prior to the survey.
+</aside>
+<div class="layout-chunk" data-layout="l-page">
+<iframe src="https://method-map.demo.ipums.org/?showcase=0" width="624" height="425px" data-distill-preview="1">
+</iframe>
+</div>
+<p>Missing regions / provinces include those with no surveyed facilities and those where no surveyed facilities normally provide the method.</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->

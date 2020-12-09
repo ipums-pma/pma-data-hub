@@ -152,3 +152,9 @@ li>a {
 .algolia-autocomplete {
   line-height: 25px;
 }
+
+d-article iframe {
+    border: 0;
+    margin-bottom: 0;
+    width: 100%;
+}
