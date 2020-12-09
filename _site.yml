@@ -20,14 +20,17 @@ navbar:
     - text: "Community"
       menu: 
         - text: "Contributing guide"
+          href: CONTRIBUTING.html
         - text: "Code of conduct"
           href: CODE_OF_CONDUCT.html
         - text: "License"
+          href: LICENSE.html
         - text: "GitHub"
+          href: https://github.com/matt-gunther/pma-data-hub/
     - text: "About"
       href: about.html
   source_url: true
 output: distill::distill_article
 theme: theme.css
 favicon: "images/favicon/favicon-32x32.png"
-exclude: ["*.md"]
+exclude: README.md
