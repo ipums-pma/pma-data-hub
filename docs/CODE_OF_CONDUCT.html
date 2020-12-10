@@ -2151,20 +2151,42 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     color: #00263A;
   }
   
-  h2{
-    font-family: 'cabrito_sans_cond_demi';
-    text-transform: uppercase;
-    color: #00263A;
+  d-article h2{
+      font-size: 30px;
+      font-family: "cabrito_sans_cond_demi";
+      text-transform: uppercase;
+      color: #00263A;
   }
   
-  h3{
+  d-article h3{
+    font-size: 26px;
     font-family: 'cabrito_sans_cond_demi';
     color: #00263A;
+    margin-top: 1.5rem;
+    margin-bottom: 1em;
   }
   
-  h4, h5{
+  d-article h4{
+    font-size: 24px;
     font-family: 'cabrito_sans_norm_regular';
     color: #00263A;
+    text-transform: unset;
+    margin-top: 1.5rem;
+    margin-bottom: 1em;
+  }
+  
+  d-article h5{
+    font-size: 24px;
+    font-family: 'cabrito_sans_cond_demi';
+    color: #00263A;
+    margin-top: 1.5rem;
+    margin-bottom: 1em;
+  }
+  
+  d-article li {
+      margin-bottom: 0;
+      margin-left: 1rem;
+      padding-left: 0;
   }
   
   body{
@@ -2414,8 +2436,8 @@ R Tips
 </button>
 <div class="nav-dropdown-content">
 <span class="nav-dropdown-header">Beginner's guide</span>
-<span class="nav-dropdown-header">IPUMS data: import an extract into R</span>
-<span class="nav-dropdown-header">R packages: how to install and load</span>
+<a href="posts/2020-12-10-get-ipums-pma-data/index.html">IPUMS data: import an extract into R</a>
+<a href="posts/2020-12-10-get-r-and-packages/index.html">R and Important R Packages</a>
 </div>
 </div>
 <div class="nav-dropdown">
@@ -2432,7 +2454,7 @@ Community
 </div>
 </div>
 <a href="about.html">About</a>
-<a href="https://github.com/matt-gunther/ipumsPMA.blog" aria-label="Link to source">
+<a href="https://github.com/matt-gunther/pma-data-hub" aria-label="Link to source">
 <i class="fab fa-github" aria-hidden="true"></i>
 </a>
 <a href="javascript:void(0);" class="nav-toggle">&#9776;</a>
@@ -2532,7 +2554,7 @@ Community
 <!--radix_placeholder_appendices-->
 <div class="appendix-bottom">
 <h3 id="updates-and-corrections">Corrections</h3>
-<p>If you see mistakes or want to suggest changes, please <a href="https://github.com/matt-gunther/ipumsPMA.blog/issues/new">create an issue</a> on the source repository.</p>
+<p>If you see mistakes or want to suggest changes, please <a href="https://github.com/matt-gunther/pma-data-hub/issues/new">create an issue</a> on the source repository.</p>
 </div>
 <!--/radix_placeholder_appendices-->
 <!--radix_placeholder_navigation_after_body-->

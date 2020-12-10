@@ -3,7 +3,7 @@ title: "PMA Data Hub"
 description: |
   A blog about PMA data
 output_dir: "docs"
-repository_url: https://github.com/matt-gunther/ipumsPMA.blog
+repository_url: https://github.com/matt-gunther/pma-data-hub
 navbar:
   search: true
   logo:
@@ -16,7 +16,9 @@ navbar:
       menu: 
         - text: "Beginner's guide"
         - text: "IPUMS data: import an extract into R"
-        - text: "R packages: how to install and load" 
+          href: posts/2020-12-10-get-ipums-pma-data/index.html
+        - text: "R and Important R Packages" 
+          href: posts/2020-12-10-get-r-and-packages/index.html
     - text: "Community"
       menu: 
         - text: "Contributing guide"

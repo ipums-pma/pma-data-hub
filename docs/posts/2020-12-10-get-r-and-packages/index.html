@@ -86,39 +86,39 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 </style>
 
   <!--radix_placeholder_meta_tags-->
-<title>PMA Data Hub: Linking Maternal and Newborn Records in 2018 Nutrition Surveys</title>
+<title>PMA Data Hub: Getting Started with R</title>
 
-<meta property="description" itemprop="description" content="How to build a rowwise function linking children to mothers in the 2018 Nutrition Surveys for Burkina Faso and Kenya."/>
+<meta property="description" itemprop="description" content="How to download R for free and install some of the R packages used on this blog"/>
 
 <link rel="icon" type="image/png" href="../../images/favicon/favicon-32x32.png"/>
 
 <!--  https://schema.org/Article -->
-<meta property="article:published" itemprop="datePublished" content="2020-12-08"/>
-<meta property="article:created" itemprop="dateCreated" content="2020-12-08"/>
+<meta property="article:published" itemprop="datePublished" content="2020-12-10"/>
+<meta property="article:created" itemprop="dateCreated" content="2020-12-10"/>
 <meta name="article:author" content="Matt Gunther"/>
 
 <!--  https://developers.facebook.com/docs/sharing/webmasters#markup -->
-<meta property="og:title" content="PMA Data Hub: Linking Maternal and Newborn Records in 2018 Nutrition Surveys"/>
+<meta property="og:title" content="PMA Data Hub: Getting Started with R"/>
 <meta property="og:type" content="article"/>
-<meta property="og:description" content="How to build a rowwise function linking children to mothers in the 2018 Nutrition Surveys for Burkina Faso and Kenya."/>
+<meta property="og:description" content="How to download R for free and install some of the R packages used on this blog"/>
 <meta property="og:locale" content="en_US"/>
 <meta property="og:site_name" content="PMA Data Hub"/>
 
 <!--  https://dev.twitter.com/cards/types/summary -->
 <meta property="twitter:card" content="summary"/>
-<meta property="twitter:title" content="PMA Data Hub: Linking Maternal and Newborn Records in 2018 Nutrition Surveys"/>
-<meta property="twitter:description" content="How to build a rowwise function linking children to mothers in the 2018 Nutrition Surveys for Burkina Faso and Kenya."/>
+<meta property="twitter:title" content="PMA Data Hub: Getting Started with R"/>
+<meta property="twitter:description" content="How to download R for free and install some of the R packages used on this blog"/>
 
 <!--/radix_placeholder_meta_tags-->
   <!--radix_placeholder_rmarkdown_metadata-->
 
 <script type="text/json" id="radix-rmarkdown-metadata">
-{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","author","date","output","draft"]}},"value":[{"type":"character","attributes":{},"value":["Linking Maternal and Newborn Records in 2018 Nutrition Surveys"]},{"type":"character","attributes":{},"value":["How to build a rowwise function linking children to mothers in the 2018 Nutrition Surveys for Burkina Faso and Kenya."]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name"]}},"value":[{"type":"character","attributes":{},"value":["Matt Gunther"]}]}]},{"type":"character","attributes":{},"value":["12-08-2020"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained","toc","toc_depth","toc_float"]}},"value":[{"type":"logical","attributes":{},"value":[false]},{"type":"logical","attributes":{},"value":[true]},{"type":"integer","attributes":{},"value":[3]},{"type":"logical","attributes":{},"value":[true]}]}]},{"type":"logical","attributes":{},"value":[false]}]}
+{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","author","categories","date","output"]}},"value":[{"type":"character","attributes":{},"value":["Getting Started with R"]},{"type":"character","attributes":{},"value":["How to download R for free and install some of the R packages used on this blog"]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","affiliation"]}},"value":[{"type":"character","attributes":{},"value":["Matt Gunther"]},{"type":"character","attributes":{},"value":["IPUMS PMA Senior Data Analyst"]}]}]},{"type":"character","attributes":{},"value":["R Tips","R Packages"]},{"type":"character","attributes":{},"value":["12-10-2020"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained","toc"]}},"value":[{"type":"logical","attributes":{},"value":[false]},{"type":"logical","attributes":{},"value":[true]}]}]}]}
 </script>
 <!--/radix_placeholder_rmarkdown_metadata-->
   
   <script type="text/json" id="radix-resource-manifest">
-  {"type":"character","attributes":{},"value":["linking-maternal-and-newborn-records_files/anchor-4.2.2/anchor.min.js","linking-maternal-and-newborn-records_files/bowser-1.9.3/bowser.min.js","linking-maternal-and-newborn-records_files/distill-2.2.21/template.v2.js","linking-maternal-and-newborn-records_files/figure-html5/unnamed-chunk-8-1.png","linking-maternal-and-newborn-records_files/font-awesome-5.13.0/css/all.min.css","linking-maternal-and-newborn-records_files/font-awesome-5.13.0/css/v4-shims.min.css","linking-maternal-and-newborn-records_files/font-awesome-5.13.0/js/script.js","linking-maternal-and-newborn-records_files/font-awesome-5.13.0/webfonts/fa-brands-400.eot","linking-maternal-and-newborn-records_files/font-awesome-5.13.0/webfonts/fa-brands-400.svg","linking-maternal-and-newborn-records_files/font-awesome-5.13.0/webfonts/fa-brands-400.ttf","linking-maternal-and-newborn-records_files/font-awesome-5.13.0/webfonts/fa-brands-400.woff","linking-maternal-and-newborn-records_files/font-awesome-5.13.0/webfonts/fa-brands-400.woff2","linking-maternal-and-newborn-records_files/font-awesome-5.13.0/webfonts/fa-regular-400.eot","linking-maternal-and-newborn-records_files/font-awesome-5.13.0/webfonts/fa-regular-400.svg","linking-maternal-and-newborn-records_files/font-awesome-5.13.0/webfonts/fa-regular-400.ttf","linking-maternal-and-newborn-records_files/font-awesome-5.13.0/webfonts/fa-regular-400.woff","linking-maternal-and-newborn-records_files/font-awesome-5.13.0/webfonts/fa-regular-400.woff2","linking-maternal-and-newborn-records_files/font-awesome-5.13.0/webfonts/fa-solid-900.eot","linking-maternal-and-newborn-records_files/font-awesome-5.13.0/webfonts/fa-solid-900.svg","linking-maternal-and-newborn-records_files/font-awesome-5.13.0/webfonts/fa-solid-900.ttf","linking-maternal-and-newborn-records_files/font-awesome-5.13.0/webfonts/fa-solid-900.woff","linking-maternal-and-newborn-records_files/font-awesome-5.13.0/webfonts/fa-solid-900.woff2","linking-maternal-and-newborn-records_files/jquery-1.11.3/jquery.min.js","linking-maternal-and-newborn-records_files/webcomponents-2.0.0/webcomponents.js"]}
+  {"type":"character","attributes":{},"value":["get-r-and-packages_files/anchor-4.2.2/anchor.min.js","get-r-and-packages_files/bowser-1.9.3/bowser.min.js","get-r-and-packages_files/distill-2.2.21/template.v2.js","get-r-and-packages_files/jquery-1.11.3/jquery.min.js","get-r-and-packages_files/webcomponents-2.0.0/webcomponents.js","images/Rlogo.png"]}
   </script>
   <!--radix_placeholder_navigation_in_header-->
 <meta name="distill:offset" content="../.."/>
@@ -2404,7 +2404,6 @@ d-appendix d-footnote-list a.footnote-backlink {
 	color: var(--hover-color, white);
 }</style>
 <!--/radix_placeholder_distill-->
-  <script src="../../site_libs/font-awesome-5.13.0/js/script.js"></script>
   <script src="../../site_libs/jquery-1.11.3/jquery.min.js"></script>
   <script src="../../site_libs/anchor-4.2.2/anchor.min.js"></script>
   <script src="../../site_libs/bowser-1.9.3/bowser.min.js"></script>
@@ -2421,7 +2420,7 @@ d-appendix d-footnote-list a.footnote-backlink {
 <!--radix_placeholder_front_matter-->
 
 <script id="distill-front-matter" type="text/json">
-{"title":"Linking Maternal and Newborn Records in 2018 Nutrition Surveys","description":"How to build a rowwise function linking children to mothers in the 2018 Nutrition Surveys for Burkina Faso and Kenya.","authors":[{"author":"Matt Gunther","authorURL":"#","affiliation":"&nbsp;","affiliationURL":"#","orcidID":""}],"publishedDate":"2020-12-08T00:00:00.000+00:00","citationText":"Gunther, 2020"}
+{"title":"Getting Started with R","description":"How to download R for free and install some of the R packages used on this blog","authors":[{"author":"Matt Gunther","authorURL":"#","affiliation":"IPUMS PMA Senior Data Analyst","affiliationURL":"#","orcidID":""}],"publishedDate":"2020-12-10T00:00:00.000+00:00","citationText":"Gunther, 2020"}
 </script>
 
 <!--/radix_placeholder_front_matter-->
@@ -2475,16 +2474,20 @@ Community
 <!--/radix_placeholder_site_before_body-->
 
 <div class="d-title">
-<h1>Linking Maternal and Newborn Records in 2018 Nutrition Surveys</h1>
+<h1>Getting Started with R</h1>
 <!--radix_placeholder_categories-->
+<div class="dt-tags">
+  <a href="../../index.html#category:R_Tips" class="dt-tag">R Tips</a>
+  <a href="../../index.html#category:R_Packages" class="dt-tag">R Packages</a>
+</div>
 <!--/radix_placeholder_categories-->
-<p><p>How to build a rowwise function linking children to mothers in the 2018 Nutrition Surveys for Burkina Faso and Kenya.</p></p>
+<p><p>How to download R for free and install some of the R packages used on this blog</p></p>
 </div>
 
 <div class="d-byline">
-  Matt Gunther  
+  Matt Gunther  (IPUMS PMA Senior Data Analyst)
   
-<br/>12-08-2020
+<br/>12-10-2020
 </div>
 
 <div class="d-article">
@@ -2492,206 +2495,59 @@ Community
 <nav class="l-text toc figcaption" id="TOC">
 <h3>Contents</h3>
 <ul>
-<li><a href="#setup">Setup</a></li>
-<li><a href="#linking-by-household-and-birthdate">Linking by household and birthdate</a><ul>
-<li><a href="#how-does-it-work">How does it work?</a></li>
-<li><a href="#results">Results</a></li>
+<li><a href="#why-analyze-pma-data-with-r">Why analyze PMA data with R?</a><ul>
+<li><a href="#do-i-really-need-special-software">Do I really need special software?</a></li>
+<li><a href="#are-there-alternatives">Are there alternatives?</a></li>
 </ul></li>
-<li><a href="#searching-for-additional-cases">Searching for Additional Cases</a><ul>
-<li><a href="#additional-results">Additional Results</a></li>
-</ul></li>
-<li><a href="#analysis">Analysis</a></li>
+<li><a href="#r-packages">R packages</a></li>
 </ul>
 </nav>
 </div>
+<h1 id="why-analyze-pma-data-with-r">Why analyze PMA data with R?</h1>
+<p>Like all IPUMS data projects, IPUMS PMA data is available free of charge to users who agree to our <a href="https://ipums.org/about/terms">terms of use</a>. That’s because we believe that cost and institutional affiliation should not be barriers to answering pressing concerns around women’s health.</p>
+<p><strong>In fact, users can analyze IPUMS PMA data with any software they like!</strong> We’ve chosen to highlight R, in particular, because it is also free and popular with data analysts throughout the world. It’s available for Windows, MacOS, and a wide variety of UNIX platforms and similar systems (including FreeBSD and Linux).</p>
+<aside>
+For non-R users: IPUMS data extracts are available as CSV or fixed-width DAT with syntax files formatted for SPSS, Stata, and SAS.
+</aside>
+<p>To get a copy of R for yourself, visit the <a href="https://cran.r-project.org/mirrors.html">Comprehensive R Archive Network</a> (CRAN), select a “mirror” near you, and choose the right download link for your operating system.</p>
+<aside>
 <div class="layout-chunk" data-layout="l-body">
-<a href="data:text/x-markdown;base64,LS0tCnRpdGxlOiAiTGlua2luZyBNYXRlcm5hbCBhbmQgTmV3Ym9ybiBSZWNvcmRzIGluIDIwMTggTnV0cml0aW9uIFN1cnZleXMiCmRlc2NyaXB0aW9uOiB8CiAgSG93IHRvIGJ1aWxkIGEgcm93d2lzZSBmdW5jdGlvbiBsaW5raW5nIGNoaWxkcmVuIHRvIG1vdGhlcnMgaW4gdGhlIDIwMTggTnV0cml0aW9uIFN1cnZleXMgZm9yIEJ1cmtpbmEgRmFzbyBhbmQgS2VueWEuCmF1dGhvcjoKICAtIG5hbWU6IE1hdHQgR3VudGhlcgpkYXRlOiAxMi0wOC0yMDIwCm91dHB1dDoKICBkaXN0aWxsOjpkaXN0aWxsX2FydGljbGU6CiAgICBzZWxmX2NvbnRhaW5lZDogZmFsc2UKICAgIHRvYzogdHJ1ZQogICAgdG9jX2RlcHRoOiAzCiAgICB0b2NfZmxvYXQ6IHRydWUKZHJhZnQ6IGZhbHNlCi0tLQoKYGBge3Igc2V0dXAsIGluY2x1ZGU9Rn0Ka25pdHI6Om9wdHNfY2h1bmskc2V0KGVjaG8gPSBUUlVFLCBldmFsID0gVCkKb3B0aW9ucyh0aWJibGUubWF4X2V4dHJhX2NvbHMgPSA1KQpsb2FkKCIuLi8uLi9kYXRhL2JmMjAxOGFfbmgucmRhIikKYGBgCgpgYGB7ciBkb3dubG9hZF9idXR0b24sIGVjaG89RiwgZXZhbD1UfQpkb3dubG9hZHRoaXM6OmRvd25sb2FkX2ZpbGUoCiAgcGF0aCA9ICIuL2xpbmtpbmctbWF0ZXJuYWwtYW5kLW5ld2Jvcm4tcmVjb3Jkcy5SbWQiLAogIGJ1dHRvbl9sYWJlbCA9ICJEb3dubG9hZCB0aGlzIHBhZ2UgYXMgUiBjb2RlIiwKICBidXR0b25fdHlwZSA9ICJkZWZhdWx0IiwKICBoYXNfaWNvbiA9IFQsCiAgaWNvbiA9ICJmYSBmYS1zYXZlIgopCmBgYAoKVGhlIFBNQSBbMjAxOCBudXRyaXRpb24gc3VydmV5IG1vZHVsZSBmb3IgQnVya2luYSBGYXNvIGFuZCBLZW55YV0oaHR0cHM6Ly9wbWEuaXB1bXMub3JnL3BtYS9zYW1wbGVfbm90ZXMuc2h0bWwjbnV0KSBjb250YWlucyBodW5kcmVkcyBvZiBpbmRpY2F0b3JzIG1lYXN1cmluZyBkaWV0IGFuZCBudXRyaXRpb25hbCBzdGF0dXMgZm9yIHdvbWVuIGFnZWQgMTAtNDkgYW5kIGNoaWxkcmVuIHVuZGVyIGFnZSA1LiBJbiBzb21lIGhvdXNlaG9sZHMsIHRoZSAyMDE4IHN1cnZleSBkZXNpZ24gaW5jbHVkZWQgYm90aCBjaGlsZHJlbiBhbmQgdGhlaXIgYmlvbG9naWNhbCBtb3RoZXIsIGJ1dCB0aGVpciByZWxhdGlvbnNoaXBzIGFyZSBub3QgaW1tZWRpYXRlbHkgYXZhaWxhYmxlIGluIHRoZSBkYXRhLiAKClRoaXMgcG9zdCBzaG93cyBob3cgdG8gd3JpdGUgYW4gUiBmdW5jdGlvbiB0aGF0IHdpbGwgbGluayBjaGlsZCBhbmQgbWF0ZXJuYWwgcmVjb3JkcywgcHJvdmlkZWQgdGhhdCBib3RoIG1vdGhlciBhbmQgY2hpbGQgd2VyZSBzdXJ2ZXllZC4gVGhlc2UgbGlua3MgbWF5IGJlIHBhcnRpY3VsYXJseSB1c2VmdWwgZm9yIHJlc2VhcmNoZXJzIHN0dWR5aW5nIHRoZSBlZmZlY3RpdmVuZXNzIG9mIGRpZmZlcmVudCBhbnRlbmF0YWwgaW50ZXJ2ZW50aW9ucyBvbiBlYXJseSBjaGlsZGhvb2QgbnV0cml0aW9uLiBGb3IgZXhhbXBsZSwgKGluc2VydCBhbmFseXNpcyBwbGFuIGhlcmUpLgoKIyMgU2V0dXAKClRvIHJ1biB0aGUgY29kZSBpbiB0aGlzIHBvc3QsIHlvdSdsbCBuZWVkIHRoZSBbdGlkeXZlcnNlIHBhY2thZ2VdKGh0dHBzOi8vdGlkeXZlcnNlLnRpZHl2ZXJzZS5vcmcvKSBmcm9tIENSQU4uIFNlZSBvdXIgcG9zdCBbSW5zdGFsbGluZyBhbmQgTG9hZGluZyBVc2VmdWwgUiBQYWNrYWdlc10oZ2V0UGFja2FnZXMuaHRtbCkgZm9yIGhlbHAuCgpgYGB7cn0KbGlicmFyeSh0aWR5dmVyc2UpCmBgYAoKVG8ga2VlcCB0aGluZ3Mgc2ltcGxlLCB3ZSdsbCBmb2N1cyBvbiAyMDE4IE51dHJpdGlvbiBkYXRhIGZyb20gQnVya2luYSBGYXNvLCB3aGljaCB5b3UgY2FuIGRvd25sb2FkIGF0IFtwbWEuaXB1bXMub3JnXShodHRwczovL3BtYS5pcHVtcy5vcmcvcG1hLWFjdGlvbi92YXJpYWJsZXMvZ3JvdXApLiBTZWUgb3VyIHBvc3QgW0Rvd25sb2FkaW5nIGFuIElQVU1TIEV4dHJhY3QgZm9yIFJdKGdldERhdGEuaHRtbCkgZm9yIGhlbHAuCgpgYGB7cn0KIyBEYXRhIGltcG9ydCBhbmQgb2JqZWN0IGFzc2lnbm1lbnQgZ29lcyBoZXJlCmBgYCAgICAKCiMjIExpbmtpbmcgYnkgaG91c2Vob2xkIGFuZCBiaXJ0aGRhdGUKClRoZSBlYXNpZXN0IHdheSB0byBtYXRjaCBtb3RoZXJzIGFuZCBjaGlsZHJlbiBpcyB0byBsb29rIHdpdGhpbiBlYWNoIGhvdXNlaG9sZCBmb3IgYSBjaGlsZCB3aG9zZSBkYXRlIG9mIGJpcnRoIGBLSURCSVJUSFlSYCBhbmQgYEtJREJJUlRITU9gIG1hdGNoZXMgdGhlIGJpcnRoIHJlY29yZCBkYXRhIGZvciBhbnkgd29tZW4gbGl2aW5nIGluIHRoYXQgc2FtZSBob3VzZWhvbGQuIFRoZSAyMDE4IE51dHJpdGlvbiBzdXJ2ZXkgb25seSBjb250YWlucyBkYXRlcyBmb3IgZWFjaCB3b21hbidzICptb3N0IHJlY2VudCBiaXJ0aCogaW4gYExBU1RCSVJUSFlSYCBhbmQgYExBU0JJUlRITU9gLCBzbyB3ZSBjYW4gb25seSBtYXRjaCBhIG1vdGhlciB0byBoZXIgbW9zdCByZWNlbnQgY2hpbGQuIAoKV2hpbGUgdGhpcyBhcHByb2FjaCB3b24ndCBtYXRjaCAqZXZlcnkqIG1vdGhlciBhbmQgY2hpbGQsIHdlIGNhbiBzYWZlbHkgYXNzdW1lIHRoYXQgd2UndmUgZm91bmQgYSBjb3JyZWN0IHBhaXIgaW4gZWFjaCBob3VzZWhvbGQgaWYgd2UgYWxzbyBtYWtlIHN1cmUgdGhhdCB0aGUgYmlydGhkYXRlcyBhbGxvdyBmb3Igb25seSBvbmUgcG9zc2libGUgbWF0Y2guIEZvciBleGFtcGxlLCBpZiB0d28gd29tZW4gaW4gdGhlIHNhbWUgaG91c2Vob2xkIGxhc3QgZ2F2ZSBiaXJ0aCBpbiB0aGUgc2FtZSBtb250aCBhbmQgeWVhciwgd2Ugc2hvdWxkIG1ha2Ugc3VyZSB0byBleGNsdWRlIHRoZW0gKHNpbmNlIHdlIHdvdWxkbid0IGJlIGFibGUgdG8gdGVsbCB3aGljaCBtb3RoZXIgbWF0Y2hlcyB3aGljaCBjaGlsZCkuIAoKYGBge3J9CmJmMjAxOGFfbmggPC0gYmYyMDE4YV9uaCAlPiUgCiAgZ3JvdXBfYnkoSEhJRCkgJT4lIAogIG11dGF0ZShNT01JRCA9IGNhc2Vfd2hlbihFTElHVFlQRSA8IDIwIH4gcG1hcF9jaHIoCiAgICBjdXJfZGF0YSgpICU+JQogICAgICBzZWxlY3QoS0lEQklSVEhZUiwKICAgICAgICAgICAgIEtJREJJUlRITU8sCiAgICAgICAgICAgICBMQVNUQklSVEhZUiwKICAgICAgICAgICAgIExBU1RCSVJUSE1PKSwgCiAgICBmdW5jdGlvbiguLi4pewogICAgICBraWQgPC0gdGliYmxlKC4uLikKICAgICAgc2FtZVlyIDwtIHdoaWNoKExBU1RCSVJUSFlSID09IGtpZCRLSURCSVJUSFlSKQogICAgICBzYW1lTW8gPC0gd2hpY2goTEFTVEJJUlRITU8gPT0ga2lkJEtJREJJUlRITU8pCiAgICAgIG1vbSA8LSBpbnRlcnNlY3Qoc2FtZVlyLCBzYW1lTW8pCiAgICAgIGlmKGxlbmd0aChtb20pPT0xKXtyZXR1cm4oUEVSU09OSURbbW9tXSl9ZWxzZXtyZXR1cm4oTkEpfQogICAgfQogICkpKSAlPiUgCiAgdW5ncm91cCgpCmBgYAoKIyMjIEhvdyBkb2VzIGl0IHdvcms/IAoKV2UgY3JlYXRlIGEgdmFyaWFibGUgYE1PTUlEYCB0aGF0IHN0b3JlcyB0aGUgdW5pcXVlIHBlcnNvbiBpZGVudGlmaWVyIGBQRVJTT05JRGAgZm9yIGVhY2ggY2hpbGQncyBtb3RoZXIuIAoKVG8gZmluZCBlYWNoIGNoaWxkJ3MgbW90aGVyLCB3ZSByZXN0cmljdCBvdXIgc2VhcmNoIHRvIGluZGl2aWR1YWxzIGxpdmluZyBpbiB0aGUgc2FtZSBob3VzZWhvbGQgKGBncm91cF9ieShISElEKWApLiBUaGVuLCB3ZSBhc3NpZ24gYE1PTUlEYCBvbmx5IHRvIGNoaWxkIHJlY29yZHMgYnkgc2VsZWN0aW5nIGNhc2VzIHdoZXJlIGBFTElHVFlQRSA8IDIwYC4gCgpUaGVuLCBmb3IgZWFjaCBjaGlsZCBpbiB0aGUgaG91c2Vob2xkLCB3ZSB1c2UgdGhlIGBwbWFwX2NocigpYCBmdW5jdGlvbiB0byBleGFtaW5lIGVhY2ggb2YgdGhlIHJlY29yZHMgZm9yIGluZGl2aWR1YWxzIHdobyBsaXZlIHdpdGggdGhlIGNoaWxkLiBGb3Igc2FrZSBvZiBzcGVlZCwgd2UgcGFzcyBvbmx5IHRoZSB2YXJpYWJsZXMgYEtJREJJUlRIWVJgLCBgS0lEQklSVEhNT2AsIGBMQVNUQklSVEhZUmAsIGFuZCBgTEFTVEJJUlRITU9gIHRvIHRoZSBhbm9ueW1vdXMgZnVuY3Rpb24gaW5zaWRlIGBwbWFwX2NocmAuIAoKRmluYWxseSwgYGtpZCA8LSB0aWJibGUoLi4uKWAgc3RvcmVzIGEgdGVtcG9yYXJ5IG9uZS1yb3cgZGF0YSBmcmFtZSBjb250YWluaW5nIGluZm9ybWF0aW9uIG9uIHRoZSBjaGlsZCwgd2hpY2ggd2UgY2FuIHRoZW4gcmVmZXJlbmNlIHdpdGggYGtpZCRCSVJUSFlSYCBhbmQgYGtpZCRCSVJUSE1PYC4gQXMgYHBtYXBfY2hyYCBpdGVyYXRlcyB0aHJvdWdoIGVhY2ggaG91c2Vob2xkIG1lbWJlciwgaXQgYXNzaWducyBgbW9tYCB0byBhbnkgcGVyc29uIHdobyBnYXZlIGJpcnRoIG9uIHRoZSBjaGlsZCdzIGJpcnRoZGF5LiBJZiBvbmx5IG9uZSBwZXJzb24gZml0cywgdGhhdCBwZXJzb24ncyBgUEVSU09OSURgIGJlY29tZXMgdGhlIGNoaWxkJ3MgYE1PTUlEYC4KICAKIyMjIFJlc3VsdHMKCkluIHRvdGFsLCA3OTYgY2hpbGRyZW4gd2VyZSBsaW5rZWQgdG8gYSBtb3RoZXI6IHRoaXMgaXMgb25seSBhYm91dCAyOCUgb2YgdGhlIDI4NTYgY2hpbGRyZW4gbGlzdGVkIGJ5IHRoZSBncm91cGluZyB2YXJpYWJsZSBgRUxJR1RZUEVgOiAKCmBgYHtyfQpiZjIwMThhX25oICU+JSBjb3VudChFTElHVFlQRSwgSEFTTU9NSUQgPSAhaXMubmEoTU9NSUQpKQpgYGAKCldoeSB3ZXJlIHNvIGZldyBjaGlsZHJlbiBtYXRjaGVkIHN1Y2Nlc3NmdWxseT8gUGFydCBvZiB0aGUgYW5zd2VyIGhhcyB0byBkbyB3aXRoIHRoZSBudXRyaXRpb24gc2FtcGxlIGRlc2lnbjogaW4gQnVya2luYSBGYXNvLCB3b21lbiBhZ2VkIDEwLTQ5IHdlcmUgaW5jbHVkZWQgZnJvbSBqdXN0IDQ1JSBvZiBob3VzZWhvbGRzIHNlbGVjdGVkIGF0IHJhbmRvbSBmcm9tIHRoZSBob3VzZWhvbGQgc2NyZWVuaW5nIHNhbXBsZSAoaW4gdGhlIEtlbnlhIDIwMTggc2FtcGxlLCAyNSUgb2YgaG91c2Vob2xkcyB3ZXJlIHJhbmRvbWx5IHNlbGVjdGVkKS4gQXMgYSByZXN1bHQsIHdlIG1pZ2h0IGVzdGltYXRlIHRoYXQgb25seSBhcm91bmQgNDUlIG9mIGNoaWxkcmVuIGNvdWxkIHBvc3NpYmx5IGJlIGxpbmtlZCB0byBtb3RoZXIgaW5jbHVkZWQgaW4gdGhlIG51dHJpdGlvbiBzYW1wbGU6CgpgYGB7cn0KYmYyMDE4YV9uaCAlPiUKICBtdXRhdGUoTU9NU19JTl9ISCA9IGNhc2Vfd2hlbihFTElHVFlQRSA8IDIwIH4gcG1hcF9jaHIoCiAgICBjdXJfZGF0YSgpICU+JQogICAgICBzZWxlY3QoSEhJRCwgRUxJR1RZUEUpLCAKICAgIGZ1bmN0aW9uKC4uLil7CiAgICAgIGtpZCA8LSB0aWJibGUoLi4uKQogICAgICBzYW1lSEggPC0gd2hpY2goSEhJRCA9PSBraWQkSEhJRCAmIEVMSUdUWVBFID09IDIwKQogICAgICBpZihsZW5ndGgoc2FtZUhIKT4wKXtyZXR1cm4oInllcyIpfWVsc2V7cmV0dXJuKCJubyIpfQogICAgfQogICkpKSAlPiUKICBncm91cF9ieShFTElHVFlQRSwgTU9NU19JTl9ISCkgJT4lCiAgY291bnQoKQpgYGAKClRoaXMgY29uZmlybXMgb3VyIGVzdGltYXRlOiBvbmx5IDEyNzcgb2YgdGhlIDI4NTYgc2FtcGxlZCBjaGlsZHJlbiBsaXZlIGluIGEgaG91c2Vob2xkIHdpdGggYSB3b21hbiBhZ2VkIDEwLTQ5IHdobyB3YXMgYWxzbyBpbmNsdWRlZCBpbiB0aGUgbnV0cml0aW9uIHNhbXBsZS4gSW4gb3RoZXIgd29yZHMsIDQ1JSBvZiBzYW1wbGVkIGNoaWxkcmVuIGxpdmUgaW4gYSBob3VzZWhvbGQgd2l0aCBhIHNhbXBsZWQgbW90aGVyLiBPdXIgc2VhcmNoIGZvdW5kIG1hdGNoZXMgZm9yIDI4JSBvZiBhbGwgY2hpbGRyZW4sICpidXQgdGhpcyByZWZsZWN0cyA2MiUgb2YgdGhlIGNoaWxkcmVuIHdobyBsaXZlIGluIGEgaG91c2Vob2xkIHdpdGggYSBzYW1wbGVkIG1vdGhlciouCgpGb3J0dW5hdGVseSwgYmVjYXVzZSBob3VzZWhvbGRzIHdlcmUgcmFuZG9tbHkgc2VsZWN0ZWQgZm9yIHRoZSBmZW1hbGUgbnV0cml0aW9uIHNhbXBsZSwgd2Ugc2hvdWxkIGhhdmUgbm8gcmVhc29uIHRvIHN1c3BlY3QgdGhhdCB0aGUgNzk2IGNoaWxkcmVuIG1hdGNoZWQgdG8gbW90aGVycyBieSBvdXIgc2VhcmNoIGNyaXRlcmlhIHJlcHJlc2VudCBhIGJpYXNlZCBzdWItc2FtcGxlIG9mIHRoZSAyODU2IGNoaWxkcmVuIG92ZXJhbGwuIEhvd2V2ZXIsIGJlZm9yZSBwcm9jZWVkaW5nIHdpdGggZnVydGhlciBhbmFseXNpcywgaXQgd291bGQgYmUgd29ydGh3aGlsZSB0byBzZWUgaWYgd2UgY2FuIGluY3JlYXNlIHRoZSBudW1iZXIgb2YgbGlua2VkIGNoaWxkcmVuIHdpdGggYWRkaXRpb25hbCBzZWFyY2ggY3JpdGVyaWEuCgojIyBTZWFyY2hpbmcgZm9yIEFkZGl0aW9uYWwgQ2FzZXMKCkluIHRoZSBleGFtcGxlIGFib3ZlLCB0aGUgdXNlIG9mIGBMQVNUQklSVEhNT2AgYW5kIGBMQVNUQklSVEhZUmAgZW5zdXJlZCB0aGF0IG9ubHkgbW90aGVyJ3MgKm1vc3QgcmVjZW50IGNoaWxkKiBjb3VsZCBiZSBsaW5rZWQgdG8gaGVyIHJlY29yZC4gCgpJdCdzIHBvc3NpYmxlIHRvIGV4cGFuZCB0aGVzZSBjcml0ZXJpYSBpbiBjZXJ0YWluIGNpcmN1bXN0YW5jZXMgdXNpbmcgYFJFTEFURUtJRGAsIHdoaWNoIGRlc2NyaWJlcyB0aGUgcmVsYXRpb25zaGlwIGJldHdlZW4gZWFjaCBjaGlsZCBhbmQgdGhlIHBlcnNvbiB3aG8gcHJvdmlkZWQgcmVzcG9uc2VzIHRvIHRoZSBpbnRlcnZpZXdlciBvbiB0aGVpciBiZWhhbGYuIAoKV2hlbiBgUkVMQVRFS0lEID09IDFgLCB0aGUgcmVzcG9uZGVudCB0byB0aGUgY2hpbGQncyBxdWVzdGlvbm5haXJlIGlzIHRoZSBjaGlsZCdzIG1vdGhlci4gU28sIGlmIGBSRUxBVEVLSUQgPT0gMWAgKmFuZCBpZiBvbmx5IG9uZSB3b21hbiBpbiB0aGUgY2hpbGQncyBob3VzZWhvbGQgaGFzIGV2ZXIgZ2l2ZW4gYmlydGgqLCB3ZSBjb3VsZCByZWFzb25hYmx5IGlkZW50aWZ5IHRoYXQgcGVyc29uIGFzIHRoZSBjaGlsZCdzIG1vdGhlci4KCmBgYHtyfQpiZjIwMThhX25oIDwtIGJmMjAxOGFfbmggJT4lCiAgZ3JvdXBfYnkoSEhJRCkgJT4lIAogIG11dGF0ZShNT01JRCA9IGNhc2Vfd2hlbigKICAgIEVMSUdUWVBFIDwgMjAgfiBwbWFwX2NocigKICAgICAgY3VyX2RhdGEoKSAlPiUgCiAgICAgICAgc2VsZWN0KAogICAgICAgICAgS0lEQklSVEhZUiwKICAgICAgICAgIEtJREJJUlRITU8sCiAgICAgICAgICBMQVNUQklSVEhZUiwKICAgICAgICAgIExBU1RCSVJUSE1PLAogICAgICAgICAgUkVMQVRFS0lECiAgICAgICAgKSwgCiAgICAgIGZ1bmN0aW9uKC4uLil7CiAgICAgICAga2lkIDwtIHRpYmJsZSguLi4pCiAgICAgICAgc2FtZVlyIDwtIHdoaWNoKExBU1RCSVJUSFlSID09IGtpZCRLSURCSVJUSFlSKQogICAgICAgIHNhbWVNbyA8LSB3aGljaChMQVNUQklSVEhNTyA9PSBraWQkS0lEQklSVEhNTykKICAgICAgICBtb20gPC0gaW50ZXJzZWN0KHNhbWVZciwgc2FtZU1vKQogICAgICAgIG1vbXNfaW5faGggPC0gd2hpY2goTEFTVEJJUlRIWVIgPCA5MDAwKQogICAgICAgIGlmKGxlbmd0aChtb20pID09IDEpeyAKICAgICAgICAgIHJldHVybihQRVJTT05JRFttb21dKQogICAgICAgIH1lbHNlIGlmKGxlbmd0aChtb21zX2luX2hoKSA9PSAxICYga2lkJFJFTEFURUtJRCA9PSAxKXsKICAgICAgICAgIHJldHVybihQRVJTT05JRFttb21zX2luX2hoXSkKICAgICAgICB9ZWxzZXsKICAgICAgICAgIHJldHVybihOQSkKICAgICAgICB9CiAgICAgIH0KICAgICkKICApKSAlPiUgCiAgdW5ncm91cCgpCmBgYAoKVGhpcyBpcyB0aGUgc2FtZSBmdW5jdGlvbiBhcyBiZWZvcmUsIGJ1dCB3aXRoIG9uZSBtYWpvciBhZGRpdGlvbi4gV2UgY291bnQgYWxsIG9mIHRoZSB3b21lbiBpbiB0aGUgY2hpbGQncyBob3VzZWhvbGQgd2hvIGhhdmUgZXZlciBnaXZlbiBiaXJ0aCBgbW9tc19pbl9oaGAuIElmIG91ciBwcmV2aW91cyBtZXRob2QgZG9lc24ndCBpZGVudGlmeSB0aGUgY2hpbGQncyBtb3RoZXIsIHdlIHRoZW4gbG9vayB0byBzZWUgaWYgdGhlcmUncyBvbmx5IG9uZSBtb3RoZXIgaW4gdGhlIGhvdXNlaG9sZCBgbGVuZ3RoKG1vbXNfaW5faGgpID09IDFgIGFuZCBpZiB0aGUgcmVzcG9uZGVudCBmb3IgdGhlIGNoaWxkJ3MgcXVlc3Rpb25uYWlyZSB3YXMgdGhlaXIgbW90aGVyIGBraWQkUkVMQVRFS0lEID09IDFgLiAKCiMjIyBBZGRpdGlvbmFsIFJlc3VsdHMKCldpdGggdGhlc2UgZXhwYW5kZWQgc2VhcmNoIGNyaXRlcmlhLCAxMDc5IGNoaWxkcmVuIHdlcmUgbWF0Y2hlZCB0byBhIG1vdGhlcidzIHJlY29yZDogYW4gaW1wcm92ZW1lbnQgYnkgMjgzIGNhc2VzIQoKYGBge3J9CmJmMjAxOGFfbmggJT4lIGNvdW50KEVMSUdUWVBFLCBIQVNNT01JRCA9ICFpcy5uYShNT01JRCkpCmBgYAoKQmVjYXVzZSBvbmx5IDEyNzcgY2hpbGRyZW4gaW4gdGhlIG51dHJpdGlvbiBzYW1wbGUgbGl2ZSB3aXRoIGEgc2FtcGxlZCBtb3RoZXIsIHdlIGhhdmUgbm93IGVzdGFibGlzaGVkIGFsbW9zdCA4NSUgb2YgdGhlIHBvc3NpYmxlIGxpbmtzIGJldHdlZW4gbW90aGVycyBhbmQgY2hpbGRyZW4uIAoKSG93ZXZlciwgKnRoZXNlIGFkZGl0aW9uYWwgMjgzIGNhc2VzIHNob3VsZCBiZSB1c2VkIHdpdGggc29tZSBkZWdyZWUgb2YgY2F1dGlvbio6IHRoZXkgcmVwcmVzZW50IGNoaWxkcmVuIGZyb20gc21hbGxlciBob3VzZWhvbGRzIGNvbXBhcmVkIHRvIHRoZSByZW1haW5pbmcgMTUlIG9mY2hpbGRyZW4gd2hvLCBmb3IgdGhlIG1vc3QgcGFydCwgbGl2ZSBpbiBob3VzZWhvbGRzIHdoZXJlIG1vcmUgdHdvIG9yIG1vcmUgbW90aGVycyByZXNpZGUgdG9nZXRoZXIuIEZ1cnRoZXIgYW5hbHlzaXMgc2hvdWxkIGRldGVybWluZSB3aGV0aGVyIGFuZCBob3cgdGhlIHNlbGVjdGlvbiBvZiB0aGVzZSBzbWFsbGVyIGhvdXNlaG9sZHMgbWlnaHQgYmlhcyB0aGUgc29jaWFsIGFuZCBlY29ub21pYyBjb21wb3NpdGlvbiBvZiBvdXIgc3ViLXNhbXBsZS4KCiMjIEFuYWx5c2lzCgpTdXBwb3NlIGEgcmVzZWFyY2hlciB3YW50ZWQgdG8gbGVhcm4gd2hldGhlciBuZXdib3JuIGZlZWRpbmcgaW5mb3JtYXRpb24gZ2l2ZW4gdG8gbW90aGVycyBieSBoZWFsdGggcHJvdmlkZXJzIHNlZW1zIHRvIGhhdmUgYW4gaW1wYWN0IG9uIHRoZSBudXRyaXRpb24gYW5kIGdyb3d0aCBvZiB5b3VuZyBjaGlsZHJlbi4gCgpOb3cgdGhhdCB3ZSd2ZSBsaW5rZWQgYXMgbWFueSBjaGlsZHJlbiBhcyBwb3NzaWJsZSB0byB0aGVpciBtb3RoZXIncyByZWNvcmRzLCB3ZSBjb3VsZCBjcmVhdGUgYSB2YXJpYWJsZSBgTU9NSU5GT2AgaW5kaWNhdGluZyB3aGV0aGVyIHRoZSBtb3RoZXIgZXZlciByZWNlaXZlZCBuZXdib3JuIGZlZWRpbmcgaW5mb3JtYXRpb24gZnJvbSBhIGhlYWx0aCBwcm92aWRlciBvciBjb21tdW5pdHkgaGVhbHRoIHdvcmtlciBkdXJpbmcgaGVyIG1vc3QgcmVjZW50IHByZWduYW5jeS4gCgpXZSBjb3VsZCB0aGVuIHRha2UgZWFjaCBjaGlsZCdzIG1pZC11cHBlciBhcm0gY2lyY3VtZmVyZW5jZSAoTVVBQykgYEtJREFSTUNJUkNWQUxgIGFzIGEgc2ltcGxlIHByb3h5IG1lYXN1cmUgZm9yIGdyb3d0aCBhbmQgbnV0cml0aW9uLiBDb21wYXJpbmcgY2hpbGRyZW4gd2hvc2UgbW90aGVycyByZWNlaXZlZCBuZXdib3JuIGZlZWRpbmcgaW5mb3JtYXRpb24gdG8gdGhvc2Ugd2hvc2UgbW90aGVycyByZWNlaXZlZCBub25lLCBubyByZWFsIGRpZmZlcmVuY2Ugc2VlbXMgdG8gZXhpc3QgKGF0IGxlYXN0IG5vdCB3aXRob3V0IGFkZGl0aW9uYWwgY29udHJvbCB2YXJpYWJsZXMpOgoKYGBge3J9CmJmMjAxOGFfbmggJT4lCiAgZmlsdGVyKCFpcy5uYShNT01JRCkpICU+JQogIHJvd3dpc2UoKSAlPiUKICBtdXRhdGUoTU9NSU5GTyA9IGJmMjAxOGFfbmgkUlBGRUVESU5GT1t3aGljaChiZjIwMThhX25oJFBFUlNPTklEID09IE1PTUlEKV0pICU+JQogIGZpbHRlcihNT01JTkZPICVpbiUgMDoxICYgS0lEQVJNQ0lSQ1ZBTCA8IDkwKSAlPiUKICBtdXRhdGUoTU9NSU5GTyA9IGFzX2ZhY3RvcihNT01JTkZPKSkgJT4lCiAgZ2dwbG90KGFlcyhLSURBUk1DSVJDVkFMLCBjb2xvciA9IE1PTUlORk8sIGZpbGwgPSBNT01JTkZPKSkgKwogICAgZ2VvbV9kZW5zaXR5KGFscGhhID0gMC4yKSArCiAgICBzY2FsZV9jb2xvcl9tYW51YWwodmFsdWVzID0gYygiIzAwMjYzQSIsICIjOTg1NzlCIikpICsKICAgIHNjYWxlX2ZpbGxfbWFudWFsKHZhbHVlcyA9IGMoIiMwMDI2M0EiLCAiIzk4NTc5QiIpKQpgYGAKCk9yIGNvdXJzZSwgbXVjaCBtb3JlIGNvdWxkIGJlIGRvbmUgdG8gaW52ZXN0aWdhdGUgdGhlIHJlbGF0aW9uc2hpcCBiZXR3ZWVuIGFudGVuYXRhbCBpbnRlcnZlbnRpb25zIGFuZCB0aGUgZ3Jvd3RoIG9mIHlvdW5nIGNoaWxkcmVuLiBMZXQgdXMga25vdyB3aGF0IHlvdSB1bmNvdmVyIGJ5IGxpbmtpbmcgbW90aGVycyB0byBjaGlsZHJlbiBpbiB0aGUgMjAxOCBudXRyaXRpb24gZGF0YSEK" download="linking-maternal-and-newborn-records.Rmd">
-<button class="btn btn-default"><i class="fa fa-save"></i> Download this page as R code</button>
-</a>
+<p><img src="images/Rlogo.png" width="362" /></p>
 </div>
-<p>The PMA <a href="https://pma.ipums.org/pma/sample_notes.shtml#nut">2018 nutrition survey module for Burkina Faso and Kenya</a> contains hundreds of indicators measuring diet and nutritional status for women aged 10-49 and children under age 5. In some households, the 2018 survey design included both children and their biological mother, but their relationships are not immediately available in the data.</p>
-<p>This post shows how to write an R function that will link child and maternal records, provided that both mother and child were surveyed. These links may be particularly useful for researchers studying the effectiveness of different antenatal interventions on early childhood nutrition. For example, (insert analysis plan here).</p>
-<h2 id="setup">Setup</h2>
-<p>To run the code in this post, you’ll need the <a href="https://tidyverse.tidyverse.org/">tidyverse package</a> from CRAN. See our post <a href="getPackages.html">Installing and Loading Useful R Packages</a> for help.</p>
-<div class="layout-chunk" data-layout="l-body">
-<div class="sourceCode">
-<pre><code><span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='http://tidyverse.tidyverse.org'>tidyverse</a></span><span class='op'>)</span>
-</code></pre>
-</div>
-</div>
-<p>To keep things simple, we’ll focus on 2018 Nutrition data from Burkina Faso, which you can download at <a href="https://pma.ipums.org/pma-action/variables/group">pma.ipums.org</a>. See our post <a href="getData.html">Downloading an IPUMS Extract for R</a> for help.</p>
-<div class="layout-chunk" data-layout="l-body">
-<div class="sourceCode">
-<pre><code><span class='co'># Data import and object assignment goes here</span>
-</code></pre>
-</div>
-</div>
-<h2 id="linking-by-household-and-birthdate">Linking by household and birthdate</h2>
-<p>The easiest way to match mothers and children is to look within each household for a child whose date of birth <code>KIDBIRTHYR</code> and <code>KIDBIRTHMO</code> matches the birth record data for any women living in that same household. The 2018 Nutrition survey only contains dates for each woman’s <em>most recent birth</em> in <code>LASTBIRTHYR</code> and <code>LASBIRTHMO</code>, so we can only match a mother to her most recent child.</p>
-<p>While this approach won’t match <em>every</em> mother and child, we can safely assume that we’ve found a correct pair in each household if we also make sure that the birthdates allow for only one possible match. For example, if two women in the same household last gave birth in the same month and year, we should make sure to exclude them (since we wouldn’t be able to tell which mother matches which child).</p>
-<div class="layout-chunk" data-layout="l-body">
-<div class="sourceCode">
-<pre><code><span class='va'>bf2018a_nh</span> <span class='op'>&lt;-</span> <span class='va'>bf2018a_nh</span> <span class='op'>%&gt;%</span> 
-  <span class='fu'>group_by</span><span class='op'>(</span><span class='va'>HHID</span><span class='op'>)</span> <span class='op'>%&gt;%</span> 
-  <span class='fu'>mutate</span><span class='op'>(</span>MOMID <span class='op'>=</span> <span class='fu'>case_when</span><span class='op'>(</span><span class='va'>ELIGTYPE</span> <span class='op'>&lt;</span> <span class='fl'>20</span> <span class='op'>~</span> <span class='fu'>pmap_chr</span><span class='op'>(</span>
-    <span class='fu'>cur_data</span><span class='op'>(</span><span class='op'>)</span> <span class='op'>%&gt;%</span>
-      <span class='fu'>select</span><span class='op'>(</span><span class='va'>KIDBIRTHYR</span>,
-             <span class='va'>KIDBIRTHMO</span>,
-             <span class='va'>LASTBIRTHYR</span>,
-             <span class='va'>LASTBIRTHMO</span><span class='op'>)</span>, 
-    <span class='kw'>function</span><span class='op'>(</span><span class='va'>...</span><span class='op'>)</span><span class='op'>{</span>
-      <span class='va'>kid</span> <span class='op'>&lt;-</span> <span class='fu'>tibble</span><span class='op'>(</span><span class='va'>...</span><span class='op'>)</span>
-      <span class='va'>sameYr</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/which.html'>which</a></span><span class='op'>(</span><span class='va'>LASTBIRTHYR</span> <span class='op'>==</span> <span class='va'>kid</span><span class='op'>$</span><span class='va'>KIDBIRTHYR</span><span class='op'>)</span>
-      <span class='va'>sameMo</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/which.html'>which</a></span><span class='op'>(</span><span class='va'>LASTBIRTHMO</span> <span class='op'>==</span> <span class='va'>kid</span><span class='op'>$</span><span class='va'>KIDBIRTHMO</span><span class='op'>)</span>
-      <span class='va'>mom</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/sets.html'>intersect</a></span><span class='op'>(</span><span class='va'>sameYr</span>, <span class='va'>sameMo</span><span class='op'>)</span>
-      <span class='kw'>if</span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/length.html'>length</a></span><span class='op'>(</span><span class='va'>mom</span><span class='op'>)</span><span class='op'>==</span><span class='fl'>1</span><span class='op'>)</span><span class='op'>{</span><span class='kw'><a href='https://rdrr.io/r/base/function.html'>return</a></span><span class='op'>(</span><span class='va'>PERSONID</span><span class='op'>[</span><span class='va'>mom</span><span class='op'>]</span><span class='op'>)</span><span class='op'>}</span><span class='kw'>else</span><span class='op'>{</span><span class='kw'><a href='https://rdrr.io/r/base/function.html'>return</a></span><span class='op'>(</span><span class='cn'>NA</span><span class='op'>)</span><span class='op'>}</span>
-    <span class='op'>}</span>
-  <span class='op'>)</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>%&gt;%</span> 
-  <span class='fu'>ungroup</span><span class='op'>(</span><span class='op'>)</span>
-</code></pre>
-</div>
-</div>
-<h3 id="how-does-it-work">How does it work?</h3>
-<p>We create a variable <code>MOMID</code> that stores the unique person identifier <code>PERSONID</code> for each child’s mother.</p>
-<p>To find each child’s mother, we restrict our search to individuals living in the same household (<code>group_by(HHID)</code>). Then, we assign <code>MOMID</code> only to child records by selecting cases where <code>ELIGTYPE &lt; 20</code>.</p>
-<p>Then, for each child in the household, we use the <code>pmap_chr()</code> function to examine each of the records for individuals who live with the child. For sake of speed, we pass only the variables <code>KIDBIRTHYR</code>, <code>KIDBIRTHMO</code>, <code>LASTBIRTHYR</code>, and <code>LASTBIRTHMO</code> to the anonymous function inside <code>pmap_chr</code>.</p>
-<p>Finally, <code>kid &lt;- tibble(...)</code> stores a temporary one-row data frame containing information on the child, which we can then reference with <code>kid$BIRTHYR</code> and <code>kid$BIRTHMO</code>. As <code>pmap_chr</code> iterates through each household member, it assigns <code>mom</code> to any person who gave birth on the child’s birthday. If only one person fits, that person’s <code>PERSONID</code> becomes the child’s <code>MOMID</code>.</p>
-<h3 id="results">Results</h3>
-<p>In total, 796 children were linked to a mother: this is only about 28% of the 2856 children listed by the grouping variable <code>ELIGTYPE</code>:</p>
-<div class="layout-chunk" data-layout="l-body">
-<div class="sourceCode">
-<pre><code><span class='va'>bf2018a_nh</span> <span class='op'>%&gt;%</span> <span class='fu'>count</span><span class='op'>(</span><span class='va'>ELIGTYPE</span>, HASMOMID <span class='op'>=</span> <span class='op'>!</span><span class='fu'><a href='https://rdrr.io/r/base/NA.html'>is.na</a></span><span class='op'>(</span><span class='va'>MOMID</span><span class='op'>)</span><span class='op'>)</span>
-</code></pre>
-</div>
-<pre><code># A tibble: 9 x 3
-                                               ELIGTYPE HASMOMID     n
-                                              &lt;dbl+lbl&gt; &lt;lgl&gt;    &lt;int&gt;
-1 11 [Infant under age 2 (INF)]                         FALSE      731
-2 11 [Infant under age 2 (INF)]                         TRUE       463
-3 14 [Aged 2-5 (K)]                                     FALSE     1329
-4 14 [Aged 2-5 (K)]                                     TRUE       333
-5 20 [Selected women aged 10-49 (WN)]                   FALSE     2411
-6 31 [Member of household included in nutrition sample] FALSE     9045
-7 32 [Member of household excluded from nutrition samp… FALSE     3535
-8 95 [Not interviewed (female questionnaire)]           FALSE       51
-9 96 [Not interviewed (household questionnaire)]        FALSE      101</code></pre>
-</div>
-<p>Why were so few children matched successfully? Part of the answer has to do with the nutrition sample design: in Burkina Faso, women aged 10-49 were included from just 45% of households selected at random from the household screening sample (in the Kenya 2018 sample, 25% of households were randomly selected). As a result, we might estimate that only around 45% of children could possibly be linked to mother included in the nutrition sample:</p>
-<div class="layout-chunk" data-layout="l-body">
-<div class="sourceCode">
-<pre><code><span class='va'>bf2018a_nh</span> <span class='op'>%&gt;%</span>
-  <span class='fu'>mutate</span><span class='op'>(</span>MOMS_IN_HH <span class='op'>=</span> <span class='fu'>case_when</span><span class='op'>(</span><span class='va'>ELIGTYPE</span> <span class='op'>&lt;</span> <span class='fl'>20</span> <span class='op'>~</span> <span class='fu'>pmap_chr</span><span class='op'>(</span>
-    <span class='fu'>cur_data</span><span class='op'>(</span><span class='op'>)</span> <span class='op'>%&gt;%</span>
-      <span class='fu'>select</span><span class='op'>(</span><span class='va'>HHID</span>, <span class='va'>ELIGTYPE</span><span class='op'>)</span>, 
-    <span class='kw'>function</span><span class='op'>(</span><span class='va'>...</span><span class='op'>)</span><span class='op'>{</span>
-      <span class='va'>kid</span> <span class='op'>&lt;-</span> <span class='fu'>tibble</span><span class='op'>(</span><span class='va'>...</span><span class='op'>)</span>
-      <span class='va'>sameHH</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/which.html'>which</a></span><span class='op'>(</span><span class='va'>HHID</span> <span class='op'>==</span> <span class='va'>kid</span><span class='op'>$</span><span class='va'>HHID</span> <span class='op'>&amp;</span> <span class='va'>ELIGTYPE</span> <span class='op'>==</span> <span class='fl'>20</span><span class='op'>)</span>
-      <span class='kw'>if</span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/length.html'>length</a></span><span class='op'>(</span><span class='va'>sameHH</span><span class='op'>)</span><span class='op'>&gt;</span><span class='fl'>0</span><span class='op'>)</span><span class='op'>{</span><span class='kw'><a href='https://rdrr.io/r/base/function.html'>return</a></span><span class='op'>(</span><span class='st'>"yes"</span><span class='op'>)</span><span class='op'>}</span><span class='kw'>else</span><span class='op'>{</span><span class='kw'><a href='https://rdrr.io/r/base/function.html'>return</a></span><span class='op'>(</span><span class='st'>"no"</span><span class='op'>)</span><span class='op'>}</span>
-    <span class='op'>}</span>
-  <span class='op'>)</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>%&gt;%</span>
-  <span class='fu'>group_by</span><span class='op'>(</span><span class='va'>ELIGTYPE</span>, <span class='va'>MOMS_IN_HH</span><span class='op'>)</span> <span class='op'>%&gt;%</span>
-  <span class='fu'>count</span><span class='op'>(</span><span class='op'>)</span>
-</code></pre>
-</div>
-<pre><code># A tibble: 9 x 3
-# Groups:   ELIGTYPE, MOMS_IN_HH [9]
-                                             ELIGTYPE MOMS_IN_HH     n
-                                            &lt;dbl+lbl&gt; &lt;chr&gt;      &lt;int&gt;
-1 11 [Infant under age 2 (INF)]                       no           655
-2 11 [Infant under age 2 (INF)]                       yes          539
-3 14 [Aged 2-5 (K)]                                   no           924
-4 14 [Aged 2-5 (K)]                                   yes          738
-5 20 [Selected women aged 10-49 (WN)]                 &lt;NA&gt;        2411
-6 31 [Member of household included in nutrition samp… &lt;NA&gt;        9045
-7 32 [Member of household excluded from nutrition sa… &lt;NA&gt;        3535
-8 95 [Not interviewed (female questionnaire)]         &lt;NA&gt;          51
-9 96 [Not interviewed (household questionnaire)]      &lt;NA&gt;         101</code></pre>
-</div>
-<p>This confirms our estimate: only 1277 of the 2856 sampled children live in a household with a woman aged 10-49 who was also included in the nutrition sample. In other words, 45% of sampled children live in a household with a sampled mother. Our search found matches for 28% of all children, <em>but this reflects 62% of the children who live in a household with a sampled mother</em>.</p>
-<p>Fortunately, because households were randomly selected for the female nutrition sample, we should have no reason to suspect that the 796 children matched to mothers by our search criteria represent a biased sub-sample of the 2856 children overall. However, before proceeding with further analysis, it would be worthwhile to see if we can increase the number of linked children with additional search criteria.</p>
-<h2 id="searching-for-additional-cases">Searching for Additional Cases</h2>
-<p>In the example above, the use of <code>LASTBIRTHMO</code> and <code>LASTBIRTHYR</code> ensured that only mother’s <em>most recent child</em> could be linked to her record.</p>
-<p>It’s possible to expand these criteria in certain circumstances using <code>RELATEKID</code>, which describes the relationship between each child and the person who provided responses to the interviewer on their behalf.</p>
-<p>When <code>RELATEKID == 1</code>, the respondent to the child’s questionnaire is the child’s mother. So, if <code>RELATEKID == 1</code> <em>and if only one woman in the child’s household has ever given birth</em>, we could reasonably identify that person as the child’s mother.</p>
-<div class="layout-chunk" data-layout="l-body">
-<div class="sourceCode">
-<pre><code><span class='va'>bf2018a_nh</span> <span class='op'>&lt;-</span> <span class='va'>bf2018a_nh</span> <span class='op'>%&gt;%</span>
-  <span class='fu'>group_by</span><span class='op'>(</span><span class='va'>HHID</span><span class='op'>)</span> <span class='op'>%&gt;%</span> 
-  <span class='fu'>mutate</span><span class='op'>(</span>MOMID <span class='op'>=</span> <span class='fu'>case_when</span><span class='op'>(</span>
-    <span class='va'>ELIGTYPE</span> <span class='op'>&lt;</span> <span class='fl'>20</span> <span class='op'>~</span> <span class='fu'>pmap_chr</span><span class='op'>(</span>
-      <span class='fu'>cur_data</span><span class='op'>(</span><span class='op'>)</span> <span class='op'>%&gt;%</span> 
-        <span class='fu'>select</span><span class='op'>(</span>
-          <span class='va'>KIDBIRTHYR</span>,
-          <span class='va'>KIDBIRTHMO</span>,
-          <span class='va'>LASTBIRTHYR</span>,
-          <span class='va'>LASTBIRTHMO</span>,
-          <span class='va'>RELATEKID</span>
-        <span class='op'>)</span>, 
-      <span class='kw'>function</span><span class='op'>(</span><span class='va'>...</span><span class='op'>)</span><span class='op'>{</span>
-        <span class='va'>kid</span> <span class='op'>&lt;-</span> <span class='fu'>tibble</span><span class='op'>(</span><span class='va'>...</span><span class='op'>)</span>
-        <span class='va'>sameYr</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/which.html'>which</a></span><span class='op'>(</span><span class='va'>LASTBIRTHYR</span> <span class='op'>==</span> <span class='va'>kid</span><span class='op'>$</span><span class='va'>KIDBIRTHYR</span><span class='op'>)</span>
-        <span class='va'>sameMo</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/which.html'>which</a></span><span class='op'>(</span><span class='va'>LASTBIRTHMO</span> <span class='op'>==</span> <span class='va'>kid</span><span class='op'>$</span><span class='va'>KIDBIRTHMO</span><span class='op'>)</span>
-        <span class='va'>mom</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/sets.html'>intersect</a></span><span class='op'>(</span><span class='va'>sameYr</span>, <span class='va'>sameMo</span><span class='op'>)</span>
-        <span class='va'>moms_in_hh</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/which.html'>which</a></span><span class='op'>(</span><span class='va'>LASTBIRTHYR</span> <span class='op'>&lt;</span> <span class='fl'>9000</span><span class='op'>)</span>
-        <span class='kw'>if</span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/length.html'>length</a></span><span class='op'>(</span><span class='va'>mom</span><span class='op'>)</span> <span class='op'>==</span> <span class='fl'>1</span><span class='op'>)</span><span class='op'>{</span> 
-          <span class='kw'><a href='https://rdrr.io/r/base/function.html'>return</a></span><span class='op'>(</span><span class='va'>PERSONID</span><span class='op'>[</span><span class='va'>mom</span><span class='op'>]</span><span class='op'>)</span>
-        <span class='op'>}</span><span class='kw'>else</span> <span class='kw'>if</span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/length.html'>length</a></span><span class='op'>(</span><span class='va'>moms_in_hh</span><span class='op'>)</span> <span class='op'>==</span> <span class='fl'>1</span> <span class='op'>&amp;</span> <span class='va'>kid</span><span class='op'>$</span><span class='va'>RELATEKID</span> <span class='op'>==</span> <span class='fl'>1</span><span class='op'>)</span><span class='op'>{</span>
-          <span class='kw'><a href='https://rdrr.io/r/base/function.html'>return</a></span><span class='op'>(</span><span class='va'>PERSONID</span><span class='op'>[</span><span class='va'>moms_in_hh</span><span class='op'>]</span><span class='op'>)</span>
-        <span class='op'>}</span><span class='kw'>else</span><span class='op'>{</span>
-          <span class='kw'><a href='https://rdrr.io/r/base/function.html'>return</a></span><span class='op'>(</span><span class='cn'>NA</span><span class='op'>)</span>
-        <span class='op'>}</span>
-      <span class='op'>}</span>
-    <span class='op'>)</span>
-  <span class='op'>)</span><span class='op'>)</span> <span class='op'>%&gt;%</span> 
-  <span class='fu'>ungroup</span><span class='op'>(</span><span class='op'>)</span>
-</code></pre>
-</div>
-</div>
-<p>This is the same function as before, but with one major addition. We count all of the women in the child’s household who have ever given birth <code>moms_in_hh</code>. If our previous method doesn’t identify the child’s mother, we then look to see if there’s only one mother in the household <code>length(moms_in_hh) == 1</code> and if the respondent for the child’s questionnaire was their mother <code>kid$RELATEKID == 1</code>.</p>
-<h3 id="additional-results">Additional Results</h3>
-<p>With these expanded search criteria, 1079 children were matched to a mother’s record: an improvement by 283 cases!</p>
-<div class="layout-chunk" data-layout="l-body">
-<div class="sourceCode">
-<pre><code><span class='va'>bf2018a_nh</span> <span class='op'>%&gt;%</span> <span class='fu'>count</span><span class='op'>(</span><span class='va'>ELIGTYPE</span>, HASMOMID <span class='op'>=</span> <span class='op'>!</span><span class='fu'><a href='https://rdrr.io/r/base/NA.html'>is.na</a></span><span class='op'>(</span><span class='va'>MOMID</span><span class='op'>)</span><span class='op'>)</span>
-</code></pre>
-</div>
-<pre><code># A tibble: 9 x 3
-                                               ELIGTYPE HASMOMID     n
-                                              &lt;dbl+lbl&gt; &lt;lgl&gt;    &lt;int&gt;
-1 11 [Infant under age 2 (INF)]                         FALSE      688
-2 11 [Infant under age 2 (INF)]                         TRUE       506
-3 14 [Aged 2-5 (K)]                                     FALSE     1089
-4 14 [Aged 2-5 (K)]                                     TRUE       573
-5 20 [Selected women aged 10-49 (WN)]                   FALSE     2411
-6 31 [Member of household included in nutrition sample] FALSE     9045
-7 32 [Member of household excluded from nutrition samp… FALSE     3535
-8 95 [Not interviewed (female questionnaire)]           FALSE       51
-9 96 [Not interviewed (household questionnaire)]        FALSE      101</code></pre>
-</div>
-<p>Because only 1277 children in the nutrition sample live with a sampled mother, we have now established almost 85% of the possible links between mothers and children.</p>
-<p>However, <em>these additional 283 cases should be used with some degree of caution</em>: they represent children from smaller households compared to the remaining 15% ofchildren who, for the most part, live in households where more two or more mothers reside together. Further analysis should determine whether and how the selection of these smaller households might bias the social and economic composition of our sub-sample.</p>
-<h2 id="analysis">Analysis</h2>
-<p>Suppose a researcher wanted to learn whether newborn feeding information given to mothers by health providers seems to have an impact on the nutrition and growth of young children.</p>
-<p>Now that we’ve linked as many children as possible to their mother’s records, we could create a variable <code>MOMINFO</code> indicating whether the mother ever received newborn feeding information from a health provider or community health worker during her most recent pregnancy.</p>
-<p>We could then take each child’s mid-upper arm circumference (MUAC) <code>KIDARMCIRCVAL</code> as a simple proxy measure for growth and nutrition. Comparing children whose mothers received newborn feeding information to those whose mothers received none, no real difference seems to exist (at least not without additional control variables):</p>
-<div class="layout-chunk" data-layout="l-body">
-<div class="sourceCode">
-<pre><code><span class='va'>bf2018a_nh</span> <span class='op'>%&gt;%</span>
-  <span class='fu'><a href='https://rdrr.io/r/stats/filter.html'>filter</a></span><span class='op'>(</span><span class='op'>!</span><span class='fu'><a href='https://rdrr.io/r/base/NA.html'>is.na</a></span><span class='op'>(</span><span class='va'>MOMID</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>%&gt;%</span>
-  <span class='fu'>rowwise</span><span class='op'>(</span><span class='op'>)</span> <span class='op'>%&gt;%</span>
-  <span class='fu'>mutate</span><span class='op'>(</span>MOMINFO <span class='op'>=</span> <span class='va'>bf2018a_nh</span><span class='op'>$</span><span class='va'>RPFEEDINFO</span><span class='op'>[</span><span class='fu'><a href='https://rdrr.io/r/base/which.html'>which</a></span><span class='op'>(</span><span class='va'>bf2018a_nh</span><span class='op'>$</span><span class='va'>PERSONID</span> <span class='op'>==</span> <span class='va'>MOMID</span><span class='op'>)</span><span class='op'>]</span><span class='op'>)</span> <span class='op'>%&gt;%</span>
-  <span class='fu'><a href='https://rdrr.io/r/stats/filter.html'>filter</a></span><span class='op'>(</span><span class='va'>MOMINFO</span> <span class='op'>%in%</span> <span class='fl'>0</span><span class='op'>:</span><span class='fl'>1</span> <span class='op'>&amp;</span> <span class='va'>KIDARMCIRCVAL</span> <span class='op'>&lt;</span> <span class='fl'>90</span><span class='op'>)</span> <span class='op'>%&gt;%</span>
-  <span class='fu'>mutate</span><span class='op'>(</span>MOMINFO <span class='op'>=</span> <span class='fu'>as_factor</span><span class='op'>(</span><span class='va'>MOMINFO</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>%&gt;%</span>
-  <span class='fu'>ggplot</span><span class='op'>(</span><span class='fu'>aes</span><span class='op'>(</span><span class='va'>KIDARMCIRCVAL</span>, color <span class='op'>=</span> <span class='va'>MOMINFO</span>, fill <span class='op'>=</span> <span class='va'>MOMINFO</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>+</span>
-    <span class='fu'>geom_density</span><span class='op'>(</span>alpha <span class='op'>=</span> <span class='fl'>0.2</span><span class='op'>)</span> <span class='op'>+</span>
-    <span class='fu'>scale_color_manual</span><span class='op'>(</span>values <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"#00263A"</span>, <span class='st'>"#98579B"</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>+</span>
-    <span class='fu'>scale_fill_manual</span><span class='op'>(</span>values <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"#00263A"</span>, <span class='st'>"#98579B"</span><span class='op'>)</span><span class='op'>)</span>
-</code></pre>
-</div>
-<p><img src="linking-maternal-and-newborn-records_files/figure-html5/unnamed-chunk-8-1.png" width="624" /></p>
-</div>
-<p>Or course, much more could be done to investigate the relationship between antenatal interventions and the growth of young children. Let us know what you uncover by linking mothers to children in the 2018 nutrition data!</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
+© 2016 The R Foundation (<a href="https://creativecommons.org/licenses/by-sa/4.0/">CC-BY-SA 4.0</a>)
+</aside>
+<h2 id="do-i-really-need-special-software">Do I really need special software?</h2>
+<p>If you’re new to data analysis, you might wonder exactly what you’re going to find in a toolkit like R.</p>
+<p>Plenty of people come to R after working with more common types of data analysis software, like Microsoft Excel or other spreadsheet programs. If you wanted to, you could absolutely download a CSV file from the IPUMS PMA extract system and open it in Excel. You would find individual <strong>respondents in rows</strong> and their responses for <strong>variables in columns</strong>, and you could make use of built-in spreadsheet functions to do things like:</p>
+<ul>
+<li>Calculate and visualize the distribution of a variable</li>
+<li>Build pivot tables and graphs examining basic relationships between variables</li>
+<li>Create new variables of your own that combine data from several variables</li>
+</ul>
+<p>However, you might also notice that a spreadsheet comes with certain limitations:</p>
+<ul>
+<li>There is no variable “metadata”, including labels for the variables and each response option. For example, you might see that the responses to a certain variable include the numbers 0, 1, and 99 - what do these values actually mean?</li>
+<li>You might find yourself repeating the same “point” and “click” procedure over and over. Or, maybe you’ve had to build a library of custom <em>macro</em> functions on your own to help automate those procedures.</li>
+<li>While you can perform arithmetic with built-in functions, there is little support for more advanced statistical procedures</li>
+<li>Graphics are limited within a set of pre-built templates</li>
+<li>Merging data from external sources (like spatial data) can be very tricky</li>
+</ul>
+<p>Statistical software is designed specifically to address these and other issues related to data cleaning and analysis. Learning a program like R takes <em>a lot of practice</em>, but doing so will almost certainly make your work much more efficient!</p>
+<h2 id="are-there-alternatives">Are there alternatives?</h2>
+<p>Yes! Many data analysts use proprietary statistical software like <a href="https://www.stata.com/">Stata</a>, <a href="http://www.sas.com/en_us/home.html">SAS</a>, or <a href="https://www.ibm.com/products/spss-statistics">SPSS</a>. These tools are also powerful, and you may find them easier to use than R.</p>
+<aside>
+Coming soon, we hope to include Stata code for many of the blog posts currently written in R.
+</aside>
+<p>Beyond price, R has a few additional advantages that make it a particularly useful tool for working with PMA data:</p>
+<ul>
+<li><strong>Community support:</strong> R users are particularly active on forums like <a href="https://stackoverflow.com/">Stack Overflow</a> and <a href="https://www.r-bloggers.com/">R-bloggers</a>. Groups like <a href="https://rladies.org/">R-ladies</a> even organize in-person meetups in cities around the world to help promote inclusion within the R community.</li>
+<li><strong>Customizability:</strong> Because R is open-source, you can change just about anything you like! With a little practice, you’ll be able to create functions and graphics that perfectly match your own needs.</li>
+<li><strong>Beyond statistics:</strong> You can use R to build a website (like this one), manage and share a code repository on GitHub, scrape and compile a social media database, or automatically generate word documents, slide presentations, and more! There are practically endless ways to use functional programming in R that have nothing to do with statistics at all.</li>
+</ul>
+<p>If you’re a beginner, learning R can be a daunting task. <em>Keep at it!</em> And never hesitate to ask questions.</p>
+<h1 id="r-packages">R packages</h1>
+<p><em>Coming soon!</em></p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
 </div>

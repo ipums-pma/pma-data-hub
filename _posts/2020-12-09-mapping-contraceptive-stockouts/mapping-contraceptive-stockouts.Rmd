@@ -9,7 +9,7 @@ categories:
   - Serivce Delivery Points
 author:
   - name: Matt Gunther
-    affiliation: IPUMS PMA
+    affiliation: IPUMS PMA Senior Data Analyst
 date: 12-09-2020
 output:
   distill::distill_article:

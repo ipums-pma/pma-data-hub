@@ -1,0 +1,75 @@
+---
+title: "Getting Started with R"
+description: |
+  How to download R for free and install some of the R packages used on this blog
+author:
+  - name: Matt Gunther
+    affiliation: IPUMS PMA Senior Data Analyst 
+categories:
+  - R Tips
+  - R Packages
+date: 12-10-2020
+output:
+  distill::distill_article:
+    self_contained: false
+    toc: true
+---
+
+# Why analyze PMA data with R?
+
+Like all IPUMS data projects, IPUMS PMA data is available free of charge to users who agree to our [terms of use](https://ipums.org/about/terms). That's because we believe that cost and institutional affiliation should not be barriers to answering pressing concerns around women's health. 
+
+**In fact, users can analyze IPUMS PMA data with any software they like!** We've chosen to highlight R, in particular, because it is also free and popular with data analysts throughout the world. It's available for Windows, MacOS, and a wide variety of UNIX platforms and similar systems (including FreeBSD and Linux).
+
+<aside>
+For non-R users: IPUMS data extracts are available as CSV or fixed-width DAT with syntax files formatted for SPSS, Stata, and SAS.
+</aside>
+
+To get a copy of R for yourself, visit the [Comprehensive R Archive Network](https://cran.r-project.org/mirrors.html) (CRAN), select a "mirror" near you, and choose the right download link for your operating system. 
+
+<aside>
+```{r}
+knitr::include_graphics("images/Rlogo.png")
+```
+© 2016 The R Foundation (<a href="https://creativecommons.org/licenses/by-sa/4.0/">CC-BY-SA 4.0</a>)
+</aside>
+
+## Do I really need special software? 
+
+If you're new to data analysis, you might wonder exactly what you're going to find in a toolkit like R. 
+
+Plenty of people come to R after working with more common types of data analysis software, like Microsoft Excel or other spreadsheet programs. If you wanted to, you could absolutely download a CSV file from the IPUMS PMA extract system and open it in Excel. You would find individual **respondents in rows** and their responses for **variables in columns**, and you could make use of built-in spreadsheet functions to do things like:
+
+* Calculate and visualize the distribution of a variable
+* Build pivot tables and graphs examining basic relationships between variables
+* Create new variables of your own that combine data from several variables
+
+However, you might also notice that a spreadsheet comes with certain limitations:
+
+* There is no variable "metadata", including labels for the variables and each response option. For example, you might see that the responses to a certain variable include the numbers 0, 1, and 99 - what do these values actually mean?
+* You might find yourself repeating the same "point" and "click" procedure over and over. Or, maybe you've had to build a library of custom *macro* functions on your own to help automate those procedures. 
+* While you can perform arithmetic with built-in functions, there is little support for more advanced statistical procedures 
+* Graphics are limited within a set of pre-built templates
+* Merging data from external sources (like spatial data) can be very tricky
+
+Statistical software is designed specifically to address these and other issues related to data cleaning and analysis. Learning a program like R takes *a lot of practice*, but doing so will almost certainly make your work much more efficient!
+
+## Are there alternatives?
+
+Yes! Many data analysts use proprietary statistical software like [Stata](https://www.stata.com/), [SAS](http://www.sas.com/en_us/home.html), or [SPSS](https://www.ibm.com/products/spss-statistics). These tools are also powerful, and you may find them easier to use than R.
+
+<aside>
+Coming soon, we hope to include Stata code for many of the blog posts currently written in R.
+</aside>
+
+Beyond price, R has a few additional advantages that make it a particularly useful tool for working with PMA data:
+
+* **Community support:** R users are particularly active on forums like [Stack Overflow](https://stackoverflow.com/) and [R-bloggers](https://www.r-bloggers.com/). Groups like [R-ladies](https://rladies.org/) even organize in-person meetups in cities around the world to help promote inclusion within the R community. 
+* **Customizability:** Because R is open-source, you can change just about anything you like! With a little practice, you'll be able to create functions and graphics that perfectly match your own needs.
+* **Beyond statistics:** You can use R to build a website (like this one), manage and share a code repository on GitHub, scrape and compile a social media database, or automatically generate word documents, slide presentations, and more! There are practically endless ways to use functional programming in R that have nothing to do with statistics at all. 
+
+If you're a beginner, learning R can be a daunting task. *Keep at it!* And never hesitate to ask questions. 
+
+# R packages
+
+*Coming soon!*

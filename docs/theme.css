@@ -82,20 +82,42 @@ h1{
   color: #00263A;
 }
 
-h2{
-  font-family: 'cabrito_sans_cond_demi';
-  text-transform: uppercase;
-  color: #00263A;
+d-article h2{
+    font-size: 30px;
+    font-family: "cabrito_sans_cond_demi";
+    text-transform: uppercase;
+    color: #00263A;
 }
 
-h3{
+d-article h3{
+  font-size: 26px;
   font-family: 'cabrito_sans_cond_demi';
   color: #00263A;
+  margin-top: 1.5rem;
+  margin-bottom: 1em;
 }
 
-h4, h5{
+d-article h4{
+  font-size: 24px;
   font-family: 'cabrito_sans_norm_regular';
   color: #00263A;
+  text-transform: unset;
+  margin-top: 1.5rem;
+  margin-bottom: 1em;
+}
+
+d-article h5{
+  font-size: 24px;
+  font-family: 'cabrito_sans_cond_demi';
+  color: #00263A;
+  margin-top: 1.5rem;
+  margin-bottom: 1em;
+}
+
+d-article li {
+    margin-bottom: 0;
+    margin-left: 1rem;
+    padding-left: 0;
 }
 
 body{
