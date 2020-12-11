@@ -1,7 +1,5 @@
 ---
 title: "About this blog"
-description: |
-  Some additional details about the blog
 output:
   distill::distill_article:
     self_contained: false
@@ -14,24 +12,22 @@ output:
 
 IPUMS PMA is just one of many [IPUMS](https://ipums.org/) data projects. IPUMS provides census and survey data from around the world integrated across time and space. IPUMS integration and documentation makes it easy to study change, conduct comparative research, merge information across data types, and analyze individuals within family and community context. Data and services are available free of charge.
 
-### Why a blog?
+# Why a blog?
 
 As the data available at [IPUMS PMA](https://pma.ipums.org) continues to grow, we wanted a space to demonstrate the range ways that PMA data can help address some of today's most pressing women's health concerns. 
 
-In the "Analysis" menu above, you'll find articles showing how to use common statistical software to do things like: 
+You'll find blog posts showing how to use common statistical software to do things like: 
 
   * compare PMA data across countries and survey years
   * use service delivery point data to contextualize outcomes for individuals
   * merge PMA data to external spatial datasets 
   * explore data related to water, hygiene, nutrition, and food security
 
-Each article contains embedded code that you may use to reproduce our results, or to jump start an analytical project of your own. Each code snippet contains a "copy" button that you can use to paste code directly into your console, like this:
+# Try out our code!
 
-```{r, echo=T}
-print("hello world")
-```
+## Download an article and run it in R
 
-Or, you can use the button at the top of each page to download the complete code and annotations from an article, like this:
+At the top of every post, you'll find a button like this one:
 
 ```{r download_button, echo=F, eval=T}
 downloadthis::download_file(
@@ -43,16 +39,28 @@ downloadthis::download_file(
 )
 ```
 
-### Is this available on GitHub?
+Click it, and you'll receive an R Markdown file containing the full text of the post along with all of the code you'll need to reproduce it.
 
-[Yes!](https://github.com/matt-gunther/ipumsPMA.blog/) While it's *not necessary* to visit our GitHub repository to access our code, we hope that visitors will feel encouraged to join a conversation, ask questions, or even post code of their own! You can also use the GitHub repository to download code from all of our articles in one step.
+<aside>
+You can run an R Markdown (.Rmd) file in R just like you would run a normal R script (.R). <a href="https://rmarkdown.rstudio.com/lesson-1.html">Click here for more information.</a>
+</aside>
 
-To contribute content to this blog, please take a look at our [Contributing Guide](CONTRIBUTING.html) and [Code of Conduct](CODE_OF_CONDUCT.html). By contributing to this project, you agree to abide by the terms of each.
+## Visit us on GitHub 
 
-### What software do I need?
+While it's *not necessary* to visit [our GitHub repository](https://github.com/matt-gunther/pma-data-hub) to access the code you'll find on this blog, we hope that visitors will feel encouraged to join a conversation, ask questions, or even post code of their own! You can also use the GitHub repository to download code from all of our posts in one step.
 
-Currently, most of the code highlighted in our articles is written in **R**, a free and open-source program used by statisticians around the world ([available here](https://cran.r-project.org/)). We've built the blog, itself, as an R package with [pkgdown](https://pkgdown.r-lib.org/) (unlike normal R packages, this one contains no functions and is not published to CRAN; it's just an easy way to package R "vignettes" - the basis of our articles - together with the smaller datasets used in our examples). Experienced R users will notice that we use [tidyverse](https://tidyverse.tidyverse.org/) conventions wherever possible, making the **tidyverse package library** an important prerequisite if you want to try our code on your own: check out our [R packages post](articles/getPackages.html) for instructions.
+To submit a post of your own, please take a look at our [Contributing Guide](CONTRIBUTING.html) and [Code of Conduct](CODE_OF_CONDUCT.html). By contributing to this project, you agree to abide by the terms of each.
 
-New to R? Not to worry! We'll post tips and links to help you get going in the "R tips" section above.
+If you spot an error or a place where our code could be improved, please consider opening an "issue" on our GitHub repository.
+
+# Statisitcal Software
+
+Currently, most of the code highlighted in our articles is written in **R**, a free and open-source program used by data analysts around the world. We've built the blog, itself, with an R package called [distill](https://rstudio.github.io/distill/). 
+
+<aside>
+New to R? Not to worry! We'll post tips and links to help you get going in the "R tips" menu above.
+</aside>
+
+Experienced R users will notice that we use [tidyverse](https://tidyverse.tidyverse.org/) conventions wherever possible, making the **tidyverse package library** an important prerequisite if you want to try our code on your own. We recommend the excellent, free introductory text [R for Data Science](https://r4ds.had.co.nz/index.html) for newcomers to R and tidyverse, alike. 
 
 **Stata users**: we are also planning to develop Stata code for each of our articles, which will be made available by a designated download button and in a "stata" folder on the GitHub repository. However, the inline code you'll find in our articles is likely to remain in R.

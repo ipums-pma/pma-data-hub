@@ -1,5 +1,5 @@
 ---
-title: "PMA Data Hub"
+title: "PMA Data Analysis Hub"
 site: distill::distill_website
 listing: posts
 ---

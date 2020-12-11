@@ -86,7 +86,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 </style>
 
   <!--radix_placeholder_meta_tags-->
-<title>PMA Data Hub: Import IPUMS PMA Data into R</title>
+<title>PMA Data Analysis Hub: Import IPUMS PMA Data into R</title>
 
 <meta property="description" itemprop="description" content="How to download an IPUMS PMA data extract and start using it in R"/>
 
@@ -99,7 +99,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <meta name="article:author" content="Matt Gunther"/>
 
 <!--  https://developers.facebook.com/docs/sharing/webmasters#markup -->
-<meta property="og:title" content="PMA Data Hub: Import IPUMS PMA Data into R"/>
+<meta property="og:title" content="PMA Data Analysis Hub: Import IPUMS PMA Data into R"/>
 <meta property="og:type" content="article"/>
 <meta property="og:description" content="How to download an IPUMS PMA data extract and start using it in R"/>
 <meta property="og:url" content="https://matt-gunther.github.io/pma-data-hub/posts/2020-12-10-get-ipums-pma-data/"/>
@@ -107,29 +107,22 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <meta property="og:image:width" content="910"/>
 <meta property="og:image:height" content="790"/>
 <meta property="og:locale" content="en_US"/>
-<meta property="og:site_name" content="PMA Data Hub"/>
+<meta property="og:site_name" content="PMA Data Analysis Hub"/>
 
 <!--  https://dev.twitter.com/cards/types/summary -->
 <meta property="twitter:card" content="summary_large_image"/>
-<meta property="twitter:title" content="PMA Data Hub: Import IPUMS PMA Data into R"/>
+<meta property="twitter:title" content="PMA Data Analysis Hub: Import IPUMS PMA Data into R"/>
 <meta property="twitter:description" content="How to download an IPUMS PMA data extract and start using it in R"/>
 <meta property="twitter:url" content="https://matt-gunther.github.io/pma-data-hub/posts/2020-12-10-get-ipums-pma-data/"/>
 <meta property="twitter:image" content="https://matt-gunther.github.io/pma-data-hub/posts/2020-12-10-get-ipums-pma-data/images/create-data-extract.png"/>
 <meta property="twitter:image:width" content="910"/>
 <meta property="twitter:image:height" content="790"/>
 
-<!--  https://scholar.google.com/intl/en/scholar/inclusion.html#indexing -->
-<meta name="citation_title" content="PMA Data Hub: Import IPUMS PMA Data into R"/>
-<meta name="citation_fulltext_html_url" content="https://matt-gunther.github.io/pma-data-hub/posts/2020-12-10-get-ipums-pma-data/"/>
-<meta name="citation_online_date" content="2020/12/10"/>
-<meta name="citation_publication_date" content="2020/12/10"/>
-<meta name="citation_author" content="Matt Gunther"/>
-<meta name="citation_author_institution" content="IPUMS PMA Senior Data Analyst"/>
 <!--/radix_placeholder_meta_tags-->
   <!--radix_placeholder_rmarkdown_metadata-->
 
 <script type="text/json" id="radix-rmarkdown-metadata">
-{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","author","categories","date","output","citation_url","canonical_url"]}},"value":[{"type":"character","attributes":{},"value":["Import IPUMS PMA Data into R"]},{"type":"character","attributes":{},"value":["How to download an IPUMS PMA data extract and start using it in R"]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","affiliation"]}},"value":[{"type":"character","attributes":{},"value":["Matt Gunther"]},{"type":"character","attributes":{},"value":["IPUMS PMA Senior Data Analyst"]}]}]},{"type":"character","attributes":{},"value":["R Tips","R Packages","Importing Data"]},{"type":"character","attributes":{},"value":["12-10-2020"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained","toc"]}},"value":[{"type":"logical","attributes":{},"value":[false]},{"type":"logical","attributes":{},"value":[true]}]}]},{"type":"character","attributes":{},"value":["https://matt-gunther.github.io/pma-data-hub/posts/2020-12-10-get-ipums-pma-data/"]},{"type":"character","attributes":{},"value":["https://matt-gunther.github.io/pma-data-hub/posts/2020-12-10-get-ipums-pma-data/"]}]}
+{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","author","categories","date","output","canonical_url"]}},"value":[{"type":"character","attributes":{},"value":["Import IPUMS PMA Data into R"]},{"type":"character","attributes":{},"value":["How to download an IPUMS PMA data extract and start using it in R"]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","affiliation"]}},"value":[{"type":"character","attributes":{},"value":["Matt Gunther"]},{"type":"character","attributes":{},"value":["IPUMS PMA Senior Data Analyst"]}]}]},{"type":"character","attributes":{},"value":["R Tips","R Packages","Importing Data"]},{"type":"character","attributes":{},"value":["12-10-2020"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained","toc"]}},"value":[{"type":"logical","attributes":{},"value":[false]},{"type":"logical","attributes":{},"value":[true]}]}]},{"type":"character","attributes":{},"value":["https://matt-gunther.github.io/pma-data-hub/posts/2020-12-10-get-ipums-pma-data/"]}]}
 </script>
 <!--/radix_placeholder_rmarkdown_metadata-->
   
@@ -2447,7 +2440,7 @@ d-appendix d-footnote-list a.footnote-backlink {
 <a class="logo" href="https://pma.ipums.org/pma/">
 <img src="../../images/logo-white.png" alt="Logo"/>
 </a>
-<a href="../../index.html" class="title">PMA Data Hub</a>
+<a href="../../index.html" class="title">PMA Data Analysis Hub</a>
 <input id="distill-search" class="nav-search hidden" type="text" placeholder="Search..."/>
 </div>
 <div class="nav-right">
@@ -2618,16 +2611,6 @@ var disqus_config = function () {
 <div class="appendix-bottom">
   <h3 id="updates-and-corrections">Corrections</h3>
   <p>If you see mistakes or want to suggest changes, please <a href="https://github.com/matt-gunther/pma-data-hub/issues/new">create an issue</a> on the source repository.</p>
-  <h3 id="citation">Citation</h3>
-  <p>For attribution, please cite this work as</p>
-  <pre class="citation-appendix short">Gunther (2020, Dec. 10). PMA Data Hub: Import IPUMS PMA Data into R. Retrieved from https://matt-gunther.github.io/pma-data-hub/posts/2020-12-10-get-ipums-pma-data/</pre>
-  <p>BibTeX citation</p>
-  <pre class="citation-appendix long">@misc{gunther2020import,
-  author = {Gunther, Matt},
-  title = {PMA Data Hub: Import IPUMS PMA Data into R},
-  url = {https://matt-gunther.github.io/pma-data-hub/posts/2020-12-10-get-ipums-pma-data/},
-  year = {2020}
-}</pre>
 </div>
 <!--/radix_placeholder_appendices-->
 <!--radix_placeholder_navigation_after_body-->
