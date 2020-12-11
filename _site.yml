@@ -14,10 +14,9 @@ navbar:
       href: index.html
     - text: "R Tips"
       menu: 
-        - text: "Beginner's guide"
-        - text: "IPUMS data: import an extract into R"
+        - text: "Import IPUMS PMA Data into R"
           href: posts/2020-12-10-get-ipums-pma-data/index.html
-        - text: "R and Important R Packages" 
+        - text: "R, RStudio, and R Packages" 
           href: posts/2020-12-10-get-r-and-packages/index.html
     - text: "Community"
       menu: 

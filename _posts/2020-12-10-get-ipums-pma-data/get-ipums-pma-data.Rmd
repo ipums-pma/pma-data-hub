@@ -1,15 +1,14 @@
 ---
-title: "Import IPUMS PMA Data"
+title: "Import IPUMS PMA Data into R"
 description: |
-  How to get an IPUMS PMA data extract and import it into R
+  How to download an IPUMS PMA data extract and start using it in R
 author:
   - name: Matt Gunther
     affiliation: IPUMS PMA Senior Data Analyst 
 categories:
   - R Tips
   - R Packages
-  - Data Manipulation
-  - Data Formatting 
+  - Importing Data
 date: 12-10-2020
 output:
   distill::distill_article:
@@ -53,9 +52,7 @@ On this final page **be sure to change the data format to ".dat (fixed-width tex
 knitr::include_graphics("images/extract-request-page.png")
 ```
 
-You will receive an email when your extract request has been processed. Click the included link to find a download page like this:
-
-*You must download both the data file and the DDI codebook*:
+You will receive an email when your extract request has been processed. Click the included link to find a download page like this one. *You must download both the data file and the DDI codebook*:
 
 ```{r}
 knitr::include_graphics("images/download-extract.png")
@@ -65,7 +62,11 @@ knitr::include_graphics("images/download-extract.png")
 
 The R package [ipumsr](http://tech.popdata.org/ipumsr/index.html) provides the tools you will need to import the data file and DDI codebook into R. You can install the package from CRAN with:
 
-`install.packages(ipumsr)`
+<aside>
+Click <a href="../2020-12-10-get-r-and-packages/index.html#r-packages">here</a> for more information on R packages.
+</aside>
+
+`install.packages("ipumsr")`
 
 Note the location where your data file and DDI codebook were saved (in my case, they were saved in my local "Downloads" folder). Substitute your own paths into the function shown below:
 

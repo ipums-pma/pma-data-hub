@@ -86,9 +86,9 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 </style>
 
   <!--radix_placeholder_meta_tags-->
-<title>PMA Data Hub: Import IPUMS PMA Data</title>
+<title>PMA Data Hub: Import IPUMS PMA Data into R</title>
 
-<meta property="description" itemprop="description" content="How to get an IPUMS PMA data extract and import it into R"/>
+<meta property="description" itemprop="description" content="How to download an IPUMS PMA data extract and start using it in R"/>
 
 <link rel="icon" type="image/png" href="../../images/favicon/favicon-32x32.png"/>
 
@@ -98,22 +98,22 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <meta name="article:author" content="Matt Gunther"/>
 
 <!--  https://developers.facebook.com/docs/sharing/webmasters#markup -->
-<meta property="og:title" content="PMA Data Hub: Import IPUMS PMA Data"/>
+<meta property="og:title" content="PMA Data Hub: Import IPUMS PMA Data into R"/>
 <meta property="og:type" content="article"/>
-<meta property="og:description" content="How to get an IPUMS PMA data extract and import it into R"/>
+<meta property="og:description" content="How to download an IPUMS PMA data extract and start using it in R"/>
 <meta property="og:locale" content="en_US"/>
 <meta property="og:site_name" content="PMA Data Hub"/>
 
 <!--  https://dev.twitter.com/cards/types/summary -->
 <meta property="twitter:card" content="summary"/>
-<meta property="twitter:title" content="PMA Data Hub: Import IPUMS PMA Data"/>
-<meta property="twitter:description" content="How to get an IPUMS PMA data extract and import it into R"/>
+<meta property="twitter:title" content="PMA Data Hub: Import IPUMS PMA Data into R"/>
+<meta property="twitter:description" content="How to download an IPUMS PMA data extract and start using it in R"/>
 
 <!--/radix_placeholder_meta_tags-->
   <!--radix_placeholder_rmarkdown_metadata-->
 
 <script type="text/json" id="radix-rmarkdown-metadata">
-{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","author","categories","date","output"]}},"value":[{"type":"character","attributes":{},"value":["Import IPUMS PMA Data"]},{"type":"character","attributes":{},"value":["How to get an IPUMS PMA data extract and import it into R"]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","affiliation"]}},"value":[{"type":"character","attributes":{},"value":["Matt Gunther"]},{"type":"character","attributes":{},"value":["IPUMS PMA Senior Data Analyst"]}]}]},{"type":"character","attributes":{},"value":["R Tips","R Packages","Data Manipulation","Data Formatting"]},{"type":"character","attributes":{},"value":["12-10-2020"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained","toc"]}},"value":[{"type":"logical","attributes":{},"value":[false]},{"type":"logical","attributes":{},"value":[true]}]}]}]}
+{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","author","categories","date","output"]}},"value":[{"type":"character","attributes":{},"value":["Import IPUMS PMA Data into R"]},{"type":"character","attributes":{},"value":["How to download an IPUMS PMA data extract and start using it in R"]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","affiliation"]}},"value":[{"type":"character","attributes":{},"value":["Matt Gunther"]},{"type":"character","attributes":{},"value":["IPUMS PMA Senior Data Analyst"]}]}]},{"type":"character","attributes":{},"value":["R Tips","R Packages","Importing Data"]},{"type":"character","attributes":{},"value":["12-10-2020"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained","toc"]}},"value":[{"type":"logical","attributes":{},"value":[false]},{"type":"logical","attributes":{},"value":[true]}]}]}]}
 </script>
 <!--/radix_placeholder_rmarkdown_metadata-->
   
@@ -2420,7 +2420,7 @@ d-appendix d-footnote-list a.footnote-backlink {
 <!--radix_placeholder_front_matter-->
 
 <script id="distill-front-matter" type="text/json">
-{"title":"Import IPUMS PMA Data","description":"How to get an IPUMS PMA data extract and import it into R","authors":[{"author":"Matt Gunther","authorURL":"#","affiliation":"IPUMS PMA Senior Data Analyst","affiliationURL":"#","orcidID":""}],"publishedDate":"2020-12-10T00:00:00.000+00:00","citationText":"Gunther, 2020"}
+{"title":"Import IPUMS PMA Data into R","description":"How to download an IPUMS PMA data extract and start using it in R","authors":[{"author":"Matt Gunther","authorURL":"#","affiliation":"IPUMS PMA Senior Data Analyst","affiliationURL":"#","orcidID":""}],"publishedDate":"2020-12-10T00:00:00.000+00:00","citationText":"Gunther, 2020"}
 </script>
 
 <!--/radix_placeholder_front_matter-->
@@ -2443,9 +2443,8 @@ R Tips
 <span class="down-arrow">&#x25BE;</span>
 </button>
 <div class="nav-dropdown-content">
-<span class="nav-dropdown-header">Beginner's guide</span>
-<a href="../../posts/2020-12-10-get-ipums-pma-data/index.html">IPUMS data: import an extract into R</a>
-<a href="../../posts/2020-12-10-get-r-and-packages/index.html">R and Important R Packages</a>
+<a href="../../posts/2020-12-10-get-ipums-pma-data/index.html">Import IPUMS PMA Data into R</a>
+<a href="../../posts/2020-12-10-get-r-and-packages/index.html">R, RStudio, and R Packages</a>
 </div>
 </div>
 <div class="nav-dropdown">
@@ -2474,16 +2473,15 @@ Community
 <!--/radix_placeholder_site_before_body-->
 
 <div class="d-title">
-<h1>Import IPUMS PMA Data</h1>
+<h1>Import IPUMS PMA Data into R</h1>
 <!--radix_placeholder_categories-->
 <div class="dt-tags">
   <a href="../../index.html#category:R_Tips" class="dt-tag">R Tips</a>
   <a href="../../index.html#category:R_Packages" class="dt-tag">R Packages</a>
-  <a href="../../index.html#category:Data_Manipulation" class="dt-tag">Data Manipulation</a>
-  <a href="../../index.html#category:Data_Formatting" class="dt-tag">Data Formatting</a>
+  <a href="../../index.html#category:Importing_Data" class="dt-tag">Importing Data</a>
 </div>
 <!--/radix_placeholder_categories-->
-<p><p>How to get an IPUMS PMA data extract and import it into R</p></p>
+<p><p>How to download an IPUMS PMA data extract and start using it in R</p></p>
 </div>
 
 <div class="d-byline">
@@ -2533,14 +2531,16 @@ Community
 <div class="layout-chunk" data-layout="l-body">
 <p><img src="images/extract-request-page.png" width="450" /></p>
 </div>
-<p>You will receive an email when your extract request has been processed. Click the included link to find a download page like this:</p>
-<p><em>You must download both the data file and the DDI codebook</em>:</p>
+<p>You will receive an email when your extract request has been processed. Click the included link to find a download page like this one. <em>You must download both the data file and the DDI codebook</em>:</p>
 <div class="layout-chunk" data-layout="l-body">
 <p><img src="images/download-extract.png" width="552" /></p>
 </div>
 <h2 id="the-ipumsr-package">The <code>ipumsr</code> package</h2>
 <p>The R package <a href="http://tech.popdata.org/ipumsr/index.html">ipumsr</a> provides the tools you will need to import the data file and DDI codebook into R. You can install the package from CRAN with:</p>
-<p><code>install.packages(ipumsr)</code></p>
+<aside>
+Click <a href="../2020-12-10-get-r-and-packages/index.html#r-packages">here</a> for more information on R packages.
+</aside>
+<p><code>install.packages("ipumsr")</code></p>
 <p>Note the location where your data file and DDI codebook were saved (in my case, they were saved in my local “Downloads” folder). Substitute your own paths into the function shown below:</p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">

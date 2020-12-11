@@ -56,7 +56,7 @@ Statistical software is designed specifically to address these and other issues 
 
 ## Are there alternatives?
 
-Yes! Many data analysts use proprietary statistical software like [Stata](https://www.stata.com/), [SAS](http://www.sas.com/en_us/home.html), or [SPSS](https://www.ibm.com/products/spss-statistics). These tools are also powerful, and you may find them easier to use than R.
+Yes! Many data analysts use proprietary statistical software like [Stata](https://www.stata.com/), [SAS](http://www.sas.com/en_us/home.html), or [SPSS](https://www.ibm.com/products/spss-statistics). These tools are also powerful, and you may even find them easier to use than R.
 
 <aside>
 Coming soon, we hope to include Stata code for many of the blog posts currently written in R.
@@ -70,6 +70,89 @@ Beyond price, R has a few additional advantages that make it a particularly usef
 
 If you're a beginner, learning R can be a daunting task. *Keep at it!* And never hesitate to ask questions. 
 
+# RStudio
+
+We **strongly** recommend running R within RStudio, an integrated development environment (IDE) designed to make your experience with R *much easier*. Some of the reasons we use it, ourselves:
+
+* Includes a multi-pane window that puts your R console, source code, output, and help files all in one place
+* Syntax highlighting and code completion
+* Support for [R Projects](https://support.rstudio.com/hc/en-us/articles/200526207-Using-Projects), a crucial approach to organizing your work and sharing it with others
+* Includes [RMarkdown](https://rmarkdown.rstudio.com/), an R package that allows you write text-based documents with embedded snippets of code that can be passed directly to your R console
+* Coming soon: tools like the [command palette](https://blog.rstudio.com/2020/10/14/rstudio-v1-4-preview-command-palette/), an improved [package manager](https://blog.rstudio.com/2020/07/01/announcing-public-package-manager/), and [integrated citation management](https://blog.rstudio.com/2020/11/09/rstudio-1-4-preview-citations/) 
+* Like R, it is available at **no cost** for users on Windows, Mac, and Linux
+
+<aside>
+This blog is, itself, an R Project with an individual R Markdown file for each page on the site. Look for a download button at the top of every post: you can download the original R Markdown file, open it in RStudio, and run all of the included code.
+</aside>
+
 # R packages
 
-*Coming soon!*
+An R package is a collection of functions created by other R users that you can download and install for yourself. Packages can be distributed in many ways, but **all of the packages we highlight on this blog can be downloaded from CRAN** (the same resource used to download "base" R). A package like `ipumsr` can be downloaded from CRAN by typing the following function into the R console:
+
+<aside>
+This function saves package files in your default "library" location. If you're using a Linux machine and don't have root access, you'll need to <a href="https://www.r-bloggers.com/2010/11/installing-r-packages/">set up R to save packages to a location where you're able to write files.</a>
+</aside>
+
+```{r, echo=T, eval=F}
+install.packages("ipumsr")
+```
+
+Packages also come with help files detailing the purpose and possible inputs (or "arguments") of each included function. Other included metadata explains what version of R you'll need to use the package, and also whether the package borrows functions from any other packages that should also be installed (usually these are called "dependencies"). 
+
+In order to access the functions and help files for a package, you need to load it after installation with:
+
+```{r, echo=T, eval=F}
+library(ipumsr)
+```
+
+**On this blog, we will often show functions together with their package like this:**
+
+```{r, eval=F, echo=T}
+ipumsr::read_ipums_micro(
+  ddi = "~/Downloads/pma_00001.xml",
+  data_file = "~/Downloads/pma_00001.dat.gz"
+)
+```
+
+The function `read_ipums_micro` comes from the package `ipumsr`. *It is not necessary for you to include the package each time you call a function (as long as you've already loaded the package with `library()`);* we're using this notation simply as a reminder (in case you want to consult the original package documentation). 
+
+<aside>
+You can use the <strong>package::function()</strong> notation if you ever want to access a function from a package without loading everything else in the package.
+</aside>
+
+## Essentials 
+
+Here are the packages you'll need to install to reproduce the code on this blog:
+
+### ipumsr
+
+The [ipumsr](https://tech.popdata.org/ipumsr/) package contains functions that make it easy to load IPUMS PMS data into R (mainly `read_ipums_micro`).
+
+It also contains functions that will return variable metadata (like the variable descriptions you see while browsing for data on [pma.ipums.org](https://pma.ipums.org).
+
+### tidyverse
+
+The [tidyverse](https://www.tidyverse.org/packages/) package actually installs a family of related packages, including:
+
+* [ggplot2](https://ggplot2.tidyverse.org/), for data visualization
+* [dplyr](https://dplyr.tidyverse.org/), for data manipulation
+* [tidyr](https://tidyr.tidyverse.org/), for data tidying
+* [readr](https://readr.tidyverse.org/), for data import
+* [purrr](https://purrr.tidyverse.org/), for functional programming
+* [tibble](https://tibble.tidyverse.org/), for tibbles (a modern re-imagining of data frames)
+* [stringr](https://github.com/tidyverse/stringr), for strings
+* [forcats](https://github.com/hadley/forcats), for factors
+
+**This blog uses tidyverse functions and syntax wherever possible** because so-called "tidy" conventions are designed with the expressed purpose of making code and console output more **human readable**. Sometimes, human readability imposes a performance cost: in our experience, IPUMS PMA datasets are small enough that this is not an issue.
+
+<aside>
+For larger datasets, we recommend exploring the package <a href="https://cran.r-project.org/web/packages/data.table/vignettes/datatable-intro.html">data.table</a>.
+</aside>
+
+### shiny
+
+Interactive graphics shown throughout this blog are built with the [shiny](https://shiny.rstudio.com/) package.
+
+## Watch for updates here 
+
+*We may add more package suggestions for future posts!*

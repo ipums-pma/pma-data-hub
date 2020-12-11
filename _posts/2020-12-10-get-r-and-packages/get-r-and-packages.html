@@ -1455,7 +1455,15 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <li><a href="#do-i-really-need-special-software">Do I really need special software?</a></li>
 <li><a href="#are-there-alternatives">Are there alternatives?</a></li>
 </ul></li>
-<li><a href="#r-packages">R packages</a></li>
+<li><a href="#rstudio">RStudio</a></li>
+<li><a href="#r-packages">R packages</a><ul>
+<li><a href="#essentials">Essentials</a><ul>
+<li><a href="#ipumsr">ipumsr</a></li>
+<li><a href="#tidyverse">tidyverse</a></li>
+<li><a href="#shiny">shiny</a></li>
+</ul></li>
+<li><a href="#watch-for-updates-here">Watch for updates here</a></li>
+</ul></li>
 </ul>
 </nav>
 </div>
@@ -1490,7 +1498,7 @@ For non-R users: IPUMS data extracts are available as CSV or fixed-width DAT wit
 </ul>
 <p>Statistical software is designed specifically to address these and other issues related to data cleaning and analysis. Learning a program like R takes <em>a lot of practice</em>, but doing so will almost certainly make your work much more efficient!</p>
 <h2 id="are-there-alternatives">Are there alternatives?</h2>
-<p>Yes! Many data analysts use proprietary statistical software like <a href="https://www.stata.com/">Stata</a>, <a href="http://www.sas.com/en_us/home.html">SAS</a>, or <a href="https://www.ibm.com/products/spss-statistics">SPSS</a>. These tools are also powerful, and you may find them easier to use than R.</p>
+<p>Yes! Many data analysts use proprietary statistical software like <a href="https://www.stata.com/">Stata</a>, <a href="http://www.sas.com/en_us/home.html">SAS</a>, or <a href="https://www.ibm.com/products/spss-statistics">SPSS</a>. These tools are also powerful, and you may even find them easier to use than R.</p>
 <aside>
 Coming soon, we hope to include Stata code for many of the blog posts currently written in R.
 </aside>
@@ -1501,8 +1509,77 @@ Coming soon, we hope to include Stata code for many of the blog posts currently 
 <li><strong>Beyond statistics:</strong> You can use R to build a website (like this one), manage and share a code repository on GitHub, scrape and compile a social media database, or automatically generate word documents, slide presentations, and more! There are practically endless ways to use functional programming in R that have nothing to do with statistics at all.</li>
 </ul>
 <p>If you’re a beginner, learning R can be a daunting task. <em>Keep at it!</em> And never hesitate to ask questions.</p>
+<h1 id="rstudio">RStudio</h1>
+<p>We <strong>strongly</strong> recommend running R within RStudio, an integrated development environment (IDE) designed to make your experience with R <em>much easier</em>. Some of the reasons we use it, ourselves:</p>
+<ul>
+<li>Includes a multi-pane window that puts your R console, source code, output, and help files all in one place</li>
+<li>Syntax highlighting and code completion</li>
+<li>Support for <a href="https://support.rstudio.com/hc/en-us/articles/200526207-Using-Projects">R Projects</a>, a crucial approach to organizing your work and sharing it with others</li>
+<li>Includes <a href="https://rmarkdown.rstudio.com/">RMarkdown</a>, an R package that allows you write text-based documents with embedded snippets of code that can be passed directly to your R console</li>
+<li>Coming soon: tools like the <a href="https://blog.rstudio.com/2020/10/14/rstudio-v1-4-preview-command-palette/">command palette</a>, an improved <a href="https://blog.rstudio.com/2020/07/01/announcing-public-package-manager/">package manager</a>, and <a href="https://blog.rstudio.com/2020/11/09/rstudio-1-4-preview-citations/">integrated citation management</a></li>
+<li>Like R, it is available at <strong>no cost</strong> for users on Windows, Mac, and Linux</li>
+</ul>
+<aside>
+This blog is, itself, an R Project with an individual R Markdown file for each page on the site. Look for a download button at the top of every post: you can download the original R Markdown file, open it in RStudio, and run all of the included code.
+</aside>
 <h1 id="r-packages">R packages</h1>
-<p><em>Coming soon!</em></p>
+<p>An R package is a collection of functions created by other R users that you can download and install for yourself. Packages can be distributed in many ways, but <strong>all of the packages we highlight on this blog can be downloaded from CRAN</strong> (the same resource used to download “base” R). A package like <code>ipumsr</code> can be downloaded from CRAN by typing the following function into the R console:</p>
+<aside>
+This function saves package files in your default “library” location. If you’re using a Linux machine and don’t have root access, you’ll need to <a href="https://www.r-bloggers.com/2010/11/installing-r-packages/">set up R to save packages to a location where you’re able to write files.</a>
+</aside>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre><code><span class='fu'><a href='https://rdrr.io/r/utils/install.packages.html'>install.packages</a></span><span class='op'>(</span><span class='st'>"ipumsr"</span><span class='op'>)</span>
+</code></pre>
+</div>
+</div>
+<p>Packages also come with help files detailing the purpose and possible inputs (or “arguments”) of each included function. Other included metadata explains what version of R you’ll need to use the package, and also whether the package borrows functions from any other packages that should also be installed (usually these are called “dependencies”).</p>
+<p>In order to access the functions and help files for a package, you need to load it after installation with:</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre><code><span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://www.ipums.org'>ipumsr</a></span><span class='op'>)</span>
+</code></pre>
+</div>
+</div>
+<p><strong>On this blog, we will often show functions together with their package like this:</strong></p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre><code><span class='fu'>ipumsr</span><span class='fu'>::</span><span class='fu'><a href='https://rdrr.io/pkg/ipumsr/man/read_ipums_micro.html'>read_ipums_micro</a></span><span class='op'>(</span>
+  ddi <span class='op'>=</span> <span class='st'>"~/Downloads/pma_00001.xml"</span>,
+  data_file <span class='op'>=</span> <span class='st'>"~/Downloads/pma_00001.dat.gz"</span>
+<span class='op'>)</span>
+</code></pre>
+</div>
+</div>
+<p>The function <code>read_ipums_micro</code> comes from the package <code>ipumsr</code>. <em>It is not necessary for you to include the package each time you call a function (as long as you’ve already loaded the package with <code>library()</code>);</em> we’re using this notation simply as a reminder (in case you want to consult the original package documentation).</p>
+<aside>
+You can use the <strong>package::function()</strong> notation if you ever want to access a function from a package without loading everything else in the package.
+</aside>
+<h2 id="essentials">Essentials</h2>
+<p>Here are the packages you’ll need to install to reproduce the code on this blog:</p>
+<h3 id="ipumsr">ipumsr</h3>
+<p>The <a href="https://tech.popdata.org/ipumsr/">ipumsr</a> package contains functions that make it easy to load IPUMS PMS data into R (mainly <code>read_ipums_micro</code>).</p>
+<p>It also contains functions that will return variable metadata (like the variable descriptions you see while browsing for data on <a href="https://pma.ipums.org">pma.ipums.org</a>.</p>
+<h3 id="tidyverse">tidyverse</h3>
+<p>The <a href="https://www.tidyverse.org/packages/">tidyverse</a> package actually installs a family of related packages, including:</p>
+<ul>
+<li><a href="https://ggplot2.tidyverse.org/">ggplot2</a>, for data visualization</li>
+<li><a href="https://dplyr.tidyverse.org/">dplyr</a>, for data manipulation</li>
+<li><a href="https://tidyr.tidyverse.org/">tidyr</a>, for data tidying</li>
+<li><a href="https://readr.tidyverse.org/">readr</a>, for data import</li>
+<li><a href="https://purrr.tidyverse.org/">purrr</a>, for functional programming</li>
+<li><a href="https://tibble.tidyverse.org/">tibble</a>, for tibbles (a modern re-imagining of data frames)</li>
+<li><a href="https://github.com/tidyverse/stringr">stringr</a>, for strings</li>
+<li><a href="https://github.com/hadley/forcats">forcats</a>, for factors</li>
+</ul>
+<p><strong>This blog uses tidyverse functions and syntax wherever possible</strong> because so-called “tidy” conventions are designed with the expressed purpose of making code and console output more <strong>human readable</strong>. Sometimes, human readability imposes a performance cost: in our experience, IPUMS PMA datasets are small enough that this is not an issue.</p>
+<aside>
+For larger datasets, we recommend exploring the package <a href="https://cran.r-project.org/web/packages/data.table/vignettes/datatable-intro.html">data.table</a>.
+</aside>
+<h3 id="shiny">shiny</h3>
+<p>Interactive graphics shown throughout this blog are built with the <a href="https://shiny.rstudio.com/">shiny</a> package.</p>
+<h2 id="watch-for-updates-here">Watch for updates here</h2>
+<p><em>We may add more package suggestions for future posts!</em></p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
