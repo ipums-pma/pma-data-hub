@@ -31,6 +31,8 @@ navbar:
           href: https://github.com/matt-gunther/pma-data-hub/
     - text: "About"
       href: about.html
+    - icon: fa fa-rss
+      href: index.xml 
   source_url: true
 output: distill::distill_article
 theme: theme.css
