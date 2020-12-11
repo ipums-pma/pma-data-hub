@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:dc="http://purl.org/dc/elements/1.1/" version="2.0">
+  <channel>
+    <title>PMA Data Hub</title>
+    <link>https://matt-gunther.github.io/pma-data-hub/</link>
+    <atom:link href="https://matt-gunther.github.io/pma-data-hub/index.xml" rel="self" type="application/rss+xml"/>
+    <description>A blog about PMA data
+</description>
+    <image>
+      <title>PMA Data Hub</title>
+      <url>https://matt-gunther.github.io/pma-data-hub/images/favicon/favicon-32x32.png</url>
+      <link>https://matt-gunther.github.io/pma-data-hub/</link>
+    </image>
+    <generator>Distill</generator>
+    <lastBuildDate>Thu, 10 Dec 2020 00:00:00 +0000</lastBuildDate>
+    <item>
+      <title>Import IPUMS PMA Data into R</title>
+      <dc:creator>Matt Gunther</dc:creator>
+      <link>https://matt-gunther.github.io/pma-data-hub/posts/2020-12-10-get-ipums-pma-data</link>
+      <description>How to download an IPUMS PMA data extract and start using it in R</description>
+      <category>R Tips</category>
+      <category>R Packages</category>
+      <category>Importing Data</category>
+      <guid>https://matt-gunther.github.io/pma-data-hub/posts/2020-12-10-get-ipums-pma-data</guid>
+      <pubDate>Thu, 10 Dec 2020 00:00:00 +0000</pubDate>
+      <media:content url="https://matt-gunther.github.io/pma-data-hub/posts/2020-12-10-get-ipums-pma-data/images/create-data-extract.png" medium="image" type="image/png" width="910" height="790"/>
+    </item>
+    <item>
+      <title>Getting Started with R</title>
+      <dc:creator>Matt Gunther</dc:creator>
+      <link>https://matt-gunther.github.io/pma-data-hub/posts/2020-12-10-get-r-and-packages</link>
+      <description>How to download R for free and install some of the R packages used on this blog</description>
+      <category>R Tips</category>
+      <category>R Packages</category>
+      <guid>https://matt-gunther.github.io/pma-data-hub/posts/2020-12-10-get-r-and-packages</guid>
+      <pubDate>Thu, 10 Dec 2020 00:00:00 +0000</pubDate>
+      <media:content url="https://matt-gunther.github.io/pma-data-hub/posts/2020-12-10-get-r-and-packages/images/Rlogo.png" medium="image" type="image/png" width="724" height="561"/>
+    </item>
+    <item>
+      <title>Mapping contraceptive stockouts</title>
+      <dc:creator>Matt Gunther</dc:creator>
+      <link>https://matt-gunther.github.io/pma-data-hub/posts/2020-12-09-mapping-contraceptive-stockouts</link>
+      <description>Build an interactive map showing the percentage of service providers reporting a recent stockout of contraceptive methods</description>
+      <category>Shiny</category>
+      <category>Mapping</category>
+      <category>Contraceptive Stockouts</category>
+      <category>Serivce Delivery Points</category>
+      <guid>https://matt-gunther.github.io/pma-data-hub/posts/2020-12-09-mapping-contraceptive-stockouts</guid>
+      <pubDate>Wed, 09 Dec 2020 00:00:00 +0000</pubDate>
+      <media:content url="https://matt-gunther.github.io/pma-data-hub/posts/2020-12-09-mapping-contraceptive-stockouts/images/static-map.png" medium="image" type="image/png" width="574" height="400"/>
+    </item>
+    <item>
+      <title>Linking Maternal and Newborn Records in 2018 Nutrition Surveys</title>
+      <dc:creator>Matt Gunther</dc:creator>
+      <link>https://matt-gunther.github.io/pma-data-hub/posts/2020-12-08-linking-maternal-and-newborn-records</link>
+      <description>How to build a rowwise function linking children to mothers in the 2018 Nutrition Surveys for Burkina Faso and Kenya.</description>
+      <guid>https://matt-gunther.github.io/pma-data-hub/posts/2020-12-08-linking-maternal-and-newborn-records</guid>
+      <pubDate>Tue, 08 Dec 2020 00:00:00 +0000</pubDate>
+      <media:content url="https://matt-gunther.github.io/pma-data-hub/posts/2020-12-08-linking-maternal-and-newborn-records/linking-maternal-and-newborn-records_files/figure-html5/unnamed-chunk-8-1.png" medium="image" type="image/png" width="1248" height="768"/>
+    </item>
+  </channel>
+</rss>

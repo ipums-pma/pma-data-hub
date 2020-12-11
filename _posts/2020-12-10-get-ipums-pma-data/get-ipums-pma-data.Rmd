@@ -21,7 +21,7 @@ IPUMS PMA is the harmonized version of the multinational survey [Performance Mon
 # How to access the data
 
 ## User Guide 
-Visit the IPUMS PMA [data dissemination website](pma.ipums.org) to browse the available data, and then follow the posted [user guide](https://pma.ipums.org/pma/userguide.shtml) to get started with an extract of interest. 
+Visit the IPUMS PMA [data dissemination website](https://pma.ipums.org/) to browse the available data, and then follow the posted [user guide](https://pma.ipums.org/pma/userguide.shtml) to get started with an extract of interest. 
 
 Note: all users must register for a **free** account. See user guide for details.
 

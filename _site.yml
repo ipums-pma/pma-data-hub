@@ -4,6 +4,7 @@ description: |
   A blog about PMA data
 output_dir: "docs"
 repository_url: https://github.com/matt-gunther/pma-data-hub
+base_url: https://matt-gunther.github.io/pma-data-hub/
 navbar:
   search: true
   logo:
@@ -34,3 +35,7 @@ navbar:
 output: distill::distill_article
 theme: theme.css
 favicon: "images/favicon/favicon-32x32.png"
+collections:
+  posts:
+    disqus: pma-data-hub-demo
+    share: [twitter, linkedin]
