@@ -14,7 +14,9 @@ date: 12-09-2020
 output:
   distill::distill_article:
     self_contained: false
-    toc: false
+    toc: true
+    toc_depth: 3
+    toc_float: true
 preview: images/static-map.png
 slug: ShinyMapDemo
 ---
@@ -26,7 +28,7 @@ A "recent" stockout includes any empty stock experienced within 3 months prior t
 </aside>
 
 ```{r, layout="l-page", fig.height=4, preview=TRUE}
-knitr::include_app("https://method-map.demo.ipums.org/", height = "425px")
+knitr::include_app("https://method-map.dev.ipums.org/", height = "425px")
 ```
 
 Missing regions / provinces include those with no surveyed facilities and those where no surveyed facilities normally provide the method.

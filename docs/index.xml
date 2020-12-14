@@ -54,6 +54,8 @@
       <dc:creator>Matt Gunther</dc:creator>
       <link>https://matt-gunther.github.io/pma-data-hub/posts/2020-12-08-linking-maternal-and-newborn-records</link>
       <description>How to build a rowwise function linking children to mothers in the 2018 Nutrition Surveys for Burkina Faso and Kenya.</description>
+      <category>Data Manipulation</category>
+      <category>Nutrition</category>
       <guid>https://matt-gunther.github.io/pma-data-hub/posts/2020-12-08-linking-maternal-and-newborn-records</guid>
       <pubDate>Tue, 08 Dec 2020 00:00:00 +0000</pubDate>
       <media:content url="https://matt-gunther.github.io/pma-data-hub/posts/2020-12-08-linking-maternal-and-newborn-records/linking-maternal-and-newborn-records_files/figure-html5/unnamed-chunk-8-1.png" medium="image" type="image/png" width="1248" height="768"/>
