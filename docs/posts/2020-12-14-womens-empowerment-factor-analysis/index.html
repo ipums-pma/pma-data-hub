@@ -86,48 +86,46 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 </style>
 
   <!--radix_placeholder_meta_tags-->
-<title>PMA Data Analysis Hub: Getting Started with R</title>
+<title>PMA Data Analysis Hub: Locating Dimensions of Women’s Empowerment in Family Planning in Burkina Faso</title>
 
-<meta property="description" itemprop="description" content="How to download R for free and install some of the R packages used on this blog"/>
+<meta property="description" itemprop="description" content="Using factor analysis to identify groups of attitudes, behaviors, and traits"/>
 
-<link rel="canonical" href="https://matt-gunther.github.io/pma-data-hub/posts/2020-12-10-get-r-and-packages/"/>
+<link rel="canonical" href="https://matt-gunther.github.io/pma-data-hub/posts/2020-12-14-womens-empowerment-factor-analysis/"/>
 <link rel="icon" type="image/png" href="../../images/favicon/favicon-32x32.png"/>
 
 <!--  https://schema.org/Article -->
-<meta property="article:published" itemprop="datePublished" content="2020-11-02"/>
-<meta property="article:created" itemprop="dateCreated" content="2020-11-02"/>
-<meta name="article:author" content="Matt Gunther"/>
+<meta property="article:published" itemprop="datePublished" content="2020-11-20"/>
+<meta property="article:created" itemprop="dateCreated" content="2020-11-20"/>
+<meta name="article:author" content="Tayler Nelson"/>
 
 <!--  https://developers.facebook.com/docs/sharing/webmasters#markup -->
-<meta property="og:title" content="PMA Data Analysis Hub: Getting Started with R"/>
+<meta property="og:title" content="PMA Data Analysis Hub: Locating Dimensions of Women’s Empowerment in Family Planning in Burkina Faso"/>
 <meta property="og:type" content="article"/>
-<meta property="og:description" content="How to download R for free and install some of the R packages used on this blog"/>
-<meta property="og:url" content="https://matt-gunther.github.io/pma-data-hub/posts/2020-12-10-get-r-and-packages/"/>
-<meta property="og:image" content="https://matt-gunther.github.io/pma-data-hub/posts/2020-12-10-get-r-and-packages/images/Rlogo.png"/>
-<meta property="og:image:width" content="724"/>
-<meta property="og:image:height" content="561"/>
+<meta property="og:description" content="Using factor analysis to identify groups of attitudes, behaviors, and traits"/>
+<meta property="og:url" content="https://matt-gunther.github.io/pma-data-hub/posts/2020-12-14-womens-empowerment-factor-analysis/"/>
 <meta property="og:locale" content="en_US"/>
 <meta property="og:site_name" content="PMA Data Analysis Hub"/>
 
 <!--  https://dev.twitter.com/cards/types/summary -->
-<meta property="twitter:card" content="summary_large_image"/>
-<meta property="twitter:title" content="PMA Data Analysis Hub: Getting Started with R"/>
-<meta property="twitter:description" content="How to download R for free and install some of the R packages used on this blog"/>
-<meta property="twitter:url" content="https://matt-gunther.github.io/pma-data-hub/posts/2020-12-10-get-r-and-packages/"/>
-<meta property="twitter:image" content="https://matt-gunther.github.io/pma-data-hub/posts/2020-12-10-get-r-and-packages/images/Rlogo.png"/>
-<meta property="twitter:image:width" content="724"/>
-<meta property="twitter:image:height" content="561"/>
+<meta property="twitter:card" content="summary"/>
+<meta property="twitter:title" content="PMA Data Analysis Hub: Locating Dimensions of Women’s Empowerment in Family Planning in Burkina Faso"/>
+<meta property="twitter:description" content="Using factor analysis to identify groups of attitudes, behaviors, and traits"/>
+<meta property="twitter:url" content="https://matt-gunther.github.io/pma-data-hub/posts/2020-12-14-womens-empowerment-factor-analysis/"/>
 
 <!--/radix_placeholder_meta_tags-->
+  
+  <meta name="citation_reference" content="citation_title=Women’s empowerment and family planning: A review of the literature;citation_publication_date=2017;citation_publisher=Cambridge University Press;citation_volume=49;citation_author=Ndola Prata;citation_author=Ashley Fraser;citation_author=Megan J Huchko;citation_author=Jessica D Gipson;citation_author=Mellissa Withers;citation_author=Shayna Lewis;citation_author=Erica J Ciaraldi;citation_author=Ushma D Upadhyay"/>
+  <meta name="citation_reference" content="citation_title=Women’s empowerment and fertility: A review of the literature;citation_publication_date=2014;citation_volume=115;citation_author=Ushma D Upadhyay;citation_author=Jessica D Gipson;citation_author=Mellissa Withers;citation_author=Shayna Lewis;citation_author=Erica J Ciaraldi;citation_author=Ashley Fraser;citation_author=Megan J Huchko;citation_author=Ndola Prata"/>
+  <meta name="citation_reference" content="citation_title=Reflections on the measurement of women’s empowerment;citation_publication_date=2001;citation_publisher=SIDA: Swedish International Development Cooperation Agency;citation_author=Naila Kabeer"/>
   <!--radix_placeholder_rmarkdown_metadata-->
 
 <script type="text/json" id="radix-rmarkdown-metadata">
-{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","author","categories","date","output","canonical_url"]}},"value":[{"type":"character","attributes":{},"value":["Getting Started with R"]},{"type":"character","attributes":{},"value":["How to download R for free and install some of the R packages used on this blog"]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","affiliation"]}},"value":[{"type":"character","attributes":{},"value":["Matt Gunther"]},{"type":"character","attributes":{},"value":["IPUMS PMA Senior Data Analyst"]}]}]},{"type":"character","attributes":{},"value":["R Tips","R Packages"]},{"type":"character","attributes":{},"value":["11-2-2020"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained","toc"]}},"value":[{"type":"logical","attributes":{},"value":[false]},{"type":"logical","attributes":{},"value":[true]}]}]},{"type":"character","attributes":{},"value":["https://matt-gunther.github.io/pma-data-hub/posts/2020-12-10-get-r-and-packages/"]}]}
+{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","author","date","categories","output","bibliography","csl","draft","nocite","canonical_url"]}},"value":[{"type":"character","attributes":{},"value":["Locating Dimensions of Women’s Empowerment in Family Planning in Burkina Faso"]},{"type":"character","attributes":{},"value":["Using factor analysis to identify groups of attitudes, behaviors, and traits"]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","affiliation"]}},"value":[{"type":"character","attributes":{},"value":["Tayler Nelson"]},{"type":"character","attributes":{},"value":["PhD Candidate, University of Minnesota Sociology\n"]}]}]},{"type":"character","attributes":{},"value":["11-20-2020"]},{"type":"character","attributes":{},"value":["Factor Analysis","Stata"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained","toc","toc_depth","toc_float"]}},"value":[{"type":"logical","attributes":{},"value":[false]},{"type":"logical","attributes":{},"value":[true]},{"type":"integer","attributes":{},"value":[3]},{"type":"logical","attributes":{},"value":[true]}]}]},{"type":"character","attributes":{},"value":["cites/cites.bib"]},{"type":"character","attributes":{},"value":["../../csl/asa.csl"]},{"type":"logical","attributes":{},"value":[false]},{"type":"character","attributes":{},"value":["@*"]},{"type":"character","attributes":{},"value":["https://matt-gunther.github.io/pma-data-hub/posts/2020-12-14-womens-empowerment-factor-analysis/"]}]}
 </script>
 <!--/radix_placeholder_rmarkdown_metadata-->
   
   <script type="text/json" id="radix-resource-manifest">
-  {"type":"character","attributes":{},"value":["get-r-and-packages_files/anchor-4.2.2/anchor.min.js","get-r-and-packages_files/bowser-1.9.3/bowser.min.js","get-r-and-packages_files/distill-2.2.21/template.v2.js","get-r-and-packages_files/jquery-1.11.3/jquery.min.js","get-r-and-packages_files/webcomponents-2.0.0/webcomponents.js","images/Rlogo.png"]}
+  {"type":"character","attributes":{},"value":["cites/cites.bib","table.csv","womens-empowerment-factor-analysis_files/anchor-4.2.2/anchor.min.js","womens-empowerment-factor-analysis_files/bowser-1.9.3/bowser.min.js","womens-empowerment-factor-analysis_files/distill-2.2.21/template.v2.js","womens-empowerment-factor-analysis_files/jquery-1.11.3/jquery.min.js","womens-empowerment-factor-analysis_files/pagedtable-1.1/css/pagedtable.css","womens-empowerment-factor-analysis_files/pagedtable-1.1/js/pagedtable.js","womens-empowerment-factor-analysis_files/webcomponents-2.0.0/webcomponents.js"]}
   </script>
   <!--radix_placeholder_navigation_in_header-->
 <meta name="distill:offset" content="../.."/>
@@ -2433,7 +2431,7 @@ d-appendix d-footnote-list a.footnote-backlink {
 <!--radix_placeholder_front_matter-->
 
 <script id="distill-front-matter" type="text/json">
-{"title":"Getting Started with R","description":"How to download R for free and install some of the R packages used on this blog","authors":[{"author":"Matt Gunther","authorURL":"#","affiliation":"IPUMS PMA Senior Data Analyst","affiliationURL":"#","orcidID":""}],"publishedDate":"2020-11-02T00:00:00.000+00:00","citationText":"Gunther, 2020"}
+{"title":"Locating Dimensions of Women’s Empowerment in Family Planning in Burkina Faso","description":"Using factor analysis to identify groups of attitudes, behaviors, and traits","authors":[{"author":"Tayler Nelson","authorURL":"#","affiliation":"PhD Candidate, University of Minnesota Sociology\n","affiliationURL":"#","orcidID":""}],"publishedDate":"2020-11-20T00:00:00.000+00:00","citationText":"Nelson, 2020"}
 </script>
 
 <!--/radix_placeholder_front_matter-->
@@ -2489,186 +2487,381 @@ Community
 <!--/radix_placeholder_site_before_body-->
 
 <div class="d-title">
-<h1>Getting Started with R</h1>
+<h1>Locating Dimensions of Women’s Empowerment in Family Planning in Burkina Faso</h1>
 <!--radix_placeholder_categories-->
 <div class="dt-tags">
-  <a href="../../index.html#category:R_Tips" class="dt-tag">R Tips</a>
-  <a href="../../index.html#category:R_Packages" class="dt-tag">R Packages</a>
+  <a href="../../index.html#category:Factor_Analysis" class="dt-tag">Factor Analysis</a>
+  <a href="../../index.html#category:Stata" class="dt-tag">Stata</a>
 </div>
 <!--/radix_placeholder_categories-->
-<p><p>How to download R for free and install some of the R packages used on this blog</p></p>
+<p><p>Using factor analysis to identify groups of attitudes, behaviors, and traits</p></p>
 </div>
 
 <div class="d-byline">
-  Matt Gunther  (IPUMS PMA Senior Data Analyst)
+  Tayler Nelson  (<p>PhD Candidate, University of Minnesota Sociology</p>)
   
-<br/>11-2-2020
+<br/>11-20-2020
 </div>
 
 <div class="d-article">
-<div class="d-contents d-contents-float">
-<nav class="l-text toc figcaption" id="TOC">
-<h3>Contents</h3>
-<ul>
-<li><a href="#why-analyze-pma-data-with-r">Why analyze PMA data with R?</a><ul>
-<li><a href="#getting-started-with-r">Getting started with R</a><ul>
-<li><a href="#our-favorite-resources">Our favorite resources</a></li>
-</ul></li>
-<li><a href="#do-i-really-need-statistical-software">Do I really need statistical software?</a></li>
-<li><a href="#are-there-alternatives">Are there alternatives?</a></li>
-</ul></li>
-<li><a href="#rstudio">RStudio</a></li>
-<li><a href="#r-packages">R packages</a><ul>
-<li><a href="#essentials">Essentials</a><ul>
-<li><a href="#ipumsr">ipumsr</a></li>
-<li><a href="#tidyverse">tidyverse</a></li>
-<li><a href="#shiny">shiny</a></li>
-</ul></li>
-<li><a href="#watch-for-updates-here">Watch for updates here</a></li>
-</ul></li>
-</ul>
-</nav>
-</div>
-<h1 id="why-analyze-pma-data-with-r">Why analyze PMA data with R?</h1>
-<p>Like all IPUMS data projects, IPUMS PMA data is available free of charge to users who agree to our <a href="https://ipums.org/about/terms">terms of use</a>. That’s because we believe that cost and institutional affiliation should not be barriers to answering pressing concerns around women’s health.</p>
-<p><strong>In fact, users can analyze IPUMS PMA data with any software they like!</strong> We’ve chosen to highlight R, in particular, because it is also free and popular with data analysts throughout the world. It’s available for Windows, MacOS, and a wide variety of UNIX platforms and similar systems (including FreeBSD and Linux).</p>
+<p><em>This post first appeared at the <a href="http://blog.popdata.org/womens-empowerment/">IPUMS Blog</a></em></p>
+<p>Women’s “empowerment,” defined by Naila Kabeer <span class="citation" data-cites="Kabeer2001-ts">(<a href="#ref-Kabeer2001-ts" role="doc-biblioref">2001</a>)</span> as “the expansion of people’s ability to make strategic life choices in a context where this ability was previously denied to them,” has been shown to be associated with greater birth spacing, lower fertility, and lower rates of unplanned pregnancy <span class="citation" data-cites="Upadhyay2014-oy">(Upadhyay et al. <a href="#ref-Upadhyay2014-oy" role="doc-biblioref">2014</a>)</span>. Yet scholars disagree on how to measure women’s empowerment, and meanings of empowerment can shift across geographic and cultural contexts <span class="citation" data-cites="Prata2017-qm">(Prata et al. <a href="#ref-Prata2017-qm" role="doc-biblioref">2017</a>)</span>.</p>
+<p>IPUMS PMA’s family planning surveys include variables that can help researchers investigate dimensions of women’s empowerment in family planning. All samples include indicators of women’s knowledge about family planning methods. Many survey rounds dig deeper, collecting data that can be used by researchers and policymakers.</p>
+<p>The <a href="https://pma.ipums.org/pma/samples.shtml#bfhttps://pma.ipums.org/pma/samples.shtml">Burkina Faso 2018 Round 6 survey</a> includes a range of variables measuring family planning attitudes, beliefs, and decision-making dynamics that relate to women’s empowerment. I used a weighted polychoric factor analysis to investigate women’s empowerment in family planning in Burkina Faso. Factor analysis can help researchers reduce a large number of observed variables by identifying similar response patterns among observed variables and grouping them into a smaller set of underlying variables, or factors. Through analyzing how variables are grouped and the strength and signs of coefficients within these groups, researchers can glean insight into which sets of observed variables might be best at measuring an unobserved construct such as women’s empowerment.</p>
 <aside>
-<strong>Non-R users:</strong> IPUMS data extracts are available as CSV or fixed-width DAT with syntax files formatted for SPSS, Stata, and SAS.
+I used Stata’s polychoric function in order to include a mix of binary and ordinal variables in my analysis.
 </aside>
-<h2 id="getting-started-with-r">Getting started with R</h2>
-<p>To get a copy of R for yourself, visit the <a href="https://cloud.r-project.org/">Comprehensive R Archive Network</a> (CRAN) and choose the right download link for your operating system.</p>
-<p>If you’re new to R (or want to refresh your skills), we recommend the excellent, free introductory text <a href="https://r4ds.had.co.nz/index.html">R for Data Science</a>. It also introduces <a href="./index.html#tidyverse">tidyverse</a> conventions, which we use throughout this blog.</p>
-<h3 id="our-favorite-resources">Our favorite resources</h3>
-<ul>
-<li><a href="https://r4ds.had.co.nz/index.html">R for Data Science</a>, for beginners</li>
-<li><a href="https://adv-r.hadley.nz/">Advanced R</a>, for a deeper dive</li>
-<li><a href="https://rspatial.org/">RSpatial</a>, for analysis with spatial data</li>
-<li><a href="https://ggplot2-book.org/">ggplot2</a>, for data visualization</li>
-<li><a href="https://mastering-shiny.org/">Mastering Shiny</a>, for interactive applications</li>
-<li><a href="https://bookdown.org/yihui/rmarkdown/">R Markdown: The Definitive Guide</a>, for producing annotated code, word documents, presentations, web pages, and more</li>
-<li><a href="https://www.r-bloggers.com/">R-bloggers</a>, for regular news and tutorials</li>
-</ul>
+<p>After reviewing the literature on women’s empowerment in family planning, I selected nineteen PMA variables to capture dimensions of women’s empowerment in family planning in Burkina Faso. These included social context variables (<code>URBAN</code>, <code>WEALTHQ</code>, <code>EDUCATTGEN</code>), whether the woman is a current/recent family planning user (<code>FPCURRECUSER</code>), whether the woman has heard of family planning on television (<code>FPTVHR</code>) or radio (<code>FPRADIOHR</code>), and belief and attitude variables that use a Likert scale to measure how much the woman agrees with a particular statement about family planning (<code>SAFEDISCKID</code>, <code>SAFEDISCFP</code>, <code>CONFLICTFP</code>, <code>DAMRELFP</code>, <code>NEGOTIATEKIDS</code>, <code>BELIEFCARRYPREG</code>, <code>BELIEFDAUPREG</code>, <code>AGREESPACE</code>, <code>AGREELIMIT</code>, <code>AGREECONTR</code>, <code>AGREEFP</code>, <code>AGREEPARTFP</code>). I also combined two variables that measure who is the primary decision-maker in deciding to use (<code>FPDECIDER</code>) or not to use (<code>DECNOFPUSE</code>) family planning into a single ordinal variable (<code>DECIDER</code>) that reports how much input a woman has in the couple’s family planning decisions. I excluded not in universe (NIU) and missing cases as well as females who were not married or partnered; my analytical sample contained 1,686 women. All analyses applied appropriate sampling weights.</p>
+<p>I retained three factors and analyzed which characteristics or beliefs relate to each underlying factor by examining variable groupings and factor loadings. Table 1 displays all factor loadings above 0.3 for each variable. Looking at high factor loadings can help researchers identify underlying factors. I have marked moderate and strong factor loadings in the table with an asterisk(*).</p>
 <aside>
-<div class="layout-chunk" data-layout="l-body">
-<p><img src="images/Rlogo.png" width="362" /></p>
-</div>
-© 2016 The R Foundation (<a href="https://creativecommons.org/licenses/by-sa/4.0/">CC-BY-SA 4.0</a>)
+<p>I used Eigenvalues and scree plots to determine how many factors to retain.</p>
+I am defining moderate and strong factor loadings as those loadings of .60 and greater.
 </aside>
-<h2 id="do-i-really-need-statistical-software">Do I really need statistical software?</h2>
-<p>If you’re new to data analysis, you might wonder exactly what you’re going to find in a toolkit like R.</p>
-<p>Plenty of people come to R after working with more common types of data analysis software, like Microsoft Excel or other spreadsheet programs. If you wanted to, you could absolutely download a CSV file from the IPUMS PMA extract system and open it in Excel. You would find individual <strong>respondents in rows</strong> and their responses for <strong>variables in columns</strong>, and you could make use of built-in spreadsheet functions to do things like:</p>
-<ul>
-<li>Calculate and visualize the distribution of a variable</li>
-<li>Build pivot tables and graphs examining basic relationships between variables</li>
-<li>Create new variables of your own that combine data from several variables</li>
-</ul>
-<p>However, you might also notice that a spreadsheet comes with certain limitations:</p>
-<ul>
-<li>There is no variable “metadata”, including labels for the variables and each response option. For example, you might see that the responses to a certain variable include the numbers 0, 1, and 99 - what do these values actually mean?</li>
-<li>You might find yourself repeating the same “point” and “click” procedure over and over. Or, maybe you’ve had to build a library of custom <em>macro</em> functions on your own to help automate those procedures.</li>
-<li>While you can perform arithmetic with built-in functions, there is little support for more advanced statistical procedures</li>
-<li>Graphics are limited within a set of pre-built templates</li>
-<li>Merging data from external sources (like spatial data) can be very tricky</li>
-</ul>
-<p>Statistical software is designed specifically to address these and other issues related to data cleaning and analysis. Learning a program like R takes <em>a lot of practice</em>, but doing so will almost certainly make your work much more efficient!</p>
-<h2 id="are-there-alternatives">Are there alternatives?</h2>
-<p>Yes! Many data analysts use proprietary statistical software like <a href="https://www.stata.com/">Stata</a>, <a href="http://www.sas.com/en_us/home.html">SAS</a>, or <a href="https://www.ibm.com/products/spss-statistics">SPSS</a>. These tools are also powerful, and you may even find them easier to use than R.</p>
+<div class="layout-chunk" data-layout="l-body-outset">
+<table>
+<thead>
+<tr>
+<th style="text-align:left;">
+VARIABLE
+</th>
+<th style="text-align:left;">
+DESCRIPTION
+</th>
+<th style="text-align:left;">
+F1
+</th>
+<th style="text-align:left;">
+F2
+</th>
+<th style="text-align:left;">
+F.3
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+URBAN
+</td>
+<td style="text-align:left;">
+Urban/rural status
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+.94 *
+</td>
+<td style="text-align:left;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+WEALTHQ
+</td>
+<td style="text-align:left;">
+Wealth score quintile
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+.87 *
+</td>
+<td style="text-align:left;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+EDUCATTGEN
+</td>
+<td style="text-align:left;">
+Highest level of schooling attended
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+.66 *
+</td>
+<td style="text-align:left;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+FPCURRECUSER
+</td>
+<td style="text-align:left;">
+Current or recent FP user
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+0.32
+</td>
+<td style="text-align:left;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+DECIDER
+</td>
+<td style="text-align:left;">
+Women’s level of say in decisions about whether to use/not use FP
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+SAFEDISCKID
+</td>
+<td style="text-align:left;">
+Safe to discuss when to have children w/ partner
+</td>
+<td style="text-align:left;">
+.66 *
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+SAFEDISCFP
+</td>
+<td style="text-align:left;">
+Safe to discuss FP w/ partner
+</td>
+<td style="text-align:left;">
+.71 *
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+CONFLICTFP
+</td>
+<td style="text-align:left;">
+Conflict in relationship if used FP
+</td>
+<td style="text-align:left;">
+-0.5
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+DAMRELFP
+</td>
+<td style="text-align:left;">
+Delaying or limiting children would deteriorate relationship w/ partner
+</td>
+<td style="text-align:left;">
+-0.44
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+NEGOTIATEKIDS
+</td>
+<td style="text-align:left;">
+Able to negotiate w/ partner when to stop having children
+</td>
+<td style="text-align:left;">
+.65 *
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+BELIEFCARRYPREG
+</td>
+<td style="text-align:left;">
+Thinks a woman should not get pregnant if child still on her back
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+.60 *
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+BELIEFDAUPREG
+</td>
+<td style="text-align:left;">
+Thinks a woman should not get pregnant if daughter is pregnant
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+0.48
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+AGREESPACE
+</td>
+<td style="text-align:left;">
+Agrees with couple that uses FP to space births
+</td>
+<td style="text-align:left;">
+0.45
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+0.44
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+AGREELIMIT
+</td>
+<td style="text-align:left;">
+Agrees with couple that uses FP to limit births
+</td>
+<td style="text-align:left;">
+0.52
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+AGREECONTR
+</td>
+<td style="text-align:left;">
+Agrees with man/woman that uses contraception
+</td>
+<td style="text-align:left;">
+0.34
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+AGREEFP
+</td>
+<td style="text-align:left;">
+Agrees with couples that use FP
+</td>
+<td style="text-align:left;">
+0.59
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+0.39
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+AGREEPARTFP
+</td>
+<td style="text-align:left;">
+Partner agrees with couples that use FP
+</td>
+<td style="text-align:left;">
+.69 *
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+FPTVHR
+</td>
+<td style="text-align:left;">
+Heard about FP on TV
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+.66 *
+</td>
+<td style="text-align:left;">
+0.38
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+FPRADIOHR
+</td>
+<td style="text-align:left;">
+Heard about FP on the radio
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+0.33
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Factor 1 includes the majority of attitude and belief variables. I looked at similarities and differences between variables and their factor loadings to interpret this factor. Variables with high factor loadings all relate to good spousal communication around family planning. For instance, <code>SAFEDISCFP</code>, which reports how much the respondent agrees that it is safe to discuss family planning with her partner, has the highest factor loading. Variables related to spousal conflict, such as <code>CONFLICTFP</code>, have weak but negative factor loadings. Together, these results indicate that Factor 1 might be a latent measure of spousal communication. Alternative interpretations are possible: for example, it might be that this factor simply represents support for family planning, and variables with high factor loadings are the most useful observed indicators of this factor.</p>
 <aside>
-Coming soon, we hope to include Stata code for many of the blog posts currently written in R.
+I looked for common conceptual threads between the highest factor loadings (asking myself, ‘What latent factor might all of these variables be measuring?’). I also looked at weak and negative factor loadings to help interpret this factor.
 </aside>
-<p>Beyond price, R has a few additional advantages that make it a particularly useful tool for working with PMA data:</p>
-<ul>
-<li><strong>Community support:</strong> R users are particularly active on forums like <a href="https://stackoverflow.com/">Stack Overflow</a> and <a href="https://www.r-bloggers.com/">R-bloggers</a>. Groups like <a href="https://rladies.org/">R-ladies</a> even organize in-person meetups in cities around the world to help promote inclusion within the R community.</li>
-<li><strong>Customizability:</strong> Because R is open-source, you can change just about anything you like! With a little practice, you’ll be able to create functions and graphics that perfectly match your own needs.</li>
-<li><strong>Beyond statistics:</strong> You can use R to build a website (like this one), manage and share a code repository on GitHub, scrape and compile a social media database, or automatically generate word documents, slide presentations, and more! There are practically endless ways to use functional programming in R that have nothing to do with statistics at all.</li>
-</ul>
-<p>If you’re a beginner, learning R can be a daunting task. <em>Keep at it!</em> And never hesitate to ask questions.</p>
-<h1 id="rstudio">RStudio</h1>
-<p>We <strong>strongly</strong> recommend running R within RStudio, an integrated development environment (IDE) designed to make your experience with R <em>much easier</em>. Some of the reasons we use it, ourselves:</p>
-<ul>
-<li>Includes a multi-pane window that puts your R console, source code, output, and help files all in one place</li>
-<li>Syntax highlighting and code completion</li>
-<li>Support for <a href="https://support.rstudio.com/hc/en-us/articles/200526207-Using-Projects">R Projects</a>, a crucial approach to organizing your work and sharing it with others</li>
-<li>Includes <a href="https://rmarkdown.rstudio.com/">RMarkdown</a>, an R package that allows you write text-based documents with embedded snippets of code that can be passed directly to your R console</li>
-<li>Coming soon: tools like the <a href="https://blog.rstudio.com/2020/10/14/rstudio-v1-4-preview-command-palette/">command palette</a>, an improved <a href="https://blog.rstudio.com/2020/07/01/announcing-public-package-manager/">package manager</a>, and <a href="https://blog.rstudio.com/2020/11/09/rstudio-1-4-preview-citations/">integrated citation management</a></li>
-<li>Like R, it is available at <strong>no cost</strong> for users on Windows, Mac, and Linux</li>
-</ul>
-<aside>
-This blog is, itself, an R Project with an individual R Markdown file for each page on the site. Look for a <strong>download button</strong> at the top of every post: you can download the original R Markdown file, open it in RStudio, and run all of the included code.
-</aside>
-<h1 id="r-packages">R packages</h1>
-<p>An R package is a collection of functions created by other R users that you can download and install for yourself. Packages can be distributed in many ways, but <strong>all of the packages we highlight on this blog can be downloaded from CRAN</strong> (the same resource used to download “base” R). A package like <code>ipumsr</code> can be downloaded from CRAN by typing the following function into the R console:</p>
-<aside>
-This function saves package files in your default “library” location. If you’re using a Linux machine and don’t have root access, you’ll need to <a href="https://www.r-bloggers.com/2010/11/installing-r-packages/">set up R to save packages to a location where you’re able to write files.</a>
-</aside>
-<div class="layout-chunk" data-layout="l-body">
-<div class="sourceCode">
-<pre><code><span class='fu'><a href='https://rdrr.io/r/utils/install.packages.html'>install.packages</a></span><span class='op'>(</span><span class='st'>"ipumsr"</span><span class='op'>)</span>
-</code></pre>
-</div>
-</div>
-<p>Packages also come with help files detailing the purpose and possible inputs (or “arguments”) of each included function. Other included metadata explains what version of R you’ll need to use the package, and also whether the package borrows functions from any other packages that should also be installed (usually these are called “dependencies”).</p>
-<p>In order to access the functions and help files for a package, you need to load it after installation with:</p>
-<div class="layout-chunk" data-layout="l-body">
-<div class="sourceCode">
-<pre><code><span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://www.ipums.org'>ipumsr</a></span><span class='op'>)</span>
-</code></pre>
-</div>
-</div>
-<p><strong>On this blog, we will often show functions together with their package like this:</strong></p>
-<div class="layout-chunk" data-layout="l-body">
-<div class="sourceCode">
-<pre><code><span class='fu'>ipumsr</span><span class='fu'>::</span><span class='fu'><a href='https://rdrr.io/pkg/ipumsr/man/read_ipums_micro.html'>read_ipums_micro</a></span><span class='op'>(</span>
-  ddi <span class='op'>=</span> <span class='st'>"~/Downloads/pma_00001.xml"</span>,
-  data_file <span class='op'>=</span> <span class='st'>"~/Downloads/pma_00001.dat.gz"</span>
-<span class='op'>)</span>
-</code></pre>
-</div>
-</div>
-<p>The function <code>read_ipums_micro</code> comes from the package <code>ipumsr</code>. <em>It is not necessary for you to include the package each time you call a function (as long as you’ve already loaded the package with <code>library()</code>);</em> we’re using this notation simply as a reminder (in case you want to consult the original package documentation).</p>
-<aside>
-You can use the <strong>package::function()</strong> notation if you ever want to access a function from a package without loading everything else in the package.
-</aside>
-<h2 id="essentials">Essentials</h2>
-<p>Here are the packages you’ll need to install to reproduce the code on this blog:</p>
-<h3 id="ipumsr">ipumsr</h3>
-<p>The <a href="https://tech.popdata.org/ipumsr/">ipumsr</a> package contains functions that make it easy to load IPUMS PMS data into R (mainly <code>read_ipums_micro</code>).</p>
-<p>It also contains functions that will return variable metadata (like the variable descriptions you see while browsing for data on <a href="https://pma.ipums.org">pma.ipums.org</a>.</p>
-<h3 id="tidyverse">tidyverse</h3>
-<p>The <a href="https://www.tidyverse.org/packages/">tidyverse</a> package actually installs a family of related packages, including:</p>
-<ul>
-<li><a href="https://ggplot2.tidyverse.org/">ggplot2</a>, for data visualization</li>
-<li><a href="https://dplyr.tidyverse.org/">dplyr</a>, for data manipulation</li>
-<li><a href="https://tidyr.tidyverse.org/">tidyr</a>, for data tidying</li>
-<li><a href="https://readr.tidyverse.org/">readr</a>, for data import</li>
-<li><a href="https://purrr.tidyverse.org/">purrr</a>, for functional programming</li>
-<li><a href="https://tibble.tidyverse.org/">tibble</a>, for tibbles (a modern re-imagining of data frames)</li>
-<li><a href="https://github.com/tidyverse/stringr">stringr</a>, for strings</li>
-<li><a href="https://github.com/hadley/forcats">forcats</a>, for factors</li>
-</ul>
-<p><strong>This blog uses tidyverse functions and syntax wherever possible</strong> because so-called “tidy” conventions are designed with the expressed purpose of making code and console output more <strong>human readable</strong>. Sometimes, human readability imposes a performance cost: in our experience, IPUMS PMA datasets are small enough that this is not an issue.</p>
-<aside>
-For larger datasets, we recommend exploring the package <a href="https://cran.r-project.org/web/packages/data.table/vignettes/datatable-intro.html">data.table</a>.
-</aside>
-<h3 id="shiny">shiny</h3>
-<p>Interactive graphics shown throughout this blog are built with the <a href="https://shiny.rstudio.com/">shiny</a> package.</p>
-<h2 id="watch-for-updates-here">Watch for updates here</h2>
-<p><em>We may add more package suggestions for future posts!</em></p>
+<p>For Factor 2, the high factor loadings for <code>URBAN</code> and <code>WEALTHQ</code> suggest that this factor indicates socioeconomic status. The variable for whether the woman has heard about family planning on TV loads moderately highly on this factor; this seems logical assuming TV ownership is a reflection of socioeconomic status.</p>
+<p>For Factor 3, the factor loadings are relatively small except for the loading for the belief that women should not get pregnant if she is still carrying a child on her back. In line with a Burkina Faso 2014 report that found popular acceptance of family planning for spacing rather than limiting births and stigma around women who have children too closely together, this factor might indicate adherence to traditional Burkina Faso beliefs around family planning. <code>AGREESPACE</code>, which reports the respondent’s agreement with couples using contraception to space the birth of their children, also loads on this factor. This factor may indicate value of traditional beliefs or more explicit support for child spacing.</p>
+<p>This factor analysis indicates several dimensions of empowerment for understanding family planning in Burkina Faso and suggests a handful of important variables (those with high factor loadings) users may be interested in including in analyses of female empowerment. It also highlights other areas to explore. For example, I was surprised that <code>DECIDER</code> was not strongly associated with any single factor (though iterations of this analysis that measured joint decision-making showed high factor loading alongside the other socioeconomic status variables in Factor 2). Researchers may want to use PMA data to investigate whether spousal communication, socioeconomic status, and geographically-specific traditional beliefs remain important factors in family planning variables across different countries and years, or look further into how decision-making might align with these factors.</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
+<div id="refs" class="references" role="doc-bibliography">
+<div id="ref-Kabeer2001-ts">
+<p>Kabeer, Naila. 2001. “Reflections on the Measurement of Women’s Empowerment.” in <em>Discussing women’s empowerment: Theory and practice</em>. Stockholm: SIDA: Swedish International Development Cooperation Agency.</p>
+</div>
+<div id="ref-Prata2017-qm">
+<p>Prata, Ndola, Ashley Fraser, Megan J. Huchko, Jessica D. Gipson, Mellissa Withers, Shayna Lewis, Erica J. Ciaraldi, and Ushma D. Upadhyay. 2017. “Women’s Empowerment and Family Planning: A Review of the Literature.” <em>Journal of Biosocial Science</em> 49(6):713–43.</p>
+</div>
+<div id="ref-Upadhyay2014-oy">
+<p>Upadhyay, Ushma D., Jessica D. Gipson, Mellissa Withers, Shayna Lewis, Erica J. Ciaraldi, Ashley Fraser, Megan J. Huchko, and Ndola Prata. 2014. “Women’s Empowerment and Fertility: A Review of the Literature.” <em>Social Science &amp; Medicine</em> 115:111–20.</p>
+</div>
+</div>
 <!--radix_placeholder_article_footer-->
 <div class="article-footer">
   <p class="social_footer">
     <span class="disqus-comments">
       <i class="fas fa-comments"></i>
       &nbsp;
-      <span class="disqus-comment-count" data-disqus-identifier="posts/2020-12-10-get-r-and-packages/">Comment on this article</span>
+      <span class="disqus-comment-count" data-disqus-identifier="posts/2020-12-14-womens-empowerment-factor-analysis/">Comment on this article</span>
     </span>
     <span class="article-sharing">
       Share: &nbsp;
-      <a href="https://twitter.com/share?text=Getting%20Started%20with%20R&amp;url=https%3A%2F%2Fmatt-gunther.github.io%2Fpma-data-hub%2Fposts%2F2020-12-10-get-r-and-packages%2F">
+      <a href="https://twitter.com/share?text=Locating%20Dimensions%20of%20Women%E2%80%99s%20Empowerment%20in%20Family%20Planning%20in%20Burkina%20Faso&amp;url=https%3A%2F%2Fmatt-gunther.github.io%2Fpma-data-hub%2Fposts%2F2020-12-14-womens-empowerment-factor-analysis%2F">
         <i class="fab fa-twitter"></i>
       </a>
-      <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fmatt-gunther.github.io%2Fpma-data-hub%2Fposts%2F2020-12-10-get-r-and-packages%2F&amp;title=Getting%20Started%20with%20R">
+      <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fmatt-gunther.github.io%2Fpma-data-hub%2Fposts%2F2020-12-14-womens-empowerment-factor-analysis%2F&amp;title=Locating%20Dimensions%20of%20Women%E2%80%99s%20Empowerment%20in%20Family%20Planning%20in%20Burkina%20Faso">
         <i class="fab fa-linkedin"></i>
       </a>
     </span>
@@ -2677,8 +2870,8 @@ For larger datasets, we recommend exploring the package <a href="https://cran.r-
   <div id="disqus_thread" class="hidden"></div>
   <script>
 var disqus_config = function () {
-  this.page.url = 'https://matt-gunther.github.io/pma-data-hub/posts/2020-12-10-get-r-and-packages/';
-  this.page.identifier = 'posts/2020-12-10-get-r-and-packages/';
+  this.page.url = 'https://matt-gunther.github.io/pma-data-hub/posts/2020-12-14-womens-empowerment-factor-analysis/';
+  this.page.identifier = 'posts/2020-12-14-womens-empowerment-factor-analysis/';
 };
 (function() {
   var d = document, s = d.createElement('script');
@@ -2699,6 +2892,8 @@ var disqus_config = function () {
 <!--/radix_placeholder_site_after_body-->
 <!--radix_placeholder_appendices-->
 <div class="appendix-bottom">
+  <h3 id="references">References</h3>
+  <div id="references-listing"></div>
   <h3 id="updates-and-corrections">Corrections</h3>
   <p>If you see mistakes or want to suggest changes, please <a href="https://github.com/matt-gunther/pma-data-hub/issues/new">create an issue</a> on the source repository.</p>
 </div>

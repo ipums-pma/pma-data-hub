@@ -28,9 +28,9 @@ html {
   --fig-cap-color:   rgba(0, 0, 0, 0.6);
   /*-- Specify custom fonts ~~~ must be imported above   --*/
   --heading-font:    cabrito_sans_norm_regular;
-  --mono-font:       monospace;
-  --body-font:       cabrito_subset;
-  --navbar-font:     cabrito_subset;  /* websites + blogs only */
+  --mono-font:       Menlo, Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  --body-font:       cabrito_sans_norm_regular;
+  --navbar-font:     cabrito_sans_norm_regular;  /* websites + blogs only */
 }
 
 /*-- ARTICLE METADATA --*/
@@ -179,4 +179,8 @@ d-article iframe {
     border: 0;
     margin-bottom: 0;
     width: 100%;
+}
+
+code {
+    font-family: Menlo, Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
 }

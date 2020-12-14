@@ -2095,9 +2095,9 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     --fig-cap-color:   rgba(0, 0, 0, 0.6);
     /*-- Specify custom fonts ~~~ must be imported above   --*/
     --heading-font:    cabrito_sans_norm_regular;
-    --mono-font:       monospace;
-    --body-font:       cabrito_subset;
-    --navbar-font:     cabrito_subset;  /* websites + blogs only */
+    --mono-font:       Menlo, Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+    --body-font:       cabrito_sans_norm_regular;
+    --navbar-font:     cabrito_sans_norm_regular;  /* websites + blogs only */
   }
   
   /*-- ARTICLE METADATA --*/
@@ -2246,6 +2246,10 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
       border: 0;
       margin-bottom: 0;
       width: 100%;
+  }
+  
+  code {
+      font-family: Menlo, Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
   }</style>
   <style type="text/css">
   /* base style */
@@ -2620,26 +2624,6 @@ function init_posts_list() {
 <p>How to download an IPUMS PMA data extract and start using it in R</p>
 </div>
 </a>
-<a href="posts/2020-12-10-get-r-and-packages/" class="post-preview">
-<script class="post-metadata" type="text/json">{"categories":["R Tips","R Packages"]}</script>
-<div class="metadata">
-<div class="publishedDate">Dec. 10, 2020</div>
-<div class="dt-authors">
-<div class="dt-author">Matt Gunther</div>
-</div>
-</div>
-<div class="thumbnail">
-<img src="posts/2020-12-10-get-r-and-packages/images/Rlogo.png"/>
-</div>
-<div class="description">
-<h2>Getting Started with R</h2>
-<div class="dt-tags">
-<div class="dt-tag">R Tips</div>
-<div class="dt-tag">R Packages</div>
-</div>
-<p>How to download R for free and install some of the R packages used on this blog</p>
-</div>
-</a>
 <a href="posts/2020-12-09-mapping-contraceptive-stockouts/" class="post-preview">
 <script class="post-metadata" type="text/json">{"categories":["Shiny","Mapping","Contraceptive Stockouts","Serivce Delivery Points"]}</script>
 <div class="metadata">
@@ -2682,6 +2666,46 @@ function init_posts_list() {
 <p>How to build a rowwise function linking children to mothers in the 2018 Nutrition Surveys for Burkina Faso and Kenya.</p>
 </div>
 </a>
+<a href="posts/2020-12-14-womens-empowerment-factor-analysis/" class="post-preview">
+<script class="post-metadata" type="text/json">{"categories":["Factor Analysis","Stata"]}</script>
+<div class="metadata">
+<div class="publishedDate">Nov. 20, 2020</div>
+<div class="dt-authors">
+<div class="dt-author">Tayler Nelson</div>
+</div>
+</div>
+<div class="thumbnail">
+<img/>
+</div>
+<div class="description">
+<h2>Locating Dimensions of Women’s Empowerment in Family Planning in Burkina Faso</h2>
+<div class="dt-tags">
+<div class="dt-tag">Factor Analysis</div>
+<div class="dt-tag">Stata</div>
+</div>
+<p>Using factor analysis to identify groups of attitudes, behaviors, and traits</p>
+</div>
+</a>
+<a href="posts/2020-12-10-get-r-and-packages/" class="post-preview">
+<script class="post-metadata" type="text/json">{"categories":["R Tips","R Packages"]}</script>
+<div class="metadata">
+<div class="publishedDate">Nov. 2, 2020</div>
+<div class="dt-authors">
+<div class="dt-author">Matt Gunther</div>
+</div>
+</div>
+<div class="thumbnail">
+<img src="posts/2020-12-10-get-r-and-packages/images/Rlogo.png"/>
+</div>
+<div class="description">
+<h2>Getting Started with R</h2>
+<div class="dt-tags">
+<div class="dt-tag">R Tips</div>
+<div class="dt-tag">R Packages</div>
+</div>
+<p>How to download R for free and install some of the R packages used on this blog</p>
+</div>
+</a>
 </div>
 <div class="posts-sidebar">
 <div class="sidebar-section categories">
@@ -2689,7 +2713,7 @@ function init_posts_list() {
 <ul>
 <li>
 <a href="#category:Articles">Articles</a>
-<span class="category-count">(4)</span>
+<span class="category-count">(5)</span>
 </li>
 <li>
 <a href="#category:Contraceptive_Stockouts">Contraceptive Stockouts</a>
@@ -2697,6 +2721,10 @@ function init_posts_list() {
 </li>
 <li>
 <a href="#category:Data_Manipulation">Data Manipulation</a>
+<span class="category-count">(1)</span>
+</li>
+<li>
+<a href="#category:Factor_Analysis">Factor Analysis</a>
 <span class="category-count">(1)</span>
 </li>
 <li>
@@ -2725,6 +2753,10 @@ function init_posts_list() {
 </li>
 <li>
 <a href="#category:Shiny">Shiny</a>
+<span class="category-count">(1)</span>
+</li>
+<li>
+<a href="#category:Stata">Stata</a>
 <span class="category-count">(1)</span>
 </li>
 </ul>
