@@ -9,6 +9,9 @@ date: 12-08-2020
 categories:
   - Data Manipulation
   - Nutrition
+  - Burkina Faso
+  - R 
+  - purrr
 output:
   distill::distill_article:
     self_contained: false
@@ -22,9 +25,11 @@ draft: false
 knitr::opts_chunk$set(echo = TRUE, eval = T)
 options(tibble.max_extra_cols = 5)
 load("../../data/bf2018a_nh.rda")
+bf2018 <- bf2018a_nh
+rm(bf2018a_nh)
 ```
 
-```{r download_button, echo=F, eval=T}
+```{r download_button, echo=F}
 downloadthis::download_file(
   path = "./linking-maternal-and-newborn-records.Rmd",
   button_label = "Download this page as R code",
@@ -48,18 +53,25 @@ library(tidyverse)
 
 To keep things simple, we'll focus on 2018 Nutrition data from Burkina Faso, which you can download at [pma.ipums.org](https://pma.ipums.org/pma-action/variables/group). See our post [Downloading an IPUMS Extract for R](getData.html) for help.
 
-```{r}
-# Data import and object assignment goes here
+```{r, eval=F}
+bf2018 <- ipumsr::read_ipums_micro(
+  ddi = "pma_00001.xml",
+  data_file = "pma_00001.dat.gz"
+)
 ```    
+
+<aside>
+Remember: replace both file names with your own paths and extract number!
+</aside>
 
 ## Linking by household and birthdate
 
-The easiest way to match mothers and children is to look within each household for a child whose date of birth `KIDBIRTHYR` and `KIDBIRTHMO` matches the birth record data for any women living in that same household. The 2018 Nutrition survey only contains dates for each woman's *most recent birth* in `LASTBIRTHYR` and `LASBIRTHMO`, so we can only match a mother to her most recent child. 
+The easiest way to match mothers and children is to look within each household for a child whose date of birth [`KIDBIRTHYR`](https://pma.ipums.org/pma-action/variables/KIDBIRTHYR) and [`KIDBIRTHMO`](https://pma.ipums.org/pma-action/variables/KIDBIRTHMO) matches the birth record data for any women living in that same household. The 2018 Nutrition survey only contains dates for each woman's *most recent birth* in [`LASTBIRTHYR`](https://pma.ipums.org/pma-action/variables/LASTBIRTHYR) and [`LASBIRTHMO`](https://pma.ipums.org/pma-action/variables/LASTBIRTHMO), so we can only match a mother to her most recent child. 
 
 While this approach won't match *every* mother and child, we can safely assume that we've found a correct pair in each household if we also make sure that the birthdates allow for only one possible match. For example, if two women in the same household last gave birth in the same month and year, we should make sure to exclude them (since we wouldn't be able to tell which mother matches which child). 
 
 ```{r}
-bf2018a_nh <- bf2018a_nh %>% 
+bf2018 <- bf2018 %>% 
   group_by(HHID) %>% 
   mutate(MOMID = case_when(ELIGTYPE < 20 ~ pmap_chr(
     cur_data() %>%
@@ -75,14 +87,14 @@ bf2018a_nh <- bf2018a_nh %>%
       if(length(mom)==1){return(PERSONID[mom])}else{return(NA)}
     }
   ))) %>% 
-  ungroup()
+  ungroup() 
 ```
 
 ### How does it work? 
 
-We create a variable `MOMID` that stores the unique person identifier `PERSONID` for each child's mother. 
+We create a variable `MOMID` that stores the unique person identifier [`PERSONID`](https://pma.ipums.org/pma-action/variables/PERSONID) for each child's mother. 
 
-To find each child's mother, we restrict our search to individuals living in the same household (`group_by(HHID)`). Then, we assign `MOMID` only to child records by selecting cases where `ELIGTYPE < 20`. 
+To find each child's mother, we restrict our search to individuals living in the same household (`group_by(HHID)`). Then, using [`ELIGTYPE`](https://pma.ipums.org/pma-action/variables/ELIGTYPE) we assign `MOMID` only to child records by selecting cases where `ELIGTYPE < 20`. 
 
 Then, for each child in the household, we use the `pmap_chr()` function to examine each of the records for individuals who live with the child. For sake of speed, we pass only the variables `KIDBIRTHYR`, `KIDBIRTHMO`, `LASTBIRTHYR`, and `LASTBIRTHMO` to the anonymous function inside `pmap_chr`. 
 
@@ -93,13 +105,13 @@ Finally, `kid <- tibble(...)` stores a temporary one-row data frame containing i
 In total, 796 children were linked to a mother: this is only about 28% of the 2856 children listed by the grouping variable `ELIGTYPE`: 
 
 ```{r}
-bf2018a_nh %>% count(ELIGTYPE, HASMOMID = !is.na(MOMID))
+bf2018 %>% count(ELIGTYPE, HASMOMID = !is.na(MOMID))
 ```
 
 Why were so few children matched successfully? Part of the answer has to do with the nutrition sample design: in Burkina Faso, women aged 10-49 were included from just 45% of households selected at random from the household screening sample (in the Kenya 2018 sample, 25% of households were randomly selected). As a result, we might estimate that only around 45% of children could possibly be linked to mother included in the nutrition sample:
 
 ```{r}
-bf2018a_nh %>%
+bf2018 %>%
   mutate(MOMS_IN_HH = case_when(ELIGTYPE < 20 ~ pmap_chr(
     cur_data() %>%
       select(HHID, ELIGTYPE), 
@@ -121,12 +133,12 @@ Fortunately, because households were randomly selected for the female nutrition 
 
 In the example above, the use of `LASTBIRTHMO` and `LASTBIRTHYR` ensured that only mother's *most recent child* could be linked to her record. 
 
-It's possible to expand these criteria in certain circumstances using `RELATEKID`, which describes the relationship between each child and the person who provided responses to the interviewer on their behalf. 
+It's possible to expand these criteria in certain circumstances using [`RELATEKID`](https://pma.ipums.org/pma-action/variables/RELATEKID), which describes the relationship between each child and the person who provided responses to the interviewer on their behalf. 
 
 When `RELATEKID == 1`, the respondent to the child's questionnaire is the child's mother. So, if `RELATEKID == 1` *and if only one woman in the child's household has ever given birth*, we could reasonably identify that person as the child's mother.
 
 ```{r}
-bf2018a_nh <- bf2018a_nh %>%
+bf2018 <- bf2018 %>%
   group_by(HHID) %>% 
   mutate(MOMID = case_when(
     ELIGTYPE < 20 ~ pmap_chr(
@@ -164,7 +176,7 @@ This is the same function as before, but with one major addition. We count all o
 With these expanded search criteria, 1079 children were matched to a mother's record: an improvement by 283 cases!
 
 ```{r}
-bf2018a_nh %>% count(ELIGTYPE, HASMOMID = !is.na(MOMID))
+bf2018 %>% count(ELIGTYPE, HASMOMID = !is.na(MOMID))
 ```
 
 Because only 1277 children in the nutrition sample live with a sampled mother, we have now established almost 85% of the possible links between mothers and children. 
@@ -177,19 +189,27 @@ Suppose a researcher wanted to learn whether newborn feeding information given t
 
 Now that we've linked as many children as possible to their mother's records, we could create a variable `MOMINFO` indicating whether the mother ever received newborn feeding information from a health provider or community health worker during her most recent pregnancy. 
 
-We could then take each child's mid-upper arm circumference (MUAC) `KIDARMCIRCVAL` as a simple proxy measure for growth and nutrition. Comparing children whose mothers received newborn feeding information to those whose mothers received none, no real difference seems to exist (at least not without additional control variables):
+We could then take each child's mid-upper arm circumference (MUAC) [`KIDARMCIRCVAL`](https://pma.ipums.org/pma-action/variables/KIDARMCIRCVAL) as a simple proxy measure for growth and nutrition. Comparing children whose mothers received newborn feeding information to those whose mothers received none, no real difference seems to exist (at least not without additional control variables):
 
-```{r}
-bf2018a_nh %>%
+```{r, layout="l-body-outset"}
+x_lab = "Child's mid-upper arm circumference (MUAC)"
+legend_lab = str_wrap("Mother received newborn feeding information during antenatal care", 15)
+
+bf2018 %>%
   filter(!is.na(MOMID)) %>%
   rowwise() %>%
-  mutate(MOMINFO = bf2018a_nh$RPFEEDINFO[which(bf2018a_nh$PERSONID == MOMID)]) %>%
+  mutate(MOMINFO = bf2018$RPFEEDINFO[which(bf2018$PERSONID == MOMID)]) %>%
   filter(MOMINFO %in% 0:1 & KIDARMCIRCVAL < 90) %>%
   mutate(MOMINFO = as_factor(MOMINFO)) %>%
   ggplot(aes(KIDARMCIRCVAL, color = MOMINFO, fill = MOMINFO)) +
     geom_density(alpha = 0.2) +
     scale_color_manual(values = c("#00263A", "#98579B")) +
-    scale_fill_manual(values = c("#00263A", "#98579B"))
+    scale_fill_manual(values = c("#00263A", "#98579B")) + 
+    labs(
+      x = x_lab,
+      color = legend_lab,
+      fill = legend_lab
+    )
 ```
 
 Or course, much more could be done to investigate the relationship between antenatal interventions and the growth of young children. Let us know what you uncover by linking mothers to children in the 2018 nutrition data!

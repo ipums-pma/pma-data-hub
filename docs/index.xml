@@ -12,18 +12,31 @@
       <link>https://matt-gunther.github.io/pma-data-hub/</link>
     </image>
     <generator>Distill</generator>
-    <lastBuildDate>Thu, 10 Dec 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 08 Dec 2020 00:00:00 +0000</lastBuildDate>
     <item>
-      <title>Import IPUMS PMA Data into R</title>
+      <title>Linking Maternal and Newborn Records in 2018 Nutrition Surveys</title>
       <dc:creator>Matt Gunther</dc:creator>
-      <link>https://matt-gunther.github.io/pma-data-hub/posts/2020-12-10-get-ipums-pma-data</link>
-      <description>How to download an IPUMS PMA data extract and start using it in R</description>
-      <category>R Tips</category>
-      <category>R Packages</category>
-      <category>Importing Data</category>
-      <guid>https://matt-gunther.github.io/pma-data-hub/posts/2020-12-10-get-ipums-pma-data</guid>
-      <pubDate>Thu, 10 Dec 2020 00:00:00 +0000</pubDate>
-      <media:content url="https://matt-gunther.github.io/pma-data-hub/posts/2020-12-10-get-ipums-pma-data/images/create-data-extract.png" medium="image" type="image/png" width="910" height="790"/>
+      <link>https://matt-gunther.github.io/pma-data-hub/posts/2020-12-08-linking-maternal-and-newborn-records</link>
+      <description>How to build a rowwise function linking children to mothers in the 2018 Nutrition Surveys for Burkina Faso and Kenya.</description>
+      <category>Data Manipulation</category>
+      <category>Nutrition</category>
+      <category>Burkina Faso</category>
+      <category>R</category>
+      <category>purrr</category>
+      <guid>https://matt-gunther.github.io/pma-data-hub/posts/2020-12-08-linking-maternal-and-newborn-records</guid>
+      <pubDate>Tue, 08 Dec 2020 00:00:00 +0000</pubDate>
+      <media:content url="https://matt-gunther.github.io/pma-data-hub/posts/2020-12-08-linking-maternal-and-newborn-records/linking-maternal-and-newborn-records_files/figure-html5/unnamed-chunk-8-1.png" medium="image" type="image/png" width="1248" height="768"/>
+    </item>
+    <item>
+      <title>Locating Dimensions of Women’s Empowerment in Family Planning in Burkina Faso</title>
+      <dc:creator>Tayler Nelson</dc:creator>
+      <link>https://matt-gunther.github.io/pma-data-hub/posts/2020-12-14-womens-empowerment-factor-analysis</link>
+      <description>Use factor analysis to identify groups of attitudes, behaviors, and traits</description>
+      <category>Burkina Faso</category>
+      <category>Factor Analysis</category>
+      <category>Stata</category>
+      <guid>https://matt-gunther.github.io/pma-data-hub/posts/2020-12-14-womens-empowerment-factor-analysis</guid>
+      <pubDate>Fri, 20 Nov 2020 00:00:00 +0000</pubDate>
     </item>
     <item>
       <title>Mapping contraceptive stockouts</title>
@@ -35,29 +48,20 @@
       <category>Contraceptive Stockouts</category>
       <category>Serivce Delivery Points</category>
       <guid>https://matt-gunther.github.io/pma-data-hub/posts/2020-12-09-mapping-contraceptive-stockouts</guid>
-      <pubDate>Wed, 09 Dec 2020 00:00:00 +0000</pubDate>
+      <pubDate>Sun, 15 Nov 2020 00:00:00 +0000</pubDate>
       <media:content url="https://matt-gunther.github.io/pma-data-hub/posts/2020-12-09-mapping-contraceptive-stockouts/images/static-map.png" medium="image" type="image/png" width="574" height="400"/>
     </item>
     <item>
-      <title>Linking Maternal and Newborn Records in 2018 Nutrition Surveys</title>
+      <title>Import IPUMS PMA Data into R</title>
       <dc:creator>Matt Gunther</dc:creator>
-      <link>https://matt-gunther.github.io/pma-data-hub/posts/2020-12-08-linking-maternal-and-newborn-records</link>
-      <description>How to build a rowwise function linking children to mothers in the 2018 Nutrition Surveys for Burkina Faso and Kenya.</description>
-      <category>Data Manipulation</category>
-      <category>Nutrition</category>
-      <guid>https://matt-gunther.github.io/pma-data-hub/posts/2020-12-08-linking-maternal-and-newborn-records</guid>
-      <pubDate>Tue, 08 Dec 2020 00:00:00 +0000</pubDate>
-      <media:content url="https://matt-gunther.github.io/pma-data-hub/posts/2020-12-08-linking-maternal-and-newborn-records/linking-maternal-and-newborn-records_files/figure-html5/unnamed-chunk-8-1.png" medium="image" type="image/png" width="1248" height="768"/>
-    </item>
-    <item>
-      <title>Locating Dimensions of Women’s Empowerment in Family Planning in Burkina Faso</title>
-      <dc:creator>Tayler Nelson</dc:creator>
-      <link>https://matt-gunther.github.io/pma-data-hub/posts/2020-12-14-womens-empowerment-factor-analysis</link>
-      <description>Using factor analysis to identify groups of attitudes, behaviors, and traits</description>
-      <category>Factor Analysis</category>
-      <category>Stata</category>
-      <guid>https://matt-gunther.github.io/pma-data-hub/posts/2020-12-14-womens-empowerment-factor-analysis</guid>
-      <pubDate>Fri, 20 Nov 2020 00:00:00 +0000</pubDate>
+      <link>https://matt-gunther.github.io/pma-data-hub/posts/2020-12-10-get-ipums-pma-data</link>
+      <description>How to download an IPUMS PMA data extract and start using it in R</description>
+      <category>R Tips</category>
+      <category>R Packages</category>
+      <category>Importing Data</category>
+      <guid>https://matt-gunther.github.io/pma-data-hub/posts/2020-12-10-get-ipums-pma-data</guid>
+      <pubDate>Tue, 10 Nov 2020 00:00:00 +0000</pubDate>
+      <media:content url="https://matt-gunther.github.io/pma-data-hub/posts/2020-12-10-get-ipums-pma-data/images/create-data-extract.png" medium="image" type="image/png" width="910" height="790"/>
     </item>
     <item>
       <title>Getting Started with R</title>
