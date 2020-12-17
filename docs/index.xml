@@ -12,7 +12,22 @@
       <link>https://matt-gunther.github.io/pma-data-hub/</link>
     </image>
     <generator>Distill</generator>
-    <lastBuildDate>Tue, 08 Dec 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 17 Dec 2020 00:00:00 +0000</lastBuildDate>
+    <item>
+      <title>Mapping contraceptive stockouts</title>
+      <dc:creator>Matt Gunther</dc:creator>
+      <link>https://matt-gunther.github.io/pma-data-hub/posts/2020-12-09-mapping-contraceptive-stockouts</link>
+      <description>Build an interactive map showing the percentage of service providers reporting a recent stockout of contraceptive methods</description>
+      <category>R</category>
+      <category>Shiny</category>
+      <category>tmap</category>
+      <category>Mapping</category>
+      <category>Contraceptive Stockouts</category>
+      <category>Serivce Delivery Points</category>
+      <guid>https://matt-gunther.github.io/pma-data-hub/posts/2020-12-09-mapping-contraceptive-stockouts</guid>
+      <pubDate>Thu, 17 Dec 2020 00:00:00 +0000</pubDate>
+      <media:content url="https://matt-gunther.github.io/pma-data-hub/posts/2020-12-09-mapping-contraceptive-stockouts/images/static-map.png" medium="image" type="image/png" width="574" height="400"/>
+    </item>
     <item>
       <title>Linking Maternal and Newborn Records in 2018 Nutrition Surveys</title>
       <dc:creator>Matt Gunther</dc:creator>
@@ -37,19 +52,6 @@
       <category>Stata</category>
       <guid>https://matt-gunther.github.io/pma-data-hub/posts/2020-12-14-womens-empowerment-factor-analysis</guid>
       <pubDate>Fri, 20 Nov 2020 00:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>Mapping contraceptive stockouts</title>
-      <dc:creator>Matt Gunther</dc:creator>
-      <link>https://matt-gunther.github.io/pma-data-hub/posts/2020-12-09-mapping-contraceptive-stockouts</link>
-      <description>Build an interactive map showing the percentage of service providers reporting a recent stockout of contraceptive methods</description>
-      <category>Shiny</category>
-      <category>Mapping</category>
-      <category>Contraceptive Stockouts</category>
-      <category>Serivce Delivery Points</category>
-      <guid>https://matt-gunther.github.io/pma-data-hub/posts/2020-12-09-mapping-contraceptive-stockouts</guid>
-      <pubDate>Sun, 15 Nov 2020 00:00:00 +0000</pubDate>
-      <media:content url="https://matt-gunther.github.io/pma-data-hub/posts/2020-12-09-mapping-contraceptive-stockouts/images/static-map.png" medium="image" type="image/png" width="574" height="400"/>
     </item>
     <item>
       <title>Import IPUMS PMA Data into R</title>

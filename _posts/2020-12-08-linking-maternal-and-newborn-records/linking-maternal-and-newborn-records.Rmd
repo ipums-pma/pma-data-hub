@@ -41,17 +41,23 @@ downloadthis::download_file(
 
 The PMA [2018 nutrition survey module for Burkina Faso and Kenya](https://pma.ipums.org/pma/sample_notes.shtml#nut) contains hundreds of indicators measuring diet and nutritional status for women aged 10-49 and children under age 5. In some households, the 2018 survey design included both children and their biological mother, but their relationships are not immediately available in the data. 
 
-This post shows how to write an R function that will link child and maternal records, provided that both mother and child were surveyed. These links may be particularly useful for researchers studying the effectiveness of different antenatal interventions on early childhood nutrition. For example, (insert analysis plan here).
+This post shows how to write an R function that will link child and maternal records, provided that both mother and child were surveyed. These links may be particularly useful for researchers studying the effectiveness of different antenatal interventions on early childhood nutrition. 
+
+For example, we'll examine a variable [`RPFEEDINFO`](https://pma.ipums.org/pma-action/variables/rpfeedinfo) that asked mothers whether they ever received information about how to feed their newborn during an antenatal care visit for their recent pregnancy. This information is stored only in the row containing the mother's record, but - if we can successfully link a mother to her child - we'll then attach it to the row containing the child's record. Then, we'll be able to compare it with a measure of the now-living child's growth [`KIDARMCIRCVAL`](https://pma.ipums.org/pma-action/variables/kidarmcircval) to see whether children whose mother received the antenatal intervention have fared better in the first years of life.
+
+<aside>
+This question was posed only to mothers who gave birth within the last <strong>2 years</strong> and received some type of antenatal care during that pregnancy. As a result, we'll restrict our analysis to the children under age 2 that we're able to link to a maternal record. 
+</aside>
 
 ## Setup
 
-To run the code in this post, you'll need the [tidyverse package](https://tidyverse.tidyverse.org/) from CRAN. See our post [Installing and Loading Useful R Packages](getPackages.html) for help.
+To run the code in this post, you'll need the [tidyverse package](https://tidyverse.tidyverse.org/) from CRAN. See our post [Installing and Loading Useful R Packages](../2020-12-10-get-r-and-packages/index.html#r-packages) for help.
 
 ```{r}
 library(tidyverse)
 ```
 
-To keep things simple, we'll focus on 2018 Nutrition data from Burkina Faso, which you can download at [pma.ipums.org](https://pma.ipums.org/pma-action/variables/group). See our post [Downloading an IPUMS Extract for R](getData.html) for help.
+To keep things simple, we'll focus on 2018 Nutrition data from Burkina Faso, which you can download at [pma.ipums.org](https://pma.ipums.org/pma-action/variables/group). See our post [Downloading an IPUMS Extract for R](../2020-12-10-get-ipums-pma-data/index.html) for help.
 
 ```{r, eval=F}
 bf2018 <- ipumsr::read_ipums_micro(
@@ -185,31 +191,29 @@ However, *these additional 283 cases should be used with some degree of caution*
 
 ## Analysis
 
-Suppose a researcher wanted to learn whether newborn feeding information given to mothers by health providers seems to have an impact on the nutrition and growth of young children. 
+Now that we've linked as many children as possible to their mother's records, we can create a new variable `MOMINFO` on the child's record indicating whether their mother received newborn feeding information as a part of antenatal care during the pregnancy. We'll get this information from `RPFEEDINFO` on the mother's record.
 
-Now that we've linked as many children as possible to their mother's records, we could create a variable `MOMINFO` indicating whether the mother ever received newborn feeding information from a health provider or community health worker during her most recent pregnancy. 
-
-We could then take each child's mid-upper arm circumference (MUAC) [`KIDARMCIRCVAL`](https://pma.ipums.org/pma-action/variables/KIDARMCIRCVAL) as a simple proxy measure for growth and nutrition. Comparing children whose mothers received newborn feeding information to those whose mothers received none, no real difference seems to exist (at least not without additional control variables):
+We'll then take each child's mid-upper arm circumference `KIDARMCIRCVAL` as a simple proxy measure for growth and nutrition. Comparing children whose mothers received newborn feeding information to those whose mothers received none, no real difference seems to exist (at least not without additional control variables):
 
 ```{r, layout="l-body-outset"}
-x_lab = "Child's mid-upper arm circumference (MUAC)"
-legend_lab = str_wrap("Mother received newborn feeding information during antenatal care", 15)
+x_lab <- "Child's mid-upper arm circumference (MUAC)"
+
+legend_lab <- str_wrap(
+  "Mother received newborn feeding information during antenatal care", 
+  15
+)
 
 bf2018 %>%
   filter(!is.na(MOMID)) %>%
   rowwise() %>%
-  mutate(MOMINFO = bf2018$RPFEEDINFO[which(bf2018$PERSONID == MOMID)]) %>%
+  mutate(MOMINFO = bf2018$RPFEEDINFO[which(bf2018$PERSONID == MOMID)]) %>% 
   filter(MOMINFO %in% 0:1 & KIDARMCIRCVAL < 90) %>%
   mutate(MOMINFO = as_factor(MOMINFO)) %>%
   ggplot(aes(KIDARMCIRCVAL, color = MOMINFO, fill = MOMINFO)) +
     geom_density(alpha = 0.2) +
     scale_color_manual(values = c("#00263A", "#98579B")) +
     scale_fill_manual(values = c("#00263A", "#98579B")) + 
-    labs(
-      x = x_lab,
-      color = legend_lab,
-      fill = legend_lab
-    )
+    labs(x = x_lab, color = legend_lab, fill = legend_lab)
 ```
 
 Or course, much more could be done to investigate the relationship between antenatal interventions and the growth of young children. Let us know what you uncover by linking mothers to children in the 2018 nutrition data!
