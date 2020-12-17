@@ -23,10 +23,18 @@ preview: images/static-map.png
 slug: ShinyMapDemo
 ---
 
+```{r download_button, echo=F}
+downloadthis::download_file(
+  path = "./mapping-contraceptive-stockouts.Rmd",
+  button_label = "Download this page as R code",
+  button_type = "default",
+  has_icon = T,
+  icon = "fa fa-save"
+)
+```
 ```{r setup, include=F}
 knitr::opts_chunk$set(echo = T, eval = F, message = F)
 ```
-
 
 # Contraceptive Stockouts
 
