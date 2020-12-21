@@ -1,5 +1,5 @@
 name: "pma-data-hub"
-title: "PMA Data Analysis Hub"
+title: "Data Analysis Hub"
 description: |
   A blog about PMA data
 output_dir: "docs"
