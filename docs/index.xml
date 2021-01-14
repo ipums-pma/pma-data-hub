@@ -12,7 +12,22 @@
       <link>https://matt-gunther.github.io/pma-data-hub/</link>
     </image>
     <generator>Distill</generator>
-    <lastBuildDate>Thu, 17 Dec 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 07 Jan 2021 00:00:00 +0000</lastBuildDate>
+    <item>
+      <title>Merging Service Delivery Point Data to Household &amp; Female Records</title>
+      <dc:creator>Matt Gunther</dc:creator>
+      <link>https://matt-gunther.github.io/pma-data-hub/posts/2020-12-30-ea-service-environment</link>
+      <description>Create aggregate measures that capture the family planning service environment experienced by inviduals</description>
+      <category>Individual in Context</category>
+      <category>Serivce Delivery Points</category>
+      <category>tidyr::pivot_longer</category>
+      <category>purrr::map</category>
+      <category>dplyr::across</category>
+      <category>ipumsr::lbl_relabel</category>
+      <category>ipumsr::lbl_na_if</category>
+      <guid>https://matt-gunther.github.io/pma-data-hub/posts/2020-12-30-ea-service-environment</guid>
+      <pubDate>Thu, 07 Jan 2021 00:00:00 +0000</pubDate>
+    </item>
     <item>
       <title>Mapping contraceptive stockouts</title>
       <dc:creator>Matt Gunther</dc:creator>
