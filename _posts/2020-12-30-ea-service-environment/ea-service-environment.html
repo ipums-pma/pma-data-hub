@@ -1,0 +1,2311 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1"/>
+  <meta name="generator" content="distill" />
+
+  <style type="text/css">
+  /* Hide doc at startup (prevent jankiness while JS renders/transforms) */
+  body {
+    visibility: hidden;
+  }
+  </style>
+
+ <!--radix_placeholder_import_source-->
+ <!--/radix_placeholder_import_source-->
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css" data-origin="pandoc">
+code.sourceCode > span { display: inline-block; line-height: 1.25; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ad0000; } /* Alert */
+code span.an { color: #5e5e5e; } /* Annotation */
+code span.at { color: #20794d; } /* Attribute */
+code span.bn { color: #ad0000; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007ba5; } /* ControlFlow */
+code span.ch { color: #20794d; } /* Char */
+code span.cn { color: #8f5902; } /* Constant */
+code span.co { color: #5e5e5e; } /* Comment */
+code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
+code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
+code span.dt { color: #ad0000; } /* DataType */
+code span.dv { color: #ad0000; } /* DecVal */
+code span.er { color: #ad0000; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #ad0000; } /* Float */
+code span.fu { color: #4758ab; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #5e5e5e; } /* Information */
+code span.kw { color: #007ba5; } /* Keyword */
+code span.op { color: #5e5e5e; } /* Operator */
+code span.ot { color: #007ba5; } /* Other */
+code span.pp { color: #ad0000; } /* Preprocessor */
+code span.sc { color: #20794d; } /* SpecialChar */
+code span.ss { color: #20794d; } /* SpecialString */
+code span.st { color: #20794d; } /* String */
+code span.va { color: #111111; } /* Variable */
+code span.vs { color: #20794d; } /* VerbatimString */
+code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
+</style>
+
+  <!--radix_placeholder_meta_tags-->
+  <title>Merging Service Delivery Point Data to Household &amp; Female Records</title>
+  
+  <meta property="description" itemprop="description" content="Create aggregate measures that capture the family planning service environment experienced by inviduals"/>
+  
+  
+  <!--  https://schema.org/Article -->
+  <meta property="article:published" itemprop="datePublished" content="2021-01-07"/>
+  <meta property="article:created" itemprop="dateCreated" content="2021-01-07"/>
+  <meta name="article:author" content="Matt Gunther"/>
+  
+  <!--  https://developers.facebook.com/docs/sharing/webmasters#markup -->
+  <meta property="og:title" content="Merging Service Delivery Point Data to Household &amp; Female Records"/>
+  <meta property="og:type" content="article"/>
+  <meta property="og:description" content="Create aggregate measures that capture the family planning service environment experienced by inviduals"/>
+  <meta property="og:locale" content="en_US"/>
+  
+  <!--  https://dev.twitter.com/cards/types/summary -->
+  <meta property="twitter:card" content="summary"/>
+  <meta property="twitter:title" content="Merging Service Delivery Point Data to Household &amp; Female Records"/>
+  <meta property="twitter:description" content="Create aggregate measures that capture the family planning service environment experienced by inviduals"/>
+  
+  <!--/radix_placeholder_meta_tags-->
+  <!--radix_placeholder_rmarkdown_metadata-->
+  
+  <script type="text/json" id="radix-rmarkdown-metadata">
+  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","author","categories","date","output","draft"]}},"value":[{"type":"character","attributes":{},"value":["Merging Service Delivery Point Data to Household & Female Records"]},{"type":"character","attributes":{},"value":["Create aggregate measures that capture the family planning service environment experienced by inviduals \n"]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","affiliation"]}},"value":[{"type":"character","attributes":{},"value":["Matt Gunther"]},{"type":"character","attributes":{},"value":["IPUMS PMA Senior Data Analyst"]}]}]},{"type":"character","attributes":{},"value":["Individual in Context","Serivce Delivery Points","tidyr::pivot_longer","purrr::map","dplyr::across","ipumsr::lbl_relabel","ipumsr::lbl_na_if"]},{"type":"character","attributes":{},"value":["01-07-2021"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained","toc","toc_depth","toc_float"]}},"value":[{"type":"logical","attributes":{},"value":[false]},{"type":"logical","attributes":{},"value":[true]},{"type":"integer","attributes":{},"value":[3]},{"type":"logical","attributes":{},"value":[true]}]}]},{"type":"logical","attributes":{},"value":[true]}]}
+  </script>
+  <!--/radix_placeholder_rmarkdown_metadata-->
+  
+  <script type="text/json" id="radix-resource-manifest">
+  {"type":"character","attributes":{},"value":["data/pma_00008.dat.gz","data/pma_00008.xml","data/pma_00009.dat.gz","data/pma_00009.xml","data/pma_00011.dat.gz","data/pma_00011.xml","ea-service-environment_files/anchor-4.2.2/anchor.min.js","ea-service-environment_files/bowser-1.9.3/bowser.min.js","ea-service-environment_files/distill-2.2.21/template.v2.js","ea-service-environment_files/font-awesome-5.13.0/css/all.min.css","ea-service-environment_files/font-awesome-5.13.0/css/v4-shims.min.css","ea-service-environment_files/font-awesome-5.13.0/js/script.js","ea-service-environment_files/font-awesome-5.13.0/webfonts/fa-brands-400.eot","ea-service-environment_files/font-awesome-5.13.0/webfonts/fa-brands-400.svg","ea-service-environment_files/font-awesome-5.13.0/webfonts/fa-brands-400.ttf","ea-service-environment_files/font-awesome-5.13.0/webfonts/fa-brands-400.woff","ea-service-environment_files/font-awesome-5.13.0/webfonts/fa-brands-400.woff2","ea-service-environment_files/font-awesome-5.13.0/webfonts/fa-regular-400.eot","ea-service-environment_files/font-awesome-5.13.0/webfonts/fa-regular-400.svg","ea-service-environment_files/font-awesome-5.13.0/webfonts/fa-regular-400.ttf","ea-service-environment_files/font-awesome-5.13.0/webfonts/fa-regular-400.woff","ea-service-environment_files/font-awesome-5.13.0/webfonts/fa-regular-400.woff2","ea-service-environment_files/font-awesome-5.13.0/webfonts/fa-solid-900.eot","ea-service-environment_files/font-awesome-5.13.0/webfonts/fa-solid-900.svg","ea-service-environment_files/font-awesome-5.13.0/webfonts/fa-solid-900.ttf","ea-service-environment_files/font-awesome-5.13.0/webfonts/fa-solid-900.woff","ea-service-environment_files/font-awesome-5.13.0/webfonts/fa-solid-900.woff2","ea-service-environment_files/jquery-1.11.3/jquery.min.js","ea-service-environment_files/webcomponents-2.0.0/webcomponents.js"]}
+  </script>
+  <!--radix_placeholder_navigation_in_header-->
+  <!--/radix_placeholder_navigation_in_header-->
+  <!--radix_placeholder_distill-->
+  
+  <style type="text/css">
+  
+  body {
+    background-color: white;
+  }
+  
+  .pandoc-table {
+    width: 100%;
+  }
+  
+  .pandoc-table>caption {
+    margin-bottom: 10px;
+  }
+  
+  .pandoc-table th:not([align]) {
+    text-align: left;
+  }
+  
+  .pagedtable-footer {
+    font-size: 15px;
+  }
+  
+  d-byline .byline {
+    grid-template-columns: 2fr 2fr;
+  }
+  
+  d-byline .byline h3 {
+    margin-block-start: 1.5em;
+  }
+  
+  d-byline .byline .authors-affiliations h3 {
+    margin-block-start: 0.5em;
+  }
+  
+  .authors-affiliations .orcid-id {
+    width: 16px;
+    height:16px;
+    margin-left: 4px;
+    margin-right: 4px;
+    vertical-align: middle;
+    padding-bottom: 2px;
+  }
+  
+  d-title .dt-tags {
+    margin-top: 1em;
+    grid-column: text;
+  }
+  
+  .dt-tags .dt-tag {
+    text-decoration: none;
+    display: inline-block;
+    color: rgba(0,0,0,0.6);
+    padding: 0em 0.4em;
+    margin-right: 0.5em;
+    margin-bottom: 0.4em;
+    font-size: 70%;
+    border: 1px solid rgba(0,0,0,0.2);
+    border-radius: 3px;
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+  
+  d-article table.gt_table td,
+  d-article table.gt_table th {
+    border-bottom: none;
+  }
+  
+  .html-widget {
+    margin-bottom: 2.0em;
+  }
+  
+  .l-screen-inset {
+    padding-right: 16px;
+  }
+  
+  .l-screen .caption {
+    margin-left: 10px;
+  }
+  
+  .shaded {
+    background: rgb(247, 247, 247);
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  }
+  
+  .shaded .html-widget {
+    margin-bottom: 0;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+  }
+  
+  .shaded .shaded-content {
+    background: white;
+  }
+  
+  .text-output {
+    margin-top: 0;
+    line-height: 1.5em;
+  }
+  
+  .hidden {
+    display: none !important;
+  }
+  
+  d-article {
+    padding-top: 2.5rem;
+    padding-bottom: 30px;
+  }
+  
+  d-appendix {
+    padding-top: 30px;
+  }
+  
+  d-article>p>img {
+    width: 100%;
+  }
+  
+  d-article h2 {
+    margin: 1rem 0 1.5rem 0;
+  }
+  
+  d-article h3 {
+    margin-top: 1.5rem;
+  }
+  
+  d-article iframe {
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    margin-bottom: 2.0em;
+    width: 100%;
+  }
+  
+  /* Tweak code blocks */
+  
+  d-article div.sourceCode code,
+  d-article pre code {
+    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  }
+  
+  d-article pre,
+  d-article div.sourceCode,
+  d-article div.sourceCode pre {
+    overflow: auto;
+  }
+  
+  d-article div.sourceCode {
+    background-color: white;
+  }
+  
+  d-article div.sourceCode pre {
+    padding-left: 10px;
+    font-size: 12px;
+    border-left: 2px solid rgba(0,0,0,0.1);
+  }
+  
+  d-article pre {
+    font-size: 12px;
+    color: black;
+    background: none;
+    margin-top: 0;
+    text-align: left;
+    white-space: pre;
+    word-spacing: normal;
+    word-break: normal;
+    word-wrap: normal;
+    line-height: 1.5;
+  
+    -moz-tab-size: 4;
+    -o-tab-size: 4;
+    tab-size: 4;
+  
+    -webkit-hyphens: none;
+    -moz-hyphens: none;
+    -ms-hyphens: none;
+    hyphens: none;
+  }
+  
+  d-article pre a {
+    border-bottom: none;
+  }
+  
+  d-article pre a:hover {
+    border-bottom: none;
+    text-decoration: underline;
+  }
+  
+  @media(min-width: 768px) {
+  
+  d-article pre,
+  d-article div.sourceCode,
+  d-article div.sourceCode pre {
+    overflow: visible !important;
+  }
+  
+  d-article div.sourceCode pre {
+    padding-left: 18px;
+    font-size: 14px;
+  }
+  
+  d-article pre {
+    font-size: 14px;
+  }
+  
+  }
+  
+  figure img.external {
+    background: white;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0 1px 8px rgba(0, 0, 0, 0.1);
+    padding: 18px;
+    box-sizing: border-box;
+  }
+  
+  /* CSS for d-contents */
+  
+  .d-contents {
+    grid-column: text;
+    color: rgba(0,0,0,0.8);
+    font-size: 0.9em;
+    padding-bottom: 1em;
+    margin-bottom: 1em;
+    padding-bottom: 0.5em;
+    margin-bottom: 1em;
+    padding-left: 0.25em;
+    justify-self: start;
+  }
+  
+  @media(min-width: 1000px) {
+    .d-contents.d-contents-float {
+      height: 0;
+      grid-column-start: 1;
+      grid-column-end: 4;
+      justify-self: center;
+      padding-right: 3em;
+      padding-left: 2em;
+    }
+  }
+  
+  .d-contents nav h3 {
+    font-size: 18px;
+    margin-top: 0;
+    margin-bottom: 1em;
+  }
+  
+  .d-contents li {
+    list-style-type: none
+  }
+  
+  .d-contents nav > ul {
+    padding-left: 0;
+  }
+  
+  .d-contents ul {
+    padding-left: 1em
+  }
+  
+  .d-contents nav ul li {
+    margin-top: 0.6em;
+    margin-bottom: 0.2em;
+  }
+  
+  .d-contents nav a {
+    font-size: 13px;
+    border-bottom: none;
+    text-decoration: none
+    color: rgba(0, 0, 0, 0.8);
+  }
+  
+  .d-contents nav a:hover {
+    text-decoration: underline solid rgba(0, 0, 0, 0.6)
+  }
+  
+  .d-contents nav > ul > li > a {
+    font-weight: 600;
+  }
+  
+  .d-contents nav > ul > li > ul {
+    font-weight: inherit;
+  }
+  
+  .d-contents nav > ul > li > ul > li {
+    margin-top: 0.2em;
+  }
+  
+  
+  .d-contents nav ul {
+    margin-top: 0;
+    margin-bottom: 0.25em;
+  }
+  
+  .d-article-with-toc h2:nth-child(2) {
+    margin-top: 0;
+  }
+  
+  
+  /* Figure */
+  
+  .figure {
+    position: relative;
+    margin-bottom: 2.5em;
+    margin-top: 1.5em;
+  }
+  
+  .figure img {
+    width: 100%;
+  }
+  
+  .figure .caption {
+    color: rgba(0, 0, 0, 0.6);
+    font-size: 12px;
+    line-height: 1.5em;
+  }
+  
+  .figure img.external {
+    background: white;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0 1px 8px rgba(0, 0, 0, 0.1);
+    padding: 18px;
+    box-sizing: border-box;
+  }
+  
+  .figure .caption a {
+    color: rgba(0, 0, 0, 0.6);
+  }
+  
+  .figure .caption b,
+  .figure .caption strong, {
+    font-weight: 600;
+    color: rgba(0, 0, 0, 1.0);
+  }
+  
+  /* Citations */
+  
+  d-article .citation {
+    color: inherit;
+    cursor: inherit;
+  }
+  
+  div.hanging-indent{
+    margin-left: 1em; text-indent: -1em;
+  }
+  
+  
+  /* Tweak 1000px media break to show more text */
+  
+  @media(min-width: 1000px) {
+    .base-grid,
+    distill-header,
+    d-title,
+    d-abstract,
+    d-article,
+    d-appendix,
+    distill-appendix,
+    d-byline,
+    d-footnote-list,
+    d-citation-list,
+    distill-footer {
+      grid-template-columns: [screen-start] 1fr [page-start kicker-start] 80px [middle-start] 50px [text-start kicker-end] 65px 65px 65px 65px 65px 65px 65px 65px [text-end gutter-start] 65px [middle-end] 65px [page-end gutter-end] 1fr [screen-end];
+      grid-column-gap: 16px;
+    }
+  
+    .grid {
+      grid-column-gap: 16px;
+    }
+  
+    d-article {
+      font-size: 1.06rem;
+      line-height: 1.7em;
+    }
+    figure .caption, .figure .caption, figure figcaption {
+      font-size: 13px;
+    }
+  }
+  
+  @media(min-width: 1180px) {
+    .base-grid,
+    distill-header,
+    d-title,
+    d-abstract,
+    d-article,
+    d-appendix,
+    distill-appendix,
+    d-byline,
+    d-footnote-list,
+    d-citation-list,
+    distill-footer {
+      grid-template-columns: [screen-start] 1fr [page-start kicker-start] 60px [middle-start] 60px [text-start kicker-end] 60px 60px 60px 60px 60px 60px 60px 60px [text-end gutter-start] 60px [middle-end] 60px [page-end gutter-end] 1fr [screen-end];
+      grid-column-gap: 32px;
+    }
+  
+    .grid {
+      grid-column-gap: 32px;
+    }
+  }
+  
+  
+  /* Get the citation styles for the appendix (not auto-injected on render since
+     we do our own rendering of the citation appendix) */
+  
+  d-appendix .citation-appendix,
+  .d-appendix .citation-appendix {
+    font-size: 11px;
+    line-height: 15px;
+    border-left: 1px solid rgba(0, 0, 0, 0.1);
+    padding-left: 18px;
+    border: 1px solid rgba(0,0,0,0.1);
+    background: rgba(0, 0, 0, 0.02);
+    padding: 10px 18px;
+    border-radius: 3px;
+    color: rgba(150, 150, 150, 1);
+    overflow: hidden;
+    margin-top: -12px;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+  }
+  
+  /* Include appendix styles here so they can be overridden */
+  
+  d-appendix {
+    contain: layout style;
+    font-size: 0.8em;
+    line-height: 1.7em;
+    margin-top: 60px;
+    margin-bottom: 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    color: rgba(0,0,0,0.5);
+    padding-top: 60px;
+    padding-bottom: 48px;
+  }
+  
+  d-appendix h3 {
+    grid-column: page-start / text-start;
+    font-size: 15px;
+    font-weight: 500;
+    margin-top: 1em;
+    margin-bottom: 0;
+    color: rgba(0,0,0,0.65);
+  }
+  
+  d-appendix h3 + * {
+    margin-top: 1em;
+  }
+  
+  d-appendix ol {
+    padding: 0 0 0 15px;
+  }
+  
+  @media (min-width: 768px) {
+    d-appendix ol {
+      padding: 0 0 0 30px;
+      margin-left: -30px;
+    }
+  }
+  
+  d-appendix li {
+    margin-bottom: 1em;
+  }
+  
+  d-appendix a {
+    color: rgba(0, 0, 0, 0.6);
+  }
+  
+  d-appendix > * {
+    grid-column: text;
+  }
+  
+  d-appendix > d-footnote-list,
+  d-appendix > d-citation-list,
+  d-appendix > distill-appendix {
+    grid-column: screen;
+  }
+  
+  /* Include footnote styles here so they can be overridden */
+  
+  d-footnote-list {
+    contain: layout style;
+  }
+  
+  d-footnote-list > * {
+    grid-column: text;
+  }
+  
+  d-footnote-list a.footnote-backlink {
+    color: rgba(0,0,0,0.3);
+    padding-left: 0.5em;
+  }
+  
+  
+  
+  /* Anchor.js */
+  
+  .anchorjs-link {
+    /*transition: all .25s linear; */
+    text-decoration: none;
+    border-bottom: none;
+  }
+  *:hover > .anchorjs-link {
+    margin-left: -1.125em !important;
+    text-decoration: none;
+    border-bottom: none;
+  }
+  
+  /* Social footer */
+  
+  .social_footer {
+    margin-top: 30px;
+    margin-bottom: 0;
+    color: rgba(0,0,0,0.67);
+  }
+  
+  .disqus-comments {
+    margin-right: 30px;
+  }
+  
+  .disqus-comment-count {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+    cursor: pointer;
+  }
+  
+  #disqus_thread {
+    margin-top: 30px;
+  }
+  
+  .article-sharing a {
+    border-bottom: none;
+    margin-right: 8px;
+  }
+  
+  .article-sharing a:hover {
+    border-bottom: none;
+  }
+  
+  .sidebar-section.subscribe {
+    font-size: 12px;
+    line-height: 1.6em;
+  }
+  
+  .subscribe p {
+    margin-bottom: 0.5em;
+  }
+  
+  
+  .article-footer .subscribe {
+    font-size: 15px;
+    margin-top: 45px;
+  }
+  
+  
+  .sidebar-section.custom {
+    font-size: 12px;
+    line-height: 1.6em;
+  }
+  
+  .custom p {
+    margin-bottom: 0.5em;
+  }
+  
+  /* Styles for listing layout (hide title) */
+  .layout-listing d-title, .layout-listing .d-title {
+    display: none;
+  }
+  
+  /* Styles for posts lists (not auto-injected) */
+  
+  
+  .posts-with-sidebar {
+    padding-left: 45px;
+    padding-right: 45px;
+  }
+  
+  .posts-list .description h2,
+  .posts-list .description p {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif;
+  }
+  
+  .posts-list .description h2 {
+    font-weight: 700;
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+  
+  .posts-list h2.post-tag {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    padding-bottom: 12px;
+  }
+  .posts-list {
+    margin-top: 60px;
+    margin-bottom: 24px;
+  }
+  
+  .posts-list .post-preview {
+    text-decoration: none;
+    overflow: hidden;
+    display: block;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    padding: 24px 0;
+  }
+  
+  .post-preview-last {
+    border-bottom: none !important;
+  }
+  
+  .posts-list .posts-list-caption {
+    grid-column: screen;
+    font-weight: 400;
+  }
+  
+  .posts-list .post-preview h2 {
+    margin: 0 0 6px 0;
+    line-height: 1.2em;
+    font-style: normal;
+    font-size: 24px;
+  }
+  
+  .posts-list .post-preview p {
+    margin: 0 0 12px 0;
+    line-height: 1.4em;
+    font-size: 16px;
+  }
+  
+  .posts-list .post-preview .thumbnail {
+    box-sizing: border-box;
+    margin-bottom: 24px;
+    position: relative;
+    max-width: 500px;
+  }
+  .posts-list .post-preview img {
+    width: 100%;
+    display: block;
+  }
+  
+  .posts-list .metadata {
+    font-size: 12px;
+    line-height: 1.4em;
+    margin-bottom: 18px;
+  }
+  
+  .posts-list .metadata > * {
+    display: inline-block;
+  }
+  
+  .posts-list .metadata .publishedDate {
+    margin-right: 2em;
+  }
+  
+  .posts-list .metadata .dt-authors {
+    display: block;
+    margin-top: 0.3em;
+    margin-right: 2em;
+  }
+  
+  .posts-list .dt-tags {
+    display: block;
+    line-height: 1em;
+  }
+  
+  .posts-list .dt-tags .dt-tag {
+    display: inline-block;
+    color: rgba(0,0,0,0.6);
+    padding: 0.3em 0.4em;
+    margin-right: 0.2em;
+    margin-bottom: 0.4em;
+    font-size: 60%;
+    border: 1px solid rgba(0,0,0,0.2);
+    border-radius: 3px;
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+  
+  .posts-list img {
+    opacity: 1;
+  }
+  
+  .posts-list img[data-src] {
+    opacity: 0;
+  }
+  
+  .posts-more {
+    clear: both;
+  }
+  
+  
+  .posts-sidebar {
+    font-size: 16px;
+  }
+  
+  .posts-sidebar h3 {
+    font-size: 16px;
+    margin-top: 0;
+    margin-bottom: 0.5em;
+    font-weight: 400;
+    text-transform: uppercase;
+  }
+  
+  .sidebar-section {
+    margin-bottom: 30px;
+  }
+  
+  .categories ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .categories li {
+    color: rgba(0, 0, 0, 0.8);
+    margin-bottom: 0;
+  }
+  
+  .categories li>a {
+    border-bottom: none;
+  }
+  
+  .categories li>a:hover {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+  }
+  
+  .categories .active {
+    font-weight: 600;
+  }
+  
+  .categories .category-count {
+    color: rgba(0, 0, 0, 0.4);
+  }
+  
+  
+  @media(min-width: 768px) {
+    .posts-list .post-preview h2 {
+      font-size: 26px;
+    }
+    .posts-list .post-preview .thumbnail {
+      float: right;
+      width: 30%;
+      margin-bottom: 0;
+    }
+    .posts-list .post-preview .description {
+      float: left;
+      width: 45%;
+    }
+    .posts-list .post-preview .metadata {
+      float: left;
+      width: 20%;
+      margin-top: 8px;
+    }
+    .posts-list .post-preview p {
+      margin: 0 0 12px 0;
+      line-height: 1.5em;
+      font-size: 16px;
+    }
+    .posts-with-sidebar .posts-list {
+      float: left;
+      width: 75%;
+    }
+    .posts-with-sidebar .posts-sidebar {
+      float: right;
+      width: 20%;
+      margin-top: 60px;
+      padding-top: 24px;
+      padding-bottom: 24px;
+    }
+  }
+  
+  
+  /* Improve display for browsers without grid (IE/Edge <= 15) */
+  
+  .downlevel {
+    line-height: 1.6em;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif;
+    margin: 0;
+  }
+  
+  .downlevel .d-title {
+    padding-top: 6rem;
+    padding-bottom: 1.5rem;
+  }
+  
+  .downlevel .d-title h1 {
+    font-size: 50px;
+    font-weight: 700;
+    line-height: 1.1em;
+    margin: 0 0 0.5rem;
+  }
+  
+  .downlevel .d-title p {
+    font-weight: 300;
+    font-size: 1.2rem;
+    line-height: 1.55em;
+    margin-top: 0;
+  }
+  
+  .downlevel .d-byline {
+    padding-top: 0.8em;
+    padding-bottom: 0.8em;
+    font-size: 0.8rem;
+    line-height: 1.8em;
+  }
+  
+  .downlevel .section-separator {
+    border: none;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+  }
+  
+  .downlevel .d-article {
+    font-size: 1.06rem;
+    line-height: 1.7em;
+    padding-top: 1rem;
+    padding-bottom: 2rem;
+  }
+  
+  
+  .downlevel .d-appendix {
+    padding-left: 0;
+    padding-right: 0;
+    max-width: none;
+    font-size: 0.8em;
+    line-height: 1.7em;
+    margin-bottom: 0;
+    color: rgba(0,0,0,0.5);
+    padding-top: 40px;
+    padding-bottom: 48px;
+  }
+  
+  .downlevel .footnotes ol {
+    padding-left: 13px;
+  }
+  
+  .downlevel .base-grid,
+  .downlevel .distill-header,
+  .downlevel .d-title,
+  .downlevel .d-abstract,
+  .downlevel .d-article,
+  .downlevel .d-appendix,
+  .downlevel .distill-appendix,
+  .downlevel .d-byline,
+  .downlevel .d-footnote-list,
+  .downlevel .d-citation-list,
+  .downlevel .distill-footer,
+  .downlevel .appendix-bottom,
+  .downlevel .posts-container {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+  
+  @media(min-width: 768px) {
+    .downlevel .base-grid,
+    .downlevel .distill-header,
+    .downlevel .d-title,
+    .downlevel .d-abstract,
+    .downlevel .d-article,
+    .downlevel .d-appendix,
+    .downlevel .distill-appendix,
+    .downlevel .d-byline,
+    .downlevel .d-footnote-list,
+    .downlevel .d-citation-list,
+    .downlevel .distill-footer,
+    .downlevel .appendix-bottom,
+    .downlevel .posts-container {
+    padding-left: 150px;
+    padding-right: 150px;
+    max-width: 900px;
+  }
+  }
+  
+  .downlevel pre code {
+    display: block;
+    border-left: 2px solid rgba(0, 0, 0, .1);
+    padding: 0 0 0 20px;
+    font-size: 14px;
+  }
+  
+  .downlevel code, .downlevel pre {
+    color: black;
+    background: none;
+    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+    text-align: left;
+    white-space: pre;
+    word-spacing: normal;
+    word-break: normal;
+    word-wrap: normal;
+    line-height: 1.5;
+  
+    -moz-tab-size: 4;
+    -o-tab-size: 4;
+    tab-size: 4;
+  
+    -webkit-hyphens: none;
+    -moz-hyphens: none;
+    -ms-hyphens: none;
+    hyphens: none;
+  }
+  
+  .downlevel .posts-list .post-preview {
+    color: inherit;
+  }
+  
+  
+  
+  </style>
+  
+  <script type="application/javascript">
+  
+  function is_downlevel_browser() {
+    if (bowser.isUnsupportedBrowser({ msie: "12", msedge: "16"},
+                                   window.navigator.userAgent)) {
+      return true;
+    } else {
+      return window.load_distill_framework === undefined;
+    }
+  }
+  
+  // show body when load is complete
+  function on_load_complete() {
+  
+    // add anchors
+    if (window.anchors) {
+      window.anchors.options.placement = 'left';
+      window.anchors.add('d-article > h2, d-article > h3, d-article > h4, d-article > h5');
+    }
+  
+  
+    // set body to visible
+    document.body.style.visibility = 'visible';
+  
+    // force redraw for leaflet widgets
+    if (window.HTMLWidgets) {
+      var maps = window.HTMLWidgets.findAll(".leaflet");
+      $.each(maps, function(i, el) {
+        var map = this.getMap();
+        map.invalidateSize();
+        map.eachLayer(function(layer) {
+          if (layer instanceof L.TileLayer)
+            layer.redraw();
+        });
+      });
+    }
+  
+    // trigger 'shown' so htmlwidgets resize
+    $('d-article').trigger('shown');
+  }
+  
+  function init_distill() {
+  
+    init_common();
+  
+    // create front matter
+    var front_matter = $('<d-front-matter></d-front-matter>');
+    $('#distill-front-matter').wrap(front_matter);
+  
+    // create d-title
+    $('.d-title').changeElementType('d-title');
+  
+    // create d-byline
+    var byline = $('<d-byline></d-byline>');
+    $('.d-byline').replaceWith(byline);
+  
+    // create d-article
+    var article = $('<d-article></d-article>');
+    $('.d-article').wrap(article).children().unwrap();
+  
+    // move posts container into article
+    $('.posts-container').appendTo($('d-article'));
+  
+    // create d-appendix
+    $('.d-appendix').changeElementType('d-appendix');
+  
+    // flag indicating that we have appendix items
+    var appendix = $('.appendix-bottom').children('h3').length > 0;
+  
+    // replace footnotes with <d-footnote>
+    $('.footnote-ref').each(function(i, val) {
+      appendix = true;
+      var href = $(this).attr('href');
+      var id = href.replace('#', '');
+      var fn = $('#' + id);
+      var fn_p = $('#' + id + '>p');
+      fn_p.find('.footnote-back').remove();
+      var text = fn_p.html();
+      var dtfn = $('<d-footnote></d-footnote>');
+      dtfn.html(text);
+      $(this).replaceWith(dtfn);
+    });
+    // remove footnotes
+    $('.footnotes').remove();
+  
+    // move refs into #references-listing
+    $('#references-listing').replaceWith($('#refs'));
+  
+    $('h1.appendix, h2.appendix').each(function(i, val) {
+      $(this).changeElementType('h3');
+    });
+    $('h3.appendix').each(function(i, val) {
+      var id = $(this).attr('id');
+      $('.d-contents a[href="#' + id + '"]').parent().remove();
+      appendix = true;
+      $(this).nextUntil($('h1, h2, h3')).addBack().appendTo($('d-appendix'));
+    });
+  
+    // show d-appendix if we have appendix content
+    $("d-appendix").css('display', appendix ? 'grid' : 'none');
+  
+    // localize layout chunks to just output
+    $('.layout-chunk').each(function(i, val) {
+  
+      // capture layout
+      var layout = $(this).attr('data-layout');
+  
+      // apply layout to markdown level block elements
+      var elements = $(this).children().not('div.sourceCode, pre, script');
+      elements.each(function(i, el) {
+        var layout_div = $('<div class="' + layout + '"></div>');
+        if (layout_div.hasClass('shaded')) {
+          var shaded_content = $('<div class="shaded-content"></div>');
+          $(this).wrap(shaded_content);
+          $(this).parent().wrap(layout_div);
+        } else {
+          $(this).wrap(layout_div);
+        }
+      });
+  
+  
+      // unwrap the layout-chunk div
+      $(this).children().unwrap();
+    });
+  
+    // remove code block used to force  highlighting css
+    $('.distill-force-highlighting-css').parent().remove();
+  
+    // remove empty line numbers inserted by pandoc when using a
+    // custom syntax highlighting theme
+    $('code.sourceCode a:empty').remove();
+  
+    // load distill framework
+    load_distill_framework();
+  
+    // wait for window.distillRunlevel == 4 to do post processing
+    function distill_post_process() {
+  
+      if (!window.distillRunlevel || window.distillRunlevel < 4)
+        return;
+  
+      // hide author/affiliations entirely if we have no authors
+      var front_matter = JSON.parse($("#distill-front-matter").html());
+      var have_authors = front_matter.authors && front_matter.authors.length > 0;
+      if (!have_authors)
+        $('d-byline').addClass('hidden');
+  
+      // article with toc class
+      $('.d-contents').parent().addClass('d-article-with-toc');
+  
+      // strip links that point to #
+      $('.authors-affiliations').find('a[href="#"]').removeAttr('href');
+  
+      // add orcid ids
+      $('.authors-affiliations').find('.author').each(function(i, el) {
+        var orcid_id = front_matter.authors[i].orcidID;
+        if (orcid_id) {
+          var a = $('<a></a>');
+          a.attr('href', 'https://orcid.org/' + orcid_id);
+          var img = $('<img></img>');
+          img.addClass('orcid-id');
+          img.attr('alt', 'ORCID ID');
+          img.attr('src','data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo1N0NEMjA4MDI1MjA2ODExOTk0QzkzNTEzRjZEQTg1NyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozM0NDOEJGNEZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozM0NDOEJGM0ZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1IE1hY2ludG9zaCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkZDN0YxMTc0MDcyMDY4MTE5NUZFRDc5MUM2MUUwNEREIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjU3Q0QyMDgwMjUyMDY4MTE5OTRDOTM1MTNGNkRBODU3Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+84NovQAAAR1JREFUeNpiZEADy85ZJgCpeCB2QJM6AMQLo4yOL0AWZETSqACk1gOxAQN+cAGIA4EGPQBxmJA0nwdpjjQ8xqArmczw5tMHXAaALDgP1QMxAGqzAAPxQACqh4ER6uf5MBlkm0X4EGayMfMw/Pr7Bd2gRBZogMFBrv01hisv5jLsv9nLAPIOMnjy8RDDyYctyAbFM2EJbRQw+aAWw/LzVgx7b+cwCHKqMhjJFCBLOzAR6+lXX84xnHjYyqAo5IUizkRCwIENQQckGSDGY4TVgAPEaraQr2a4/24bSuoExcJCfAEJihXkWDj3ZAKy9EJGaEo8T0QSxkjSwORsCAuDQCD+QILmD1A9kECEZgxDaEZhICIzGcIyEyOl2RkgwAAhkmC+eAm0TAAAAABJRU5ErkJggg==');
+          a.append(img);
+          $(this).append(a);
+        }
+      });
+  
+      // hide elements of author/affiliations grid that have no value
+      function hide_byline_column(caption) {
+        $('d-byline').find('h3:contains("' + caption + '")').parent().css('visibility', 'hidden');
+      }
+  
+      // affiliations
+      var have_affiliations = false;
+      for (var i = 0; i<front_matter.authors.length; ++i) {
+        var author = front_matter.authors[i];
+        if (author.affiliation !== "&nbsp;") {
+          have_affiliations = true;
+          break;
+        }
+      }
+      if (!have_affiliations)
+        $('d-byline').find('h3:contains("Affiliations")').css('visibility', 'hidden');
+  
+      // published date
+      if (!front_matter.publishedDate)
+        hide_byline_column("Published");
+  
+      // document object identifier
+      var doi = $('d-byline').find('h3:contains("DOI")');
+      var doi_p = doi.next().empty();
+      if (!front_matter.doi) {
+        // if we have a citation and valid citationText then link to that
+        if ($('#citation').length > 0 && front_matter.citationText) {
+          doi.html('Citation');
+          $('<a href="#citation"></a>')
+            .text(front_matter.citationText)
+            .appendTo(doi_p);
+        } else {
+          hide_byline_column("DOI");
+        }
+      } else {
+        $('<a></a>')
+           .attr('href', "https://doi.org/" + front_matter.doi)
+           .html(front_matter.doi)
+           .appendTo(doi_p);
+      }
+  
+       // change plural form of authors/affiliations
+      if (front_matter.authors.length === 1) {
+        var grid = $('.authors-affiliations');
+        grid.children('h3:contains("Authors")').text('Author');
+        grid.children('h3:contains("Affiliations")').text('Affiliation');
+      }
+  
+      // remove d-appendix and d-footnote-list local styles
+      $('d-appendix > style:first-child').remove();
+      $('d-footnote-list > style:first-child').remove();
+  
+      // move appendix-bottom entries to the bottom
+      $('.appendix-bottom').appendTo('d-appendix').children().unwrap();
+      $('.appendix-bottom').remove();
+  
+      // clear polling timer
+      clearInterval(tid);
+  
+      // show body now that everything is ready
+      on_load_complete();
+    }
+  
+    var tid = setInterval(distill_post_process, 50);
+    distill_post_process();
+  
+  }
+  
+  function init_downlevel() {
+  
+    init_common();
+  
+     // insert hr after d-title
+    $('.d-title').after($('<hr class="section-separator"/>'));
+  
+    // check if we have authors
+    var front_matter = JSON.parse($("#distill-front-matter").html());
+    var have_authors = front_matter.authors && front_matter.authors.length > 0;
+  
+    // manage byline/border
+    if (!have_authors)
+      $('.d-byline').remove();
+    $('.d-byline').after($('<hr class="section-separator"/>'));
+    $('.d-byline a').remove();
+  
+    // remove toc
+    $('.d-contents').remove();
+  
+    // move appendix elements
+    $('h1.appendix, h2.appendix').each(function(i, val) {
+      $(this).changeElementType('h3');
+    });
+    $('h3.appendix').each(function(i, val) {
+      $(this).nextUntil($('h1, h2, h3')).addBack().appendTo($('.d-appendix'));
+    });
+  
+  
+    // inject headers into references and footnotes
+    var refs_header = $('<h3></h3>');
+    refs_header.text('References');
+    $('#refs').prepend(refs_header);
+  
+    var footnotes_header = $('<h3></h3');
+    footnotes_header.text('Footnotes');
+    $('.footnotes').children('hr').first().replaceWith(footnotes_header);
+  
+    // move appendix-bottom entries to the bottom
+    $('.appendix-bottom').appendTo('.d-appendix').children().unwrap();
+    $('.appendix-bottom').remove();
+  
+    // remove appendix if it's empty
+    if ($('.d-appendix').children().length === 0)
+      $('.d-appendix').remove();
+  
+    // prepend separator above appendix
+    $('.d-appendix').before($('<hr class="section-separator" style="clear: both"/>'));
+  
+    // trim code
+    $('pre>code').each(function(i, val) {
+      $(this).html($.trim($(this).html()));
+    });
+  
+    // move posts-container right before article
+    $('.posts-container').insertBefore($('.d-article'));
+  
+    $('body').addClass('downlevel');
+  
+    on_load_complete();
+  }
+  
+  
+  function init_common() {
+  
+    // jquery plugin to change element types
+    (function($) {
+      $.fn.changeElementType = function(newType) {
+        var attrs = {};
+  
+        $.each(this[0].attributes, function(idx, attr) {
+          attrs[attr.nodeName] = attr.nodeValue;
+        });
+  
+        this.replaceWith(function() {
+          return $("<" + newType + "/>", attrs).append($(this).contents());
+        });
+      };
+    })(jQuery);
+  
+    // prevent underline for linked images
+    $('a > img').parent().css({'border-bottom' : 'none'});
+  
+    // mark non-body figures created by knitr chunks as 100% width
+    $('.layout-chunk').each(function(i, val) {
+      var figures = $(this).find('img, .html-widget');
+      if ($(this).attr('data-layout') !== "l-body") {
+        figures.css('width', '100%');
+      } else {
+        figures.css('max-width', '100%');
+        figures.filter("[width]").each(function(i, val) {
+          var fig = $(this);
+          fig.css('width', fig.attr('width') + 'px');
+        });
+  
+      }
+    });
+  
+    // auto-append index.html to post-preview links in file: protocol
+    // and in rstudio ide preview
+    $('.post-preview').each(function(i, val) {
+      if (window.location.protocol === "file:")
+        $(this).attr('href', $(this).attr('href') + "index.html");
+    });
+  
+    // get rid of index.html references in header
+    if (window.location.protocol !== "file:") {
+      $('.distill-site-header a[href]').each(function(i,val) {
+        $(this).attr('href', $(this).attr('href').replace("index.html", "./"));
+      });
+    }
+  
+    // add class to pandoc style tables
+    $('tr.header').parent('thead').parent('table').addClass('pandoc-table');
+    $('.kable-table').children('table').addClass('pandoc-table');
+  
+    // add figcaption style to table captions
+    $('caption').parent('table').addClass("figcaption");
+  
+    // initialize posts list
+    if (window.init_posts_list)
+      window.init_posts_list();
+  
+    // implmement disqus comment link
+    $('.disqus-comment-count').click(function() {
+      window.headroom_prevent_pin = true;
+      $('#disqus_thread').toggleClass('hidden');
+      if (!$('#disqus_thread').hasClass('hidden')) {
+        var offset = $(this).offset();
+        $(window).resize();
+        $('html, body').animate({
+          scrollTop: offset.top - 35
+        });
+      }
+    });
+  }
+  
+  document.addEventListener('DOMContentLoaded', function() {
+    if (is_downlevel_browser())
+      init_downlevel();
+    else
+      window.addEventListener('WebComponentsReady', init_distill);
+  });
+  
+  </script>
+  
+  <!--/radix_placeholder_distill-->
+  <script src="ea-service-environment_files/font-awesome-5.13.0/js/script.js"></script>
+  <script src="ea-service-environment_files/jquery-1.11.3/jquery.min.js"></script>
+  <script src="ea-service-environment_files/anchor-4.2.2/anchor.min.js"></script>
+  <script src="ea-service-environment_files/bowser-1.9.3/bowser.min.js"></script>
+  <script src="ea-service-environment_files/webcomponents-2.0.0/webcomponents.js"></script>
+  <script src="ea-service-environment_files/distill-2.2.21/template.v2.js"></script>
+  <!--radix_placeholder_site_in_header-->
+  <!--/radix_placeholder_site_in_header-->
+
+
+</head>
+
+<body>
+
+<!--radix_placeholder_front_matter-->
+
+<script id="distill-front-matter" type="text/json">
+{"title":"Merging Service Delivery Point Data to Household & Female Records","description":"Create aggregate measures that capture the family planning service environment experienced by inviduals","authors":[{"author":"Matt Gunther","authorURL":"#","affiliation":"IPUMS PMA Senior Data Analyst","affiliationURL":"#","orcidID":""}],"publishedDate":"2021-01-07T00:00:00.000+00:00","citationText":"Gunther, 2021"}
+</script>
+
+<!--/radix_placeholder_front_matter-->
+<!--radix_placeholder_navigation_before_body-->
+<!--/radix_placeholder_navigation_before_body-->
+<!--radix_placeholder_site_before_body-->
+<!--/radix_placeholder_site_before_body-->
+
+<div class="d-title">
+<h1>Merging Service Delivery Point Data to Household &amp; Female Records</h1>
+<!--radix_placeholder_categories-->
+<div class="dt-tags">
+<div class="dt=tag">Individual in Context</div>
+<div class="dt=tag">Serivce Delivery Points</div>
+<div class="dt=tag">tidyr::pivot_longer</div>
+<div class="dt=tag">purrr::map</div>
+<div class="dt=tag">dplyr::across</div>
+<div class="dt=tag">ipumsr::lbl_relabel</div>
+<div class="dt=tag">ipumsr::lbl_na_if</div>
+</div>
+<!--/radix_placeholder_categories-->
+<p><p>Create aggregate measures that capture the family planning service environment experienced by inviduals</p></p>
+</div>
+
+<div class="d-byline">
+  Matt Gunther  (IPUMS PMA Senior Data Analyst)
+  
+<br/>01-07-2021
+</div>
+
+<div class="d-article">
+<div class="d-contents d-contents-float">
+<nav class="l-text toc figcaption" id="TOC">
+<h3>Contents</h3>
+<ul>
+<li><a href="#data">Data</a></li>
+<li><a href="#setup">Setup</a></li>
+<li><a href="#reformatting-with-ipumsr-functions">Reformatting with ipumsr functions</a></li>
+<li><a href="#understanding-easerved-variables">Understanding EASERVED variables</a></li>
+<li><a href="#pivot-longer-one-easerved-per-row">Pivot longer: one EASERVED per row</a></li>
+<li><a href="#summarise-by-easerved-and-year">Summarise by EASERVED and YEAR</a></li>
+<li><a href="#merging-to-individual-records">Merging to individual records</a></li>
+</ul>
+</nav>
+</div>
+<div class="layout-chunk" data-layout="l-body">
+<a href="data:text/x-markdown;base64,LS0tCnRpdGxlOiAiTWVyZ2luZyBTZXJ2aWNlIERlbGl2ZXJ5IFBvaW50IERhdGEgdG8gSG91c2Vob2xkICYgRmVtYWxlIFJlY29yZHMiCmRlc2NyaXB0aW9uOiB8CiAgQ3JlYXRlIGFnZ3JlZ2F0ZSBtZWFzdXJlcyB0aGF0IGNhcHR1cmUgdGhlIGZhbWlseSBwbGFubmluZyBzZXJ2aWNlIGVudmlyb25tZW50IGV4cGVyaWVuY2VkIGJ5IGludmlkdWFscyAKYXV0aG9yOgogIC0gbmFtZTogTWF0dCBHdW50aGVyCiAgICBhZmZpbGlhdGlvbjogSVBVTVMgUE1BIFNlbmlvciBEYXRhIEFuYWx5c3QKY2F0ZWdvcmllczoKICAtIEluZGl2aWR1YWwgaW4gQ29udGV4dAogIC0gU2VyaXZjZSBEZWxpdmVyeSBQb2ludHMKICAtIHRpZHlyOjpwaXZvdF9sb25nZXIKICAtIHB1cnJyOjptYXAKICAtIGRwbHlyOjphY3Jvc3MKICAtIGlwdW1zcjo6bGJsX3JlbGFiZWwKICAtIGlwdW1zcjo6bGJsX25hX2lmCmRhdGU6IDAxLTA3LTIwMjEKb3V0cHV0OgogIGRpc3RpbGw6OmRpc3RpbGxfYXJ0aWNsZToKICAgIHNlbGZfY29udGFpbmVkOiBmYWxzZQogICAgdG9jOiB0cnVlCiAgICB0b2NfZGVwdGg6IDMKICAgIHRvY19mbG9hdDogdHJ1ZQpkcmFmdDogdHJ1ZQotLS0KCmBgYHtyIGRvd25sb2FkX2J1dHRvbiwgZWNobz1GfQpkb3dubG9hZHRoaXM6OmRvd25sb2FkX2ZpbGUoCiAgcGF0aCA9ICJlYS1zZXJ2aWNlLWVudmlyb25tZW50LlJtZCIsCiAgYnV0dG9uX2xhYmVsID0gIkRvd25sb2FkIHRoaXMgcGFnZSBhcyBSIGNvZGUiLAogIGJ1dHRvbl90eXBlID0gImRlZmF1bHQiLAogIGhhc19pY29uID0gVCwKICBpY29uID0gImZhIGZhLXNhdmUiCikKYGBgCgpgYGB7ciBzZXR1cCwgaW5jbHVkZT1GfQprbml0cjo6b3B0c19jaHVuayRzZXQoZWNobyA9IFQsIGV2YWwgPSBULCBtZXNzYWdlID0gRikKb3B0aW9ucyh0aWJibGUucHJpbnRfbWluPTE1LCB0aWJibGUubWF4X2V4dHJhX2NvbHMgPSA1KQpgYGAKCkluIG91ciBsYXN0IHBvc3QsIHdlIGV4cGxhaW5lZCBob3cgUE1BIFNlcnZpY2UgRGVsaXZlcnkgUG9pbnQgKFNEUCkgZGF0YSBhcmUgZGVzaWduZWQgdG8gZGVzY3JpYmUgdGhlIGZhbWlseSBwbGFubmluZyBzZXJ2aWNlcyBhdmFpbGFibGUgdG8gd29tZW4gbGl2aW5nIHdpdGhpbiBlYWNoIHN1cnZleSdzIGdlb2dyYXBoaWMgZW51bWVyYXRpb24gYXJlYXMuIEluIHRoaXMgcG9zdCwgd2UnbGwgYmVnaW4gd2l0aCBhbiBleGFtcGxlIFNEUCBkYXRhc2V0IGNvbGxlY3RlZCBmcm9tIEJ1cmtpbmEgRmFzbywgYW5kIHdlJ2xsIHRoZW4gc2hvdyBob3cgdG8gdXNlIFtFQUlEXShodHRwczovL3BtYS5pcHVtcy5vcmcvcG1hLWFjdGlvbi92YXJpYWJsZXMvRUFJRCkgYW5kIFtFQVNFUlZFRF0oaHR0cHM6Ly9wbWEuaXB1bXMub3JnL3BtYS1hY3Rpb24vdmFyaWFibGVzL0VBU0VSVkVEKSB0byBhZ2dyZWdhdGUgdmFyaWFibGVzIGNvbGxlY3RlZCBmcm9tIFNEUHMgaW4gZWFjaCBhcmVhLiBUaGUgYWdncmVnYXRlZCBtZWFzdXJlcyB3aWxsIHRoZW4gYmUgYXR0YWNoZWQgdG8gYW5vdGhlciBkYXRhc2V0IHdpdGggcmVjb3JkcyByZXByZXNlbnRpbmcgaW5kaXZpZHVhbCB3b21lbiwgd2hpY2ggd2Ugd2lsbCB1c2UgaW4gYW4gdXBjb21pbmcgRGF0YSBBbmFseXNpcyBwb3N0IGV4cGxvcmluZyBob3cgZW52aXJvbm1lbnRhbCBmYWN0b3JzIGltcGFjdCB3b21lbidzIGZlcnRpbGl0eSBvdXRjb21lcy4KCiMgRGF0YQoKSGVhZCBvdmVyIHRvIFtwbWEuaXB1bXMub3JnXShodHRwczovL3BtYS5pcHVtcy5vcmcvcG1hLWFjdGlvbi92YXJpYWJsZXMvZ3JvdXApIGFuZCBjcmVhdGUgYSBkYXRhIGV4dHJhY3Qgd2l0aCB0aGVzZSBzYW1wbGVzOgoKICAqIEJ1cmtpbmEgRmFzbyAtIDIwMTggUjYKICAqIEJ1cmtpbmEgRmFzbyAtIDIwMTcgUjUKICAKPGFzaWRlPgpTZWUgb3VyIHBvc3QgYWJvdXQgPGEgaHJlZj0iLi4vMjAyMC0xMi0xMC1nZXQtaXB1bXMtcG1hLWRhdGEvaW5kZXguaHRtbCI+ZG93bmxvYWRpbmcgYW4gSVBVTVMgZXh0cmFjdCBmb3IgUjwvYT4gZm9yIGRldGFpbGVkIGluc3RydWN0aW9ucy4KPC9hc2lkZT4gIAogIApGb3IgdGhpcyBleGFtcGxlLCBzdXBwb3NlIHdlJ3JlIGdlbmVyYWxseSBpbnRlcmVzdGVkIGJvdGggaW4gdGhlIHR5cGVzIG9mIGZhY2lsaXRpZXMgYW5kIGluIHRoZSB0eXBlcyBvZiBmYW1pbHkgcGxhbm5pbmcgc2VydmljZXMgb2ZmZXJlZCB3aXRoaW4gZWFjaCBlbnVtZXJhdGlvbiBhcmVhLiAKCldlJ2xsIHdhbnQgdG8gZXhhbWluZSBhIGZldyB2YXJpYWJsZXMgZGVzY3JpYmluZyB0aGUgU0RQLCBpdHNlbGY6IAoKICAqIFtFQUlEXShodHRwczovL3BtYS5pcHVtcy5vcmcvcG1hLWFjdGlvbi92YXJpYWJsZXMvRUFJRCkgLSB0aGUgZW51bWVyYXRpb24gYXJlYSB3aGVyZSB0aGUgU0RQIGlzIHBoeXNpY2FsbHkgbG9jYXRlZAogICogW0VBU0VSVkVEXShodHRwczovL3BtYS5pcHVtcy5vcmcvcG1hLWFjdGlvbi92YXJpYWJsZXMvRUFTRVJWRUQpICAtIGVudW1lcmF0aW9uIGFyZWFzIHdoZXJlIHRoZSBTRFAgcHJvdmlkZXMgc2VydmljZXMgKG51bWJlcmVkIDEtMTgpCiAgKiBbQVVUSE9SSVRZXShodHRwczovL3BtYS5pcHVtcy5vcmcvcG1hLWFjdGlvbi92YXJpYWJsZXMvQVVUSE9SSVRZKSAgLSB0aGUgU0RQJ3MgbWFuYWdpbmcgQVVUSE9SSVRZIChnb3Zlcm5tZW50LCBOR08sIGZhaXRoLWJhc2VkIG9yZ2FuemlhdGlvbiwgcHJpdmF0ZSBvcmdhbml6YXRpb24sIG9yIG90aGVyKQogICogW0ZBQ0lMSVRZVFlQRUdFTl0oaHR0cHM6Ly9wbWEuaXB1bXMub3JnL3BtYS1hY3Rpb24vdmFyaWFibGVzL0ZBQ0lMSVRZVFlQRUdFTikgIC0gdGhlIGdlbmVyYWwgZmFjaWxpdHkgdHlwZSAoYWRkaXRpb25hbCBkZXRhaWwgaXMgcHJvdmlkZWQgYnkgdGhlIHZhcmlhYmxlIGBGQUNJTElUWVRZUEVgLCBidXQgd2UnbGwgdXNlIHRoZSBtb3JlIGdlbmVyYWwgdmVyc2lvbiBpbiBvdXIgYW5hbHlzaXMpCiAgKiBbQ09OU0VOVFNRXShodHRwczovL3BtYS5pcHVtcy5vcmcvcG1hLWFjdGlvbi92YXJpYWJsZXMvQ09OU0VOVFNRKSAtIHdoZXRoZXIgdGhlIHJlc3BvbmRlbnQgdG8gdGhlIFNEUCBxdWVzdGlvbm5haXJlIGNvbnNlbnRlZCB0byBiZSBpbnRlcnZpZXdlZCAoZm9yIHRob3NlIHRoYXQgZGlkIG5vdCwgd2Ugc3RpbGwgbWF5IGhhdmUgc29tZSBiYXNpYyBpbmZvcm1hdGlvbiBsaWtlIGBFQUlEYCwgIGBGQUNJTElUWVRZUEVHRU5gLCBldGMpLgogIApXZSdsbCBhbHNvIHdhbnQgdmFyaWFibGVzIGRlc2NyaWJpbmcgdGhlIGZhbWlseSBwbGFubmluZyBzZXJ2aWNlcyB0aGF0IGFyZSBub3JtYWxseSBhdmFpbGFibGUsIGFuZCB0aG9zZSB0aGF0IGhhdmUgYmVlbiBvdXQgb2Ygc3RvY2suIAoKU2VsZWN0IHRoZXNlIHZhcmlhYmxlcyBkZXNjcmliaW5nIHdoZXRoZXIgYSBmYWNpbGl0eSBub3JtYWxseSBwcm92aWRlcyBhIGdpdmVuIGZhbWlseSBwbGFubmluZyBtZXRob2Q6CiAgCiAgKiBbQ09OUFJPVl0oaHR0cHM6Ly9wbWEuaXB1bXMub3JnL3BtYS1hY3Rpb24vdmFyaWFibGVzL0NPTlBST1YpCiAgKiBbQ1lDQlBST1ZdKGh0dHBzOi8vcG1hLmlwdW1zLm9yZy9wbWEtYWN0aW9uL3ZhcmlhYmxlcy9DWUNCUFJPVikKICAqIFtERVBPUFJPVl0oaHR0cHM6Ly9wbWEuaXB1bXMub3JnL3BtYS1hY3Rpb24vdmFyaWFibGVzL0RFUE9QUk9WKQogICogW0RJQVBST1ZdKGh0dHBzOi8vcG1hLmlwdW1zLm9yZy9wbWEtYWN0aW9uL3ZhcmlhYmxlcy9ESUFQUk9WKQogICogW0VNUkdQUk9WXShodHRwczovL3BtYS5pcHVtcy5vcmcvcG1hLWFjdGlvbi92YXJpYWJsZXMvRU1SR1BST1YpCiAgKiBbRkNQUk9WXShodHRwczovL3BtYS5pcHVtcy5vcmcvcG1hLWFjdGlvbi92YXJpYWJsZXMvRkNQUk9WKQogICogW0ZTVFBST1ZdKGh0dHBzOi8vcG1hLmlwdW1zLm9yZy9wbWEtYWN0aW9uL3ZhcmlhYmxlcy9GU1RQUk9WKQogICogW0ZKUFJPVl0oaHR0cHM6Ly9wbWEuaXB1bXMub3JnL3BtYS1hY3Rpb24vdmFyaWFibGVzL0ZKUFJPVikKICAqIFtJTVBQUk9WXShodHRwczovL3BtYS5pcHVtcy5vcmcvcG1hLWFjdGlvbi92YXJpYWJsZXMvSU1QUFJPVikKICAqIFtJVURQUk9WXShodHRwczovL3BtYS5pcHVtcy5vcmcvcG1hLWFjdGlvbi92YXJpYWJsZXMvSVVEUFJPVikKICAqIFtNU1RQUk9WXShodHRwczovL3BtYS5pcHVtcy5vcmcvcG1hLWFjdGlvbi92YXJpYWJsZXMvTVNUUFJPVikKICAqIFtQSUxMUFJPVl0oaHR0cHM6Ly9wbWEuaXB1bXMub3JnL3BtYS1hY3Rpb24vdmFyaWFibGVzL1BJTExQUk9WKQogICogW1NBWVBST1ZdKGh0dHBzOi8vcG1hLmlwdW1zLm9yZy9wbWEtYWN0aW9uL3ZhcmlhYmxlcy9TQVlQUk9WKQogIApUaGVuIHNlbGVjdCB0aGVzZSB2YXJpYWJsZXMgZGVzY3JpYmluZyB3aGV0aGVyIGEgZmFjaWxpdHkgdGhhdCBwcm92aWRlcyBhIGdpdmVuIGZhbWlseSBwbGFubmluZyBtZXRob2QgaGFkIHN1cHBsaWVzIGluLXN0b2NrIGFuZCBvYnNlcnZlZCBieSB0aGUgaW50ZXJ2aWV3ZXI6CgogICogW0NPTk9CU10oaHR0cHM6Ly9wbWEuaXB1bXMub3JnL3BtYS1hY3Rpb24vdmFyaWFibGVzL0NPTk9CUykKICAqIFtDWUNCT0JTXShodHRwczovL3BtYS5pcHVtcy5vcmcvcG1hLWFjdGlvbi92YXJpYWJsZXMvQ1lDQk9CUykKICAqIFtERVBPT0JTXShodHRwczovL3BtYS5pcHVtcy5vcmcvcG1hLWFjdGlvbi92YXJpYWJsZXMvREVQT09CUykKICAqIFtESUFPQlNdKGh0dHBzOi8vcG1hLmlwdW1zLm9yZy9wbWEtYWN0aW9uL3ZhcmlhYmxlcy9ESUFPQlMpCiAgKiBbRU1SR09CU10oaHR0cHM6Ly9wbWEuaXB1bXMub3JnL3BtYS1hY3Rpb24vdmFyaWFibGVzL0VNUkdPQlMpCiAgKiBbRkNPQlNdKGh0dHBzOi8vcG1hLmlwdW1zLm9yZy9wbWEtYWN0aW9uL3ZhcmlhYmxlcy9GQ09CUykKICAqIFtGSk9CU10oaHR0cHM6Ly9wbWEuaXB1bXMub3JnL3BtYS1hY3Rpb24vdmFyaWFibGVzL0ZKT0JTKQogICogW0lNUE9CU10oaHR0cHM6Ly9wbWEuaXB1bXMub3JnL3BtYS1hY3Rpb24vdmFyaWFibGVzL0lNUE9CUykKICAqIFtJVURPQlNdKGh0dHBzOi8vcG1hLmlwdW1zLm9yZy9wbWEtYWN0aW9uL3ZhcmlhYmxlcy9JVURPQlMpCiAgKiBbUElMTE9CU10oaHR0cHM6Ly9wbWEuaXB1bXMub3JnL3BtYS1hY3Rpb24vdmFyaWFibGVzL1BJTExPQlMpCiAgKiBbU0FZT0JTXShodHRwczovL3BtYS5pcHVtcy5vcmcvcG1hLWFjdGlvbi92YXJpYWJsZXMvU0FZT0JTKQogIApBbHNvIHNlbGVjdCB0aGVzZSB2YXJpYWJsZXMgZGVzY3JpYmluZyB3aGV0aGVyIGEgZmFjaWxpdHkgd2l0aCB0aGUgbWV0aG9kIGluLXN0b2NrIGhhZCBldmVyIGV4cGVyaWVuY2VkIGEgc3RvY2tvdXQgd2l0aGluIHRoZSBsYXN0IDMgbW9udGhzOgogIAogICogW0NPTk9VVDNNT10oaHR0cHM6Ly9wbWEuaXB1bXMub3JnL3BtYS1hY3Rpb24vdmFyaWFibGVzL0NPTk9VVDNNTykKICAqIFtDWUNCT1VUM01PXShodHRwczovL3BtYS5pcHVtcy5vcmcvcG1hLWFjdGlvbi92YXJpYWJsZXMvQ1lDQk9VVDNNTykKICAqIFtERVBPT1VUM01PXShodHRwczovL3BtYS5pcHVtcy5vcmcvcG1hLWFjdGlvbi92YXJpYWJsZXMvREVQT09VVDNNTykKICAqIFtESUFPVVQzTU9dKGh0dHBzOi8vcG1hLmlwdW1zLm9yZy9wbWEtYWN0aW9uL3ZhcmlhYmxlcy9ESUFPVVQzTU8pCiAgKiBbRU1SR09VVDNNT10oaHR0cHM6Ly9wbWEuaXB1bXMub3JnL3BtYS1hY3Rpb24vdmFyaWFibGVzL0VNUkdPVVQzTU8pCiAgKiBbRkNPVVQzTU9dKGh0dHBzOi8vcG1hLmlwdW1zLm9yZy9wbWEtYWN0aW9uL3ZhcmlhYmxlcy9GQ09VVDNNTykKICAqIFtGSk9VVDNNT10oaHR0cHM6Ly9wbWEuaXB1bXMub3JnL3BtYS1hY3Rpb24vdmFyaWFibGVzL0ZKT1VUM01PKQogICogW0lNUE9VVDNNT10oaHR0cHM6Ly9wbWEuaXB1bXMub3JnL3BtYS1hY3Rpb24vdmFyaWFibGVzL0lNUE9VVDNNTykKICAqIFtJVURPVVQzTU9dKGh0dHBzOi8vcG1hLmlwdW1zLm9yZy9wbWEtYWN0aW9uL3ZhcmlhYmxlcy9JVURPVVQzTU8pCiAgKiBbUElMTE9VVDNNT10oaHR0cHM6Ly9wbWEuaXB1bXMub3JnL3BtYS1hY3Rpb24vdmFyaWFibGVzL1BJTExPVVQzTU8pCiAgKiBbU0FZT1VUM01PXShodHRwczovL3BtYS5pcHVtcy5vcmcvcG1hLWFjdGlvbi92YXJpYWJsZXMvU0FZT1VUM01PKQogIApMYXN0bHksIHNlbGVjdCB0aGVzZSB2YXJpYWJsZXMgcmVwb3J0aW5nIHRoZSBsZW5ndGggb2YgdGhlIGN1cnJlbnQgc3RvY2tvdXQgZXhwZXJpZW5jZWQgYnkgYSBmYWNpbGl0eSB0aGF0IG5vcm1hbGx5IHByb3ZpZGVzIGVhY2ggbWV0aG9kLCBidXQgd2FzIG91dCBvZiBzdG9jayBvbiB0aGUgZGF5IG9mIHRoZSBpbnRlcnZpZXc6CiAgCiAgKiBbQ09OT1VUREFZXShodHRwczovL3BtYS5pcHVtcy5vcmcvcG1hLWFjdGlvbi92YXJpYWJsZXMvQ09OT1VUREFZKQogICogW0NZQ0JPVVREQVldKGh0dHBzOi8vcG1hLmlwdW1zLm9yZy9wbWEtYWN0aW9uL3ZhcmlhYmxlcy9DWUNCT1VUREFZKQogICogW0RFUE9PVVREQVldKGh0dHBzOi8vcG1hLmlwdW1zLm9yZy9wbWEtYWN0aW9uL3ZhcmlhYmxlcy9ERVBPT1VUREFZKQogICogW0RJQU9VVERBWV0oaHR0cHM6Ly9wbWEuaXB1bXMub3JnL3BtYS1hY3Rpb24vdmFyaWFibGVzL0RJQU9VVERBWSkKICAqIFtFTVJHT1VUREFZXShodHRwczovL3BtYS5pcHVtcy5vcmcvcG1hLWFjdGlvbi92YXJpYWJsZXMvRU1SR09VVERBWSkKICAqIFtGQ09VVERBWV0oaHR0cHM6Ly9wbWEuaXB1bXMub3JnL3BtYS1hY3Rpb24vdmFyaWFibGVzL0ZDT1VUREFZKQogICogW0ZKT1VUREFZXShodHRwczovL3BtYS5pcHVtcy5vcmcvcG1hLWFjdGlvbi92YXJpYWJsZXMvRkpPVVREQVkpCiAgKiBbSU1QT1VUREFZXShodHRwczovL3BtYS5pcHVtcy5vcmcvcG1hLWFjdGlvbi92YXJpYWJsZXMvSU1QT1VUREFZKQogICogW0lVRE9VVERBWV0oaHR0cHM6Ly9wbWEuaXB1bXMub3JnL3BtYS1hY3Rpb24vdmFyaWFibGVzL0lVRE9VVERBWSkKICAqIFtQSUxMT1VUREFZXShodHRwczovL3BtYS5pcHVtcy5vcmcvcG1hLWFjdGlvbi92YXJpYWJsZXMvUElMTE9VVERBWSkKICAqIFtTQVlPVVREQVldKGh0dHBzOi8vcG1hLmlwdW1zLm9yZy9wbWEtYWN0aW9uL3ZhcmlhYmxlcy9TQVlPVVREQVkpCgojIFNldHVwIAoKV2UnbGwgYmUgZmVhdHVyaW5nIGZ1bmN0aW9ucyBmcm9tIHR3byBSIHBhY2thZ2VzIGluIHRoaXMgcG9zdDogW3RpZHl2ZXJzZV0oaHR0cHM6Ly90aWR5dmVyc2UudGlkeXZlcnNlLm9yZy8pIGFuZCBbaXB1bXNyXShodHRwOi8vdGVjaC5wb3BkYXRhLm9yZy9pcHVtc3IvKS4gT25jZSBpbnN0YWxsZWQsIGxvYWQgdGhlIHR3byBwYWNrYWdlcyB3aXRoOgoKYGBge3IgbG9jYWx9CmxpYnJhcnkodGlkeXZlcnNlKQpsaWJyYXJ5KGlwdW1zcikKYGBgCgo8YXNpZGU+ClNlZSBvdXIgcG9zdCBhYm91dCA8YSBocmVmPSIuLi8yMDIwLTEyLTEwLWdldC1yLWFuZC1wYWNrYWdlcy9pbmRleC5odG1sI3ItcGFja2FnZXMiPmdldHRpbmcgc3RhcnRlZCB3aXRoIFI8L2E+IGZvciBoZWxwIHdpdGggUiBwYWNrYWdlIGluc3RhbGxhdGlvbi4KPC9hc2lkZT4KCkxvYWQgeW91ciBkYXRhIGV4dHJhY3Qgd2l0aCBgcmVhZF9pcHVtc19taWNyb2AgKm1ha2luZyBzdXJlIHRvIGNoYW5nZSB0aGUgZmlsZSBwYXRocyBhbmQgZXh0cmFjdCBudW1iZXJzIHNob3duIGJlbG93IHRvIG1hdGNoIHlvdXIgb3duKjoKCmBgYHtyLCByZXN1bHRzPSdoaWRlJ30Kc2RwIDwtIGlwdW1zcjo6cmVhZF9pcHVtc19taWNybygKICBkZGkgPSAiZGF0YS9wbWFfMDAwMDgueG1sIiwKICBkYXRhID0gImRhdGEvcG1hXzAwMDA4LmRhdC5neiIKKSAKYGBgCgpgYGB7ciwgZWNobz1GfQojIENoZWNrIHdpdGggcHJvZHVjdGlvbiB0ZWFtIGFib3V0IHRoaXMgZXh0cmEgdmFyaWFibGUKc2RwIDwtIHNkcCAlPiUgc2VsZWN0KC1FQVNFUlZFRCkKYGBgCgpgYGB7cn0Kc2RwCmBgYAoKIyBSZWZvcm1hdHRpbmcgd2l0aCBpcHVtc3IgZnVuY3Rpb25zCgpBIGtleSBmZWF0dXJlIHRvIHJlbWVtYmVyIGFib3V0IElQVU1TIGV4dHJhY3RzIGlzIHRoYXQgdmFyaWFibGVzIG9mdGVuIGhhdmUgdmFsdWUgbGFiZWxzLCB3aGljaCBhcmUgdGV4dCBsYWJlbHMgYXNzaWduZWQgdG8gdGhlIGRpZmZlcmVudCB2YWx1ZXMgdGFrZW4gYnkgYSB2YXJpYWJsZS4gV2hlbiB3ZSBsb2FkIHRoZSBleHRyYWN0IGludG8gUiB3aXRoIGFuIGBpcHVtc3JgIGZ1bmN0aW9uLCB0aGVzZSB2YXJpYWJsZXMgYXJlIGltcG9ydGVkIGFzIGBsYWJlbGxlZGAgb2JqZWN0cyByYXRoZXIgdGhhbiB0aGUgbW9yZSBjb21tb24gYGZhY3RvcmAgY2xhc3Mgb2Ygb2JqZWN0cy4gCgo8YXNpZGU+CjxhIGhyZWY9Imh0dHA6Ly90ZWNoLnBvcGRhdGEub3JnL2lwdW1zci9hcnRpY2xlcy92YWx1ZS1sYWJlbHMuaHRtbCI+TW9yZSBpbmZvcm1hdGlvbjwvYT4gb24gdGhlIGRpZmZlcmVuY2UgYmV0d2VlbiBmYWN0b3JzIGFuZCBJUFVNUyBsYWJlbGxlZCB2YXJpYWJsZXMuCjwvYXNpZGU+CgpBcyBhIHJlc3VsdCwgSVBVTVMgZGF0YSB1c2VycyBuZWVkIHRvIHRha2Ugc29tZSB1bnVzdWFsIHN0ZXBzIHdoZW4gcmVjb2RpbmcgYSB2YXJpYWJsZSBvciBoYW5kbGluZyBOQSB2YWx1ZXMuIEx1Y2tpbHksIHRoZSBgaXB1bXNyYCBwYWNrYWdlIHByb3ZpZGUgYSBmZXcgZnVuY3Rpb25zIChzdGFydGluZyB3aXRoIHRoZSBwcmVmaXggYGxibF9gKSB0aGF0IG1ha2UgdGhpcyBwcm9jZXNzIHZlcnkgZWFzeSEKCkxldCdzIHRha2UgYSBsb29rIGF0IHRoZSB2YXJpYWJsZSBgQ09OT0JTYDoKCmBgYHtyfQpzZHAgJT4lIGNvdW50KENPTk9CUykKYGBgCgpOb3RpY2UgdGhhdCB3ZSBoYXZlIHR3byB2YWx1ZXMgcmVwcmVzZW50aW5nIFNEUHMgd2l0aCBtYWxlIGNvbmRvbXMgImluLXN0b2NrIjogU0RQcyB3aGVyZSB0aGUgaW50ZXJ2aWV3ZXIgcGVyc29uYWxseSBvYnNlcnZlZCB0aGUgY29uZG9tcyBnZXQgYDFgLCB3aGlsZSB0aG9zZSAKd2hlcmUgY29uZG9tcyB3aGVyZSByZXBvcnRlZCBpbi1zdG9jayAtIGJ1dCBub3Qgb2JzZXJ2ZWQgYnkgdGhlIGludGVydmlld2VyIC0gZ2V0IGAyYC4gU3VwcG9zZSB3ZSBvbmx5IGNhcmUgYWJvdXQgdGhlIHJlcG9ydGVkIHN0b2NrLCBidXQgbm90IHRoZSBwaHlzaWNhbCBvYnNlcnZhdGlvbjogd2UnZCB3YW50IHRvIGNvbGxhcHNlIHRob3NlIHR3byB2YWx1ZXMgdG9nZXRoZXIsIGNyZWF0aW5nIGEgYmluYXJ5ICJ5ZXMiIG9yICJubyIgdHlwZSBvZiB2YXJpYWJsZSBpbiBwbGFjZSBvZiB0aGUgY3VycmVudCB2ZXJzaW9uIG9mIGBDT05PQlNgLiBUaGUgYGlwdW1zcmAgZnVuY3Rpb24gW2xibF9yZWxhYmVsXShodHRwOi8vdGVjaC5wb3BkYXRhLm9yZy9pcHVtc3IvcmVmZXJlbmNlL2xibF9yZWxhYmVsLmh0bWwpIHdpbGwgaGVscCB1cyBkbyB0aGF0LgoKQWxzbyB0YWtlIGEgbG9vayBhdCB0aGUgdmFsdWVzIGA5NGAgYW5kIGA5OWAuIEJvdGggcmVwcmVzZW50IGRpZmZlcmVudCB0eXBlcyBvZiBub24tcmVzcG9uc2U6IFNEUHMgd2hlcmUgbm8gcmVzcG9uZGVudCBjb25zZW50ZWQgdG8gY29tcGxldGUgdGhlIGludGVydmlldyBnZXQgYDk0YCwgd2hpbGUgYW55IFNEUCB0aGF0J3MgYmV5b25kIHRoZSBzYW1wbGluZyB1bml2ZXJzZSBmb3IgdGhpcyBxdWVzdGlvbiBnZXRzIGA5OWAuIF5bTG9va2luZyBhdCB0aGUgW1VuaXZlcnNlIHRhYl0oaHR0cHM6Ly9wbWEuaXB1bXMub3JnL3BtYS1hY3Rpb24vdmFyaWFibGVzL0NPTk9CUyN1bml2ZXJzZV9zZWN0aW9uKSBmb3IgYENPTk9CU2AsIHdlIGxlYXJuIHRoYXQgb25seSBTRFBzIHRoYXQgbm9ybWFsbHkgcHJvdmlkZSBtYWxlIGNvbmRvbXMgcmVjZWl2ZWQgdGhpcyBxdWVzdGlvbiAtIHNlZSBgQ09OUFJPVmAuXSBGb3Igb3VyIHB1cnBvc2VzLCBpdCB3aWxsIGJlIG1vc3QgaGVscGZ1bCB0byB1c2UgdGhlIGBpcHVtc3JgIGZ1bmN0aW9uIFtsYmxfbmFfaWZdKGh0dHA6Ly90ZWNoLnBvcGRhdGEub3JnL2lwdW1zci9yZWZlcmVuY2UvbGJsX25hX2lmLmh0bWwpIHRvIG1hcmsgYm90aCBvZiB0aGVzZSB2YWx1ZXMgYE5BYC4KCkxvb2tpbmcgYXQgdGhlIGRvY3VtZW50YXRpb24gZm9yIGJvdGggb2YgdGhlc2UgZnVuY3Rpb25zLCB0aGUgbW9zdCBpbnR1aXRpdmUgd2F5IHRvIGhhbmRsZSBvdXIgcmVjb2RpbmcgdGFzayBpcyB0byBzcGVjaWZ5IG5ldyBsYWJlbHMgYmFzZWQgb24gdGhlIG51bWVyaWMgdmFsdWVzIGZvciBgQ09OT0JTYDoKCmBgYHtyfQpzZHAgJT4lIAogIG11dGF0ZSgKICAgIENPTk9CUyA9IGxibF9yZWxhYmVsKAogICAgICBDT05PQlMsCiAgICAgIGxibCgxLCAiaW4gc3RvY2siKSB+IC52YWwgJWluJSAxOjIsCiAgICAgIGxibCgwLCAib3V0IG9mIHN0b2NrIikgfiAudmFsID09IDMKICAgICksCiAgICBDT05PQlMgPSBsYmxfbmFfaWYoCiAgICAgIENPTk9CUywKICAgICAgfi52YWwgPiA5MAogICAgKQogICkgJT4lIAogIGNvdW50KENPTk9CUykKYGBgCgpUaGF0IHdvcmtlZCBwZXJmZWN0bHkgd2VsbCBmb3IganVzdCBvbmUgdmFyaWFibGUsIGJ1dCB3ZSdsbCB1bHRpbWF0ZWx5IHdhbnQgdG8gcmVjb2RlICphbGwqIG9mIHRoZSBgT0JTYCB2YXJpYWJsZXMgaW4gb3VyIGRhdGFzZXQgYXMgYmluYXJ5IHZhcmlhYmxlcy4gVGhlIGBkcGx5cmAgZnVuY3Rpb24gW2Fjcm9zc10oaHR0cHM6Ly9kcGx5ci50aWR5dmVyc2Uub3JnL3JlZmVyZW5jZS9hY3Jvc3MuaHRtbCkgd2lsbCBhcHBseSBgbGJsX3JlbGFiZWxgIHRvIGEgc2VyaWVzIG9mIGNvbHVtbnMgYmFzZWQgb24gc29tZSBzZWxlY3Rpb24gZnVuY3Rpb246IHdlJ2xsIHVzZSBgZW5kc193aXRoKCJPQlMiKWAgdG8gcGVyZm9ybSBiaW5hcnkgcmVjb2Rpbmcgb24gZXZlcnkgdmFyaWFibGUgZW5kaW5nIHdpdGggIk9CUyIuCgo8YXNpZGU+ClRoZSA8Yj5kcGx5cjwvYj4gcGFja2FnZSBpcyBsb2FkZWQgaW50byBSIHdoZW4geW91IHVzZSA8Yj5saWJyYXJ5KHRpZHl2ZXJzZSk8L2I+CjwvYXNpZGU+CgpPdXIgbWlzc2luZyB2YWx1ZXMgYXJlIGEgYml0IHRyaWNraWVyIGJlY2F1c2Ugd2UgY2FuJ3QgcmVsaWFibHkgdXNlIGA5NGAgYW5kIGA5OWAgZm9yIGV2ZXJ5IHZhcmlhYmxlLiBTb21lIHZhcmlhYmxlcywgbGlrZSBgQ09OT1VUREFZYCwgYXJlIGxvbmdlciBiZWNhdXNlIHRoZXkgY2FuIHRha2UgaGlnaGVyIHZhbHVlcyAoMTAwIGRheXMsIDEwMDAgZGF5cywgZXRjKToKCmBgYHtyfQpzZHAgJT4lIGNvdW50KENPTk9VVERBWSkKYGBgCgpUaGVyZSBhcmUgYWxzbyBhZGRpdGlvbmFsIG5vbi1yZXNwb25zZSBvcHRpb25zLCBsaWtlICJEb24ndCBrbm93IiBhbmQgIk5vIHJlc3BvbnNlIG9yIG1pc3NpbmciIHRoYXQgZG9uJ3QgYXBwZWFyIGluIGBDT05PQlNgLCBidXQgbWlnaHQgYXBwZWFyIGVsc2V3aGVyZToKCmBgYHtyfQpzZHAgJT4lIGNvdW50KENPTk9VVDNNTykKYGBgCgpIZXJlJ3MgdGhlIHRyaWNrOiBpbnN0ZWFkIG9mIHNwZWNpZnlpbmcgbm9uLXJlc3BvbnNlICp2YWx1ZXMqIGluIG91ciBkYXRhc2V0LCB3ZSdsbCBqdXN0IHNwZWNpZnkgbm9uLXJlc3BvbnNlICpsYWJlbHMqLCBzaW5jZSB0aGV5IGFyZSBjb25zaXN0ZW50IGFjcm9zcyBhbGwgUE1BIHZhcmlhYmxlczoKCmBgYHtyfQpzZHAgJT4lIAogIG11dGF0ZSgKICAgIENPTk9CUyA9IGxibF9yZWxhYmVsKAogICAgICBDT05PQlMsCiAgICAgIGxibCgxLCAiaW4gc3RvY2siKSB+IC52YWwgJWluJSAxOjIsCiAgICAgIGxibCgwLCAib3V0IG9mIHN0b2NrIikgfiAudmFsID09IDMKICAgICksCiAgICBDT05PQlMgPSBsYmxfbmFfaWYoCiAgICAgIENPTk9CUywKICAgICAgfi5sYmwgJWluJSBjKAogICAgICAgICJOb3QgaW50ZXJ2aWV3ZWQgKFNEUCBxdWVzdGlvbm5haXJlKSIsCiAgICAgICAgIkRvbid0IGtub3ciLAogICAgICAgICJObyByZXNwb25zZSBvciBtaXNzaW5nIiwKICAgICAgICAiTklVIChub3QgaW4gdW5pdmVyc2UpIgogICAgICApCiAgICApCiAgKSAlPiUgCiAgY291bnQoQ09OT0JTKQpgYGAKCkZpbmFsbHksIGxldCdzIGFwcGx5IHRoZSB0d28gcmVjb2RpbmcgZnVuY3Rpb25zIHVzaW5nIGBkcGx5cjo6YWNyb3NzYCB0byBzcGFuIGFsbCBvZiB0aGUgdmFyaWFibGVzIHdlIHdhbnQ6CgpgYGB7cn0Kc2RwIDwtIHNkcCAlPiUgCiAgbXV0YXRlKAogICAgYWNyb3NzKGVuZHNfd2l0aCgiT0JTIiksIH5sYmxfcmVsYWJlbCgKICAgICAgLngsCiAgICAgIGxibCgxLCAiaW4gc3RvY2siKSB+IC52YWwgJWluJSAxOjIsCiAgICAgIGxibCgwLCAib3V0IG9mIHN0b2NrIikgfiAudmFsID09IDMKICAgICkpLAogICAgYWNyb3NzKGV2ZXJ5dGhpbmcoKSwgfmxibF9uYV9pZigKICAgICAgLngsCiAgICAgIH4ubGJsICVpbiUgYygKICAgICAgICAiTm90IGludGVydmlld2VkIChTRFAgcXVlc3Rpb25uYWlyZSkiLAogICAgICAgICJEb24ndCBrbm93IiwKICAgICAgICAiTm8gcmVzcG9uc2Ugb3IgbWlzc2luZyIsCiAgICAgICAgIk5JVSAobm90IGluIHVuaXZlcnNlKSIKICAgICAgKQogICAgKSkKICApCmBgYAoKCiMgVW5kZXJzdGFuZGluZyBFQVNFUlZFRCB2YXJpYWJsZXMKCk5vdyB0aGF0IHdlJ3ZlIHJlY29kZWQgZXZlcnkgdmFyaWFibGUsIGxldCdzIHRha2UgYSBsb29rIHNwZWNpZmljYWxseSBhdCB0aGUgdmFyaWFibGVzIGRlc2NyaWJpbmcgdGhlIHNlcnZpY2UgYXJlYSBmb3IgZWFjaCBTRFAuIFRoYXQgaW5mb3JtYXRpb24gaXMgc3RvcmVkIGluIGEgZ3JvdXAgb2YgdmFyaWFibGVzIHN0YXJ0aW5nIHdpdGggIkVBU0VSVkVEIiBhbmQgZW5kaW5nIHdpdGggdGhlIG51bWJlcnMgMS0xOC5eW1doZW4geW91IGNyZWF0ZWQgeW91ciBkYXRhIGV4dHJhY3QsIHlvdSBtaWdodCByZW1lbWJlciB0aGF0IHlvdSBvbmx5IHNlbGVjdGVkIG9uZSB2YXJpYWJsZSBjYWxsZWQgRUFTRVJWRUQuIFRoZSBJUFVNUyBleHRyYWN0IHN5c3RlbSBhdXRvbWF0aWNhbGx5IHNlbGVjdHMgdGhlIHJpZ2h0IG51bWJlciBvZiBFQVNFUlZFRCB2YXJpYWJsZXMgYmFzZWQgb24gdGhlIG1heGltdW0gbnVtYmVyIG9mIGVudW1lcmF0aW9uIGFyZWFzIHNlcnZlZCBieSBhbnkgb25lIFNEUCBpbiB5b3VyIGV4dHJhY3QgKGJldHdlZW4gMjAxNyBhbmQgMjAxOCBpbiBCdXJraW5hIEZhc28sIHRoZSBTRFAgd2l0aCB0aGUgd2lkZXN0IHNlcnZpY2UgYXJlYSBjb3ZlcmVkIDE4IGVudW1lcmF0aW9uIGFyZWFzKS5dCgpFYWNoIG9mIHRoZXNlIDE4IGBFQVNFUlZFRGAgdmFyaWFibGVzIGxpc3Qgb25lIG9mIHRoZSBlbnVtZXJhdGlvbiBhcmVhcyBzZXJ2ZWQgYnkgYW4gU0RQLCBidXQgYXJlICoqZnVsbHkgYXZhaWxhYmxlIG9ubHkgaWYgdGhlIFNEUCBpcyBhICpwdWJsaWMqIGluc3RpdHV0aW9uKiogKHRoaXMgaW5mb3JtYXRpb24gaXMgbGltaXRlZCB0byBwdWJsaWMgaW5zdGl0dXRpb25zIGJlY2F1c2UgaXQncyBwcm92aWRlZCBieSBsb2NhbCBvciBuYXRpb25hbCBnb3Zlcm5tZW50cywgbm90IGJ5IHRoZSByZXNwb25kZW50IHRvIHRoZSBTRFAgcXVlc3Rpb25uYWlyZSkuIAoKVG8gc2VlIHRoaXMsIHRha2UgYSBsb29rIGF0IHRoZSBudW1iZXIgb2YgbWlzc2luZyB2YWx1ZXMgZm9yIGVhY2ggb2YgdGhlIGBFQVNFUlZFRGAgdmFyaWFibGVzICpqdXN0IGZvciB0aG9zZSBTRFBzIHdoZXJlIHRoZSBtYW5hZ2luZyBhdXRob3JpdHkgaXMgIkdvdmVybm1lbnQiKiAoYEFVVEhPUklUWSA9PSAxYCk6CgpgYGB7cn0Kc2RwICU+JSBjb3VudChBVVRIT1JJVFkpCgpzZHAgJT4lIAogIGZpbHRlcihBVVRIT1JJVFkgPT0gMSkgJT4lIAogIHN1bW1hcmlzZShhY3Jvc3Moc3RhcnRzX3dpdGgoIkVBU0VSVkVEIiksIH5zdW0oaXMubmEoLngpKSkpCmBgYAoKV2Ugc2VlIHRoYXQgd2UgaGF2ZSBhdCBsZWFzdCBvbmUgc2VydmljZSBhcmVhIGxpc3RlZCBmb3IgYWxsIDIwMiBwdWJsaWMgU0RQcyBpbiBvdXIgZGF0YXNldCAodGhlIGNhbGN1bGF0ZWQgdG90YWwgbnVtYmVyIG9mIG5vbi1taXNzaW5nIHZhbHVlcyBmb3IgYEVBU0VSVkVEMWAgaXMgemVybykuIEhvd2V2ZXIsIDE1NiBwdWJsaWMgU0RQcyBzZXJ2ZSBvbmx5IG9uZSBlbnVtZXJhdGlvbiBhcmVhLCBzbyB0aGVpciByZW1haW5pbmcgYEVBU0VSVkVEYCB2YWx1ZXMgYXJlIGFsbCBtaXNzaW5nIChgTkFgKS4gVGhlcmUgYXJlIDE3MyBwdWJsaWMgU0RQcyB0aGF0IHNlcnZlIG9ubHkgMiBlbnVtZXJhdGlvbiBhcmVhcywgMTgxIHRoYXQgc2VydmUgb25seSAzLCBhbmQgc28gb24uIAoKV2hhdCBhYm91dCBub24tcHVibGljIFNEUHM/ICoqRm9yIGFsbCBvdGhlciB0eXBlcyBvZiBTRFBzIHdoZXJlIHRoZSByZXNwb25kZW50IGNvbnNlbnRlZCB0byBiZSBpbnRlcnZpZXdlZCoqIChgQ09OU0VOVFNRID09IDFgKSoqLCBgRUFTRVJWRUQxYCB3aWxsIHJlcHJlc2VudCB0aGUgZW51bWVyYXRpb24gYXJlYSB3aGVyZSB0aGUgU0RQIGlzIGxvY2F0ZWQuKiogSG93ZXZlciwgdGhlIHJlbWFpbmluZyBgRUFTRVJWRURgIHZhcmlhYmxlcyB3aWxsIGVhY2ggYmUgbWlzc2luZy4KCmBgYHtyfQpzZHAgJT4lIAogIGZpbHRlcihBVVRIT1JJVFkgIT0gMSkgJT4lIAogIHN1bW1hcmlzZShhY3Jvc3Moc3RhcnRzX3dpdGgoIkVBU0VSVkVEIiksIH5zdW0oaXMubmEoLngpKSkpCmBgYAoKSW4gb3RoZXIgd29yZHM6IGl0J3Mgb25seSBhc3N1bWVkIHRoYXQgZXZlcnkgbm9uLXB1YmxpYyBTRFAgcHJvdmlkZXMgc2VydmljZXMgaW4gaXRzICpvd24qIGVudW1lcmF0aW9uIGFyZWEsIGV2ZW4gaWYgaXQgcmVhbGx5IG1pZ2h0IHNlcnZpY2UgYWRkaXRpb25hbCBlbnVtZXJhdGlvbiBhcmVhcywgYXMgd2VsbC4gCgoqKldoYXQgYWJvdXQgbm9uLXB1YmxpYyBTRFBzIHRoYXQgZG9uJ3QgY29uc2VudCB0byBiZSBpbnRlcnZpZXdlZD8qKiBUaGVyZSBhcmUgNCBvZiB0aGVzZSBjYXNlcywgYW5kIHlvdSdsbCBzZWUgdGhhdCB0aGV5IGFjY291bnQgZm9yIGFsbCBvZiB0aGUgbWlzc2luZyB2YWx1ZXMgaW4gYEVBU0VSVkVEMWA6CgpgYGB7cn0Kc2RwICU+JSAKICBmaWx0ZXIoQVVUSE9SSVRZICE9IDEpICU+JSAKICBjb3VudChpcy5uYShFQVNFUlZFRDEpLCBDT05TRU5UU1EpCmBgYAoKRm9yIG91ciBhbmFseXNpcywgd2UnZCBsaWtlIHRvIHNldCBgRUFTRVJWRUQxYCB0byBtYXRjaCB0aGUgU0RQJ3Mgb3duIGVudW1lcmF0aW9uIGFyZWEgYEVBSURgIGV2ZW4gaWYgdGhlIHJlc3BvbmRlbnQgZGlkIG5vdCBjb21wbGV0ZSB0aGUgc3VydmV5OgoKYGBge3J9CnNkcCA8LSBzZHAgJT4lIAogIG11dGF0ZShFQVNFUlZFRDEgPSBjYXNlX3doZW4oCiAgICBpcy5uYShFQVNFUlZFRDEpIH4gRUFJRCwKICAgIFQgfiBhcy5kb3VibGUoRUFTRVJWRUQxKQogICkpCmBgYAoKPGFzaWRlPgpXZSBjb2VyY2UgRUFTRVJWRUQxIGFzIGEgZG91YmxlIHRvIG1hdGNoIHRoZSBjbGFzcyBwcm92aWRlZCBieSBFQUlELgo8L2FzaWRlPgoKTm93LCBldmVyeSBTRFAgaGFzIGF0IGxlYXN0IG9uZSBub24tbWlzc2luZyBFQVNFUlZFRCB2YXJpYWJsZSEKCiMgUGl2b3QgbG9uZ2VyOiBvbmUgRUFTRVJWRUQgcGVyIHJvdwoKUmVtZW1iZXI6IG91ciB1bHRpbWF0ZSBnb2FsIGlzIHRvIHN1bW1hcmlzZSB0aGUgc2VydmljZSBlbnZpcm9ubWVudCBhdmFpbGFibGUgdG8gd29tZW4gbGl2aW5nIHdpdGhpbiBlYWNoIGVudW1lcmF0aW9uIGFyZWEsIHNvIHdlJ3JlIGxvb2tpbmcgZm9yIGFuIGVhc3kgd2F5IHRvIGNhbGN1bGF0ZSBzdW1tYXJ5IHN0YXRpc3RpY3MgZm9yIGVhY2ggb25lLiAKClJpZ2h0IG5vdywgdGhlIGRhdGEgYXJlIGZvcm1hdHRlZCBzbyB0aGF0IGVhY2ggU0RQIG9jY3VwaWVzIGEgc2luZ2xlIHJvdy4gSW4gb3JkZXIgdG8gZm9jdXMgaW5zdGVhZCBvbiB0aGUgZW51bWVyYXRpb24gYXJlYXMgcmVjZWl2aW5nIHNlcnZpY2VzIGZyb20gdGhlIFNEUHMsIHdlIHNob3VsZCByZXNoYXBlIHRoZSBkYXRhIHNvIHRoYXQgdGhlIGluZm9ybWF0aW9uIGFib3V0IGVhY2ggU0RQIGdldHMgcmVwZWF0ZWQgaW4gb25lIHJvdyBmb3IgZWFjaCBvZiB0aGUgZW51bWVyYXRpb24gYXJlYXMgdGhhdCBpdCBzZXJ2ZXMuCgpGb3IgZXhhbXBsZSwgbGV0J3MgbG9vayBhdCBhIGZldyBvZiB0aGUgdmFyaWFibGVzIGZvciB0aGUgU0RQcyBjdXJyZW50bHkgaW4gdGhlIGZpcnN0IDMgcm93cyBvZiBvdXIgZGF0YXNldDoKCmBgYHtyfQpzZHAgJT4lIAogIHNsaWNlKDE6MykgJT4lIAogIHNlbGVjdChGQUNJTElUWUlELCBFQUlELCBFQVNFUlZFRDEsIEVBU0VSVkVEMiwgQ09OUFJPViwgQ09OT0JTKQpgYGAKCkZhY2lsaXR5IGA3MjUwYCBpcyBsb2NhdGVkIGluIGVudW1lcmF0aW9uIGFyZWEgYDcxNDJgLCBhbmQgdGhlIGZpcnN0IHR3byBlbnVtZXJhdGlvbiBhcmVhcyBsaXN0ZWQgaW4gaXRzIHNlcnZpY2UgYXJlYSBhcmUgYDczODBgIGFuZCBgNzMyM2A6IG5vdGljZSB0aGF0IHRoZXNlIGFyZSAqb3V0c2lkZSBvZiogaXRzIG93biBhcmVhIChgRUFJRGApLiAKCkZhY2lsaXR5IGA3ODc5YCBpcyBsb2NhdGVkIGluIGVudW1lcmF0aW9uIGFyZWEgYDc4NzlgLCBhbmQgdGhlIGZpcnN0IHR3byBlbnVtZXJhdGlvbiBhcmVhcyBsaXN0ZWQgaW4gaXRzIHNlcnZpY2UgYXJlYSBhcmUgYDc4NzlgIGFuZCBgNzUxNmA6IG5vdGljZSB0aGF0IGl0cyBvd24gYXJlYSAoYEVBSURgKSBpcyBpbmNsdWRlZC4gCgpGYWNpbGl0eSBgNzUwNmAgaXMgbG9jYXRlZCBpbiBlbnVtZXJhdGlvbiBhcmVhIGA3NDgzYCwgYW5kIGl0cyBzZXJ2aWNlIGFyZWEgaW5jbHVkZXMgb25seSBvbmUgdmFsdWU6IGFsc28gYDc0ODNgIChgRUFJRCA9PSBFQVNFUlZFRDFgKS4gCgpXZSdsbCBub3cgdXNlIHRoZSBgdGlkeXJgIGZ1bmN0aW9uIFtwaXZvdF9sb25nZXJdKGh0dHBzOi8vdGlkeXIudGlkeXZlcnNlLm9yZy9yZWZlcmVuY2UvcGl2b3RfbG9uZ2VyLmh0bWwpIHRvIHJlc2hhcGUgdGhlc2UgZGF0YSwgY3JlYXRpbmcgNiByb3dzOiBvbmUgcm93IGZvciBlYWNoIGVudW1lcmF0aW9uIGFyZWEgc2VydmVkIGJ5IGVhY2ggU0RQOgoKPGFzaWRlPgpUaGUgPGI+dGlkeXI8L2I+IHBhY2thZ2UgaXMgbG9hZGVkIGludG8gUiB3aGVuIHlvdSB1c2UgPGI+bGlicmFyeSh0aWR5dmVyc2UpPC9iPgo8L2FzaWRlPgoKYGBge3J9CnNkcCAlPiUgCiAgc2xpY2UoMTozKSAlPiUgCiAgc2VsZWN0KEZBQ0lMSVRZSUQsIEVBSUQsIEVBU0VSVkVEMSwgRUFTRVJWRUQyLCBDT05QUk9WLCBDT05PQlMpICU+JSAKICBwaXZvdF9sb25nZXIoCiAgICBjb2xzID0gc3RhcnRzX3dpdGgoIkVBU0VSVkVEIikKICApCmBgYAoKTm93LCBlYWNoIFNEUCBvY2N1cGllcyAyIHJvd3M6IG9uZSBmb3IgYEVBU0VSVkVEMWAgYW5kIG9uZSBmb3IgYEVBU0VSVkVEMmAuIFRoZSBmdW5jdGlvbiBjcmVhdGVkIHR3byBuZXcgY29sdW1ucyBhdXRvbWF0aWNhbGx5OiBgbmFtZWAgY29udGFpbnMgdGhlIG5hbWUgb2YgdGhlIGNvbHVtbiB0aGF0IHdhcyAicGl2b3RlZCIsIGFuZCBgdmFsdWVgIGNvbnRhaW5zIHRoZSB2YWx1ZSBmcm9tIHRoZSBjb2x1bW4gdGhhdCB3YXMgInBpdm90ZWQiLiBXZSBjYW4gZHJvcCBgbmFtZWAgYW5kIGRlY2lkZSB0byBjYWxsIGB2YWx1ZWAgc29tZXRoaW5nIGxpa2UgYEVBU0VSVkVEYDoKCmBgYHtyfQpzZHAgJT4lIAogIHNsaWNlKDE6MykgJT4lIAogIHNlbGVjdChGQUNJTElUWUlELCBFQUlELCBFQVNFUlZFRDEsIEVBU0VSVkVEMiwgQ09OUFJPViwgQ09OT0JTKSAlPiUgCiAgcGl2b3RfbG9uZ2VyKAogICAgY29scyA9IHN0YXJ0c193aXRoKCJFQVNFUlZFRCIpLAogICAgdmFsdWVzX3RvID0gIkVBU0VSVkVEIiwKICAgIG5hbWVzX3RvID0gTlVMTAogICkKYGBgCgoqKldoeSBkaWQgd2UgZG8gdGhpcz8qKiBOb3csIGlmIHdlIHdhbnQgdG8gc3VtbWFyaXNlIHRoZSBudW1iZXIgb2YgZmFjaWxpdGllcyB0aGF0IHByb3ZpZGUgbWFsZSBjb25kb21zIGluIGVhY2ggZW51bWVyYXRpb24gYXJlYSBsaXN0ZWQgaW4gRUFTRVJWRUQsIHdlIGNhbiBkbyBzbyB2ZXJ5IGVhc2lseToKCmBgYHtyfQpzZHAgJT4lIAogIHNsaWNlKDE6MykgJT4lIAogIHNlbGVjdChGQUNJTElUWUlELCBFQUlELCBFQVNFUlZFRDEsIEVBU0VSVkVEMiwgQ09OUFJPViwgQ09OT0JTKSAlPiUgCiAgcGl2b3RfbG9uZ2VyKAogICAgY29scyA9IHN0YXJ0c193aXRoKCJFQVNFUlZFRCIpLAogICAgdmFsdWVzX3RvID0gIkVBU0VSVkVEIiwKICAgIG5hbWVzX3RvID0gTlVMTAogICkgJT4lIAogIGdyb3VwX2J5KEVBU0VSVkVEKSAlPiUgCiAgc3VtbWFyaXNlKHNkcHNfcHJvdmlkaW5nX2NvbmRvbXMgPSBzdW0oQ09OUFJPVikpCmBgYAoKT25lIG1vcmUgdGhpbmcgaGVyZTogbm90aWNlIHRoYXQgZmFjaWxpdHkgYDc1MDZgIHByb2R1Y2VkIGFuIGBOQWAgaW4gb3VyIG5ldyB2YXJpYWJsZSBgRUFTRVJWRURgLCBzaW5jZSBpdCBvbmx5IHByb3ZpZGVzIHNlcnZpY2VzIGluIG9uZSBlbnVtZXJhdGlvbiBhcmVhIChgRUFTRVJWRUQyID09IE5BYCkuIFdlIG5lZWQgdG8gZHJvcCB0aGF0IHJvdyB3aGVuIHdlIHBpdm90IHVzaW5nIGB2YWx1ZXNfZHJvcF9uYSA9IFRgOgoKYGBge3J9CnNkcCAlPiUgCiAgc2xpY2UoMTozKSAlPiUgCiAgc2VsZWN0KEZBQ0lMSVRZSUQsIEVBSUQsIEVBU0VSVkVEMSwgRUFTRVJWRUQyLCBDT05QUk9WLCBDT05PQlMpICU+JSAKICBwaXZvdF9sb25nZXIoCiAgICBjb2xzID0gc3RhcnRzX3dpdGgoIkVBU0VSVkVEIiksCiAgICB2YWx1ZXNfdG8gPSAiRUFTRVJWRUQiLAogICAgbmFtZXNfdG8gPSBOVUxMLAogICAgdmFsdWVzX2Ryb3BfbmEgPSBUCiAgKSAlPiUgCiAgZ3JvdXBfYnkoRUFTRVJWRUQpICU+JSAKICBzdW1tYXJpc2Uoc2Rwc19wcm92aWRpbmdfY29uZG9tcyA9IHN1bShDT05QUk9WKSkKYGBgCgpOb3cgdGhhdCB3ZSBrbm93IGhvdyB0byBgcGl2b3RfbG9uZ2VyYCwgbGV0J3MgYXBwbHkgdGhlIGZ1bmN0aW9uIHRvIG91ciBmdWxsIGRhdGFzZXQ6CgpgYGB7cn0Kc2RwIDwtIHNkcCAlPiUgCiAgcGl2b3RfbG9uZ2VyKAogICAgY29scyA9IHN0YXJ0c193aXRoKCJFQVNFUlZFRCIpLAogICAgdmFsdWVzX3RvID0gIkVBU0VSVkVEIiwKICAgIHZhbHVlc19kcm9wX25hID0gVCwKICAgIG5hbWVzX3RvID0gTlVMTAogICkgJT4lIAogIGRpc3RpbmN0KCkgICMgaW4gY2FzZSBhbnkgZmFjaWxpdHkgbGlzdGVkIHRoZSBzYW1lIEVBU0VSVkVEIHR3aWNlCmBgYAoKRHJvcHBpbmcgZWFjaCByb3cgd2hlcmUgYEVBU0VSVkVEYCBpcyBtaXNzaW5nLCB3ZSdyZSBsZWZ0IHdpdGggMzcyIHJvd3Mgd2hlcmUgaW5mb3JtYXRpb24gYWJvdXQgZWFjaCBTRFAgZ2V0cyByZXBlYXRlZCBvbmNlIGZvciBldmVyeSBlbnVtZXJhdGlvbiBhcmVhIHRoYXQgaXQgc2VydmVzLiAoUmVtZW1iZXI6IG91ciBvcmlnaW5hbCBkYXRhc2V0IGNvbnRhaW5lZCBvbmx5IDIzNCByb3dzIGJlY2F1c2UgU0RQcyBvY2N1cGllZCBqdXN0IG9uZSByb3cgYXBpZWNlKS4gCgpgYGB7cn0Kc2RwICU+JSBzZWxlY3QoRkFDSUxJVFlJRCwgRUFJRCwgRUFTRVJWRUQsIGV2ZXJ5dGhpbmcoKSkKYGBgCgojIFN1bW1hcmlzZSBieSBFQVNFUlZFRCBhbmQgWUVBUgoKTm93IHRoYXQgd2UndmUgZmluaXNoZWQgcmVjb2RpbmcgYW5kIHJlc2hhcGluZyB0aGUgZGF0YSwgd2UnbGwgY3JlYXRlIGEgZmV3IHN1bW1hcnkgc3RhdGlzdGljcyBkZXNjcmliaW5nIHRoZSBzZXJ2aWNlIGVudmlyb25tZW50IGluIGVhY2ggZW51bWVyYXRpb24gYXJlYSBmb3IgZWFjaCBzdXJ2ZXkgeWVhci4KCkxldCdzIHN0YXJ0IGJ5IGV4YW1pbmluZyB0aGUgYXZhaWxhYmlsaXR5IG9mIGRpZmZlcmVudCBmYW1pbHkgcGxhbm5pbmcgbWV0aG9kcy4gVXNpbmcgYGdyb3VwX2J5KEVBU0VSVkVELCBZRUFSKWAgYW5kIGBhY3Jvc3NgIHdlIGNhbiB0ZXN0IHdoZXRoZXIgZWFjaCBtZXRob2Qgd2FzIG5vcm1hbGx5IGF2YWlsYWJsZSBmcm9tIGF0IGxlYXN0IG9uZSBTRFAgc2VydmluZyBlYWNoIGFyZWEgaW4gZWFjaCB5ZWFyLiBXZSdsbCB1c2UgYSBbZ2x1ZV0oaHR0cHM6Ly9nbHVlLnRpZHl2ZXJzZS5vcmcvKSBzcGVjaWZpY2F0aW9uIHRvIGFkZCB0aGUgcHJlZml4ICJBTllfIiB0byBlYWNoIGBQUk9WYCB2YXJpYWJsZSAoZm9yIGV4YW1wbGUsIGBDT05QUk9WYCB3aWxsIGJlIHN1bW1hcml6ZWQgYXMgYEFOWV9DT05QUk9WYCwgYmVjYXVzZSBpdCBpbmRpY2F0ZXMgd2hldGhlciBhbnkgZmFjaWxpdHkgc2VydmluZyB0aGUgRUEgcHJvdmlkZXMgbWFsZSBjb25kb21zKS4KCmBgYHtyfQpzZHAgJT4lIAogIGdyb3VwX2J5KEVBU0VSVkVELCBZRUFSKSAlPiUKICBzdW1tYXJpc2UoCiAgICAuZ3JvdXBzID0gImtlZXAiLAogICAgYWNyb3NzKGVuZHNfd2l0aCgiUFJPViIpLCB+YW55KC54ID09IDEpLCAubmFtZXMgPSAiQU5ZX3suY29sfSIpCiAgKQpgYGAKClN1cHBvc2Ugd2Ugb25seSB3YW50IHRvIGtub3cgdGhlIG51bWJlciBvZiBtZXRob2RzIHByb3ZpZGVkIGJ5IGF0IGxlYXN0IG9uZSBTRFAgaW4gZWFjaCBlbnVtZXJhdGlvbiBhcmVhLiBVc2luZyB0aGUgW3Jvdy13aXNlIHBhcnRuZXJdKGh0dHBzOi8vZHBseXIudGlkeXZlcnNlLm9yZy9hcnRpY2xlcy9yb3d3aXNlLmh0bWwpIG9mIGBkcGx5cjo6YWNyb3NzYCwgY2FsbGVkIGBkcGx5cjo6Y19hY3Jvc3NgLCB3ZSBjYW4gY291bnQgdGhlIG51bWJlciBvZiBUUlVFIGBQUk9WYCB2YXJpYWJsZXMgaW4gZWFjaCByb3cgb2YgdGhlIHN1bW1hcnkgb3V0cHV0LgoKYGBge3J9CnNkcCAlPiUgCiAgZ3JvdXBfYnkoRUFTRVJWRUQsIFlFQVIpICU+JQogIHN1bW1hcmlzZSgKICAgIC5ncm91cHMgPSAia2VlcCIsCiAgICBhY3Jvc3MoZW5kc193aXRoKCJQUk9WIiksIH5hbnkoLnggPT0gMSksIC5uYW1lcyA9ICJBTllfey5jb2x9IikKICApICU+JSAKICB0cmFuc211dGUoTlVNX01FVEhPRFNfUFJPViA9IHN1bShjX2Fjcm9zcyhlbmRzX3dpdGgoIlBST1YiKSksIG5hLnJtID0gVCkpCmBgYAoKPGFzaWRlPgpUaGUgZnVuY3Rpb24gdHJhbnNtdXRlKCkgd29ya3MganVzdCBsaWtlIG11dGF0ZSgpLCBleGNlcHQgdGhhdCBpdCByZW1vdmVzIGFsbCBvZiB0aGUgY29sdW1ucyBleGNlcHQgZm9yIHRoZSByZXN1bHQgYW5kIGFueSBncm91cGluZyB2YXJpYWJsZXMuCjwvYXNpZGU+CgpMZXQncyB1c2UgdGhlIHNhbWUgcHJvY2VkdXJlIHRvIGNyZWF0ZSBzdW1tYXJ5IHZhcmlhYmxlcyBmcm9tIHRoZSBgT0JTYCwgYE9VVDNNT2AsIGFuZCBgT1VUREFZYCB2YXJpYWJsZXMsIHRvbywgY3JlYXRpbmc6CgogICogYE5VTV9NRVRIT0RTX1BST1ZgIC0gbnVtYmVyIG9mIG1ldGhvZHMgcHJvdmlkZWQgYnkgYXQgbGVhc3Qgb25lIFNEUAogICogYE5VTV9NRVRIT0RTX09VVGAgLSBudW1iZXIgb2YgbWV0aG9kcyBvdXQgb2Ygc3RvY2sgd2l0aCBhdCBsZWFzdCBvbmUgU0RQCiAgKiBgTlVNX01FVEhPRFNfSU5TVE9DS2AgLSBudW1iZXIgb2YgbWV0aG9kcyBpbi1zdG9jayB3aXRoIGF0IGxlYXN0IG9uZSBTRFAKICAqIGBOVU1fTUVUSE9EU19PVVQzTU9gIC0gbnVtYmVyIG9mIG1ldGhvZHMgb3V0IG9mIHN0b2NrIGFueSB0aW1lIGluIHRoZSBsYXN0IDMgbW9udGhzIHdpdGggYXQgbGVhc3Qgb25lIFNEUAogICogYE1FQU5fT1VUREFZYCAtIHRoZSBtZWFuIGxlbmd0aCBvZiBhIHN0b2Nrb3V0IGZvciBhbnkgZmFtaWx5IHBsYW5uaW5nIG1ldGhvZCAobWVhc3VyZWQgaW4gZGF5cykKCmBgYHtyfQpzZHAgJT4lIAogIGdyb3VwX2J5KEVBU0VSVkVELCBZRUFSKSAlPiUKICBzdW1tYXJpc2UoCiAgICAuZ3JvdXBzID0gImtlZXAiLAogICAgYWNyb3NzKGVuZHNfd2l0aCgiUFJPViIpLCB+YW55KC54ID09IDEpLCAubmFtZXMgPSAiQU5ZX3suY29sfSIpLAogICAgYWNyb3NzKGVuZHNfd2l0aCgiT0JTIiksIH5hbnkoLnggPT0gMCksIC5uYW1lcyA9ICJBTllfey5jb2x9X09VVCIpLAogICAgYWNyb3NzKGVuZHNfd2l0aCgiT0JTIiksIH5hbnkoLnggPT0gMSksIC5uYW1lcyA9ICJBTllfey5jb2x9X0lOU1RPQ0siKSwKICAgIGFjcm9zcyhlbmRzX3dpdGgoIk9VVDNNTyIpLCB+YW55KC54ID09IDEpLCAubmFtZXMgPSAiQU5ZX3suY29sfSIpLAogICAgYWNyb3NzKGVuZHNfd2l0aCgiT1VUREFZIiksIH5tZWFuKC54LCBuYS5ybSA9IFQpLCAubmFtZXMgPSAiTUVBTl97LmNvbH0iKQogICkgJT4lIAogIHRyYW5zbXV0ZSgKICAgIE5VTV9NRVRIT0RTX1BST1YgPSBzdW0oY19hY3Jvc3MoZW5kc193aXRoKCJQUk9WIikpLCBuYS5ybSA9IFQpLAogICAgTlVNX01FVEhPRFNfT1VUU1RPQ0sgPSBzdW0oY19hY3Jvc3MoZW5kc193aXRoKCJPQlNfT1VUIikpLCBuYS5ybSA9IFQpLAogICAgTlVNX01FVEhPRFNfSU5TVE9DSyA9IHN1bShjX2Fjcm9zcyhlbmRzX3dpdGgoIk9CU19JTlNUT0NLIikpLCBuYS5ybSA9IFQpLAogICAgTlVNX01FVEhPRFNfT1VUM01PID0gc3VtKGNfYWNyb3NzKGVuZHNfd2l0aCgiT1VUM01PIikpLCBuYS5ybSA9IFQpLAogICAgTUVBTl9PVVREQVkgPSBtZWFuKGNfYWNyb3NzKGVuZHNfd2l0aCgiT1VUREFZIikpLCBuYS5ybSA9IFQpCiAgKQpgYGAKCkZpbmFsbHksIGxldCdzIGFkZCBhIGZldyBtb3JlIHN1bW1hcnkgdmFyaWFibGVzIHdpdGhpbiB0aGUgc2FtZSBgc3VtbWFyaXNlYCBmdW5jdGlvbiB0aGF0IHdpbGwgaGVscCBkZXNjcmliZSB0aGUgYW1vdW50IGFuZCB0eXBlcyBvZiBmYWNpbGl0aWVzIHNlcnZpbmcgZWFjaCBlbnVtZXJhdGlvbiBhcmVhOiAKCiAgKiBgTl9TRFBgIC0gbnVtYmVyIG9mIFNEUHMgCiAgKiBgTl9TRFBfSU5UYCAtIG51bWJlciBvZiBTRFBzIHRoYXQgY29uc2VudGVkIHRvIHRoZSBpbnRlcnZpZXcKICAqIGBIT1NQSVRBTGAgLSBudW1iZXIgb2YgU0RQcyB0aGF0IGFyZSBob3NwaXRhbHMgCiAgKiBgSENFTlRFUmAgLSBudW1iZXIgb2YgU0RQcyB0aGF0IGFyZSBoZWFsdGggY2VudGVycyAKICAqIGBQSEFSTWAgLSBudW1iZXIgb2YgU0RQcyB0aGF0IGFyZSBwaGFybWFjaWVzCiAgKiBgT1RIRVJgIC0gbnVtYmVyIG9mIFNEUHMgdGhhdCBhcmUgYW4gIm90aGVyIiBmYWNpbGl0eSB0eXBlIAogICogYEdPVmAgIC0gbnVtYmVyIG9mIFNEUHMgbWFuYWdlZCBieSBhIGdvdmVybm1lbnQgYXV0aG9yaXR5CiAgKiBgRkFJVEhgIC0gbnVtYmVyIG9mIFNEUHMgbWFuYWdlZCBieSBhIGZhaXRoLWJhc2VkIGF1dGhvcml0eQogICogYFBSSVZgIC0gbnVtYmVyIG9mIFNEUHMgbWFuYWdlZCBieSBhIHByaXZhdGUgc2VjdG9yIGF1dGhvcml0eQogIAo8YXNpZGU+ClRoaXMgdGltZSwgd2UnbGwgcmVwbGFjZSB0cmFuc211dGUoKSB3aXRoIG11dGF0ZSgpIGFuZCBzZWxlY3QoKTogd2l0aCBzbyBtYW55IG5ldyB2YXJpYWJsZXMgY29taW5nIGludG8gcGxheSwgd2Ugc2hvdWxkIGJlIGV4cGxpY2l0IGFib3V0IHdoaWNoIG9uZXMgd2Ugd2FudCB0byBhZGQgYW5kIGRyb3AuIFdlJ2xsIGFsc28gcmVtb3ZlIHRoZSBncm91cGluZyB2YXJpYWJsZXMgdXNlZCBpbiBvdXIgc3VtbWFyeSBjYWxjdWxhdGlvbnMgd2l0aCB1bmdyb3VwKCkuCjwvYXNpZGU+CgpgYGB7cn0Kc2RwIDwtIHNkcCAlPiUgCiAgZ3JvdXBfYnkoRUFTRVJWRUQsIFlFQVIpICU+JQogIHN1bW1hcmlzZSgKICAgIC5ncm91cHMgPSAia2VlcCIsCiAgICBOX1NEUCA9IG4oKSwKICAgIE5fU0RQX0lOVCA9IHN1bShDT05TRU5UU1EgPT0gMSksCiAgICBIT1NQSVRBTCA9IHN1bShGQUNJTElUWVRZUEVHRU4gPT0gMSksCiAgICBIQ0VOVEVSID0gc3VtKEZBQ0lMSVRZVFlQRUdFTiA9PSAyKSwKICAgIFBIQVJNID0gc3VtKEZBQ0lMSVRZVFlQRUdFTiA9PSA3KSwKICAgIE9USEVSID0gc3VtKEZBQ0lMSVRZVFlQRUdFTiA9PSA5KSwKICAgIEdPViAgPSBzdW0oQVVUSE9SSVRZID09IDEpLAogICAgRkFJVEggPSBzdW0oQVVUSE9SSVRZID09IDMpLAogICAgUFJJViA9IHN1bShBVVRIT1JJVFkgPT0gNCksCiAgICBhY3Jvc3MoZW5kc193aXRoKCJQUk9WIiksIH5hbnkoLnggPT0gMSksIC5uYW1lcyA9ICJBTllfey5jb2x9IiksCiAgICBhY3Jvc3MoZW5kc193aXRoKCJPQlMiKSwgfmFueSgueCA9PSAwKSwgLm5hbWVzID0gIkFOWV97LmNvbH1fT1VUIiksCiAgICBhY3Jvc3MoZW5kc193aXRoKCJPQlMiKSwgfmFueSgueCA9PSAxKSwgLm5hbWVzID0gIkFOWV97LmNvbH1fSU5TVE9DSyIpLAogICAgYWNyb3NzKGVuZHNfd2l0aCgiT1VUM01PIiksIH5hbnkoLnggPT0gMSksIC5uYW1lcyA9ICJBTllfey5jb2x9IiksCiAgICBhY3Jvc3MoZW5kc193aXRoKCJPVVREQVkiKSwgfm1lYW4oLngsIG5hLnJtID0gVCksIC5uYW1lcyA9ICJNRUFOX3suY29sfSIpCiAgKSAlPiUgCiAgbXV0YXRlKAogICAgTlVNX01FVEhPRFNfUFJPViA9IHN1bShjX2Fjcm9zcyhlbmRzX3dpdGgoIlBST1YiKSksIG5hLnJtID0gVCksCiAgICBOVU1fTUVUSE9EU19PVVQgPSBzdW0oY19hY3Jvc3MoZW5kc193aXRoKCJPQlNfT1VUIikpLCBuYS5ybSA9IFQpLAogICAgTlVNX01FVEhPRFNfSU5TVE9DSyA9IHN1bShjX2Fjcm9zcyhlbmRzX3dpdGgoIk9CU19JTlNUT0NLIikpLCBuYS5ybSA9IFQpLAogICAgTlVNX01FVEhPRFNfT1VUM01PID0gc3VtKGNfYWNyb3NzKGVuZHNfd2l0aCgiT1VUM01PIikpLCBuYS5ybSA9IFQpLAogICAgTUVBTl9PVVREQVkgPSBtZWFuKGNfYWNyb3NzKGVuZHNfd2l0aCgiT1VUREFZIikpLCBuYS5ybSA9IFQpCiAgKSAlPiUKICBzZWxlY3QoCiAgICAtZW5kc193aXRoKCJQUk9WIiksCiAgICBOVU1fTUVUSE9EU19QUk9WLCAjIG1hbnVhbGx5IGtlcHQsIHNpbmNlIGFsbCBvdGhlcnMgZW5kaW5nIHdpdGggIlBST1YiIGFyZSBkcm9wcGVkCiAgICAtZW5kc193aXRoKCJPQlNfT1VUIiksCiAgICAtZW5kc193aXRoKCJPQlNfSU5TVE9DSyIpLAogICAgLWVuZHNfd2l0aCgiT1VUM01PIiksCiAgICBOVU1fTUVUSE9EU19PVVQzTU8sICMgbWFudWFsbHkga2VwdCwgc2luY2UgYWxsIG90aGVycyBlbmRpbmcgd2l0aCAiT1VUM01PIiBhcmUgZHJvcHBlZAogICAgIC1lbmRzX3dpdGgoIk9VVERBWSIpLAogICAgTUVBTl9PVVREQVkKICApICU+JSAKICB1bmdyb3VwKCkKCnNkcApgYGAKCiMgTWVyZ2luZyB0byBpbmRpdmlkdWFsIHJlY29yZHMKCgpOb3cgdGhhdCB3ZSd2ZSBjcmVhdGVkIHNvbWUgc3VtbWFyeSBzdGF0aXN0aWNzIGFib3V0IGVhY2ggZW51bWVyYXRpb24gYXJlYSwgd2UnbGwgd2FudCB0byBtZXJnZSB0aGVtIHRvIGEgZGF0YSBleHRyYWN0IHdoZXJlIHdvbWVuIGFyZSB0aGUgcHJpbWFyeSB1bml0IG9mIGFuYWx5c2lzLiBDb25zaWRlciB0aGUgZm9sbG93aW5nIGZlbWFsZSByZXNwb25kZW50IGRhdGFzZXQgY29sbGVjdGVkIGZyb20gQnVya2luYSBGYXNvIGluIDIwMTcgYW5kIDIwMTg7IGl0IGNvbnRhaW5zIGEgdmFyaWFibGUgW0ZQQ1VSUlVTRV0oaHR0cHM6Ly9wbWEuaXB1bXMub3JnL3BtYS1hY3Rpb24vdmFyaWFibGVzL0ZQQ1VSUlVTRSNkZXNjcmlwdGlvbl9zZWN0aW9uKSBpbmRpY2F0aW5nIHdoZXRoZXIgdGhlIHdvbWFuIGlzIGN1cnJlbnRseSB1c2luZyBhIG1ldGhvZCBvZiBmYW1pbHkgcGxhbm5pbmc6CgpgYGB7ciwgcmVzdWx0cz0naGlkZSd9CmhoZiA8LSByZWFkX2lwdW1zX21pY3JvKAogIGRkaSA9ICJkYXRhL3BtYV8wMDAxMS54bWwiLAogIGRhdGEgPSAiZGF0YS9wbWFfMDAwMTEuZGF0Lmd6IgopICU+JSAKICBzZWxlY3QoUEVSU09OSUQsIEVBSUQsIFlFQVIsIEZQQ1VSUlVTRSkgJT4lIAogIG11dGF0ZSgKICAgIGFjcm9zcyhldmVyeXRoaW5nKCksIH5sYmxfbmFfaWYoCiAgICAgIC54LAogICAgICB+LmxibCAlaW4lIGMoCiAgICAgICAgIk5vIHJlc3BvbnNlIG9yIG1pc3NpbmciLAogICAgICAgICJOSVUgKG5vdCBpbiB1bml2ZXJzZSkiCiAgICAgICkKICAgICkpCiAgKQpgYGAKCmBgYHtyfQpoaGYKYGBgCgpUbyBtZXJnZSB0aGUgU0RQIHZhcmlhYmxlcyB3ZSd2ZSBjcmVhdGVkLCB3ZSdsbCB1c2UgW2RwbHlyOjpyaWdodF9qb2luXShodHRwczovL2RwbHlyLnRpZHl2ZXJzZS5vcmcvcmVmZXJlbmNlL2pvaW4uaHRtbCkgdG8gZW5zdXJlIHRoYXQgYWxsIHJvd3MgZnJvbSBgaGhmYCBhcmUgcHJlc2VydmVkLiBJbiB0aGUgcHJvY2Vzcywgd2UnbGwgYmUgYXR0YWNoaW5nIG9uZSByb3cgb2YgdGhlIGBzZHBgIGRhdGEgdG8gZWFjaCB3b21hbiBieSBtYXRjaGluZyBoZXIgYEVBSURgIHRvIGFuIGBFQVNFUlZFRGAsIGFuZCBieSBtYXRjaGluZyBoZXIgc3VydmV5IGBZRUFSYCB0byBhbiBTRFAgc3VydmV5IGBZRUFSYC4KCmBgYHtyfQpoaGYgPC0gc2RwICU+JSAKICByZW5hbWUoRUFJRCA9IEVBU0VSVkVEKSAlPiUgCiAgcmlnaHRfam9pbihoaGYsIGJ5ID0gYygiRUFJRCIsICJZRUFSIikpCmBgYAoKTm93LCBlYWNoIHdvbWFuJ3MgcmVjb3JkIGNvbnRhaW5zIGFsbCBvZiB0aGUgdmFyaWFibGVzIHdlIGNyZWF0ZWQgYWJvdmUgc3VtbWFyaXppbmcgdGhlIFNEUHMgdGhhdCBzZXJ2ZSBoZXIgZW51bWVyYXRpb24gYXJlYS4gRm9yIGV4YW1wbGUsIGZvciBhbGwgd29tZW4gbGl2aW5nIGluIGBFQUlEID09IDcwMDNgIGluIGBZRUFSID09IDIwMTdgLCB0aGUgdmFsdWUgaW4gYE5VTV9NRVRIT0RTX09VVDNNT2Agc2hvd3MgdGhlIG51bWJlciBvZiBmYW1pbHkgcGxhbm5pbmcgbWV0aG9kcyB0aGF0IHdlcmUgb3V0IG9mIHN0b2NrIHdpdGggYW55IFNEUCBzZXJ2aW5nIHRoZSB3b21hbidzIGVudW1lcmF0aW9uIGFyZWEgd2l0aGluIHRocmVlIG1vbnRocyBwcmlvciB0byB0aGUgc3VydmV5OgoKYGBge3J9CmhoZiAlPiUgCiAgZmlsdGVyKEVBSUQgPT0gNzAwMywgWUVBUiA9PSAyMDE3KSAlPiUgCiAgc2VsZWN0KFBFUlNPTklELCBFQUlELCBZRUFSLCBOVU1fTUVUSE9EU19PVVQzTU8pCmBgYAoKWW91J2xsIG5vdGljZSB0aGF0IDU1IHdvbWVuIHdlcmUgc3VydmV5ZWQgaW4gYEVBSURgIDcwMDMgaW4gMjAxNywgYW5kIGVhY2ggb25lIGhhcyB0aGUgc2FtZSB2YWx1ZSAoMCkgZm9yIGBOVU1fTUVUSE9EU19PVVQzTU9gLiAKCldlJ2xsIGRpZyBkZWVwZXIgaW50byB0aGUgdHlwZXMgb2YgcmVzZWFyY2ggcXVlc3Rpb25zIHRoYXQgb3VyIG5ldyBjb21iaW5lZCBkYXRhc2V0IGNhbiBhbnN3ZXIgaW4gb3VyIHVwY29taW5nIERhdGEgQW5hbHlzaXMgcG9zdC4gRm9yIG5vdywgdGFrZSBhIGxvb2sgYXQgdGhlIGFwcGFyZW50IHJlbGF0aW9uc2hpcCBiZXR3ZWVuIGBGUENVUlJVU0VgIGFuZCBgTlVNX01FVEhPRFNfT1VUM01PYCBmb3IgYWxsIG9mIHRoZSB3b21lbiB3aXRoIG5vbi1taXNzaW5nIHJlc3BvbnNlcyBmb3IgYm90aCB2YXJpYWJsZXM6CgpgYGB7cn0KaGhmICU+JSAKICBmaWx0ZXIoIWlzLm5hKEZQQ1VSUlVTRSkgJiAhaXMubmEoTlVNX01FVEhPRFNfT1VUM01PKSkgJT4lIAogIGdyb3VwX2J5KE5VTV9NRVRIT0RTX09VVDNNTyA+IDApICU+JSAKICBjb3VudChGUENVUlJVU0UpICU+JSAKICBtdXRhdGUocGN0ID0gbi9zdW0obikpCmBgYAoKTm90YWJseSwgYW1vbmcgdGhvc2UgcmVzcG9uZGVudHMgbGl2aW5nIGluIGFuIGVudW1lcmF0aW9uIGFyZWEgdGhhdCBleHBlcmllbmNlZCB6ZXJvIHN0b2Nrb3V0cyB3aXRoaW4gdGhlIDMgbW9udGhzIHByaW9yIHRvIHRoZSBTRFAgc3VydmV5LCAzNSUgaW5kaWNhdGVkIHRoYXQgdGhleSB3ZXJlIGFjdGl2ZWx5IHVzaW5nIGEgZmFtaWx5IHBsYW5uaW5nIG1ldGhvZC4gQ29tcGFyZSB0aGF0IHRvIHRoZSBzZXQgb2YgcmVzcG9uZGVudHMgbGl2aW5nIGluIGFuIGFyZWEgd2hlcmUgYXQgbGVhc3Qgb25lIG1ldGhvZCB3YXMgb3V0IG9mIHN0b2NrIGR1cmluZyB0aGUgc2FtZSB0aW1lIHBlcmlvZDogb25seSAzMCUgd2hlcmUgdXNpbmcgYSBmYW1pbHkgcGxhbm5pbmcgbWV0aG9kLiAKCldoaWxlIGEgNSUgZGlmZmVyZW5jZSBtYXkgb3IgbWF5IG5vdCBwcm92ZSB0byBiZSBzdGF0aXN0aWNhbGx5IHNpZ25pZmljYW50IHVuZGVyIGZ1cnRoZXIgYW5hbHlzaXMsIGl0J3Mgbm90IGVudGlyZWx5IHN1cnByaXNpbmcgdGhhdCB0aGUgcmVsaWFibGUgYXZhaWxhYmlsaXR5IG9mIGNvbnRyYWNlcHRpdmUgbWV0aG9kcyBmcm9tIHNlcnZpY2UgcHJvdmlkZXJzIG1pZ2h0IGluZmx1ZW5jZSB0aGUgY29udHJhY2VwdGl2ZSBwcmV2YWxlbmNlIHJhdGUgYW1vbmcgd29tZW4gaW4gYSBnaXZlbiBzZXJ2aWNlIGFyZWEuIAoKQXMgYWx3YXlzLCBsZXQgdXMga25vdyB3aGF0IGtpbmRzIG9mIHF1ZXN0aW9ucyBhYm91dCBmZXJ0aWxpdHkgYW5kIGZhbWlseSBwbGFubmluZyB5b3UncmUgYW5zd2VyaW5nIHdpdGggZGF0YSBtZXJnZWQgZnJvbSBzZXJ2aWNlIHByb3ZpZGVycyEgCgpgYGB7ciwgZXZhbD1GLCBpbmNsdWRlPUZ9CiMgc2RwIDwtIG1hcChjKCJfaW5FQSIsICJfb3V0RUEiLCAiX2FsbCIpLCB+ewojIAojICAgbmFtZSA8LSAueAojIAojICAgZWFfZmlsdGVyIDwtIGZ1bmN0aW9uKGRhdGEsIG5hbWUpewojICAgICBpZihuYW1lID09ICJfaW5FQSIpe2ZpbHRlcihkYXRhLCBFQUlEID09IEVBU0VSVkVEKX0KIyAgICAgZWxzZSBpZihuYW1lID09ICJfb3V0RUEiKXtmaWx0ZXIoZGF0YSwgRUFJRCAhPSBFQVNFUlZFRCl9CiMgICAgIGVsc2Uge2ZpbHRlcihkYXRhKX0KIyAgIH0KIyAKIyAgIHNkcCAlPiUKIyAgICAgZWFfZmlsdGVyKG5hbWUpICU+JQojICAgICBncm91cF9ieShFQVNFUlZFRCwgWUVBUikgJT4lCiMgICAgIHN1bW1hcmlzZSgKIyAgICAgICAuZ3JvdXBzID0gImtlZXAiLAojICAgICAgIE5fRkFDID0gbigpLAojICAgICAgIE5fSU5UUlZXRCA9IHN1bShDT05TRU5UU1EgPT0gMSksCiMgICAgICAgSE9TUElUQUwgPSBzdW0oRkFDSUxJVFlUWVBFR0VOID09IDEpLAojICAgICAgIEhDRU5URVIgPSBzdW0oRkFDSUxJVFlUWVBFR0VOID09IDIpLAojICAgICAgIFBIQVJNID0gc3VtKEZBQ0lMSVRZVFlQRUdFTiA9PSA3KSwKIyAgICAgICBPVEhFUiA9IHN1bShGQUNJTElUWVRZUEVHRU4gPT0gOSksCiMgICAgICAgR09WICA9IHN1bShBVVRIT1JJVFkgPT0gMSksCiMgICAgICAgRkFJVEggPSBzdW0oQVVUSE9SSVRZID09IDMpLAojICAgICAgIFBSSVYgPSBzdW0oQVVUSE9SSVRZID09IDQpLAojICAgICAgIGFjcm9zcyhlbmRzX3dpdGgoIlBST1YiKSwgfmFueSgueCA9PSAxKSwgLm5hbWVzID0gIkFOWV97LmNvbH0iKSwKIyAgICAgICBhY3Jvc3MoZW5kc193aXRoKCJPQlMiKSwgfmFueSgueCA9PSAwKSwgLm5hbWVzID0gIkFOWV97LmNvbH1fT1VUIiksCiMgICAgICAgYWNyb3NzKGVuZHNfd2l0aCgiT0JTIiksIH5hbnkoLnggPT0gMSksIC5uYW1lcyA9ICJBTllfey5jb2x9X0lOU1RPQ0siKSwKIyAgICAgICBhY3Jvc3MoZW5kc193aXRoKCJPVVQzTU8iKSwgfmFueSgueCA9PSAxKSwgLm5hbWVzID0gIkFOWV97LmNvbH0iKSwKIyAgICAgICBhY3Jvc3MoZW5kc193aXRoKCJPVVRFViIpLCB+YW55KC54ID09IDEpLCAubmFtZXMgPSAiQU5ZX3suY29sfSIpCiMgICAgICkgJT4lCiMgICAgIG11dGF0ZSgKIyAgICAgICBOVU1fTUVUSE9EU19QUk9WID0gc3VtKGNfYWNyb3NzKGVuZHNfd2l0aCgiUFJPViIpKSwgbmEucm0gPSBUKSwKIyAgICAgICBOVU1fTUVUSE9EU19PVVQgPSBzdW0oY19hY3Jvc3MoZW5kc193aXRoKCJPQlNfT1VUIikpLCBuYS5ybSA9IFQpLAojICAgICAgIE5VTV9NRVRIT0RTX0lOU1RPQ0sgPSBzdW0oY19hY3Jvc3MoZW5kc193aXRoKCJPQlNfSU5TVE9DSyIpKSwgbmEucm0gPSBUKSwKIyAgICAgICBOVU1fTUVUSE9EU19PVVQzTU8gPSBzdW0oY19hY3Jvc3MoZW5kc193aXRoKCJPVVQzTU8iKSksIG5hLnJtID0gVCkKIyAgICAgKSAlPiUKIyAgICAgc2VsZWN0KAojICAgICAgIC1lbmRzX3dpdGgoIlBST1YiKSwKIyAgICAgICBOVU1fTUVUSE9EU19QUk9WLCAKIyAgICAgICAtZW5kc193aXRoKCJPQlNfT1VUIiksCiMgICAgICAgLWVuZHNfd2l0aCgiT0JTX0lOU1RPQ0siKSwKIyAgICAgICAtZW5kc193aXRoKCJPVVQzTU8iKSwKIyAgICAgICBOVU1fTUVUSE9EU19PVVQzTU8KIyAgICAgKSAlPiUgCiMgICAgIHJlbmFtZV93aXRoKH5wYXN0ZTAoLngsIG5hbWUpLCAtYyhFQVNFUlZFRCwgWUVBUikpCiMgfSkKIyAKIyBzZHAgPC0gc2RwICU+JQojICAgcmVkdWNlKGZ1bGxfam9pbiwgYnkgPSBjKCJFQVNFUlZFRCIsICJZRUFSIikpICU+JQojICAgYXJyYW5nZShFQVNFUlZFRCwgWUVBUikgJT4lCiMgICBtdXRhdGUoYWNyb3NzKGV2ZXJ5dGhpbmcoKSwgfnJlcGxhY2VfbmEoLngsIDApKSkKYGBgCgpgYGB7ciwgZXZhbD1GLCBpbmNsdWRlPUZ9CiMgc2RwICU+JSBzdW1tYXJpc2VfYWxsKHN1bSkgJT4lIHN0cigpCgojV2UgYXJlIGN1cnJlbnRseSBsb3NpbmcgYW55IGZhY2lsaXR5IHRoYXQgd2FzIGludGVydmlld2VkIChDT05TRU5UU1EgPT0gMSkgYW5kIGRvZXNuJ3Qgc2VydmUgdGhlIGVhIHRoYXQgaXQncyBsb2NhdGVkIGluISBUaGlzIGlzIGEgcHJvYmxlbSBvbmx5IG9uY2U6IEVBIDc1NTQgY29udGFpbnMgb25seSBvbmUgZmFjaWxpdHkgKGlkIDc1ODIpIGFuZCBpdCBkb2VzIG5vdCBzZXJ2ZSB0aGUgRUEqCmBgYAoK" download="ea-service-environment.Rmd">
+<button class="btn btn-default"><i class="fa fa-save"></i> Download this page as R code</button>
+</a>
+</div>
+<p>In our last post, we explained how PMA Service Delivery Point (SDP) data are designed to describe the family planning services available to women living within each survey’s geographic enumeration areas. In this post, we’ll begin with an example SDP dataset collected from Burkina Faso, and we’ll then show how to use <a href="https://pma.ipums.org/pma-action/variables/EAID">EAID</a> and <a href="https://pma.ipums.org/pma-action/variables/EASERVED">EASERVED</a> to aggregate variables collected from SDPs in each area. The aggregated measures will then be attached to another dataset with records representing individual women, which we will use in an upcoming Data Analysis post exploring how environmental factors impact women’s fertility outcomes.</p>
+<h1 id="data">Data</h1>
+<p>Head over to <a href="https://pma.ipums.org/pma-action/variables/group">pma.ipums.org</a> and create a data extract with these samples:</p>
+<ul>
+<li>Burkina Faso - 2018 R6</li>
+<li>Burkina Faso - 2017 R5</li>
+</ul>
+<aside>
+See our post about <a href="../2020-12-10-get-ipums-pma-data/index.html">downloading an IPUMS extract for R</a> for detailed instructions.
+</aside>
+<p>For this example, suppose we’re generally interested both in the types of facilities and in the types of family planning services offered within each enumeration area.</p>
+<p>We’ll want to examine a few variables describing the SDP, itself:</p>
+<ul>
+<li><a href="https://pma.ipums.org/pma-action/variables/EAID">EAID</a> - the enumeration area where the SDP is physically located</li>
+<li><a href="https://pma.ipums.org/pma-action/variables/EASERVED">EASERVED</a> - enumeration areas where the SDP provides services (numbered 1-18)</li>
+<li><a href="https://pma.ipums.org/pma-action/variables/AUTHORITY">AUTHORITY</a> - the SDP’s managing AUTHORITY (government, NGO, faith-based organziation, private organization, or other)</li>
+<li><a href="https://pma.ipums.org/pma-action/variables/FACILITYTYPEGEN">FACILITYTYPEGEN</a> - the general facility type (additional detail is provided by the variable <code>FACILITYTYPE</code>, but we’ll use the more general version in our analysis)</li>
+<li><a href="https://pma.ipums.org/pma-action/variables/CONSENTSQ">CONSENTSQ</a> - whether the respondent to the SDP questionnaire consented to be interviewed (for those that did not, we still may have some basic information like <code>EAID</code>, <code>FACILITYTYPEGEN</code>, etc).</li>
+</ul>
+<p>We’ll also want variables describing the family planning services that are normally available, and those that have been out of stock.</p>
+<p>Select these variables describing whether a facility normally provides a given family planning method:</p>
+<ul>
+<li><a href="https://pma.ipums.org/pma-action/variables/CONPROV">CONPROV</a></li>
+<li><a href="https://pma.ipums.org/pma-action/variables/CYCBPROV">CYCBPROV</a></li>
+<li><a href="https://pma.ipums.org/pma-action/variables/DEPOPROV">DEPOPROV</a></li>
+<li><a href="https://pma.ipums.org/pma-action/variables/DIAPROV">DIAPROV</a></li>
+<li><a href="https://pma.ipums.org/pma-action/variables/EMRGPROV">EMRGPROV</a></li>
+<li><a href="https://pma.ipums.org/pma-action/variables/FCPROV">FCPROV</a></li>
+<li><a href="https://pma.ipums.org/pma-action/variables/FSTPROV">FSTPROV</a></li>
+<li><a href="https://pma.ipums.org/pma-action/variables/FJPROV">FJPROV</a></li>
+<li><a href="https://pma.ipums.org/pma-action/variables/IMPPROV">IMPPROV</a></li>
+<li><a href="https://pma.ipums.org/pma-action/variables/IUDPROV">IUDPROV</a></li>
+<li><a href="https://pma.ipums.org/pma-action/variables/MSTPROV">MSTPROV</a></li>
+<li><a href="https://pma.ipums.org/pma-action/variables/PILLPROV">PILLPROV</a></li>
+<li><a href="https://pma.ipums.org/pma-action/variables/SAYPROV">SAYPROV</a></li>
+</ul>
+<p>Then select these variables describing whether a facility that provides a given family planning method had supplies in-stock and observed by the interviewer:</p>
+<ul>
+<li><a href="https://pma.ipums.org/pma-action/variables/CONOBS">CONOBS</a></li>
+<li><a href="https://pma.ipums.org/pma-action/variables/CYCBOBS">CYCBOBS</a></li>
+<li><a href="https://pma.ipums.org/pma-action/variables/DEPOOBS">DEPOOBS</a></li>
+<li><a href="https://pma.ipums.org/pma-action/variables/DIAOBS">DIAOBS</a></li>
+<li><a href="https://pma.ipums.org/pma-action/variables/EMRGOBS">EMRGOBS</a></li>
+<li><a href="https://pma.ipums.org/pma-action/variables/FCOBS">FCOBS</a></li>
+<li><a href="https://pma.ipums.org/pma-action/variables/FJOBS">FJOBS</a></li>
+<li><a href="https://pma.ipums.org/pma-action/variables/IMPOBS">IMPOBS</a></li>
+<li><a href="https://pma.ipums.org/pma-action/variables/IUDOBS">IUDOBS</a></li>
+<li><a href="https://pma.ipums.org/pma-action/variables/PILLOBS">PILLOBS</a></li>
+<li><a href="https://pma.ipums.org/pma-action/variables/SAYOBS">SAYOBS</a></li>
+</ul>
+<p>Also select these variables describing whether a facility with the method in-stock had ever experienced a stockout within the last 3 months:</p>
+<ul>
+<li><a href="https://pma.ipums.org/pma-action/variables/CONOUT3MO">CONOUT3MO</a></li>
+<li><a href="https://pma.ipums.org/pma-action/variables/CYCBOUT3MO">CYCBOUT3MO</a></li>
+<li><a href="https://pma.ipums.org/pma-action/variables/DEPOOUT3MO">DEPOOUT3MO</a></li>
+<li><a href="https://pma.ipums.org/pma-action/variables/DIAOUT3MO">DIAOUT3MO</a></li>
+<li><a href="https://pma.ipums.org/pma-action/variables/EMRGOUT3MO">EMRGOUT3MO</a></li>
+<li><a href="https://pma.ipums.org/pma-action/variables/FCOUT3MO">FCOUT3MO</a></li>
+<li><a href="https://pma.ipums.org/pma-action/variables/FJOUT3MO">FJOUT3MO</a></li>
+<li><a href="https://pma.ipums.org/pma-action/variables/IMPOUT3MO">IMPOUT3MO</a></li>
+<li><a href="https://pma.ipums.org/pma-action/variables/IUDOUT3MO">IUDOUT3MO</a></li>
+<li><a href="https://pma.ipums.org/pma-action/variables/PILLOUT3MO">PILLOUT3MO</a></li>
+<li><a href="https://pma.ipums.org/pma-action/variables/SAYOUT3MO">SAYOUT3MO</a></li>
+</ul>
+<p>Lastly, select these variables reporting the length of the current stockout experienced by a facility that normally provides each method, but was out of stock on the day of the interview:</p>
+<ul>
+<li><a href="https://pma.ipums.org/pma-action/variables/CONOUTDAY">CONOUTDAY</a></li>
+<li><a href="https://pma.ipums.org/pma-action/variables/CYCBOUTDAY">CYCBOUTDAY</a></li>
+<li><a href="https://pma.ipums.org/pma-action/variables/DEPOOUTDAY">DEPOOUTDAY</a></li>
+<li><a href="https://pma.ipums.org/pma-action/variables/DIAOUTDAY">DIAOUTDAY</a></li>
+<li><a href="https://pma.ipums.org/pma-action/variables/EMRGOUTDAY">EMRGOUTDAY</a></li>
+<li><a href="https://pma.ipums.org/pma-action/variables/FCOUTDAY">FCOUTDAY</a></li>
+<li><a href="https://pma.ipums.org/pma-action/variables/FJOUTDAY">FJOUTDAY</a></li>
+<li><a href="https://pma.ipums.org/pma-action/variables/IMPOUTDAY">IMPOUTDAY</a></li>
+<li><a href="https://pma.ipums.org/pma-action/variables/IUDOUTDAY">IUDOUTDAY</a></li>
+<li><a href="https://pma.ipums.org/pma-action/variables/PILLOUTDAY">PILLOUTDAY</a></li>
+<li><a href="https://pma.ipums.org/pma-action/variables/SAYOUTDAY">SAYOUTDAY</a></li>
+</ul>
+<h1 id="setup">Setup</h1>
+<p>We’ll be featuring functions from two R packages in this post: <a href="https://tidyverse.tidyverse.org/">tidyverse</a> and <a href="http://tech.popdata.org/ipumsr/">ipumsr</a>. Once installed, load the two packages with:</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre><code><span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='http://tidyverse.tidyverse.org'>tidyverse</a></span><span class='op'>)</span>
+<span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://www.ipums.org'>ipumsr</a></span><span class='op'>)</span>
+</code></pre>
+</div>
+</div>
+<aside>
+See our post about <a href="../2020-12-10-get-r-and-packages/index.html#r-packages">getting started with R</a> for help with R package installation.
+</aside>
+<p>Load your data extract with <code>read_ipums_micro</code> <em>making sure to change the file paths and extract numbers shown below to match your own</em>:</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre><code><span class='va'>sdp</span> <span class='op'>&lt;-</span> <span class='fu'>ipumsr</span><span class='fu'>::</span><span class='fu'><a href='https://rdrr.io/pkg/ipumsr/man/read_ipums_micro.html'>read_ipums_micro</a></span><span class='op'>(</span>
+  ddi <span class='op'>=</span> <span class='st'>"data/pma_00008.xml"</span>,
+  data <span class='op'>=</span> <span class='st'>"data/pma_00008.dat.gz"</span>
+<span class='op'>)</span> 
+</code></pre>
+</div>
+</div>
+<div class="layout-chunk" data-layout="l-body">
+
+</div>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre><code><span class='va'>sdp</span>
+</code></pre>
+</div>
+<pre><code># A tibble: 234 x 75
+        SAMPLE COUNTRY  YEAR ROUND  EAID FACILITYID CONSENTSQ
+     &lt;int+lbl&gt; &lt;int+l&gt; &lt;int&gt; &lt;dbl&gt; &lt;dbl&gt;  &lt;int+lbl&gt; &lt;int+lbl&gt;
+ 1 85405 [Bur… 1 [Bur…  2017     5  7142       7250   1 [Yes]
+ 2 85405 [Bur… 1 [Bur…  2017     5  7879       7399   1 [Yes]
+ 3 85405 [Bur… 1 [Bur…  2017     5  7483       7506   1 [Yes]
+ 4 85405 [Bur… 1 [Bur…  2017     5  7185       7982   1 [Yes]
+ 5 85405 [Bur… 1 [Bur…  2017     5  7859       7065   1 [Yes]
+ 6 85405 [Bur… 1 [Bur…  2017     5  7082       7729   1 [Yes]
+ 7 85405 [Bur… 1 [Bur…  2017     5  7650       7490   1 [Yes]
+ 8 85405 [Bur… 1 [Bur…  2017     5  7955       7311   1 [Yes]
+ 9 85405 [Bur… 1 [Bur…  2017     5  7323       7524   1 [Yes]
+10 85405 [Bur… 1 [Bur…  2017     5  7774       7932   1 [Yes]
+11 85405 [Bur… 1 [Bur…  2017     5  7339       7553   1 [Yes]
+12 85405 [Bur… 1 [Bur…  2017     5  7620       7371   1 [Yes]
+13 85405 [Bur… 1 [Bur…  2017     5  7791       7530   1 [Yes]
+14 85405 [Bur… 1 [Bur…  2017     5  7708       7574   1 [Yes]
+15 85405 [Bur… 1 [Bur…  2017     5  7621       7882   1 [Yes]
+# … with 219 more rows, and 68 more variables: STRATA &lt;int+lbl&gt;,
+#   EASERVED1 &lt;int+lbl&gt;, EASERVED2 &lt;int+lbl&gt;, EASERVED3 &lt;int+lbl&gt;,
+#   EASERVED4 &lt;int+lbl&gt;, …</code></pre>
+</div>
+<h1 id="reformatting-with-ipumsr-functions">Reformatting with ipumsr functions</h1>
+<p>A key feature to remember about IPUMS extracts is that variables often have value labels, which are text labels assigned to the different values taken by a variable. When we load the extract into R with an <code>ipumsr</code> function, these variables are imported as <code>labelled</code> objects rather than the more common <code>factor</code> class of objects.</p>
+<aside>
+<a href="http://tech.popdata.org/ipumsr/articles/value-labels.html">More information</a> on the difference between factors and IPUMS labelled variables.
+</aside>
+<p>As a result, IPUMS data users need to take some unusual steps when recoding a variable or handling NA values. Luckily, the <code>ipumsr</code> package provide a few functions (starting with the prefix <code>lbl_</code>) that make this process very easy!</p>
+<p>Let’s take a look at the variable <code>CONOBS</code>:</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre><code><span class='va'>sdp</span> <span class='op'>%&gt;%</span> <span class='fu'>count</span><span class='op'>(</span><span class='va'>CONOBS</span><span class='op'>)</span>
+</code></pre>
+</div>
+<pre><code># A tibble: 5 x 2
+                                    CONOBS     n
+                                 &lt;int+lbl&gt; &lt;int&gt;
+1  1 [In-stock and observed]                 204
+2  2 [In-stock but not observed]               3
+3  3 [Out of stock]                            5
+4 94 [Not interviewed (SDP questionnaire)]     4
+5 99 [NIU (not in universe)]                  18</code></pre>
+</div>
+<p>Notice that we have two values representing SDPs with male condoms “in-stock”: SDPs where the interviewer personally observed the condoms get <code>1</code>, while those where condoms where reported in-stock - but not observed by the interviewer - get <code>2</code>. Suppose we only care about the reported stock, but not the physical observation: we’d want to collapse those two values together, creating a binary “yes” or “no” type of variable in place of the current version of <code>CONOBS</code>. The <code>ipumsr</code> function <a href="http://tech.popdata.org/ipumsr/reference/lbl_relabel.html">lbl_relabel</a> will help us do that.</p>
+<p>Also take a look at the values <code>94</code> and <code>99</code>. Both represent different types of non-response: SDPs where no respondent consented to complete the interview get <code>94</code>, while any SDP that’s beyond the sampling universe for this question gets <code>99</code>. <a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> For our purposes, it will be most helpful to use the <code>ipumsr</code> function <a href="http://tech.popdata.org/ipumsr/reference/lbl_na_if.html">lbl_na_if</a> to mark both of these values <code>NA</code>.</p>
+<p>Looking at the documentation for both of these functions, the most intuitive way to handle our recoding task is to specify new labels based on the numeric values for <code>CONOBS</code>:</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre><code><span class='va'>sdp</span> <span class='op'>%&gt;%</span> 
+  <span class='fu'>mutate</span><span class='op'>(</span>
+    CONOBS <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/pkg/ipumsr/man/lbl_relabel.html'>lbl_relabel</a></span><span class='op'>(</span>
+      <span class='va'>CONOBS</span>,
+      <span class='fu'><a href='https://rdrr.io/pkg/ipumsr/man/lbl.html'>lbl</a></span><span class='op'>(</span><span class='fl'>1</span>, <span class='st'>"in stock"</span><span class='op'>)</span> <span class='op'>~</span> <span class='va'>.val</span> <span class='op'>%in%</span> <span class='fl'>1</span><span class='op'>:</span><span class='fl'>2</span>,
+      <span class='fu'><a href='https://rdrr.io/pkg/ipumsr/man/lbl.html'>lbl</a></span><span class='op'>(</span><span class='fl'>0</span>, <span class='st'>"out of stock"</span><span class='op'>)</span> <span class='op'>~</span> <span class='va'>.val</span> <span class='op'>==</span> <span class='fl'>3</span>
+    <span class='op'>)</span>,
+    CONOBS <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/pkg/ipumsr/man/lbl_na_if.html'>lbl_na_if</a></span><span class='op'>(</span>
+      <span class='va'>CONOBS</span>,
+      <span class='op'>~</span><span class='va'>.val</span> <span class='op'>&gt;</span> <span class='fl'>90</span>
+    <span class='op'>)</span>
+  <span class='op'>)</span> <span class='op'>%&gt;%</span> 
+  <span class='fu'>count</span><span class='op'>(</span><span class='va'>CONOBS</span><span class='op'>)</span>
+</code></pre>
+</div>
+<pre><code># A tibble: 3 x 2
+             CONOBS     n
+          &lt;dbl+lbl&gt; &lt;int&gt;
+1  0 [out of stock]     5
+2  1 [in stock]       207
+3 NA                   22</code></pre>
+</div>
+<p>That worked perfectly well for just one variable, but we’ll ultimately want to recode <em>all</em> of the <code>OBS</code> variables in our dataset as binary variables. The <code>dplyr</code> function <a href="https://dplyr.tidyverse.org/reference/across.html">across</a> will apply <code>lbl_relabel</code> to a series of columns based on some selection function: we’ll use <code>ends_with("OBS")</code> to perform binary recoding on every variable ending with “OBS”.</p>
+<aside>
+The <b>dplyr</b> package is loaded into R when you use <b>library(tidyverse)</b>
+</aside>
+<p>Our missing values are a bit trickier because we can’t reliably use <code>94</code> and <code>99</code> for every variable. Some variables, like <code>CONOUTDAY</code>, are longer because they can take higher values (100 days, 1000 days, etc):</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre><code><span class='va'>sdp</span> <span class='op'>%&gt;%</span> <span class='fu'>count</span><span class='op'>(</span><span class='va'>CONOUTDAY</span><span class='op'>)</span>
+</code></pre>
+</div>
+<pre><code># A tibble: 7 x 2
+                                   CONOUTDAY     n
+                                   &lt;int+lbl&gt; &lt;int&gt;
+1    1                                           1
+2    3                                           1
+3   10                                           1
+4   15                                           1
+5   60                                           1
+6 9994 [Not interviewed (SDP questionnaire)]     4
+7 9999 [NIU (not in universe)]                 225</code></pre>
+</div>
+<p>There are also additional non-response options, like “Don’t know” and “No response or missing” that don’t appear in <code>CONOBS</code>, but might appear elsewhere:</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre><code><span class='va'>sdp</span> <span class='op'>%&gt;%</span> <span class='fu'>count</span><span class='op'>(</span><span class='va'>CONOUT3MO</span><span class='op'>)</span>
+</code></pre>
+</div>
+<pre><code># A tibble: 5 x 2
+                                 CONOUT3MO     n
+                                 &lt;int+lbl&gt; &lt;int&gt;
+1  0 [No]                                    203
+2  1 [Yes]                                     3
+3 94 [Not interviewed (SDP questionnaire)]     4
+4 97 [Don&#39;t know]                              1
+5 99 [NIU (not in universe)]                  23</code></pre>
+</div>
+<p>Here’s the trick: instead of specifying non-response <em>values</em> in our dataset, we’ll just specify non-response <em>labels</em>, since they are consistent across all PMA variables:</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre><code><span class='va'>sdp</span> <span class='op'>%&gt;%</span> 
+  <span class='fu'>mutate</span><span class='op'>(</span>
+    CONOBS <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/pkg/ipumsr/man/lbl_relabel.html'>lbl_relabel</a></span><span class='op'>(</span>
+      <span class='va'>CONOBS</span>,
+      <span class='fu'><a href='https://rdrr.io/pkg/ipumsr/man/lbl.html'>lbl</a></span><span class='op'>(</span><span class='fl'>1</span>, <span class='st'>"in stock"</span><span class='op'>)</span> <span class='op'>~</span> <span class='va'>.val</span> <span class='op'>%in%</span> <span class='fl'>1</span><span class='op'>:</span><span class='fl'>2</span>,
+      <span class='fu'><a href='https://rdrr.io/pkg/ipumsr/man/lbl.html'>lbl</a></span><span class='op'>(</span><span class='fl'>0</span>, <span class='st'>"out of stock"</span><span class='op'>)</span> <span class='op'>~</span> <span class='va'>.val</span> <span class='op'>==</span> <span class='fl'>3</span>
+    <span class='op'>)</span>,
+    CONOBS <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/pkg/ipumsr/man/lbl_na_if.html'>lbl_na_if</a></span><span class='op'>(</span>
+      <span class='va'>CONOBS</span>,
+      <span class='op'>~</span><span class='va'>.lbl</span> <span class='op'>%in%</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span>
+        <span class='st'>"Not interviewed (SDP questionnaire)"</span>,
+        <span class='st'>"Don't know"</span>,
+        <span class='st'>"No response or missing"</span>,
+        <span class='st'>"NIU (not in universe)"</span>
+      <span class='op'>)</span>
+    <span class='op'>)</span>
+  <span class='op'>)</span> <span class='op'>%&gt;%</span> 
+  <span class='fu'>count</span><span class='op'>(</span><span class='va'>CONOBS</span><span class='op'>)</span>
+</code></pre>
+</div>
+<pre><code># A tibble: 3 x 2
+             CONOBS     n
+          &lt;dbl+lbl&gt; &lt;int&gt;
+1  0 [out of stock]     5
+2  1 [in stock]       207
+3 NA                   22</code></pre>
+</div>
+<p>Finally, let’s apply the two recoding functions using <code>dplyr::across</code> to span all of the variables we want:</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre><code><span class='va'>sdp</span> <span class='op'>&lt;-</span> <span class='va'>sdp</span> <span class='op'>%&gt;%</span> 
+  <span class='fu'>mutate</span><span class='op'>(</span>
+    <span class='fu'>across</span><span class='op'>(</span><span class='fu'><a href='https://tidyselect.r-lib.org/reference/starts_with.html'>ends_with</a></span><span class='op'>(</span><span class='st'>"OBS"</span><span class='op'>)</span>, <span class='op'>~</span><span class='fu'><a href='https://rdrr.io/pkg/ipumsr/man/lbl_relabel.html'>lbl_relabel</a></span><span class='op'>(</span>
+      <span class='va'>.x</span>,
+      <span class='fu'><a href='https://rdrr.io/pkg/ipumsr/man/lbl.html'>lbl</a></span><span class='op'>(</span><span class='fl'>1</span>, <span class='st'>"in stock"</span><span class='op'>)</span> <span class='op'>~</span> <span class='va'>.val</span> <span class='op'>%in%</span> <span class='fl'>1</span><span class='op'>:</span><span class='fl'>2</span>,
+      <span class='fu'><a href='https://rdrr.io/pkg/ipumsr/man/lbl.html'>lbl</a></span><span class='op'>(</span><span class='fl'>0</span>, <span class='st'>"out of stock"</span><span class='op'>)</span> <span class='op'>~</span> <span class='va'>.val</span> <span class='op'>==</span> <span class='fl'>3</span>
+    <span class='op'>)</span><span class='op'>)</span>,
+    <span class='fu'>across</span><span class='op'>(</span><span class='fu'><a href='https://tidyselect.r-lib.org/reference/everything.html'>everything</a></span><span class='op'>(</span><span class='op'>)</span>, <span class='op'>~</span><span class='fu'><a href='https://rdrr.io/pkg/ipumsr/man/lbl_na_if.html'>lbl_na_if</a></span><span class='op'>(</span>
+      <span class='va'>.x</span>,
+      <span class='op'>~</span><span class='va'>.lbl</span> <span class='op'>%in%</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span>
+        <span class='st'>"Not interviewed (SDP questionnaire)"</span>,
+        <span class='st'>"Don't know"</span>,
+        <span class='st'>"No response or missing"</span>,
+        <span class='st'>"NIU (not in universe)"</span>
+      <span class='op'>)</span>
+    <span class='op'>)</span><span class='op'>)</span>
+  <span class='op'>)</span>
+</code></pre>
+</div>
+</div>
+<h1 id="understanding-easerved-variables">Understanding EASERVED variables</h1>
+<p>Now that we’ve recoded every variable, let’s take a look specifically at the variables describing the service area for each SDP. That information is stored in a group of variables starting with “EASERVED” and ending with the numbers 1-18.<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a></p>
+<p>Each of these 18 <code>EASERVED</code> variables list one of the enumeration areas served by an SDP, but are <strong>fully available only if the SDP is a <em>public</em> institution</strong> (this information is limited to public institutions because it’s provided by local or national governments, not by the respondent to the SDP questionnaire).</p>
+<p>To see this, take a look at the number of missing values for each of the <code>EASERVED</code> variables <em>just for those SDPs where the managing authority is “Government”</em> (<code>AUTHORITY == 1</code>):</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre><code><span class='va'>sdp</span> <span class='op'>%&gt;%</span> <span class='fu'>count</span><span class='op'>(</span><span class='va'>AUTHORITY</span><span class='op'>)</span>
+</code></pre>
+</div>
+<pre><code># A tibble: 3 x 2
+        AUTHORITY     n
+        &lt;int+lbl&gt; &lt;int&gt;
+1 1 [Government]    202
+2 3 [Faith-based]     3
+3 4 [Private]        29</code></pre>
+<div class="sourceCode">
+<pre><code><span class='va'>sdp</span> <span class='op'>%&gt;%</span> 
+  <span class='fu'><a href='https://rdrr.io/r/stats/filter.html'>filter</a></span><span class='op'>(</span><span class='va'>AUTHORITY</span> <span class='op'>==</span> <span class='fl'>1</span><span class='op'>)</span> <span class='op'>%&gt;%</span> 
+  <span class='fu'>summarise</span><span class='op'>(</span><span class='fu'>across</span><span class='op'>(</span><span class='fu'><a href='https://tidyselect.r-lib.org/reference/starts_with.html'>starts_with</a></span><span class='op'>(</span><span class='st'>"EASERVED"</span><span class='op'>)</span>, <span class='op'>~</span><span class='fu'><a href='https://rdrr.io/r/base/sum.html'>sum</a></span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/NA.html'>is.na</a></span><span class='op'>(</span><span class='va'>.x</span><span class='op'>)</span><span class='op'>)</span><span class='op'>)</span><span class='op'>)</span>
+</code></pre>
+</div>
+<pre><code># A tibble: 1 x 18
+  EASERVED1 EASERVED2 EASERVED3 EASERVED4 EASERVED5 EASERVED6
+      &lt;int&gt;     &lt;int&gt;     &lt;int&gt;     &lt;int&gt;     &lt;int&gt;     &lt;int&gt;
+1         0       156       173       181       190       192
+# … with 12 more variables: EASERVED7 &lt;int&gt;, EASERVED8 &lt;int&gt;,
+#   EASERVED9 &lt;int&gt;, EASERVED10 &lt;int&gt;, EASERVED11 &lt;int&gt;, …</code></pre>
+</div>
+<p>We see that we have at least one service area listed for all 202 public SDPs in our dataset (the calculated total number of non-missing values for <code>EASERVED1</code> is zero). However, 156 public SDPs serve only one enumeration area, so their remaining <code>EASERVED</code> values are all missing (<code>NA</code>). There are 173 public SDPs that serve only 2 enumeration areas, 181 that serve only 3, and so on.</p>
+<p>What about non-public SDPs? <strong>For all other types of SDPs where the respondent consented to be interviewed</strong> (<code>CONSENTSQ == 1</code>)<strong>, <code>EASERVED1</code> will represent the enumeration area where the SDP is located.</strong> However, the remaining <code>EASERVED</code> variables will each be missing.</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre><code><span class='va'>sdp</span> <span class='op'>%&gt;%</span> 
+  <span class='fu'><a href='https://rdrr.io/r/stats/filter.html'>filter</a></span><span class='op'>(</span><span class='va'>AUTHORITY</span> <span class='op'>!=</span> <span class='fl'>1</span><span class='op'>)</span> <span class='op'>%&gt;%</span> 
+  <span class='fu'>summarise</span><span class='op'>(</span><span class='fu'>across</span><span class='op'>(</span><span class='fu'><a href='https://tidyselect.r-lib.org/reference/starts_with.html'>starts_with</a></span><span class='op'>(</span><span class='st'>"EASERVED"</span><span class='op'>)</span>, <span class='op'>~</span><span class='fu'><a href='https://rdrr.io/r/base/sum.html'>sum</a></span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/NA.html'>is.na</a></span><span class='op'>(</span><span class='va'>.x</span><span class='op'>)</span><span class='op'>)</span><span class='op'>)</span><span class='op'>)</span>
+</code></pre>
+</div>
+<pre><code># A tibble: 1 x 18
+  EASERVED1 EASERVED2 EASERVED3 EASERVED4 EASERVED5 EASERVED6
+      &lt;int&gt;     &lt;int&gt;     &lt;int&gt;     &lt;int&gt;     &lt;int&gt;     &lt;int&gt;
+1         4        32        32        32        32        32
+# … with 12 more variables: EASERVED7 &lt;int&gt;, EASERVED8 &lt;int&gt;,
+#   EASERVED9 &lt;int&gt;, EASERVED10 &lt;int&gt;, EASERVED11 &lt;int&gt;, …</code></pre>
+</div>
+<p>In other words: it’s only assumed that every non-public SDP provides services in its <em>own</em> enumeration area, even if it really might service additional enumeration areas, as well.</p>
+<p><strong>What about non-public SDPs that don’t consent to be interviewed?</strong> There are 4 of these cases, and you’ll see that they account for all of the missing values in <code>EASERVED1</code>:</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre><code><span class='va'>sdp</span> <span class='op'>%&gt;%</span> 
+  <span class='fu'><a href='https://rdrr.io/r/stats/filter.html'>filter</a></span><span class='op'>(</span><span class='va'>AUTHORITY</span> <span class='op'>!=</span> <span class='fl'>1</span><span class='op'>)</span> <span class='op'>%&gt;%</span> 
+  <span class='fu'>count</span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/NA.html'>is.na</a></span><span class='op'>(</span><span class='va'>EASERVED1</span><span class='op'>)</span>, <span class='va'>CONSENTSQ</span><span class='op'>)</span>
+</code></pre>
+</div>
+<pre><code># A tibble: 2 x 3
+  `is.na(EASERVED1)` CONSENTSQ     n
+  &lt;lgl&gt;              &lt;int+lbl&gt; &lt;int&gt;
+1 FALSE                1 [Yes]    28
+2 TRUE                 0 [No]      4</code></pre>
+</div>
+<p>For our analysis, we’d like to set <code>EASERVED1</code> to match the SDP’s own enumeration area <code>EAID</code> even if the respondent did not complete the survey:</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre><code><span class='va'>sdp</span> <span class='op'>&lt;-</span> <span class='va'>sdp</span> <span class='op'>%&gt;%</span> 
+  <span class='fu'>mutate</span><span class='op'>(</span>EASERVED1 <span class='op'>=</span> <span class='fu'>case_when</span><span class='op'>(</span>
+    <span class='fu'><a href='https://rdrr.io/r/base/NA.html'>is.na</a></span><span class='op'>(</span><span class='va'>EASERVED1</span><span class='op'>)</span> <span class='op'>~</span> <span class='va'>EAID</span>,
+    <span class='cn'>T</span> <span class='op'>~</span> <span class='fu'><a href='https://rdrr.io/r/base/double.html'>as.double</a></span><span class='op'>(</span><span class='va'>EASERVED1</span><span class='op'>)</span>
+  <span class='op'>)</span><span class='op'>)</span>
+</code></pre>
+</div>
+</div>
+<aside>
+We coerce EASERVED1 as a double to match the class provided by EAID.
+</aside>
+<p>Now, every SDP has at least one non-missing EASERVED variable!</p>
+<h1 id="pivot-longer-one-easerved-per-row">Pivot longer: one EASERVED per row</h1>
+<p>Remember: our ultimate goal is to summarise the service environment available to women living within each enumeration area, so we’re looking for an easy way to calculate summary statistics for each one.</p>
+<p>Right now, the data are formatted so that each SDP occupies a single row. In order to focus instead on the enumeration areas receiving services from the SDPs, we should reshape the data so that the information about each SDP gets repeated in one row for each of the enumeration areas that it serves.</p>
+<p>For example, let’s look at a few of the variables for the SDPs currently in the first 3 rows of our dataset:</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre><code><span class='va'>sdp</span> <span class='op'>%&gt;%</span> 
+  <span class='fu'>slice</span><span class='op'>(</span><span class='fl'>1</span><span class='op'>:</span><span class='fl'>3</span><span class='op'>)</span> <span class='op'>%&gt;%</span> 
+  <span class='fu'>select</span><span class='op'>(</span><span class='va'>FACILITYID</span>, <span class='va'>EAID</span>, <span class='va'>EASERVED1</span>, <span class='va'>EASERVED2</span>, <span class='va'>CONPROV</span>, <span class='va'>CONOBS</span><span class='op'>)</span>
+</code></pre>
+</div>
+<pre><code># A tibble: 3 x 6
+  FACILITYID  EAID EASERVED1 EASERVED2   CONPROV       CONOBS
+   &lt;int+lbl&gt; &lt;dbl&gt;     &lt;dbl&gt; &lt;int+lbl&gt; &lt;int+lbl&gt;    &lt;dbl+lbl&gt;
+1       7250  7142      7380      7323   1 [Yes] 1 [in stock]
+2       7399  7879      7879      7516   1 [Yes] 1 [in stock]
+3       7506  7483      7483        NA   1 [Yes] 1 [in stock]</code></pre>
+</div>
+<p>Facility <code>7250</code> is located in enumeration area <code>7142</code>, and the first two enumeration areas listed in its service area are <code>7380</code> and <code>7323</code>: notice that these are <em>outside of</em> its own area (<code>EAID</code>).</p>
+<p>Facility <code>7879</code> is located in enumeration area <code>7879</code>, and the first two enumeration areas listed in its service area are <code>7879</code> and <code>7516</code>: notice that its own area (<code>EAID</code>) is included.</p>
+<p>Facility <code>7506</code> is located in enumeration area <code>7483</code>, and its service area includes only one value: also <code>7483</code> (<code>EAID == EASERVED1</code>).</p>
+<p>We’ll now use the <code>tidyr</code> function <a href="https://tidyr.tidyverse.org/reference/pivot_longer.html">pivot_longer</a> to reshape these data, creating 6 rows: one row for each enumeration area served by each SDP:</p>
+<aside>
+The <b>tidyr</b> package is loaded into R when you use <b>library(tidyverse)</b>
+</aside>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre><code><span class='va'>sdp</span> <span class='op'>%&gt;%</span> 
+  <span class='fu'>slice</span><span class='op'>(</span><span class='fl'>1</span><span class='op'>:</span><span class='fl'>3</span><span class='op'>)</span> <span class='op'>%&gt;%</span> 
+  <span class='fu'>select</span><span class='op'>(</span><span class='va'>FACILITYID</span>, <span class='va'>EAID</span>, <span class='va'>EASERVED1</span>, <span class='va'>EASERVED2</span>, <span class='va'>CONPROV</span>, <span class='va'>CONOBS</span><span class='op'>)</span> <span class='op'>%&gt;%</span> 
+  <span class='fu'>pivot_longer</span><span class='op'>(</span>
+    cols <span class='op'>=</span> <span class='fu'><a href='https://tidyselect.r-lib.org/reference/starts_with.html'>starts_with</a></span><span class='op'>(</span><span class='st'>"EASERVED"</span><span class='op'>)</span>
+  <span class='op'>)</span>
+</code></pre>
+</div>
+<pre><code># A tibble: 6 x 6
+  FACILITYID  EAID   CONPROV       CONOBS name          value
+   &lt;int+lbl&gt; &lt;dbl&gt; &lt;int+lbl&gt;    &lt;dbl+lbl&gt; &lt;chr&gt;     &lt;dbl+lbl&gt;
+1       7250  7142   1 [Yes] 1 [in stock] EASERVED1      7380
+2       7250  7142   1 [Yes] 1 [in stock] EASERVED2      7323
+3       7399  7879   1 [Yes] 1 [in stock] EASERVED1      7879
+4       7399  7879   1 [Yes] 1 [in stock] EASERVED2      7516
+5       7506  7483   1 [Yes] 1 [in stock] EASERVED1      7483
+6       7506  7483   1 [Yes] 1 [in stock] EASERVED2        NA</code></pre>
+</div>
+<p>Now, each SDP occupies 2 rows: one for <code>EASERVED1</code> and one for <code>EASERVED2</code>. The function created two new columns automatically: <code>name</code> contains the name of the column that was “pivoted”, and <code>value</code> contains the value from the column that was “pivoted”. We can drop <code>name</code> and decide to call <code>value</code> something like <code>EASERVED</code>:</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre><code><span class='va'>sdp</span> <span class='op'>%&gt;%</span> 
+  <span class='fu'>slice</span><span class='op'>(</span><span class='fl'>1</span><span class='op'>:</span><span class='fl'>3</span><span class='op'>)</span> <span class='op'>%&gt;%</span> 
+  <span class='fu'>select</span><span class='op'>(</span><span class='va'>FACILITYID</span>, <span class='va'>EAID</span>, <span class='va'>EASERVED1</span>, <span class='va'>EASERVED2</span>, <span class='va'>CONPROV</span>, <span class='va'>CONOBS</span><span class='op'>)</span> <span class='op'>%&gt;%</span> 
+  <span class='fu'>pivot_longer</span><span class='op'>(</span>
+    cols <span class='op'>=</span> <span class='fu'><a href='https://tidyselect.r-lib.org/reference/starts_with.html'>starts_with</a></span><span class='op'>(</span><span class='st'>"EASERVED"</span><span class='op'>)</span>,
+    values_to <span class='op'>=</span> <span class='st'>"EASERVED"</span>,
+    names_to <span class='op'>=</span> <span class='cn'>NULL</span>
+  <span class='op'>)</span>
+</code></pre>
+</div>
+<pre><code># A tibble: 6 x 5
+  FACILITYID  EAID   CONPROV       CONOBS  EASERVED
+   &lt;int+lbl&gt; &lt;dbl&gt; &lt;int+lbl&gt;    &lt;dbl+lbl&gt; &lt;dbl+lbl&gt;
+1       7250  7142   1 [Yes] 1 [in stock]      7380
+2       7250  7142   1 [Yes] 1 [in stock]      7323
+3       7399  7879   1 [Yes] 1 [in stock]      7879
+4       7399  7879   1 [Yes] 1 [in stock]      7516
+5       7506  7483   1 [Yes] 1 [in stock]      7483
+6       7506  7483   1 [Yes] 1 [in stock]        NA</code></pre>
+</div>
+<p><strong>Why did we do this?</strong> Now, if we want to summarise the number of facilities that provide male condoms in each enumeration area listed in EASERVED, we can do so very easily:</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre><code><span class='va'>sdp</span> <span class='op'>%&gt;%</span> 
+  <span class='fu'>slice</span><span class='op'>(</span><span class='fl'>1</span><span class='op'>:</span><span class='fl'>3</span><span class='op'>)</span> <span class='op'>%&gt;%</span> 
+  <span class='fu'>select</span><span class='op'>(</span><span class='va'>FACILITYID</span>, <span class='va'>EAID</span>, <span class='va'>EASERVED1</span>, <span class='va'>EASERVED2</span>, <span class='va'>CONPROV</span>, <span class='va'>CONOBS</span><span class='op'>)</span> <span class='op'>%&gt;%</span> 
+  <span class='fu'>pivot_longer</span><span class='op'>(</span>
+    cols <span class='op'>=</span> <span class='fu'><a href='https://tidyselect.r-lib.org/reference/starts_with.html'>starts_with</a></span><span class='op'>(</span><span class='st'>"EASERVED"</span><span class='op'>)</span>,
+    values_to <span class='op'>=</span> <span class='st'>"EASERVED"</span>,
+    names_to <span class='op'>=</span> <span class='cn'>NULL</span>
+  <span class='op'>)</span> <span class='op'>%&gt;%</span> 
+  <span class='fu'>group_by</span><span class='op'>(</span><span class='va'>EASERVED</span><span class='op'>)</span> <span class='op'>%&gt;%</span> 
+  <span class='fu'>summarise</span><span class='op'>(</span>sdps_providing_condoms <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/sum.html'>sum</a></span><span class='op'>(</span><span class='va'>CONPROV</span><span class='op'>)</span><span class='op'>)</span>
+</code></pre>
+</div>
+<pre><code># A tibble: 6 x 2
+   EASERVED sdps_providing_condoms
+  &lt;dbl+lbl&gt;                  &lt;int&gt;
+1      7323                      1
+2      7380                      1
+3      7483                      1
+4      7516                      1
+5      7879                      1
+6        NA                      1</code></pre>
+</div>
+<p>One more thing here: notice that facility <code>7506</code> produced an <code>NA</code> in our new variable <code>EASERVED</code>, since it only provides services in one enumeration area (<code>EASERVED2 == NA</code>). We need to drop that row when we pivot using <code>values_drop_na = T</code>:</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre><code><span class='va'>sdp</span> <span class='op'>%&gt;%</span> 
+  <span class='fu'>slice</span><span class='op'>(</span><span class='fl'>1</span><span class='op'>:</span><span class='fl'>3</span><span class='op'>)</span> <span class='op'>%&gt;%</span> 
+  <span class='fu'>select</span><span class='op'>(</span><span class='va'>FACILITYID</span>, <span class='va'>EAID</span>, <span class='va'>EASERVED1</span>, <span class='va'>EASERVED2</span>, <span class='va'>CONPROV</span>, <span class='va'>CONOBS</span><span class='op'>)</span> <span class='op'>%&gt;%</span> 
+  <span class='fu'>pivot_longer</span><span class='op'>(</span>
+    cols <span class='op'>=</span> <span class='fu'><a href='https://tidyselect.r-lib.org/reference/starts_with.html'>starts_with</a></span><span class='op'>(</span><span class='st'>"EASERVED"</span><span class='op'>)</span>,
+    values_to <span class='op'>=</span> <span class='st'>"EASERVED"</span>,
+    names_to <span class='op'>=</span> <span class='cn'>NULL</span>,
+    values_drop_na <span class='op'>=</span> <span class='cn'>T</span>
+  <span class='op'>)</span> <span class='op'>%&gt;%</span> 
+  <span class='fu'>group_by</span><span class='op'>(</span><span class='va'>EASERVED</span><span class='op'>)</span> <span class='op'>%&gt;%</span> 
+  <span class='fu'>summarise</span><span class='op'>(</span>sdps_providing_condoms <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/sum.html'>sum</a></span><span class='op'>(</span><span class='va'>CONPROV</span><span class='op'>)</span><span class='op'>)</span>
+</code></pre>
+</div>
+<pre><code># A tibble: 5 x 2
+   EASERVED sdps_providing_condoms
+  &lt;dbl+lbl&gt;                  &lt;int&gt;
+1      7323                      1
+2      7380                      1
+3      7483                      1
+4      7516                      1
+5      7879                      1</code></pre>
+</div>
+<p>Now that we know how to <code>pivot_longer</code>, let’s apply the function to our full dataset:</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre><code><span class='va'>sdp</span> <span class='op'>&lt;-</span> <span class='va'>sdp</span> <span class='op'>%&gt;%</span> 
+  <span class='fu'>pivot_longer</span><span class='op'>(</span>
+    cols <span class='op'>=</span> <span class='fu'><a href='https://tidyselect.r-lib.org/reference/starts_with.html'>starts_with</a></span><span class='op'>(</span><span class='st'>"EASERVED"</span><span class='op'>)</span>,
+    values_to <span class='op'>=</span> <span class='st'>"EASERVED"</span>,
+    values_drop_na <span class='op'>=</span> <span class='cn'>T</span>,
+    names_to <span class='op'>=</span> <span class='cn'>NULL</span>
+  <span class='op'>)</span> <span class='op'>%&gt;%</span> 
+  <span class='fu'>distinct</span><span class='op'>(</span><span class='op'>)</span>  <span class='co'># in case any facility listed the same EASERVED twice</span>
+</code></pre>
+</div>
+</div>
+<p>Dropping each row where <code>EASERVED</code> is missing, we’re left with 372 rows where information about each SDP gets repeated once for every enumeration area that it serves. (Remember: our original dataset contained only 234 rows because SDPs occupied just one row apiece).</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre><code><span class='va'>sdp</span> <span class='op'>%&gt;%</span> <span class='fu'>select</span><span class='op'>(</span><span class='va'>FACILITYID</span>, <span class='va'>EAID</span>, <span class='va'>EASERVED</span>, <span class='fu'><a href='https://tidyselect.r-lib.org/reference/everything.html'>everything</a></span><span class='op'>(</span><span class='op'>)</span><span class='op'>)</span>
+</code></pre>
+</div>
+<pre><code># A tibble: 372 x 58
+   FACILITYID  EAID EASERVED      SAMPLE COUNTRY  YEAR ROUND CONSENTSQ
+    &lt;int+lbl&gt; &lt;dbl&gt; &lt;dbl+lb&gt;   &lt;int+lbl&gt; &lt;int+l&gt; &lt;int&gt; &lt;dbl&gt; &lt;int+lbl&gt;
+ 1       7250  7142     7380 85405 [Bur… 1 [Bur…  2017     5   1 [Yes]
+ 2       7250  7142     7323 85405 [Bur… 1 [Bur…  2017     5   1 [Yes]
+ 3       7250  7142     7491 85405 [Bur… 1 [Bur…  2017     5   1 [Yes]
+ 4       7250  7142     7605 85405 [Bur… 1 [Bur…  2017     5   1 [Yes]
+ 5       7250  7142     7142 85405 [Bur… 1 [Bur…  2017     5   1 [Yes]
+ 6       7250  7142     7279 85405 [Bur… 1 [Bur…  2017     5   1 [Yes]
+ 7       7250  7142     7370 85405 [Bur… 1 [Bur…  2017     5   1 [Yes]
+ 8       7250  7142     7725 85405 [Bur… 1 [Bur…  2017     5   1 [Yes]
+ 9       7250  7142     7811 85405 [Bur… 1 [Bur…  2017     5   1 [Yes]
+10       7250  7142     7859 85405 [Bur… 1 [Bur…  2017     5   1 [Yes]
+11       7250  7142     7472 85405 [Bur… 1 [Bur…  2017     5   1 [Yes]
+12       7250  7142     7175 85405 [Bur… 1 [Bur…  2017     5   1 [Yes]
+13       7250  7142     7234 85405 [Bur… 1 [Bur…  2017     5   1 [Yes]
+14       7250  7142     7799 85405 [Bur… 1 [Bur…  2017     5   1 [Yes]
+15       7250  7142     7909 85405 [Bur… 1 [Bur…  2017     5   1 [Yes]
+# … with 357 more rows, and 50 more variables: STRATA &lt;int+lbl&gt;,
+#   FACILITYTYPE &lt;int+lbl&gt;, FACILITYTYPEGEN &lt;int+lbl&gt;,
+#   AUTHORITY &lt;int+lbl&gt;, CONPROV &lt;int+lbl&gt;, …</code></pre>
+</div>
+<h1 id="summarise-by-easerved-and-year">Summarise by EASERVED and YEAR</h1>
+<p>Now that we’ve finished recoding and reshaping the data, we’ll create a few summary statistics describing the service environment in each enumeration area for each survey year.</p>
+<p>Let’s start by examining the availability of different family planning methods. Using <code>group_by(EASERVED, YEAR)</code> and <code>across</code> we can test whether each method was normally available from at least one SDP serving each area in each year. We’ll use a <a href="https://glue.tidyverse.org/">glue</a> specification to add the prefix “ANY_” to each <code>PROV</code> variable (for example, <code>CONPROV</code> will be summarized as <code>ANY_CONPROV</code>, because it indicates whether any facility serving the EA provides male condoms).</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre><code><span class='va'>sdp</span> <span class='op'>%&gt;%</span> 
+  <span class='fu'>group_by</span><span class='op'>(</span><span class='va'>EASERVED</span>, <span class='va'>YEAR</span><span class='op'>)</span> <span class='op'>%&gt;%</span>
+  <span class='fu'>summarise</span><span class='op'>(</span>
+    .groups <span class='op'>=</span> <span class='st'>"keep"</span>,
+    <span class='fu'>across</span><span class='op'>(</span><span class='fu'><a href='https://tidyselect.r-lib.org/reference/starts_with.html'>ends_with</a></span><span class='op'>(</span><span class='st'>"PROV"</span><span class='op'>)</span>, <span class='op'>~</span><span class='fu'><a href='https://rdrr.io/r/base/any.html'>any</a></span><span class='op'>(</span><span class='va'>.x</span> <span class='op'>==</span> <span class='fl'>1</span><span class='op'>)</span>, .names <span class='op'>=</span> <span class='st'>"ANY_{.col}"</span><span class='op'>)</span>
+  <span class='op'>)</span>
+</code></pre>
+</div>
+<pre><code># A tibble: 149 x 15
+# Groups:   EASERVED, YEAR [149]
+   EASERVED  YEAR ANY_CONPROV ANY_CYCBPROV ANY_DEPOPROV ANY_DIAPROV
+   &lt;dbl+lb&gt; &lt;int&gt; &lt;lgl&gt;       &lt;lgl&gt;        &lt;lgl&gt;        &lt;lgl&gt;      
+ 1     7003  2017 TRUE        TRUE         TRUE         FALSE      
+ 2     7003  2018 TRUE        TRUE         TRUE         FALSE      
+ 3     7006  2017 TRUE        TRUE         TRUE         FALSE      
+ 4     7006  2018 TRUE        TRUE         TRUE         FALSE      
+ 5     7009  2017 TRUE        TRUE         TRUE         FALSE      
+ 6     7009  2018 TRUE        TRUE         TRUE         FALSE      
+ 7     7016  2017 TRUE        TRUE         TRUE         FALSE      
+ 8     7016  2018 TRUE        TRUE         TRUE         FALSE      
+ 9     7026  2017 TRUE        TRUE         TRUE         FALSE      
+10     7026  2018 TRUE        TRUE         TRUE         FALSE      
+11     7042  2017 TRUE        TRUE         TRUE         FALSE      
+12     7042  2018 TRUE        TRUE         TRUE         FALSE      
+13     7048  2017 TRUE        TRUE         TRUE         FALSE      
+14     7048  2018 TRUE        TRUE         TRUE         FALSE      
+15     7056  2017 TRUE        TRUE         TRUE         FALSE      
+# … with 134 more rows, and 9 more variables: ANY_EMRGPROV &lt;lgl&gt;,
+#   ANY_FCPROV &lt;lgl&gt;, ANY_FSTPROV &lt;lgl&gt;, ANY_FJPROV &lt;lgl&gt;,
+#   ANY_IMPPROV &lt;lgl&gt;, …</code></pre>
+</div>
+<p>Suppose we only want to know the number of methods provided by at least one SDP in each enumeration area. Using the <a href="https://dplyr.tidyverse.org/articles/rowwise.html">row-wise partner</a> of <code>dplyr::across</code>, called <code>dplyr::c_across</code>, we can count the number of TRUE <code>PROV</code> variables in each row of the summary output.</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre><code><span class='va'>sdp</span> <span class='op'>%&gt;%</span> 
+  <span class='fu'>group_by</span><span class='op'>(</span><span class='va'>EASERVED</span>, <span class='va'>YEAR</span><span class='op'>)</span> <span class='op'>%&gt;%</span>
+  <span class='fu'>summarise</span><span class='op'>(</span>
+    .groups <span class='op'>=</span> <span class='st'>"keep"</span>,
+    <span class='fu'>across</span><span class='op'>(</span><span class='fu'><a href='https://tidyselect.r-lib.org/reference/starts_with.html'>ends_with</a></span><span class='op'>(</span><span class='st'>"PROV"</span><span class='op'>)</span>, <span class='op'>~</span><span class='fu'><a href='https://rdrr.io/r/base/any.html'>any</a></span><span class='op'>(</span><span class='va'>.x</span> <span class='op'>==</span> <span class='fl'>1</span><span class='op'>)</span>, .names <span class='op'>=</span> <span class='st'>"ANY_{.col}"</span><span class='op'>)</span>
+  <span class='op'>)</span> <span class='op'>%&gt;%</span> 
+  <span class='fu'>transmute</span><span class='op'>(</span>NUM_METHODS_PROV <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/sum.html'>sum</a></span><span class='op'>(</span><span class='fu'>c_across</span><span class='op'>(</span><span class='fu'><a href='https://tidyselect.r-lib.org/reference/starts_with.html'>ends_with</a></span><span class='op'>(</span><span class='st'>"PROV"</span><span class='op'>)</span><span class='op'>)</span>, na.rm <span class='op'>=</span> <span class='cn'>T</span><span class='op'>)</span><span class='op'>)</span>
+</code></pre>
+</div>
+<pre><code># A tibble: 149 x 3
+# Groups:   EASERVED, YEAR [149]
+    EASERVED  YEAR NUM_METHODS_PROV
+   &lt;dbl+lbl&gt; &lt;int&gt;            &lt;int&gt;
+ 1      7003  2017               10
+ 2      7003  2018                8
+ 3      7006  2017               10
+ 4      7006  2018                8
+ 5      7009  2017                9
+ 6      7009  2018               10
+ 7      7016  2017                9
+ 8      7016  2018                8
+ 9      7026  2017               10
+10      7026  2018               10
+11      7042  2017               11
+12      7042  2018               10
+13      7048  2017               11
+14      7048  2018               11
+15      7056  2017                8
+# … with 134 more rows</code></pre>
+</div>
+<aside>
+The function transmute() works just like mutate(), except that it removes all of the columns except for the result and any grouping variables.
+</aside>
+<p>Let’s use the same procedure to create summary variables from the <code>OBS</code>, <code>OUT3MO</code>, and <code>OUTDAY</code> variables, too, creating:</p>
+<ul>
+<li><code>NUM_METHODS_PROV</code> - number of methods provided by at least one SDP</li>
+<li><code>NUM_METHODS_OUT</code> - number of methods out of stock with at least one SDP</li>
+<li><code>NUM_METHODS_INSTOCK</code> - number of methods in-stock with at least one SDP</li>
+<li><code>NUM_METHODS_OUT3MO</code> - number of methods out of stock any time in the last 3 months with at least one SDP</li>
+<li><code>MEAN_OUTDAY</code> - the mean length of a stockout for any family planning method (measured in days)</li>
+</ul>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre><code><span class='va'>sdp</span> <span class='op'>%&gt;%</span> 
+  <span class='fu'>group_by</span><span class='op'>(</span><span class='va'>EASERVED</span>, <span class='va'>YEAR</span><span class='op'>)</span> <span class='op'>%&gt;%</span>
+  <span class='fu'>summarise</span><span class='op'>(</span>
+    .groups <span class='op'>=</span> <span class='st'>"keep"</span>,
+    <span class='fu'>across</span><span class='op'>(</span><span class='fu'><a href='https://tidyselect.r-lib.org/reference/starts_with.html'>ends_with</a></span><span class='op'>(</span><span class='st'>"PROV"</span><span class='op'>)</span>, <span class='op'>~</span><span class='fu'><a href='https://rdrr.io/r/base/any.html'>any</a></span><span class='op'>(</span><span class='va'>.x</span> <span class='op'>==</span> <span class='fl'>1</span><span class='op'>)</span>, .names <span class='op'>=</span> <span class='st'>"ANY_{.col}"</span><span class='op'>)</span>,
+    <span class='fu'>across</span><span class='op'>(</span><span class='fu'><a href='https://tidyselect.r-lib.org/reference/starts_with.html'>ends_with</a></span><span class='op'>(</span><span class='st'>"OBS"</span><span class='op'>)</span>, <span class='op'>~</span><span class='fu'><a href='https://rdrr.io/r/base/any.html'>any</a></span><span class='op'>(</span><span class='va'>.x</span> <span class='op'>==</span> <span class='fl'>0</span><span class='op'>)</span>, .names <span class='op'>=</span> <span class='st'>"ANY_{.col}_OUT"</span><span class='op'>)</span>,
+    <span class='fu'>across</span><span class='op'>(</span><span class='fu'><a href='https://tidyselect.r-lib.org/reference/starts_with.html'>ends_with</a></span><span class='op'>(</span><span class='st'>"OBS"</span><span class='op'>)</span>, <span class='op'>~</span><span class='fu'><a href='https://rdrr.io/r/base/any.html'>any</a></span><span class='op'>(</span><span class='va'>.x</span> <span class='op'>==</span> <span class='fl'>1</span><span class='op'>)</span>, .names <span class='op'>=</span> <span class='st'>"ANY_{.col}_INSTOCK"</span><span class='op'>)</span>,
+    <span class='fu'>across</span><span class='op'>(</span><span class='fu'><a href='https://tidyselect.r-lib.org/reference/starts_with.html'>ends_with</a></span><span class='op'>(</span><span class='st'>"OUT3MO"</span><span class='op'>)</span>, <span class='op'>~</span><span class='fu'><a href='https://rdrr.io/r/base/any.html'>any</a></span><span class='op'>(</span><span class='va'>.x</span> <span class='op'>==</span> <span class='fl'>1</span><span class='op'>)</span>, .names <span class='op'>=</span> <span class='st'>"ANY_{.col}"</span><span class='op'>)</span>,
+    <span class='fu'>across</span><span class='op'>(</span><span class='fu'><a href='https://tidyselect.r-lib.org/reference/starts_with.html'>ends_with</a></span><span class='op'>(</span><span class='st'>"OUTDAY"</span><span class='op'>)</span>, <span class='op'>~</span><span class='fu'><a href='https://rdrr.io/r/base/mean.html'>mean</a></span><span class='op'>(</span><span class='va'>.x</span>, na.rm <span class='op'>=</span> <span class='cn'>T</span><span class='op'>)</span>, .names <span class='op'>=</span> <span class='st'>"MEAN_{.col}"</span><span class='op'>)</span>
+  <span class='op'>)</span> <span class='op'>%&gt;%</span> 
+  <span class='fu'>transmute</span><span class='op'>(</span>
+    NUM_METHODS_PROV <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/sum.html'>sum</a></span><span class='op'>(</span><span class='fu'>c_across</span><span class='op'>(</span><span class='fu'><a href='https://tidyselect.r-lib.org/reference/starts_with.html'>ends_with</a></span><span class='op'>(</span><span class='st'>"PROV"</span><span class='op'>)</span><span class='op'>)</span>, na.rm <span class='op'>=</span> <span class='cn'>T</span><span class='op'>)</span>,
+    NUM_METHODS_OUTSTOCK <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/sum.html'>sum</a></span><span class='op'>(</span><span class='fu'>c_across</span><span class='op'>(</span><span class='fu'><a href='https://tidyselect.r-lib.org/reference/starts_with.html'>ends_with</a></span><span class='op'>(</span><span class='st'>"OBS_OUT"</span><span class='op'>)</span><span class='op'>)</span>, na.rm <span class='op'>=</span> <span class='cn'>T</span><span class='op'>)</span>,
+    NUM_METHODS_INSTOCK <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/sum.html'>sum</a></span><span class='op'>(</span><span class='fu'>c_across</span><span class='op'>(</span><span class='fu'><a href='https://tidyselect.r-lib.org/reference/starts_with.html'>ends_with</a></span><span class='op'>(</span><span class='st'>"OBS_INSTOCK"</span><span class='op'>)</span><span class='op'>)</span>, na.rm <span class='op'>=</span> <span class='cn'>T</span><span class='op'>)</span>,
+    NUM_METHODS_OUT3MO <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/sum.html'>sum</a></span><span class='op'>(</span><span class='fu'>c_across</span><span class='op'>(</span><span class='fu'><a href='https://tidyselect.r-lib.org/reference/starts_with.html'>ends_with</a></span><span class='op'>(</span><span class='st'>"OUT3MO"</span><span class='op'>)</span><span class='op'>)</span>, na.rm <span class='op'>=</span> <span class='cn'>T</span><span class='op'>)</span>,
+    MEAN_OUTDAY <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/mean.html'>mean</a></span><span class='op'>(</span><span class='fu'>c_across</span><span class='op'>(</span><span class='fu'><a href='https://tidyselect.r-lib.org/reference/starts_with.html'>ends_with</a></span><span class='op'>(</span><span class='st'>"OUTDAY"</span><span class='op'>)</span><span class='op'>)</span>, na.rm <span class='op'>=</span> <span class='cn'>T</span><span class='op'>)</span>
+  <span class='op'>)</span>
+</code></pre>
+</div>
+<pre><code># A tibble: 149 x 7
+# Groups:   EASERVED, YEAR [149]
+   EASERVED  YEAR NUM_METHODS_PROV NUM_METHODS_OUT… NUM_METHODS_INS…
+   &lt;dbl+lb&gt; &lt;int&gt;            &lt;int&gt;            &lt;int&gt;            &lt;int&gt;
+ 1     7003  2017               10                0                8
+ 2     7003  2018                8                0                8
+ 3     7006  2017               10                0                8
+ 4     7006  2018                8                0                8
+ 5     7009  2017                9                1                9
+ 6     7009  2018               10                1                9
+ 7     7016  2017                9                2                8
+ 8     7016  2018                8                0                8
+ 9     7026  2017               10                0                8
+10     7026  2018               10                1                8
+11     7042  2017               11                1                9
+12     7042  2018               10                0                8
+13     7048  2017               11                0                9
+14     7048  2018               11                1                8
+15     7056  2017                8                0                8
+# … with 134 more rows, and 2 more variables:
+#   NUM_METHODS_OUT3MO &lt;int&gt;, MEAN_OUTDAY &lt;dbl&gt;</code></pre>
+</div>
+<p>Finally, let’s add a few more summary variables within the same <code>summarise</code> function that will help describe the amount and types of facilities serving each enumeration area:</p>
+<ul>
+<li><code>N_SDP</code> - number of SDPs</li>
+<li><code>N_SDP_INT</code> - number of SDPs that consented to the interview</li>
+<li><code>HOSPITAL</code> - number of SDPs that are hospitals</li>
+<li><code>HCENTER</code> - number of SDPs that are health centers</li>
+<li><code>PHARM</code> - number of SDPs that are pharmacies</li>
+<li><code>OTHER</code> - number of SDPs that are an “other” facility type</li>
+<li><code>GOV</code> - number of SDPs managed by a government authority</li>
+<li><code>FAITH</code> - number of SDPs managed by a faith-based authority</li>
+<li><code>PRIV</code> - number of SDPs managed by a private sector authority</li>
+</ul>
+<aside>
+This time, we’ll replace transmute() with mutate() and select(): with so many new variables coming into play, we should be explicit about which ones we want to add and drop. We’ll also remove the grouping variables used in our summary calculations with ungroup().
+</aside>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre><code><span class='va'>sdp</span> <span class='op'>&lt;-</span> <span class='va'>sdp</span> <span class='op'>%&gt;%</span> 
+  <span class='fu'>group_by</span><span class='op'>(</span><span class='va'>EASERVED</span>, <span class='va'>YEAR</span><span class='op'>)</span> <span class='op'>%&gt;%</span>
+  <span class='fu'>summarise</span><span class='op'>(</span>
+    .groups <span class='op'>=</span> <span class='st'>"keep"</span>,
+    N_SDP <span class='op'>=</span> <span class='fu'>n</span><span class='op'>(</span><span class='op'>)</span>,
+    N_SDP_INT <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/sum.html'>sum</a></span><span class='op'>(</span><span class='va'>CONSENTSQ</span> <span class='op'>==</span> <span class='fl'>1</span><span class='op'>)</span>,
+    HOSPITAL <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/sum.html'>sum</a></span><span class='op'>(</span><span class='va'>FACILITYTYPEGEN</span> <span class='op'>==</span> <span class='fl'>1</span><span class='op'>)</span>,
+    HCENTER <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/sum.html'>sum</a></span><span class='op'>(</span><span class='va'>FACILITYTYPEGEN</span> <span class='op'>==</span> <span class='fl'>2</span><span class='op'>)</span>,
+    PHARM <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/sum.html'>sum</a></span><span class='op'>(</span><span class='va'>FACILITYTYPEGEN</span> <span class='op'>==</span> <span class='fl'>7</span><span class='op'>)</span>,
+    OTHER <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/sum.html'>sum</a></span><span class='op'>(</span><span class='va'>FACILITYTYPEGEN</span> <span class='op'>==</span> <span class='fl'>9</span><span class='op'>)</span>,
+    GOV  <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/sum.html'>sum</a></span><span class='op'>(</span><span class='va'>AUTHORITY</span> <span class='op'>==</span> <span class='fl'>1</span><span class='op'>)</span>,
+    FAITH <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/sum.html'>sum</a></span><span class='op'>(</span><span class='va'>AUTHORITY</span> <span class='op'>==</span> <span class='fl'>3</span><span class='op'>)</span>,
+    PRIV <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/sum.html'>sum</a></span><span class='op'>(</span><span class='va'>AUTHORITY</span> <span class='op'>==</span> <span class='fl'>4</span><span class='op'>)</span>,
+    <span class='fu'>across</span><span class='op'>(</span><span class='fu'><a href='https://tidyselect.r-lib.org/reference/starts_with.html'>ends_with</a></span><span class='op'>(</span><span class='st'>"PROV"</span><span class='op'>)</span>, <span class='op'>~</span><span class='fu'><a href='https://rdrr.io/r/base/any.html'>any</a></span><span class='op'>(</span><span class='va'>.x</span> <span class='op'>==</span> <span class='fl'>1</span><span class='op'>)</span>, .names <span class='op'>=</span> <span class='st'>"ANY_{.col}"</span><span class='op'>)</span>,
+    <span class='fu'>across</span><span class='op'>(</span><span class='fu'><a href='https://tidyselect.r-lib.org/reference/starts_with.html'>ends_with</a></span><span class='op'>(</span><span class='st'>"OBS"</span><span class='op'>)</span>, <span class='op'>~</span><span class='fu'><a href='https://rdrr.io/r/base/any.html'>any</a></span><span class='op'>(</span><span class='va'>.x</span> <span class='op'>==</span> <span class='fl'>0</span><span class='op'>)</span>, .names <span class='op'>=</span> <span class='st'>"ANY_{.col}_OUT"</span><span class='op'>)</span>,
+    <span class='fu'>across</span><span class='op'>(</span><span class='fu'><a href='https://tidyselect.r-lib.org/reference/starts_with.html'>ends_with</a></span><span class='op'>(</span><span class='st'>"OBS"</span><span class='op'>)</span>, <span class='op'>~</span><span class='fu'><a href='https://rdrr.io/r/base/any.html'>any</a></span><span class='op'>(</span><span class='va'>.x</span> <span class='op'>==</span> <span class='fl'>1</span><span class='op'>)</span>, .names <span class='op'>=</span> <span class='st'>"ANY_{.col}_INSTOCK"</span><span class='op'>)</span>,
+    <span class='fu'>across</span><span class='op'>(</span><span class='fu'><a href='https://tidyselect.r-lib.org/reference/starts_with.html'>ends_with</a></span><span class='op'>(</span><span class='st'>"OUT3MO"</span><span class='op'>)</span>, <span class='op'>~</span><span class='fu'><a href='https://rdrr.io/r/base/any.html'>any</a></span><span class='op'>(</span><span class='va'>.x</span> <span class='op'>==</span> <span class='fl'>1</span><span class='op'>)</span>, .names <span class='op'>=</span> <span class='st'>"ANY_{.col}"</span><span class='op'>)</span>,
+    <span class='fu'>across</span><span class='op'>(</span><span class='fu'><a href='https://tidyselect.r-lib.org/reference/starts_with.html'>ends_with</a></span><span class='op'>(</span><span class='st'>"OUTDAY"</span><span class='op'>)</span>, <span class='op'>~</span><span class='fu'><a href='https://rdrr.io/r/base/mean.html'>mean</a></span><span class='op'>(</span><span class='va'>.x</span>, na.rm <span class='op'>=</span> <span class='cn'>T</span><span class='op'>)</span>, .names <span class='op'>=</span> <span class='st'>"MEAN_{.col}"</span><span class='op'>)</span>
+  <span class='op'>)</span> <span class='op'>%&gt;%</span> 
+  <span class='fu'>mutate</span><span class='op'>(</span>
+    NUM_METHODS_PROV <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/sum.html'>sum</a></span><span class='op'>(</span><span class='fu'>c_across</span><span class='op'>(</span><span class='fu'><a href='https://tidyselect.r-lib.org/reference/starts_with.html'>ends_with</a></span><span class='op'>(</span><span class='st'>"PROV"</span><span class='op'>)</span><span class='op'>)</span>, na.rm <span class='op'>=</span> <span class='cn'>T</span><span class='op'>)</span>,
+    NUM_METHODS_OUT <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/sum.html'>sum</a></span><span class='op'>(</span><span class='fu'>c_across</span><span class='op'>(</span><span class='fu'><a href='https://tidyselect.r-lib.org/reference/starts_with.html'>ends_with</a></span><span class='op'>(</span><span class='st'>"OBS_OUT"</span><span class='op'>)</span><span class='op'>)</span>, na.rm <span class='op'>=</span> <span class='cn'>T</span><span class='op'>)</span>,
+    NUM_METHODS_INSTOCK <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/sum.html'>sum</a></span><span class='op'>(</span><span class='fu'>c_across</span><span class='op'>(</span><span class='fu'><a href='https://tidyselect.r-lib.org/reference/starts_with.html'>ends_with</a></span><span class='op'>(</span><span class='st'>"OBS_INSTOCK"</span><span class='op'>)</span><span class='op'>)</span>, na.rm <span class='op'>=</span> <span class='cn'>T</span><span class='op'>)</span>,
+    NUM_METHODS_OUT3MO <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/sum.html'>sum</a></span><span class='op'>(</span><span class='fu'>c_across</span><span class='op'>(</span><span class='fu'><a href='https://tidyselect.r-lib.org/reference/starts_with.html'>ends_with</a></span><span class='op'>(</span><span class='st'>"OUT3MO"</span><span class='op'>)</span><span class='op'>)</span>, na.rm <span class='op'>=</span> <span class='cn'>T</span><span class='op'>)</span>,
+    MEAN_OUTDAY <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/mean.html'>mean</a></span><span class='op'>(</span><span class='fu'>c_across</span><span class='op'>(</span><span class='fu'><a href='https://tidyselect.r-lib.org/reference/starts_with.html'>ends_with</a></span><span class='op'>(</span><span class='st'>"OUTDAY"</span><span class='op'>)</span><span class='op'>)</span>, na.rm <span class='op'>=</span> <span class='cn'>T</span><span class='op'>)</span>
+  <span class='op'>)</span> <span class='op'>%&gt;%</span>
+  <span class='fu'>select</span><span class='op'>(</span>
+    <span class='op'>-</span><span class='fu'><a href='https://tidyselect.r-lib.org/reference/starts_with.html'>ends_with</a></span><span class='op'>(</span><span class='st'>"PROV"</span><span class='op'>)</span>,
+    <span class='va'>NUM_METHODS_PROV</span>, <span class='co'># manually kept, since all others ending with "PROV" are dropped</span>
+    <span class='op'>-</span><span class='fu'><a href='https://tidyselect.r-lib.org/reference/starts_with.html'>ends_with</a></span><span class='op'>(</span><span class='st'>"OBS_OUT"</span><span class='op'>)</span>,
+    <span class='op'>-</span><span class='fu'><a href='https://tidyselect.r-lib.org/reference/starts_with.html'>ends_with</a></span><span class='op'>(</span><span class='st'>"OBS_INSTOCK"</span><span class='op'>)</span>,
+    <span class='op'>-</span><span class='fu'><a href='https://tidyselect.r-lib.org/reference/starts_with.html'>ends_with</a></span><span class='op'>(</span><span class='st'>"OUT3MO"</span><span class='op'>)</span>,
+    <span class='va'>NUM_METHODS_OUT3MO</span>, <span class='co'># manually kept, since all others ending with "OUT3MO" are dropped</span>
+     <span class='op'>-</span><span class='fu'><a href='https://tidyselect.r-lib.org/reference/starts_with.html'>ends_with</a></span><span class='op'>(</span><span class='st'>"OUTDAY"</span><span class='op'>)</span>,
+    <span class='va'>MEAN_OUTDAY</span>
+  <span class='op'>)</span> <span class='op'>%&gt;%</span> 
+  <span class='fu'>ungroup</span><span class='op'>(</span><span class='op'>)</span>
+
+<span class='va'>sdp</span>
+</code></pre>
+</div>
+<pre><code># A tibble: 149 x 16
+   EASERVED  YEAR N_SDP N_SDP_INT HOSPITAL HCENTER PHARM OTHER   GOV
+   &lt;dbl+lb&gt; &lt;int&gt; &lt;int&gt;     &lt;int&gt;    &lt;int&gt;   &lt;int&gt; &lt;int&gt; &lt;int&gt; &lt;int&gt;
+ 1     7003  2017     3         3        2       1     0     0     3
+ 2     7003  2018     2         2        1       1     0     0     2
+ 3     7006  2017     2         2        1       1     0     0     2
+ 4     7006  2018     1         1        0       1     0     0     1
+ 5     7009  2017     3         3        2       1     0     0     3
+ 6     7009  2018     2         2        1       1     0     0     2
+ 7     7016  2017     3         3        2       1     0     0     3
+ 8     7016  2018     2         2        1       1     0     0     2
+ 9     7026  2017     3         3        1       2     0     0     3
+10     7026  2018     3         3        1       2     0     0     3
+11     7042  2017     3         3        2       1     0     0     3
+12     7042  2018     2         2        1       1     0     0     2
+13     7048  2017     2         2        2       0     0     0     2
+14     7048  2018     2         2        2       0     0     0     2
+15     7056  2017     2         2        1       1     0     0     2
+# … with 134 more rows, and 7 more variables: FAITH &lt;int&gt;,
+#   PRIV &lt;int&gt;, NUM_METHODS_OUT &lt;int&gt;, NUM_METHODS_INSTOCK &lt;int&gt;,
+#   NUM_METHODS_PROV &lt;int&gt;, …</code></pre>
+</div>
+<h1 id="merging-to-individual-records">Merging to individual records</h1>
+<p>Now that we’ve created some summary statistics about each enumeration area, we’ll want to merge them to a data extract where women are the primary unit of analysis. Consider the following female respondent dataset collected from Burkina Faso in 2017 and 2018; it contains a variable <a href="https://pma.ipums.org/pma-action/variables/FPCURRUSE#description_section">FPCURRUSE</a> indicating whether the woman is currently using a method of family planning:</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre><code><span class='va'>hhf</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/pkg/ipumsr/man/read_ipums_micro.html'>read_ipums_micro</a></span><span class='op'>(</span>
+  ddi <span class='op'>=</span> <span class='st'>"data/pma_00011.xml"</span>,
+  data <span class='op'>=</span> <span class='st'>"data/pma_00011.dat.gz"</span>
+<span class='op'>)</span> <span class='op'>%&gt;%</span> 
+  <span class='fu'>select</span><span class='op'>(</span><span class='va'>PERSONID</span>, <span class='va'>EAID</span>, <span class='va'>YEAR</span>, <span class='va'>FPCURRUSE</span><span class='op'>)</span> <span class='op'>%&gt;%</span> 
+  <span class='fu'>mutate</span><span class='op'>(</span>
+    <span class='fu'>across</span><span class='op'>(</span><span class='fu'><a href='https://tidyselect.r-lib.org/reference/everything.html'>everything</a></span><span class='op'>(</span><span class='op'>)</span>, <span class='op'>~</span><span class='fu'><a href='https://rdrr.io/pkg/ipumsr/man/lbl_na_if.html'>lbl_na_if</a></span><span class='op'>(</span>
+      <span class='va'>.x</span>,
+      <span class='op'>~</span><span class='va'>.lbl</span> <span class='op'>%in%</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span>
+        <span class='st'>"No response or missing"</span>,
+        <span class='st'>"NIU (not in universe)"</span>
+      <span class='op'>)</span>
+    <span class='op'>)</span><span class='op'>)</span>
+  <span class='op'>)</span>
+</code></pre>
+</div>
+</div>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre><code><span class='va'>hhf</span>
+</code></pre>
+</div>
+<pre><code># A tibble: 6,944 x 4
+   PERSONID                EAID  YEAR FPCURRUSE
+   &lt;chr&gt;                  &lt;dbl&gt; &lt;int&gt; &lt;int+lbl&gt;
+ 1 0762000000029022017506  7620  2017  NA      
+ 2 0735800000017142017501  7358  2017   0 [No] 
+ 3 0710400000020992017502  7104  2017   0 [No] 
+ 4 0704800000014092017503  7048  2017   0 [No] 
+ 5 0715600000020782017502  7156  2017   0 [No] 
+ 6 0727900000021452017502  7279  2017   0 [No] 
+ 7 0743100000024642017502  7431  2017   1 [Yes]
+ 8 0721200000025792017502  7212  2017   0 [No] 
+ 9 0704200000014542017512  7042  2017   0 [No] 
+10 0797200000013032017502  7972  2017   0 [No] 
+11 0752100000016312017505  7521  2017   1 [Yes]
+12 0740000000008122017506  7400  2017   1 [Yes]
+13 0793400000007082017503  7934  2017   0 [No] 
+14 0700900000009972017502  7009  2017   0 [No] 
+15 0727900000014742017502  7279  2017   0 [No] 
+# … with 6,929 more rows</code></pre>
+</div>
+<p>To merge the SDP variables we’ve created, we’ll use <a href="https://dplyr.tidyverse.org/reference/join.html">dplyr::right_join</a> to ensure that all rows from <code>hhf</code> are preserved. In the process, we’ll be attaching one row of the <code>sdp</code> data to each woman by matching her <code>EAID</code> to an <code>EASERVED</code>, and by matching her survey <code>YEAR</code> to an SDP survey <code>YEAR</code>.</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre><code><span class='va'>hhf</span> <span class='op'>&lt;-</span> <span class='va'>sdp</span> <span class='op'>%&gt;%</span> 
+  <span class='fu'>rename</span><span class='op'>(</span>EAID <span class='op'>=</span> <span class='va'>EASERVED</span><span class='op'>)</span> <span class='op'>%&gt;%</span> 
+  <span class='fu'>right_join</span><span class='op'>(</span><span class='va'>hhf</span>, by <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"EAID"</span>, <span class='st'>"YEAR"</span><span class='op'>)</span><span class='op'>)</span>
+</code></pre>
+</div>
+</div>
+<p>Now, each woman’s record contains all of the variables we created above summarizing the SDPs that serve her enumeration area. For example, for all women living in <code>EAID == 7003</code> in <code>YEAR == 2017</code>, the value in <code>NUM_METHODS_OUT3MO</code> shows the number of family planning methods that were out of stock with any SDP serving the woman’s enumeration area within three months prior to the survey:</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre><code><span class='va'>hhf</span> <span class='op'>%&gt;%</span> 
+  <span class='fu'><a href='https://rdrr.io/r/stats/filter.html'>filter</a></span><span class='op'>(</span><span class='va'>EAID</span> <span class='op'>==</span> <span class='fl'>7003</span>, <span class='va'>YEAR</span> <span class='op'>==</span> <span class='fl'>2017</span><span class='op'>)</span> <span class='op'>%&gt;%</span> 
+  <span class='fu'>select</span><span class='op'>(</span><span class='va'>PERSONID</span>, <span class='va'>EAID</span>, <span class='va'>YEAR</span>, <span class='va'>NUM_METHODS_OUT3MO</span><span class='op'>)</span>
+</code></pre>
+</div>
+<pre><code># A tibble: 55 x 4
+   PERSONID                    EAID  YEAR NUM_METHODS_OUT3MO
+   &lt;chr&gt;                  &lt;dbl+lbl&gt; &lt;int&gt;              &lt;int&gt;
+ 1 0700300000019732017504      7003  2017                  0
+ 2 0700300000019732017503      7003  2017                  0
+ 3 0700300000026402017515      7003  2017                  0
+ 4 0700300000010752017502      7003  2017                  0
+ 5 0700300000016092017503      7003  2017                  0
+ 6 0700300000008352017508      7003  2017                  0
+ 7 0700300000012732017502      7003  2017                  0
+ 8 0700300000005272017507      7003  2017                  0
+ 9 0700300000025612017508      7003  2017                  0
+10 0700300000023912017504      7003  2017                  0
+11 0700300000018662017507      7003  2017                  0
+12 0700300000025612017507      7003  2017                  0
+13 0700300000009052017502      7003  2017                  0
+14 0700300000008352017507      7003  2017                  0
+15 0700300000000732017502      7003  2017                  0
+# … with 40 more rows</code></pre>
+</div>
+<p>You’ll notice that 55 women were surveyed in <code>EAID</code> 7003 in 2017, and each one has the same value (0) for <code>NUM_METHODS_OUT3MO</code>.</p>
+<p>We’ll dig deeper into the types of research questions that our new combined dataset can answer in our upcoming Data Analysis post. For now, take a look at the apparent relationship between <code>FPCURRUSE</code> and <code>NUM_METHODS_OUT3MO</code> for all of the women with non-missing responses for both variables:</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre><code><span class='va'>hhf</span> <span class='op'>%&gt;%</span> 
+  <span class='fu'><a href='https://rdrr.io/r/stats/filter.html'>filter</a></span><span class='op'>(</span><span class='op'>!</span><span class='fu'><a href='https://rdrr.io/r/base/NA.html'>is.na</a></span><span class='op'>(</span><span class='va'>FPCURRUSE</span><span class='op'>)</span> <span class='op'>&amp;</span> <span class='op'>!</span><span class='fu'><a href='https://rdrr.io/r/base/NA.html'>is.na</a></span><span class='op'>(</span><span class='va'>NUM_METHODS_OUT3MO</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>%&gt;%</span> 
+  <span class='fu'>group_by</span><span class='op'>(</span><span class='va'>NUM_METHODS_OUT3MO</span> <span class='op'>&gt;</span> <span class='fl'>0</span><span class='op'>)</span> <span class='op'>%&gt;%</span> 
+  <span class='fu'>count</span><span class='op'>(</span><span class='va'>FPCURRUSE</span><span class='op'>)</span> <span class='op'>%&gt;%</span> 
+  <span class='fu'>mutate</span><span class='op'>(</span>pct <span class='op'>=</span> <span class='va'>n</span><span class='op'>/</span><span class='fu'><a href='https://rdrr.io/r/base/sum.html'>sum</a></span><span class='op'>(</span><span class='va'>n</span><span class='op'>)</span><span class='op'>)</span>
+</code></pre>
+</div>
+<pre><code># A tibble: 4 x 4
+# Groups:   NUM_METHODS_OUT3MO &gt; 0 [2]
+  `NUM_METHODS_OUT3MO &gt; 0` FPCURRUSE     n   pct
+  &lt;lgl&gt;                    &lt;int+lbl&gt; &lt;int&gt; &lt;dbl&gt;
+1 FALSE                      0 [No]   2721 0.648
+2 FALSE                      1 [Yes]  1475 0.352
+3 TRUE                       0 [No]   1124 0.700
+4 TRUE                       1 [Yes]   482 0.300</code></pre>
+</div>
+<p>Notably, among those respondents living in an enumeration area that experienced zero stockouts within the 3 months prior to the SDP survey, 35% indicated that they were actively using a family planning method. Compare that to the set of respondents living in an area where at least one method was out of stock during the same time period: only 30% where using a family planning method.</p>
+<p>While a 5% difference may or may not prove to be statistically significant under further analysis, it’s not entirely surprising that the reliable availability of contraceptive methods from service providers might influence the contraceptive prevalence rate among women in a given service area.</p>
+<p>As always, let us know what kinds of questions about fertility and family planning you’re answering with data merged from service providers!</p>
+<div class="sourceCode" id="cb24"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
+<section class="footnotes" role="doc-endnotes">
+<hr />
+<ol>
+<li id="fn1" role="doc-endnote"><p>Looking at the <a href="https://pma.ipums.org/pma-action/variables/CONOBS#universe_section">Universe tab</a> for <code>CONOBS</code>, we learn that only SDPs that normally provide male condoms received this question - see <code>CONPROV</code>.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2" role="doc-endnote"><p>When you created your data extract, you might remember that you only selected one variable called EASERVED. The IPUMS extract system automatically selects the right number of EASERVED variables based on the maximum number of enumeration areas served by any one SDP in your extract (between 2017 and 2018 in Burkina Faso, the SDP with the widest service area covered 18 enumeration areas).<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section>
+<!--radix_placeholder_article_footer-->
+<!--/radix_placeholder_article_footer-->
+</div>
+
+<div class="d-appendix">
+</div>
+
+
+<!--radix_placeholder_site_after_body-->
+<!--/radix_placeholder_site_after_body-->
+<!--radix_placeholder_appendices-->
+<div class="appendix-bottom"></div>
+<!--/radix_placeholder_appendices-->
+<!--radix_placeholder_navigation_after_body-->
+<!--/radix_placeholder_navigation_after_body-->
+
+</body>
+
+</html>

@@ -20,7 +20,6 @@ output:
     toc_depth: 3
     toc_float: true
 preview: images/static-map.png
-slug: ShinyMapDemo
 ---
 
 ```{r download_button, echo=F}
