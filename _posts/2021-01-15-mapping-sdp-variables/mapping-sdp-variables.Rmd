@@ -1,0 +1,197 @@
+---
+title: "Mapping Service Delivery Point Data"
+description: |
+  Map spatial variation in the service delivery environment across enumeration areas.
+author:
+  - name: Nina Brooks
+    affiliation: IPUMS PMA Postdoctoral Associate
+categories:
+  - Individual in Context
+  - Serivce Delivery Points
+  - Mapping
+  - sf
+date: 01-15-2021
+output:
+  distill::distill_article:
+    self_contained: false
+    toc: true
+    toc_depth: 3
+    toc_float: true
+draft: true
+---
+
+
+```{r download_button, echo=F}
+downloadthis::download_file(
+  path = "mapping-sdp-variables.Rmd",
+  button_label = "Download this page as R code",
+  button_type = "default",
+  has_icon = T,
+  icon = "fa fa-save"
+)
+```
+
+```{r setup, include=F}
+knitr::opts_chunk$set(echo = T, eval = T, message = F)
+options(tibble.print_min=10, tibble.max_extra_cols = 5)
+```
+
+In our last post, we showed how PMA Service Delivery Point (SDP) data can be aggregated to the enumeration area they serve (captured by [EASERVED](https://pma.ipums.org/pma-action/variables/EASERVED)) and linked to the individual-level PMA survey data. In this post, we'll show how the SDP data can be linked to the PMA GPS datasets. Then, we'll map different variables to show how variation in variables can be understood spatially.
+
+# Data
+
+We'll be working with the final `sdp` dataset created in the previous post. You can either check out that post [here](how to link between posts?) or just load the `sdp` dataset from the “data” folder for this post in the PMA Data Hub repository on GitHub (add link). We'll focus on a few of the `EASEARVED`-level variables created in the last post:
+
+  * `NUM_METHODS_PROV` - number of methods provided by at least one SDP
+  * `NUM_METHODS_OUT` - number of methods out of stock with at least one SDP
+  * `NUM_METHODS_INSTOCK` - number of methods in-stock with at least one SDP
+  * `NUM_METHODS_OUT3MO` - number of methods out of stock any time in the last 3 months with at least one SDP
+  * `MEAN_OUTDAY` - the mean length of a stockout for any family planning method (measured in days)
+  * `N_SDP` - number of SDPs 
+  
+We'll also use the `STRATA` variable, which identifies whether an EA is in an urban or rural area. 
+
+We'll also be working with the PMA GPS datasets for Burkina Faso. The GPS data include one GPS coordinate per enumeration area. The Burkina Faso Round 5 and 6 surveys sampled the same enumeration areas, which means we can link the GPS data to both rounds (either mention here or in the aside later on).
+
+<aside>
+Read more about the GPS data and request access on the PMA on the <a href="https://www.pmadata.org/data/about-data">PMA Data website</a>.
+</aside>
+
+The last dataset we'll use in this post are the adminstrative boundaries for Burkina Faso. Shapefiles with administrative boundaries are widely available for download, but we'll use the R package [GADMTools](https://cran.r-project.org/web/packages/GADMTools/index.html), which allows you to download shapefiles directly in R.
+
+# Setup
+
+```{r local}
+library(ipumsr)
+library(sf) # primary spatial package
+library(GADMTools) # for downloading shapefiles
+library(viridis) # for color palettes
+library(tidyverse)
+```
+
+Load the SDP data and the GPS data from the data folder and check out what the GPS data contains:
+
+```{r}
+load("data/sdp.Rdata") 
+
+gps <- read_csv("data/PMA_BF_GPS_v1_24Jul2018.csv")
+gps
+```
+
+The `gps` data has 7 variables:
+
+  * PMACC: the 3-letter country code (ask Devon about this - they seem to be 2-letters?)
+  * PMAYEAR: the 4-digit year of data collection
+  * REGION: sub-national administrative division name
+  * EA_ID: the enumeration area ID (and how we'll merge this data into other PMA datasets)
+  * GPSLAT: the displaced EA's centroid latitude coordinate in decimal degrees
+  * GPSLONG: the displaced EA's centroid longitude coordinate in decimal degrees
+  * DATUM: the coordinate reference system and geographic datum. This variable is always "WGS84" for the World Geodetic System 1984.
+
+<aside>
+Note that while the `PMAYEAR` variable is 2017 for all EAs, because the same EAs were sampled in the 2017 (Round 5) and 2018 (Round 6) surveys, we can link these coordinates to both samples.
+</aside>
+
+<aside>
+The `REGION` variable corresponds to the first administrative level in a given country or `adm_1` in GADM language.
+</aside>
+
+Note that the `GPSLAT` and `GPSLONG` are **displaced** coordinates of the EA centroid. This is because PMA randomly displaces the geographic coordinates to preserve the privacy of survey respondents. Coordinates are displaced randomly by both angle and distance. Urban EAs are displaced from their true location up to 2 km. Rural EAs are displaced from their true location up to 5 km. Additionally, a random sample of 1% of rural EAs are displaced up to 10km. The PMA GPS data come with documentation that explains the displacement in more detail. The primary spatial package we'll use is simple features or `sf`. We'll use `sf::st_as_sf()` to convert the GPS data to a spatial data object (known as a simple feature collection).
+
+<aside>
+PMA follows the same displacement protocol as the Demographic and Health Surveys, for those familiar the the DHS spatial data.
+</aside>
+
+```{r}
+gps <- gps %>%
+    st_as_sf(
+      coords = c("GPSLONG", "GPSLAT"), 
+      crs = 4326) # 4326 is the coordinate reference system (CRS) identifier for WGS84
+gps
+```
+
+Now that `gps` is a simple features object, we've lost the `GPSLAT` and `GPSLONG` variables and gained a variable called `geometry`, which contains the spatial information for this data. 
+
+The last thing we need is the Burkina Faso shapefile. [GADMTools](https://cran.r-project.org/web/packages/GADMTools/index.html) will allow us to download and load shapefiles. Conveniently, `GADMTools::gadm_sf_loadCountries()` will load the shapefile as an `sf` object. The `bf_1` object is a list which contains some metadata that we don't need to hold onto, in addition to the shapefile, so we'll only take what we need. Note that here the `geometry` variable is a `POLYGON`, whereas in the `gps` data it is a `POINT`.
+
+```{r}
+bf_1 <- gadm_sf_loadCountries(
+  fileNames = "BFA", # the ISO-3166-1 country code 
+  basefile = "data/", # the directory where the shapefile will be saved
+  level = 1) # indicates that we want administrative level 1
+
+bf_1 <- bf_1$sf
+bf_1
+```
+
+
+# Merge and Map
+Now that we have all our data, we'll show you how to map variables... But before we do that, let's do some basic, exploratory mapping.
+
+## Exploratory Maps
+`ggplot2` has support for `sf` objects, which makes it really easy to map things using the `ggplot2::geom_sf()`. `geom_sf()` will automatically identify what kind of spatial data you're plotting and handle it appropriately. For example, let's plot the `gps` data (which are points) and the administrative region (which are polygons).
+
+```{r}
+# Plot EA centroids
+ggplot() +
+  geom_sf(data = gps)
+
+# Plot regions of Burkina Faso
+ggplot() +
+  geom_sf(data = bf_1)
+
+```
+
+The building-block approach of `ggplot2` ("Grammar of Graphics") also makes it really easy to layer different spatial features on the same map.
+
+```{r}
+# Plot regions of Burkina Faso & EA centroids on the same map
+ggplot() +
+  geom_sf(data = bf_1) +
+  geom_sf(data = gps)
+  
+```
+
+## Merge GPS and SDP Data
+To map the EA-level variables constructed in the last post, we need to merge the `sdp` data and the `gps` data by `EA_ID`. First, let's rename the `EASEARVED` variable to match the GPS data and then use a `dplyr::right_join` to merge in the SDP data. We need to use a `right_join()` because the sf object must be listed first in our join command to retain the sf class, but we want to ensure that all rows from `sdp` are preserved.
+
+<aside>
+Remember, the SDP data contains information from both 2017 and 2018, while the GPS data has a single observation per EA.
+</aside>
+```{r}
+# check <- sdp %>%
+#   group_by(EA_ID) %>%
+#   tally() %>%
+#   filter(n == 1)
+# 
+# sdp[sdp$EA_ID %in% check$EA_ID,]
+
+# rename to be consistent with GPS data
+sdp <- sdp %>%
+  rename(
+    EA_ID = EASERVED 
+  )
+
+sdp <- right_join(gps, sdp, by = "EA_ID")
+
+sdp # now the sdp data is an sf object
+```
+
+# Map SDP data
+Remember, the `sdp` data contains information from 2017 & 2018, which can clog up the map depending on how we use this information. To start out, let's use only the 2017 data and add information about the number of service delivery providers that serve a given EA (`N_SDP`). By passing `N_SDP` to the size aesthetic, we can more easily visualize how EAs vary in their access to service delivery providers.
+
+```{r}
+sdp2017 <- sdp %>%
+  filter(YEAR == 2017)
+
+ggplot() +
+  geom_sf(data = bf_1) +
+  geom_sf(data = sdp2017, 
+          aes(size = N_SDP),
+          alpha = 0.4) 
+
+
+```
+
+
+From the map it looks like there may be a few clusters where EAs are served by many SDPs, which are likely in urban areas. But, it's a little hard to see the variation in size when there are so many EAs right next to each other. Let's do two things to make this more readable. First, we'll discretize the `N_SDP` variable, and second, we'll add in the locations of the administrative capitals.

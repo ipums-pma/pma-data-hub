@@ -1,0 +1,1727 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1"/>
+  <meta name="generator" content="distill" />
+
+  <style type="text/css">
+  /* Hide doc at startup (prevent jankiness while JS renders/transforms) */
+  body {
+    visibility: hidden;
+  }
+  </style>
+
+ <!--radix_placeholder_import_source-->
+ <!--/radix_placeholder_import_source-->
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css" data-origin="pandoc">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ad0000; } /* Alert */
+code span.an { color: #5e5e5e; } /* Annotation */
+code span.at { color: #20794d; } /* Attribute */
+code span.bn { color: #ad0000; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007ba5; } /* ControlFlow */
+code span.ch { color: #20794d; } /* Char */
+code span.cn { color: #8f5902; } /* Constant */
+code span.co { color: #5e5e5e; } /* Comment */
+code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
+code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
+code span.dt { color: #ad0000; } /* DataType */
+code span.dv { color: #ad0000; } /* DecVal */
+code span.er { color: #ad0000; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #ad0000; } /* Float */
+code span.fu { color: #4758ab; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #5e5e5e; } /* Information */
+code span.kw { color: #007ba5; } /* Keyword */
+code span.op { color: #5e5e5e; } /* Operator */
+code span.ot { color: #007ba5; } /* Other */
+code span.pp { color: #ad0000; } /* Preprocessor */
+code span.sc { color: #20794d; } /* SpecialChar */
+code span.ss { color: #20794d; } /* SpecialString */
+code span.st { color: #20794d; } /* String */
+code span.va { color: #111111; } /* Variable */
+code span.vs { color: #20794d; } /* VerbatimString */
+code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
+</style>
+
+  <!--radix_placeholder_meta_tags-->
+  <title>Mapping Service Delivery Point Data</title>
+
+  <meta property="description" itemprop="description" content="Map spatial variation in the service delivery environment across enumeration areas."/>
+
+
+  <!--  https://schema.org/Article -->
+  <meta property="article:published" itemprop="datePublished" content="2021-01-15"/>
+  <meta property="article:created" itemprop="dateCreated" content="2021-01-15"/>
+  <meta name="article:author" content="Nina Brooks"/>
+
+  <!--  https://developers.facebook.com/docs/sharing/webmasters#markup -->
+  <meta property="og:title" content="Mapping Service Delivery Point Data"/>
+  <meta property="og:type" content="article"/>
+  <meta property="og:description" content="Map spatial variation in the service delivery environment across enumeration areas."/>
+  <meta property="og:locale" content="en_US"/>
+
+  <!--  https://dev.twitter.com/cards/types/summary -->
+  <meta property="twitter:card" content="summary"/>
+  <meta property="twitter:title" content="Mapping Service Delivery Point Data"/>
+  <meta property="twitter:description" content="Map spatial variation in the service delivery environment across enumeration areas."/>
+
+  <!--/radix_placeholder_meta_tags-->
+  <!--radix_placeholder_rmarkdown_metadata-->
+
+  <script type="text/json" id="radix-rmarkdown-metadata">
+  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","author","categories","date","output","draft"]}},"value":[{"type":"character","attributes":{},"value":["Mapping Service Delivery Point Data"]},{"type":"character","attributes":{},"value":["Map spatial variation in the service delivery environment across enumeration areas.\n"]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","affiliation"]}},"value":[{"type":"character","attributes":{},"value":["Nina Brooks"]},{"type":"character","attributes":{},"value":["IPUMS PMA Postdoctoral Associate"]}]}]},{"type":"character","attributes":{},"value":["Individual in Context","Serivce Delivery Points","Mapping","sf"]},{"type":"character","attributes":{},"value":["01-15-2021"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained","toc","toc_depth","toc_float"]}},"value":[{"type":"logical","attributes":{},"value":[false]},{"type":"logical","attributes":{},"value":[true]},{"type":"integer","attributes":{},"value":[3]},{"type":"logical","attributes":{},"value":[true]}]}]},{"type":"logical","attributes":{},"value":[false]}]}
+  </script>
+  <!--/radix_placeholder_rmarkdown_metadata-->
+  
+  <script type="text/json" id="radix-resource-manifest">
+  {"type":"character","attributes":{},"value":["data/BFA_adm1.sf.rds","data/PMA_BF_GPS_v1_24Jul2018.csv","data/sdp.Rdata","mapping-sdp-variables_files/anchor-4.2.2/anchor.min.js","mapping-sdp-variables_files/bowser-1.9.3/bowser.min.js","mapping-sdp-variables_files/distill-2.2.21/template.v2.js","mapping-sdp-variables_files/figure-html5/unnamed-chunk-4-1.png","mapping-sdp-variables_files/figure-html5/unnamed-chunk-4-2.png","mapping-sdp-variables_files/figure-html5/unnamed-chunk-5-1.png","mapping-sdp-variables_files/figure-html5/unnamed-chunk-6-1.png","mapping-sdp-variables_files/figure-html5/unnamed-chunk-7-1.png","mapping-sdp-variables_files/font-awesome-5.13.0/css/all.min.css","mapping-sdp-variables_files/font-awesome-5.13.0/css/v4-shims.min.css","mapping-sdp-variables_files/font-awesome-5.13.0/js/script.js","mapping-sdp-variables_files/font-awesome-5.13.0/webfonts/fa-brands-400.eot","mapping-sdp-variables_files/font-awesome-5.13.0/webfonts/fa-brands-400.svg","mapping-sdp-variables_files/font-awesome-5.13.0/webfonts/fa-brands-400.ttf","mapping-sdp-variables_files/font-awesome-5.13.0/webfonts/fa-brands-400.woff","mapping-sdp-variables_files/font-awesome-5.13.0/webfonts/fa-brands-400.woff2","mapping-sdp-variables_files/font-awesome-5.13.0/webfonts/fa-regular-400.eot","mapping-sdp-variables_files/font-awesome-5.13.0/webfonts/fa-regular-400.svg","mapping-sdp-variables_files/font-awesome-5.13.0/webfonts/fa-regular-400.ttf","mapping-sdp-variables_files/font-awesome-5.13.0/webfonts/fa-regular-400.woff","mapping-sdp-variables_files/font-awesome-5.13.0/webfonts/fa-regular-400.woff2","mapping-sdp-variables_files/font-awesome-5.13.0/webfonts/fa-solid-900.eot","mapping-sdp-variables_files/font-awesome-5.13.0/webfonts/fa-solid-900.svg","mapping-sdp-variables_files/font-awesome-5.13.0/webfonts/fa-solid-900.ttf","mapping-sdp-variables_files/font-awesome-5.13.0/webfonts/fa-solid-900.woff","mapping-sdp-variables_files/font-awesome-5.13.0/webfonts/fa-solid-900.woff2","mapping-sdp-variables_files/header-attrs-2.6/header-attrs.js","mapping-sdp-variables_files/jquery-1.11.3/jquery.min.js","mapping-sdp-variables_files/webcomponents-2.0.0/webcomponents.js"]}
+  </script>
+  <!--radix_placeholder_navigation_in_header-->
+  <!--/radix_placeholder_navigation_in_header-->
+  <!--radix_placeholder_distill-->
+
+  <style type="text/css">
+
+  body {
+    background-color: white;
+  }
+
+  .pandoc-table {
+    width: 100%;
+  }
+
+  .pandoc-table>caption {
+    margin-bottom: 10px;
+  }
+
+  .pandoc-table th:not([align]) {
+    text-align: left;
+  }
+
+  .pagedtable-footer {
+    font-size: 15px;
+  }
+
+  d-byline .byline {
+    grid-template-columns: 2fr 2fr;
+  }
+
+  d-byline .byline h3 {
+    margin-block-start: 1.5em;
+  }
+
+  d-byline .byline .authors-affiliations h3 {
+    margin-block-start: 0.5em;
+  }
+
+  .authors-affiliations .orcid-id {
+    width: 16px;
+    height:16px;
+    margin-left: 4px;
+    margin-right: 4px;
+    vertical-align: middle;
+    padding-bottom: 2px;
+  }
+
+  d-title .dt-tags {
+    margin-top: 1em;
+    grid-column: text;
+  }
+
+  .dt-tags .dt-tag {
+    text-decoration: none;
+    display: inline-block;
+    color: rgba(0,0,0,0.6);
+    padding: 0em 0.4em;
+    margin-right: 0.5em;
+    margin-bottom: 0.4em;
+    font-size: 70%;
+    border: 1px solid rgba(0,0,0,0.2);
+    border-radius: 3px;
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+
+  d-article table.gt_table td,
+  d-article table.gt_table th {
+    border-bottom: none;
+  }
+
+  .html-widget {
+    margin-bottom: 2.0em;
+  }
+
+  .l-screen-inset {
+    padding-right: 16px;
+  }
+
+  .l-screen .caption {
+    margin-left: 10px;
+  }
+
+  .shaded {
+    background: rgb(247, 247, 247);
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  }
+
+  .shaded .html-widget {
+    margin-bottom: 0;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+  }
+
+  .shaded .shaded-content {
+    background: white;
+  }
+
+  .text-output {
+    margin-top: 0;
+    line-height: 1.5em;
+  }
+
+  .hidden {
+    display: none !important;
+  }
+
+  d-article {
+    padding-top: 2.5rem;
+    padding-bottom: 30px;
+  }
+
+  d-appendix {
+    padding-top: 30px;
+  }
+
+  d-article>p>img {
+    width: 100%;
+  }
+
+  d-article h2 {
+    margin: 1rem 0 1.5rem 0;
+  }
+
+  d-article h3 {
+    margin-top: 1.5rem;
+  }
+
+  d-article iframe {
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    margin-bottom: 2.0em;
+    width: 100%;
+  }
+
+  /* Tweak code blocks */
+
+  d-article div.sourceCode code,
+  d-article pre code {
+    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  }
+
+  d-article pre,
+  d-article div.sourceCode,
+  d-article div.sourceCode pre {
+    overflow: auto;
+  }
+
+  d-article div.sourceCode {
+    background-color: white;
+  }
+
+  d-article div.sourceCode pre {
+    padding-left: 10px;
+    font-size: 12px;
+    border-left: 2px solid rgba(0,0,0,0.1);
+  }
+
+  d-article pre {
+    font-size: 12px;
+    color: black;
+    background: none;
+    margin-top: 0;
+    text-align: left;
+    white-space: pre;
+    word-spacing: normal;
+    word-break: normal;
+    word-wrap: normal;
+    line-height: 1.5;
+
+    -moz-tab-size: 4;
+    -o-tab-size: 4;
+    tab-size: 4;
+
+    -webkit-hyphens: none;
+    -moz-hyphens: none;
+    -ms-hyphens: none;
+    hyphens: none;
+  }
+
+  d-article pre a {
+    border-bottom: none;
+  }
+
+  d-article pre a:hover {
+    border-bottom: none;
+    text-decoration: underline;
+  }
+
+  @media(min-width: 768px) {
+
+  d-article pre,
+  d-article div.sourceCode,
+  d-article div.sourceCode pre {
+    overflow: visible !important;
+  }
+
+  d-article div.sourceCode pre {
+    padding-left: 18px;
+    font-size: 14px;
+  }
+
+  d-article pre {
+    font-size: 14px;
+  }
+
+  }
+
+  figure img.external {
+    background: white;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0 1px 8px rgba(0, 0, 0, 0.1);
+    padding: 18px;
+    box-sizing: border-box;
+  }
+
+  /* CSS for d-contents */
+
+  .d-contents {
+    grid-column: text;
+    color: rgba(0,0,0,0.8);
+    font-size: 0.9em;
+    padding-bottom: 1em;
+    margin-bottom: 1em;
+    padding-bottom: 0.5em;
+    margin-bottom: 1em;
+    padding-left: 0.25em;
+    justify-self: start;
+  }
+
+  @media(min-width: 1000px) {
+    .d-contents.d-contents-float {
+      height: 0;
+      grid-column-start: 1;
+      grid-column-end: 4;
+      justify-self: center;
+      padding-right: 3em;
+      padding-left: 2em;
+    }
+  }
+
+  .d-contents nav h3 {
+    font-size: 18px;
+    margin-top: 0;
+    margin-bottom: 1em;
+  }
+
+  .d-contents li {
+    list-style-type: none
+  }
+
+  .d-contents nav > ul {
+    padding-left: 0;
+  }
+
+  .d-contents ul {
+    padding-left: 1em
+  }
+
+  .d-contents nav ul li {
+    margin-top: 0.6em;
+    margin-bottom: 0.2em;
+  }
+
+  .d-contents nav a {
+    font-size: 13px;
+    border-bottom: none;
+    text-decoration: none
+    color: rgba(0, 0, 0, 0.8);
+  }
+
+  .d-contents nav a:hover {
+    text-decoration: underline solid rgba(0, 0, 0, 0.6)
+  }
+
+  .d-contents nav > ul > li > a {
+    font-weight: 600;
+  }
+
+  .d-contents nav > ul > li > ul {
+    font-weight: inherit;
+  }
+
+  .d-contents nav > ul > li > ul > li {
+    margin-top: 0.2em;
+  }
+
+
+  .d-contents nav ul {
+    margin-top: 0;
+    margin-bottom: 0.25em;
+  }
+
+  .d-article-with-toc h2:nth-child(2) {
+    margin-top: 0;
+  }
+
+
+  /* Figure */
+
+  .figure {
+    position: relative;
+    margin-bottom: 2.5em;
+    margin-top: 1.5em;
+  }
+
+  .figure img {
+    width: 100%;
+  }
+
+  .figure .caption {
+    color: rgba(0, 0, 0, 0.6);
+    font-size: 12px;
+    line-height: 1.5em;
+  }
+
+  .figure img.external {
+    background: white;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0 1px 8px rgba(0, 0, 0, 0.1);
+    padding: 18px;
+    box-sizing: border-box;
+  }
+
+  .figure .caption a {
+    color: rgba(0, 0, 0, 0.6);
+  }
+
+  .figure .caption b,
+  .figure .caption strong, {
+    font-weight: 600;
+    color: rgba(0, 0, 0, 1.0);
+  }
+
+  /* Citations */
+
+  d-article .citation {
+    color: inherit;
+    cursor: inherit;
+  }
+
+  div.hanging-indent{
+    margin-left: 1em; text-indent: -1em;
+  }
+
+
+  /* Tweak 1000px media break to show more text */
+
+  @media(min-width: 1000px) {
+    .base-grid,
+    distill-header,
+    d-title,
+    d-abstract,
+    d-article,
+    d-appendix,
+    distill-appendix,
+    d-byline,
+    d-footnote-list,
+    d-citation-list,
+    distill-footer {
+      grid-template-columns: [screen-start] 1fr [page-start kicker-start] 80px [middle-start] 50px [text-start kicker-end] 65px 65px 65px 65px 65px 65px 65px 65px [text-end gutter-start] 65px [middle-end] 65px [page-end gutter-end] 1fr [screen-end];
+      grid-column-gap: 16px;
+    }
+
+    .grid {
+      grid-column-gap: 16px;
+    }
+
+    d-article {
+      font-size: 1.06rem;
+      line-height: 1.7em;
+    }
+    figure .caption, .figure .caption, figure figcaption {
+      font-size: 13px;
+    }
+  }
+
+  @media(min-width: 1180px) {
+    .base-grid,
+    distill-header,
+    d-title,
+    d-abstract,
+    d-article,
+    d-appendix,
+    distill-appendix,
+    d-byline,
+    d-footnote-list,
+    d-citation-list,
+    distill-footer {
+      grid-template-columns: [screen-start] 1fr [page-start kicker-start] 60px [middle-start] 60px [text-start kicker-end] 60px 60px 60px 60px 60px 60px 60px 60px [text-end gutter-start] 60px [middle-end] 60px [page-end gutter-end] 1fr [screen-end];
+      grid-column-gap: 32px;
+    }
+
+    .grid {
+      grid-column-gap: 32px;
+    }
+  }
+
+
+  /* Get the citation styles for the appendix (not auto-injected on render since
+     we do our own rendering of the citation appendix) */
+
+  d-appendix .citation-appendix,
+  .d-appendix .citation-appendix {
+    font-size: 11px;
+    line-height: 15px;
+    border-left: 1px solid rgba(0, 0, 0, 0.1);
+    padding-left: 18px;
+    border: 1px solid rgba(0,0,0,0.1);
+    background: rgba(0, 0, 0, 0.02);
+    padding: 10px 18px;
+    border-radius: 3px;
+    color: rgba(150, 150, 150, 1);
+    overflow: hidden;
+    margin-top: -12px;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+  }
+
+  /* Include appendix styles here so they can be overridden */
+
+  d-appendix {
+    contain: layout style;
+    font-size: 0.8em;
+    line-height: 1.7em;
+    margin-top: 60px;
+    margin-bottom: 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    color: rgba(0,0,0,0.5);
+    padding-top: 60px;
+    padding-bottom: 48px;
+  }
+
+  d-appendix h3 {
+    grid-column: page-start / text-start;
+    font-size: 15px;
+    font-weight: 500;
+    margin-top: 1em;
+    margin-bottom: 0;
+    color: rgba(0,0,0,0.65);
+  }
+
+  d-appendix h3 + * {
+    margin-top: 1em;
+  }
+
+  d-appendix ol {
+    padding: 0 0 0 15px;
+  }
+
+  @media (min-width: 768px) {
+    d-appendix ol {
+      padding: 0 0 0 30px;
+      margin-left: -30px;
+    }
+  }
+
+  d-appendix li {
+    margin-bottom: 1em;
+  }
+
+  d-appendix a {
+    color: rgba(0, 0, 0, 0.6);
+  }
+
+  d-appendix > * {
+    grid-column: text;
+  }
+
+  d-appendix > d-footnote-list,
+  d-appendix > d-citation-list,
+  d-appendix > distill-appendix {
+    grid-column: screen;
+  }
+
+  /* Include footnote styles here so they can be overridden */
+
+  d-footnote-list {
+    contain: layout style;
+  }
+
+  d-footnote-list > * {
+    grid-column: text;
+  }
+
+  d-footnote-list a.footnote-backlink {
+    color: rgba(0,0,0,0.3);
+    padding-left: 0.5em;
+  }
+
+
+
+  /* Anchor.js */
+
+  .anchorjs-link {
+    /*transition: all .25s linear; */
+    text-decoration: none;
+    border-bottom: none;
+  }
+  *:hover > .anchorjs-link {
+    margin-left: -1.125em !important;
+    text-decoration: none;
+    border-bottom: none;
+  }
+
+  /* Social footer */
+
+  .social_footer {
+    margin-top: 30px;
+    margin-bottom: 0;
+    color: rgba(0,0,0,0.67);
+  }
+
+  .disqus-comments {
+    margin-right: 30px;
+  }
+
+  .disqus-comment-count {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+    cursor: pointer;
+  }
+
+  #disqus_thread {
+    margin-top: 30px;
+  }
+
+  .article-sharing a {
+    border-bottom: none;
+    margin-right: 8px;
+  }
+
+  .article-sharing a:hover {
+    border-bottom: none;
+  }
+
+  .sidebar-section.subscribe {
+    font-size: 12px;
+    line-height: 1.6em;
+  }
+
+  .subscribe p {
+    margin-bottom: 0.5em;
+  }
+
+
+  .article-footer .subscribe {
+    font-size: 15px;
+    margin-top: 45px;
+  }
+
+
+  .sidebar-section.custom {
+    font-size: 12px;
+    line-height: 1.6em;
+  }
+
+  .custom p {
+    margin-bottom: 0.5em;
+  }
+
+  /* Styles for listing layout (hide title) */
+  .layout-listing d-title, .layout-listing .d-title {
+    display: none;
+  }
+
+  /* Styles for posts lists (not auto-injected) */
+
+
+  .posts-with-sidebar {
+    padding-left: 45px;
+    padding-right: 45px;
+  }
+
+  .posts-list .description h2,
+  .posts-list .description p {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif;
+  }
+
+  .posts-list .description h2 {
+    font-weight: 700;
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+
+  .posts-list h2.post-tag {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    padding-bottom: 12px;
+  }
+  .posts-list {
+    margin-top: 60px;
+    margin-bottom: 24px;
+  }
+
+  .posts-list .post-preview {
+    text-decoration: none;
+    overflow: hidden;
+    display: block;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    padding: 24px 0;
+  }
+
+  .post-preview-last {
+    border-bottom: none !important;
+  }
+
+  .posts-list .posts-list-caption {
+    grid-column: screen;
+    font-weight: 400;
+  }
+
+  .posts-list .post-preview h2 {
+    margin: 0 0 6px 0;
+    line-height: 1.2em;
+    font-style: normal;
+    font-size: 24px;
+  }
+
+  .posts-list .post-preview p {
+    margin: 0 0 12px 0;
+    line-height: 1.4em;
+    font-size: 16px;
+  }
+
+  .posts-list .post-preview .thumbnail {
+    box-sizing: border-box;
+    margin-bottom: 24px;
+    position: relative;
+    max-width: 500px;
+  }
+  .posts-list .post-preview img {
+    width: 100%;
+    display: block;
+  }
+
+  .posts-list .metadata {
+    font-size: 12px;
+    line-height: 1.4em;
+    margin-bottom: 18px;
+  }
+
+  .posts-list .metadata > * {
+    display: inline-block;
+  }
+
+  .posts-list .metadata .publishedDate {
+    margin-right: 2em;
+  }
+
+  .posts-list .metadata .dt-authors {
+    display: block;
+    margin-top: 0.3em;
+    margin-right: 2em;
+  }
+
+  .posts-list .dt-tags {
+    display: block;
+    line-height: 1em;
+  }
+
+  .posts-list .dt-tags .dt-tag {
+    display: inline-block;
+    color: rgba(0,0,0,0.6);
+    padding: 0.3em 0.4em;
+    margin-right: 0.2em;
+    margin-bottom: 0.4em;
+    font-size: 60%;
+    border: 1px solid rgba(0,0,0,0.2);
+    border-radius: 3px;
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+
+  .posts-list img {
+    opacity: 1;
+  }
+
+  .posts-list img[data-src] {
+    opacity: 0;
+  }
+
+  .posts-more {
+    clear: both;
+  }
+
+
+  .posts-sidebar {
+    font-size: 16px;
+  }
+
+  .posts-sidebar h3 {
+    font-size: 16px;
+    margin-top: 0;
+    margin-bottom: 0.5em;
+    font-weight: 400;
+    text-transform: uppercase;
+  }
+
+  .sidebar-section {
+    margin-bottom: 30px;
+  }
+
+  .categories ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .categories li {
+    color: rgba(0, 0, 0, 0.8);
+    margin-bottom: 0;
+  }
+
+  .categories li>a {
+    border-bottom: none;
+  }
+
+  .categories li>a:hover {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+  }
+
+  .categories .active {
+    font-weight: 600;
+  }
+
+  .categories .category-count {
+    color: rgba(0, 0, 0, 0.4);
+  }
+
+
+  @media(min-width: 768px) {
+    .posts-list .post-preview h2 {
+      font-size: 26px;
+    }
+    .posts-list .post-preview .thumbnail {
+      float: right;
+      width: 30%;
+      margin-bottom: 0;
+    }
+    .posts-list .post-preview .description {
+      float: left;
+      width: 45%;
+    }
+    .posts-list .post-preview .metadata {
+      float: left;
+      width: 20%;
+      margin-top: 8px;
+    }
+    .posts-list .post-preview p {
+      margin: 0 0 12px 0;
+      line-height: 1.5em;
+      font-size: 16px;
+    }
+    .posts-with-sidebar .posts-list {
+      float: left;
+      width: 75%;
+    }
+    .posts-with-sidebar .posts-sidebar {
+      float: right;
+      width: 20%;
+      margin-top: 60px;
+      padding-top: 24px;
+      padding-bottom: 24px;
+    }
+  }
+
+
+  /* Improve display for browsers without grid (IE/Edge <= 15) */
+
+  .downlevel {
+    line-height: 1.6em;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif;
+    margin: 0;
+  }
+
+  .downlevel .d-title {
+    padding-top: 6rem;
+    padding-bottom: 1.5rem;
+  }
+
+  .downlevel .d-title h1 {
+    font-size: 50px;
+    font-weight: 700;
+    line-height: 1.1em;
+    margin: 0 0 0.5rem;
+  }
+
+  .downlevel .d-title p {
+    font-weight: 300;
+    font-size: 1.2rem;
+    line-height: 1.55em;
+    margin-top: 0;
+  }
+
+  .downlevel .d-byline {
+    padding-top: 0.8em;
+    padding-bottom: 0.8em;
+    font-size: 0.8rem;
+    line-height: 1.8em;
+  }
+
+  .downlevel .section-separator {
+    border: none;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+  }
+
+  .downlevel .d-article {
+    font-size: 1.06rem;
+    line-height: 1.7em;
+    padding-top: 1rem;
+    padding-bottom: 2rem;
+  }
+
+
+  .downlevel .d-appendix {
+    padding-left: 0;
+    padding-right: 0;
+    max-width: none;
+    font-size: 0.8em;
+    line-height: 1.7em;
+    margin-bottom: 0;
+    color: rgba(0,0,0,0.5);
+    padding-top: 40px;
+    padding-bottom: 48px;
+  }
+
+  .downlevel .footnotes ol {
+    padding-left: 13px;
+  }
+
+  .downlevel .base-grid,
+  .downlevel .distill-header,
+  .downlevel .d-title,
+  .downlevel .d-abstract,
+  .downlevel .d-article,
+  .downlevel .d-appendix,
+  .downlevel .distill-appendix,
+  .downlevel .d-byline,
+  .downlevel .d-footnote-list,
+  .downlevel .d-citation-list,
+  .downlevel .distill-footer,
+  .downlevel .appendix-bottom,
+  .downlevel .posts-container {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+
+  @media(min-width: 768px) {
+    .downlevel .base-grid,
+    .downlevel .distill-header,
+    .downlevel .d-title,
+    .downlevel .d-abstract,
+    .downlevel .d-article,
+    .downlevel .d-appendix,
+    .downlevel .distill-appendix,
+    .downlevel .d-byline,
+    .downlevel .d-footnote-list,
+    .downlevel .d-citation-list,
+    .downlevel .distill-footer,
+    .downlevel .appendix-bottom,
+    .downlevel .posts-container {
+    padding-left: 150px;
+    padding-right: 150px;
+    max-width: 900px;
+  }
+  }
+
+  .downlevel pre code {
+    display: block;
+    border-left: 2px solid rgba(0, 0, 0, .1);
+    padding: 0 0 0 20px;
+    font-size: 14px;
+  }
+
+  .downlevel code, .downlevel pre {
+    color: black;
+    background: none;
+    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+    text-align: left;
+    white-space: pre;
+    word-spacing: normal;
+    word-break: normal;
+    word-wrap: normal;
+    line-height: 1.5;
+
+    -moz-tab-size: 4;
+    -o-tab-size: 4;
+    tab-size: 4;
+
+    -webkit-hyphens: none;
+    -moz-hyphens: none;
+    -ms-hyphens: none;
+    hyphens: none;
+  }
+
+  .downlevel .posts-list .post-preview {
+    color: inherit;
+  }
+
+
+
+  </style>
+
+  <script type="application/javascript">
+
+  function is_downlevel_browser() {
+    if (bowser.isUnsupportedBrowser({ msie: "12", msedge: "16"},
+                                   window.navigator.userAgent)) {
+      return true;
+    } else {
+      return window.load_distill_framework === undefined;
+    }
+  }
+
+  // show body when load is complete
+  function on_load_complete() {
+
+    // add anchors
+    if (window.anchors) {
+      window.anchors.options.placement = 'left';
+      window.anchors.add('d-article > h2, d-article > h3, d-article > h4, d-article > h5');
+    }
+
+
+    // set body to visible
+    document.body.style.visibility = 'visible';
+
+    // force redraw for leaflet widgets
+    if (window.HTMLWidgets) {
+      var maps = window.HTMLWidgets.findAll(".leaflet");
+      $.each(maps, function(i, el) {
+        var map = this.getMap();
+        map.invalidateSize();
+        map.eachLayer(function(layer) {
+          if (layer instanceof L.TileLayer)
+            layer.redraw();
+        });
+      });
+    }
+
+    // trigger 'shown' so htmlwidgets resize
+    $('d-article').trigger('shown');
+  }
+
+  function init_distill() {
+
+    init_common();
+
+    // create front matter
+    var front_matter = $('<d-front-matter></d-front-matter>');
+    $('#distill-front-matter').wrap(front_matter);
+
+    // create d-title
+    $('.d-title').changeElementType('d-title');
+
+    // create d-byline
+    var byline = $('<d-byline></d-byline>');
+    $('.d-byline').replaceWith(byline);
+
+    // create d-article
+    var article = $('<d-article></d-article>');
+    $('.d-article').wrap(article).children().unwrap();
+
+    // move posts container into article
+    $('.posts-container').appendTo($('d-article'));
+
+    // create d-appendix
+    $('.d-appendix').changeElementType('d-appendix');
+
+    // flag indicating that we have appendix items
+    var appendix = $('.appendix-bottom').children('h3').length > 0;
+
+    // replace footnotes with <d-footnote>
+    $('.footnote-ref').each(function(i, val) {
+      appendix = true;
+      var href = $(this).attr('href');
+      var id = href.replace('#', '');
+      var fn = $('#' + id);
+      var fn_p = $('#' + id + '>p');
+      fn_p.find('.footnote-back').remove();
+      var text = fn_p.html();
+      var dtfn = $('<d-footnote></d-footnote>');
+      dtfn.html(text);
+      $(this).replaceWith(dtfn);
+    });
+    // remove footnotes
+    $('.footnotes').remove();
+
+    // move refs into #references-listing
+    $('#references-listing').replaceWith($('#refs'));
+
+    $('h1.appendix, h2.appendix').each(function(i, val) {
+      $(this).changeElementType('h3');
+    });
+    $('h3.appendix').each(function(i, val) {
+      var id = $(this).attr('id');
+      $('.d-contents a[href="#' + id + '"]').parent().remove();
+      appendix = true;
+      $(this).nextUntil($('h1, h2, h3')).addBack().appendTo($('d-appendix'));
+    });
+
+    // show d-appendix if we have appendix content
+    $("d-appendix").css('display', appendix ? 'grid' : 'none');
+
+    // localize layout chunks to just output
+    $('.layout-chunk').each(function(i, val) {
+
+      // capture layout
+      var layout = $(this).attr('data-layout');
+
+      // apply layout to markdown level block elements
+      var elements = $(this).children().not('div.sourceCode, pre, script');
+      elements.each(function(i, el) {
+        var layout_div = $('<div class="' + layout + '"></div>');
+        if (layout_div.hasClass('shaded')) {
+          var shaded_content = $('<div class="shaded-content"></div>');
+          $(this).wrap(shaded_content);
+          $(this).parent().wrap(layout_div);
+        } else {
+          $(this).wrap(layout_div);
+        }
+      });
+
+
+      // unwrap the layout-chunk div
+      $(this).children().unwrap();
+    });
+
+    // remove code block used to force  highlighting css
+    $('.distill-force-highlighting-css').parent().remove();
+
+    // remove empty line numbers inserted by pandoc when using a
+    // custom syntax highlighting theme
+    $('code.sourceCode a:empty').remove();
+
+    // load distill framework
+    load_distill_framework();
+
+    // wait for window.distillRunlevel == 4 to do post processing
+    function distill_post_process() {
+
+      if (!window.distillRunlevel || window.distillRunlevel < 4)
+        return;
+
+      // hide author/affiliations entirely if we have no authors
+      var front_matter = JSON.parse($("#distill-front-matter").html());
+      var have_authors = front_matter.authors && front_matter.authors.length > 0;
+      if (!have_authors)
+        $('d-byline').addClass('hidden');
+
+      // article with toc class
+      $('.d-contents').parent().addClass('d-article-with-toc');
+
+      // strip links that point to #
+      $('.authors-affiliations').find('a[href="#"]').removeAttr('href');
+
+      // add orcid ids
+      $('.authors-affiliations').find('.author').each(function(i, el) {
+        var orcid_id = front_matter.authors[i].orcidID;
+        if (orcid_id) {
+          var a = $('<a></a>');
+          a.attr('href', 'https://orcid.org/' + orcid_id);
+          var img = $('<img></img>');
+          img.addClass('orcid-id');
+          img.attr('alt', 'ORCID ID');
+          img.attr('src','data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo1N0NEMjA4MDI1MjA2ODExOTk0QzkzNTEzRjZEQTg1NyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozM0NDOEJGNEZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozM0NDOEJGM0ZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1IE1hY2ludG9zaCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkZDN0YxMTc0MDcyMDY4MTE5NUZFRDc5MUM2MUUwNEREIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjU3Q0QyMDgwMjUyMDY4MTE5OTRDOTM1MTNGNkRBODU3Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+84NovQAAAR1JREFUeNpiZEADy85ZJgCpeCB2QJM6AMQLo4yOL0AWZETSqACk1gOxAQN+cAGIA4EGPQBxmJA0nwdpjjQ8xqArmczw5tMHXAaALDgP1QMxAGqzAAPxQACqh4ER6uf5MBlkm0X4EGayMfMw/Pr7Bd2gRBZogMFBrv01hisv5jLsv9nLAPIOMnjy8RDDyYctyAbFM2EJbRQw+aAWw/LzVgx7b+cwCHKqMhjJFCBLOzAR6+lXX84xnHjYyqAo5IUizkRCwIENQQckGSDGY4TVgAPEaraQr2a4/24bSuoExcJCfAEJihXkWDj3ZAKy9EJGaEo8T0QSxkjSwORsCAuDQCD+QILmD1A9kECEZgxDaEZhICIzGcIyEyOl2RkgwAAhkmC+eAm0TAAAAABJRU5ErkJggg==');
+          a.append(img);
+          $(this).append(a);
+        }
+      });
+
+      // hide elements of author/affiliations grid that have no value
+      function hide_byline_column(caption) {
+        $('d-byline').find('h3:contains("' + caption + '")').parent().css('visibility', 'hidden');
+      }
+
+      // affiliations
+      var have_affiliations = false;
+      for (var i = 0; i<front_matter.authors.length; ++i) {
+        var author = front_matter.authors[i];
+        if (author.affiliation !== "&nbsp;") {
+          have_affiliations = true;
+          break;
+        }
+      }
+      if (!have_affiliations)
+        $('d-byline').find('h3:contains("Affiliations")').css('visibility', 'hidden');
+
+      // published date
+      if (!front_matter.publishedDate)
+        hide_byline_column("Published");
+
+      // document object identifier
+      var doi = $('d-byline').find('h3:contains("DOI")');
+      var doi_p = doi.next().empty();
+      if (!front_matter.doi) {
+        // if we have a citation and valid citationText then link to that
+        if ($('#citation').length > 0 && front_matter.citationText) {
+          doi.html('Citation');
+          $('<a href="#citation"></a>')
+            .text(front_matter.citationText)
+            .appendTo(doi_p);
+        } else {
+          hide_byline_column("DOI");
+        }
+      } else {
+        $('<a></a>')
+           .attr('href', "https://doi.org/" + front_matter.doi)
+           .html(front_matter.doi)
+           .appendTo(doi_p);
+      }
+
+       // change plural form of authors/affiliations
+      if (front_matter.authors.length === 1) {
+        var grid = $('.authors-affiliations');
+        grid.children('h3:contains("Authors")').text('Author');
+        grid.children('h3:contains("Affiliations")').text('Affiliation');
+      }
+
+      // remove d-appendix and d-footnote-list local styles
+      $('d-appendix > style:first-child').remove();
+      $('d-footnote-list > style:first-child').remove();
+
+      // move appendix-bottom entries to the bottom
+      $('.appendix-bottom').appendTo('d-appendix').children().unwrap();
+      $('.appendix-bottom').remove();
+
+      // clear polling timer
+      clearInterval(tid);
+
+      // show body now that everything is ready
+      on_load_complete();
+    }
+
+    var tid = setInterval(distill_post_process, 50);
+    distill_post_process();
+
+  }
+
+  function init_downlevel() {
+
+    init_common();
+
+     // insert hr after d-title
+    $('.d-title').after($('<hr class="section-separator"/>'));
+
+    // check if we have authors
+    var front_matter = JSON.parse($("#distill-front-matter").html());
+    var have_authors = front_matter.authors && front_matter.authors.length > 0;
+
+    // manage byline/border
+    if (!have_authors)
+      $('.d-byline').remove();
+    $('.d-byline').after($('<hr class="section-separator"/>'));
+    $('.d-byline a').remove();
+
+    // remove toc
+    $('.d-contents').remove();
+
+    // move appendix elements
+    $('h1.appendix, h2.appendix').each(function(i, val) {
+      $(this).changeElementType('h3');
+    });
+    $('h3.appendix').each(function(i, val) {
+      $(this).nextUntil($('h1, h2, h3')).addBack().appendTo($('.d-appendix'));
+    });
+
+
+    // inject headers into references and footnotes
+    var refs_header = $('<h3></h3>');
+    refs_header.text('References');
+    $('#refs').prepend(refs_header);
+
+    var footnotes_header = $('<h3></h3');
+    footnotes_header.text('Footnotes');
+    $('.footnotes').children('hr').first().replaceWith(footnotes_header);
+
+    // move appendix-bottom entries to the bottom
+    $('.appendix-bottom').appendTo('.d-appendix').children().unwrap();
+    $('.appendix-bottom').remove();
+
+    // remove appendix if it's empty
+    if ($('.d-appendix').children().length === 0)
+      $('.d-appendix').remove();
+
+    // prepend separator above appendix
+    $('.d-appendix').before($('<hr class="section-separator" style="clear: both"/>'));
+
+    // trim code
+    $('pre>code').each(function(i, val) {
+      $(this).html($.trim($(this).html()));
+    });
+
+    // move posts-container right before article
+    $('.posts-container').insertBefore($('.d-article'));
+
+    $('body').addClass('downlevel');
+
+    on_load_complete();
+  }
+
+
+  function init_common() {
+
+    // jquery plugin to change element types
+    (function($) {
+      $.fn.changeElementType = function(newType) {
+        var attrs = {};
+
+        $.each(this[0].attributes, function(idx, attr) {
+          attrs[attr.nodeName] = attr.nodeValue;
+        });
+
+        this.replaceWith(function() {
+          return $("<" + newType + "/>", attrs).append($(this).contents());
+        });
+      };
+    })(jQuery);
+
+    // prevent underline for linked images
+    $('a > img').parent().css({'border-bottom' : 'none'});
+
+    // mark non-body figures created by knitr chunks as 100% width
+    $('.layout-chunk').each(function(i, val) {
+      var figures = $(this).find('img, .html-widget');
+      if ($(this).attr('data-layout') !== "l-body") {
+        figures.css('width', '100%');
+      } else {
+        figures.css('max-width', '100%');
+        figures.filter("[width]").each(function(i, val) {
+          var fig = $(this);
+          fig.css('width', fig.attr('width') + 'px');
+        });
+
+      }
+    });
+
+    // auto-append index.html to post-preview links in file: protocol
+    // and in rstudio ide preview
+    $('.post-preview').each(function(i, val) {
+      if (window.location.protocol === "file:")
+        $(this).attr('href', $(this).attr('href') + "index.html");
+    });
+
+    // get rid of index.html references in header
+    if (window.location.protocol !== "file:") {
+      $('.distill-site-header a[href]').each(function(i,val) {
+        $(this).attr('href', $(this).attr('href').replace("index.html", "./"));
+      });
+    }
+
+    // add class to pandoc style tables
+    $('tr.header').parent('thead').parent('table').addClass('pandoc-table');
+    $('.kable-table').children('table').addClass('pandoc-table');
+
+    // add figcaption style to table captions
+    $('caption').parent('table').addClass("figcaption");
+
+    // initialize posts list
+    if (window.init_posts_list)
+      window.init_posts_list();
+
+    // implmement disqus comment link
+    $('.disqus-comment-count').click(function() {
+      window.headroom_prevent_pin = true;
+      $('#disqus_thread').toggleClass('hidden');
+      if (!$('#disqus_thread').hasClass('hidden')) {
+        var offset = $(this).offset();
+        $(window).resize();
+        $('html, body').animate({
+          scrollTop: offset.top - 35
+        });
+      }
+    });
+  }
+
+  document.addEventListener('DOMContentLoaded', function() {
+    if (is_downlevel_browser())
+      init_downlevel();
+    else
+      window.addEventListener('WebComponentsReady', init_distill);
+  });
+
+  </script>
+
+  <!--/radix_placeholder_distill-->
+  <script src="mapping-sdp-variables_files/header-attrs-2.6/header-attrs.js"></script>
+  <script src="mapping-sdp-variables_files/font-awesome-5.13.0/js/script.js"></script>
+  <script src="mapping-sdp-variables_files/jquery-1.11.3/jquery.min.js"></script>
+  <script src="mapping-sdp-variables_files/anchor-4.2.2/anchor.min.js"></script>
+  <script src="mapping-sdp-variables_files/bowser-1.9.3/bowser.min.js"></script>
+  <script src="mapping-sdp-variables_files/webcomponents-2.0.0/webcomponents.js"></script>
+  <script src="mapping-sdp-variables_files/distill-2.2.21/template.v2.js"></script>
+  <!--radix_placeholder_site_in_header-->
+  <!--/radix_placeholder_site_in_header-->
+
+
+</head>
+
+<body>
+
+<!--radix_placeholder_front_matter-->
+
+<script id="distill-front-matter" type="text/json">
+{"title":"Mapping Service Delivery Point Data","description":"Map spatial variation in the service delivery environment across enumeration areas.","authors":[{"author":"Nina Brooks","authorURL":"#","affiliation":"IPUMS PMA Postdoctoral Associate","affiliationURL":"#","orcidID":""}],"publishedDate":"2021-01-15T00:00:00.000+00:00","citationText":"Brooks, 2021"}
+</script>
+
+<!--/radix_placeholder_front_matter-->
+<!--radix_placeholder_navigation_before_body-->
+<!--/radix_placeholder_navigation_before_body-->
+<!--radix_placeholder_site_before_body-->
+<!--/radix_placeholder_site_before_body-->
+
+<div class="d-title">
+<h1>Mapping Service Delivery Point Data</h1>
+<!--radix_placeholder_categories-->
+<div class="dt-tags">
+<div class="dt=tag">Individual in Context</div>
+<div class="dt=tag">Serivce Delivery Points</div>
+<div class="dt=tag">Mapping</div>
+<div class="dt=tag">sf</div>
+</div>
+<!--/radix_placeholder_categories-->
+<p><p>Map spatial variation in the service delivery environment across enumeration areas.</p></p>
+</div>
+
+<div class="d-byline">
+  Nina Brooks  (IPUMS PMA Postdoctoral Associate)
+  
+<br/>01-15-2021
+</div>
+
+<div class="d-article">
+<div class="d-contents d-contents-float">
+<nav class="l-text toc figcaption" id="TOC">
+<h3>Contents</h3>
+<ul>
+<li><a href="#data">Data</a></li>
+<li><a href="#setup">Setup</a></li>
+<li><a href="#merge-and-map">Merge and Map</a>
+<ul>
+<li><a href="#exploratory-maps">Exploratory Maps</a></li>
+<li><a href="#merge-gps-and-sdp-data">Merge GPS and SDP Data</a></li>
+</ul></li>
+<li><a href="#map-sdp-data">Map SDP data</a></li>
+</ul>
+</nav>
+</div>
+<div class="layout-chunk" data-layout="l-body">
+<a href="data:text/x-markdown;base64,LS0tCnRpdGxlOiAiTWFwcGluZyBTZXJ2aWNlIERlbGl2ZXJ5IFBvaW50IERhdGEiCmRlc2NyaXB0aW9uOiB8CiAgTWFwIHNwYXRpYWwgdmFyaWF0aW9uIGluIHRoZSBzZXJ2aWNlIGRlbGl2ZXJ5IGVudmlyb25tZW50IGFjcm9zcyBlbnVtZXJhdGlvbiBhcmVhcy4KYXV0aG9yOgogIC0gbmFtZTogTmluYSBCcm9va3MKICAgIGFmZmlsaWF0aW9uOiBJUFVNUyBQTUEgUG9zdGRvY3RvcmFsIEFzc29jaWF0ZQpjYXRlZ29yaWVzOgogIC0gSW5kaXZpZHVhbCBpbiBDb250ZXh0CiAgLSBTZXJpdmNlIERlbGl2ZXJ5IFBvaW50cwogIC0gTWFwcGluZwogIC0gc2YKZGF0ZTogMDEtMTUtMjAyMQpvdXRwdXQ6CiAgZGlzdGlsbDo6ZGlzdGlsbF9hcnRpY2xlOgogICAgc2VsZl9jb250YWluZWQ6IGZhbHNlCiAgICB0b2M6IHRydWUKICAgIHRvY19kZXB0aDogMwogICAgdG9jX2Zsb2F0OiB0cnVlCmRyYWZ0OiBmYWxzZQotLS0KCgpgYGB7ciBkb3dubG9hZF9idXR0b24sIGVjaG89Rn0KZG93bmxvYWR0aGlzOjpkb3dubG9hZF9maWxlKAogIHBhdGggPSAibWFwcGluZy1zZHAtdmFyaWFibGVzLlJtZCIsCiAgYnV0dG9uX2xhYmVsID0gIkRvd25sb2FkIHRoaXMgcGFnZSBhcyBSIGNvZGUiLAogIGJ1dHRvbl90eXBlID0gImRlZmF1bHQiLAogIGhhc19pY29uID0gVCwKICBpY29uID0gImZhIGZhLXNhdmUiCikKYGBgCgpgYGB7ciBzZXR1cCwgaW5jbHVkZT1GfQprbml0cjo6b3B0c19jaHVuayRzZXQoZWNobyA9IFQsIGV2YWwgPSBULCBtZXNzYWdlID0gRikKb3B0aW9ucyh0aWJibGUucHJpbnRfbWluPTEwLCB0aWJibGUubWF4X2V4dHJhX2NvbHMgPSA1KQpgYGAKCkluIG91ciBsYXN0IHBvc3QsIHdlIHNob3dlZCBob3cgUE1BIFNlcnZpY2UgRGVsaXZlcnkgUG9pbnQgKFNEUCkgZGF0YSBjYW4gYmUgYWdncmVnYXRlZCB0byB0aGUgZW51bWVyYXRpb24gYXJlYSB0aGV5IHNlcnZlIChjYXB0dXJlZCBieSBbRUFTRVJWRURdKGh0dHBzOi8vcG1hLmlwdW1zLm9yZy9wbWEtYWN0aW9uL3ZhcmlhYmxlcy9FQVNFUlZFRCkpIGFuZCBsaW5rZWQgdG8gdGhlIGluZGl2aWR1YWwtbGV2ZWwgUE1BIHN1cnZleSBkYXRhLiBJbiB0aGlzIHBvc3QsIHdlJ2xsIHNob3cgaG93IHRoZSBTRFAgZGF0YSBjYW4gYmUgbGlua2VkIHRvIHRoZSBQTUEgR1BTIGRhdGFzZXRzLiBUaGVuLCB3ZSdsbCBtYXAgZGlmZmVyZW50IHZhcmlhYmxlcyB0byBzaG93IGhvdyB2YXJpYXRpb24gaW4gdmFyaWFibGVzIGNhbiBiZSB1bmRlcnN0b29kIHNwYXRpYWxseS4KCiMgRGF0YQoKV2UnbGwgYmUgd29ya2luZyB3aXRoIHRoZSBmaW5hbCBgc2RwYCBkYXRhc2V0IGNyZWF0ZWQgaW4gdGhlIHByZXZpb3VzIHBvc3QuIFlvdSBjYW4gZWl0aGVyIGNoZWNrIG91dCB0aGF0IHBvc3QgW2hlcmVdKGhvdyB0byBsaW5rIGJldHdlZW4gcG9zdHM/KSBvciBqdXN0IGxvYWQgdGhlIGBzZHBgIGRhdGFzZXQgZnJvbSB0aGUg4oCcZGF0YeKAnSBmb2xkZXIgZm9yIHRoaXMgcG9zdCBpbiB0aGUgUE1BIERhdGEgSHViIHJlcG9zaXRvcnkgb24gR2l0SHViIChhZGQgbGluaykuIFdlJ2xsIGZvY3VzIG9uIGEgZmV3IG9mIHRoZSBgRUFTRUFSVkVEYC1sZXZlbCB2YXJpYWJsZXMgY3JlYXRlZCBpbiB0aGUgbGFzdCBwb3N0OgoKICAqIGBOVU1fTUVUSE9EU19QUk9WYCAtIG51bWJlciBvZiBtZXRob2RzIHByb3ZpZGVkIGJ5IGF0IGxlYXN0IG9uZSBTRFAKICAqIGBOVU1fTUVUSE9EU19PVVRgIC0gbnVtYmVyIG9mIG1ldGhvZHMgb3V0IG9mIHN0b2NrIHdpdGggYXQgbGVhc3Qgb25lIFNEUAogICogYE5VTV9NRVRIT0RTX0lOU1RPQ0tgIC0gbnVtYmVyIG9mIG1ldGhvZHMgaW4tc3RvY2sgd2l0aCBhdCBsZWFzdCBvbmUgU0RQCiAgKiBgTlVNX01FVEhPRFNfT1VUM01PYCAtIG51bWJlciBvZiBtZXRob2RzIG91dCBvZiBzdG9jayBhbnkgdGltZSBpbiB0aGUgbGFzdCAzIG1vbnRocyB3aXRoIGF0IGxlYXN0IG9uZSBTRFAKICAqIGBNRUFOX09VVERBWWAgLSB0aGUgbWVhbiBsZW5ndGggb2YgYSBzdG9ja291dCBmb3IgYW55IGZhbWlseSBwbGFubmluZyBtZXRob2QgKG1lYXN1cmVkIGluIGRheXMpCiAgKiBgTl9TRFBgIC0gbnVtYmVyIG9mIFNEUHMgCiAgCldlJ2xsIGFsc28gdXNlIHRoZSBgU1RSQVRBYCB2YXJpYWJsZSwgd2hpY2ggaWRlbnRpZmllcyB3aGV0aGVyIGFuIEVBIGlzIGluIGFuIHVyYmFuIG9yIHJ1cmFsIGFyZWEuIAoKV2UnbGwgYWxzbyBiZSB3b3JraW5nIHdpdGggdGhlIFBNQSBHUFMgZGF0YXNldHMgZm9yIEJ1cmtpbmEgRmFzby4gVGhlIEdQUyBkYXRhIGluY2x1ZGUgb25lIEdQUyBjb29yZGluYXRlIHBlciBlbnVtZXJhdGlvbiBhcmVhLiBUaGUgQnVya2luYSBGYXNvIFJvdW5kIDUgYW5kIDYgc3VydmV5cyBzYW1wbGVkIHRoZSBzYW1lIGVudW1lcmF0aW9uIGFyZWFzLCB3aGljaCBtZWFucyB3ZSBjYW4gbGluayB0aGUgR1BTIGRhdGEgdG8gYm90aCByb3VuZHMgKGVpdGhlciBtZW50aW9uIGhlcmUgb3IgaW4gdGhlIGFzaWRlIGxhdGVyIG9uKS4KCjxhc2lkZT4KUmVhZCBtb3JlIGFib3V0IHRoZSBHUFMgZGF0YSBhbmQgcmVxdWVzdCBhY2Nlc3Mgb24gdGhlIFBNQSBvbiB0aGUgPGEgaHJlZj0iaHR0cHM6Ly93d3cucG1hZGF0YS5vcmcvZGF0YS9hYm91dC1kYXRhIj5QTUEgRGF0YSB3ZWJzaXRlPC9hPi4KPC9hc2lkZT4KClRoZSBsYXN0IGRhdGFzZXQgd2UnbGwgdXNlIGluIHRoaXMgcG9zdCBhcmUgdGhlIGFkbWluc3RyYXRpdmUgYm91bmRhcmllcyBmb3IgQnVya2luYSBGYXNvLiBTaGFwZWZpbGVzIHdpdGggYWRtaW5pc3RyYXRpdmUgYm91bmRhcmllcyBhcmUgd2lkZWx5IGF2YWlsYWJsZSBmb3IgZG93bmxvYWQsIGJ1dCB3ZSdsbCB1c2UgdGhlIFIgcGFja2FnZSBbR0FETVRvb2xzXShodHRwczovL2NyYW4uci1wcm9qZWN0Lm9yZy93ZWIvcGFja2FnZXMvR0FETVRvb2xzL2luZGV4Lmh0bWwpLCB3aGljaCBhbGxvd3MgeW91IHRvIGRvd25sb2FkIHNoYXBlZmlsZXMgZGlyZWN0bHkgaW4gUi4KCiMgU2V0dXAKCmBgYHtyIGxvY2FsfQpsaWJyYXJ5KGlwdW1zcikKbGlicmFyeShzZikgIyBwcmltYXJ5IHNwYXRpYWwgcGFja2FnZQpsaWJyYXJ5KEdBRE1Ub29scykgIyBmb3IgZG93bmxvYWRpbmcgc2hhcGVmaWxlcwpsaWJyYXJ5KHZpcmlkaXMpICMgZm9yIGNvbG9yIHBhbGV0dGVzCmxpYnJhcnkodGlkeXZlcnNlKQpgYGAKCkxvYWQgdGhlIFNEUCBkYXRhIGFuZCB0aGUgR1BTIGRhdGEgZnJvbSB0aGUgZGF0YSBmb2xkZXIgYW5kIGNoZWNrIG91dCB3aGF0IHRoZSBHUFMgZGF0YSBjb250YWluczoKCmBgYHtyfQpsb2FkKCJkYXRhL3NkcC5SZGF0YSIpIAoKZ3BzIDwtIHJlYWRfY3N2KCJkYXRhL1BNQV9CRl9HUFNfdjFfMjRKdWwyMDE4LmNzdiIpCmdwcwpgYGAKClRoZSBgZ3BzYCBkYXRhIGhhcyA3IHZhcmlhYmxlczoKCiAgKiBQTUFDQzogdGhlIDMtbGV0dGVyIGNvdW50cnkgY29kZSAoYXNrIERldm9uIGFib3V0IHRoaXMgLSB0aGV5IHNlZW0gdG8gYmUgMi1sZXR0ZXJzPykKICAqIFBNQVlFQVI6IHRoZSA0LWRpZ2l0IHllYXIgb2YgZGF0YSBjb2xsZWN0aW9uCiAgKiBSRUdJT046IHN1Yi1uYXRpb25hbCBhZG1pbmlzdHJhdGl2ZSBkaXZpc2lvbiBuYW1lCiAgKiBFQV9JRDogdGhlIGVudW1lcmF0aW9uIGFyZWEgSUQgKGFuZCBob3cgd2UnbGwgbWVyZ2UgdGhpcyBkYXRhIGludG8gb3RoZXIgUE1BIGRhdGFzZXRzKQogICogR1BTTEFUOiB0aGUgZGlzcGxhY2VkIEVBJ3MgY2VudHJvaWQgbGF0aXR1ZGUgY29vcmRpbmF0ZSBpbiBkZWNpbWFsIGRlZ3JlZXMKICAqIEdQU0xPTkc6IHRoZSBkaXNwbGFjZWQgRUEncyBjZW50cm9pZCBsb25naXR1ZGUgY29vcmRpbmF0ZSBpbiBkZWNpbWFsIGRlZ3JlZXMKICAqIERBVFVNOiB0aGUgY29vcmRpbmF0ZSByZWZlcmVuY2Ugc3lzdGVtIGFuZCBnZW9ncmFwaGljIGRhdHVtLiBUaGlzIHZhcmlhYmxlIGlzIGFsd2F5cyAiV0dTODQiIGZvciB0aGUgV29ybGQgR2VvZGV0aWMgU3lzdGVtIDE5ODQuCgo8YXNpZGU+Ck5vdGUgdGhhdCB3aGlsZSB0aGUgYFBNQVlFQVJgIHZhcmlhYmxlIGlzIDIwMTcgZm9yIGFsbCBFQXMsIGJlY2F1c2UgdGhlIHNhbWUgRUFzIHdlcmUgc2FtcGxlZCBpbiB0aGUgMjAxNyAoUm91bmQgNSkgYW5kIDIwMTggKFJvdW5kIDYpIHN1cnZleXMsIHdlIGNhbiBsaW5rIHRoZXNlIGNvb3JkaW5hdGVzIHRvIGJvdGggc2FtcGxlcy4KPC9hc2lkZT4KCjxhc2lkZT4KVGhlIGBSRUdJT05gIHZhcmlhYmxlIGNvcnJlc3BvbmRzIHRvIHRoZSBmaXJzdCBhZG1pbmlzdHJhdGl2ZSBsZXZlbCBpbiBhIGdpdmVuIGNvdW50cnkgb3IgYGFkbV8xYCBpbiBHQURNIGxhbmd1YWdlLgo8L2FzaWRlPgoKTm90ZSB0aGF0IHRoZSBgR1BTTEFUYCBhbmQgYEdQU0xPTkdgIGFyZSAqKmRpc3BsYWNlZCoqIGNvb3JkaW5hdGVzIG9mIHRoZSBFQSBjZW50cm9pZC4gVGhpcyBpcyBiZWNhdXNlIFBNQSByYW5kb21seSBkaXNwbGFjZXMgdGhlIGdlb2dyYXBoaWMgY29vcmRpbmF0ZXMgdG8gcHJlc2VydmUgdGhlIHByaXZhY3kgb2Ygc3VydmV5IHJlc3BvbmRlbnRzLiBDb29yZGluYXRlcyBhcmUgZGlzcGxhY2VkIHJhbmRvbWx5IGJ5IGJvdGggYW5nbGUgYW5kIGRpc3RhbmNlLiBVcmJhbiBFQXMgYXJlIGRpc3BsYWNlZCBmcm9tIHRoZWlyIHRydWUgbG9jYXRpb24gdXAgdG8gMiBrbS4gUnVyYWwgRUFzIGFyZSBkaXNwbGFjZWQgZnJvbSB0aGVpciB0cnVlIGxvY2F0aW9uIHVwIHRvIDUga20uIEFkZGl0aW9uYWxseSwgYSByYW5kb20gc2FtcGxlIG9mIDElIG9mIHJ1cmFsIEVBcyBhcmUgZGlzcGxhY2VkIHVwIHRvIDEwa20uIFRoZSBQTUEgR1BTIGRhdGEgY29tZSB3aXRoIGRvY3VtZW50YXRpb24gdGhhdCBleHBsYWlucyB0aGUgZGlzcGxhY2VtZW50IGluIG1vcmUgZGV0YWlsLiBUaGUgcHJpbWFyeSBzcGF0aWFsIHBhY2thZ2Ugd2UnbGwgdXNlIGlzIHNpbXBsZSBmZWF0dXJlcyBvciBgc2ZgLiBXZSdsbCB1c2UgYHNmOjpzdF9hc19zZigpYCB0byBjb252ZXJ0IHRoZSBHUFMgZGF0YSB0byBhIHNwYXRpYWwgZGF0YSBvYmplY3QgKGtub3duIGFzIGEgc2ltcGxlIGZlYXR1cmUgY29sbGVjdGlvbikuCgo8YXNpZGU+ClBNQSBmb2xsb3dzIHRoZSBzYW1lIGRpc3BsYWNlbWVudCBwcm90b2NvbCBhcyB0aGUgRGVtb2dyYXBoaWMgYW5kIEhlYWx0aCBTdXJ2ZXlzLCBmb3IgdGhvc2UgZmFtaWxpYXIgdGhlIHRoZSBESFMgc3BhdGlhbCBkYXRhLgo8L2FzaWRlPgoKYGBge3J9CmdwcyA8LSBncHMgJT4lCiAgICBzdF9hc19zZigKICAgICAgY29vcmRzID0gYygiR1BTTE9ORyIsICJHUFNMQVQiKSwgCiAgICAgIGNycyA9IDQzMjYpICMgNDMyNiBpcyB0aGUgY29vcmRpbmF0ZSByZWZlcmVuY2Ugc3lzdGVtIChDUlMpIGlkZW50aWZpZXIgZm9yIFdHUzg0CmdwcwpgYGAKCk5vdyB0aGF0IGBncHNgIGlzIGEgc2ltcGxlIGZlYXR1cmVzIG9iamVjdCwgd2UndmUgbG9zdCB0aGUgYEdQU0xBVGAgYW5kIGBHUFNMT05HYCB2YXJpYWJsZXMgYW5kIGdhaW5lZCBhIHZhcmlhYmxlIGNhbGxlZCBgZ2VvbWV0cnlgLCB3aGljaCBjb250YWlucyB0aGUgc3BhdGlhbCBpbmZvcm1hdGlvbiBmb3IgdGhpcyBkYXRhLiAKClRoZSBsYXN0IHRoaW5nIHdlIG5lZWQgaXMgdGhlIEJ1cmtpbmEgRmFzbyBzaGFwZWZpbGUuIFtHQURNVG9vbHNdKGh0dHBzOi8vY3Jhbi5yLXByb2plY3Qub3JnL3dlYi9wYWNrYWdlcy9HQURNVG9vbHMvaW5kZXguaHRtbCkgd2lsbCBhbGxvdyB1cyB0byBkb3dubG9hZCBhbmQgbG9hZCBzaGFwZWZpbGVzLiBDb252ZW5pZW50bHksIGBHQURNVG9vbHM6OmdhZG1fc2ZfbG9hZENvdW50cmllcygpYCB3aWxsIGxvYWQgdGhlIHNoYXBlZmlsZSBhcyBhbiBgc2ZgIG9iamVjdC4gVGhlIGBiZl8xYCBvYmplY3QgaXMgYSBsaXN0IHdoaWNoIGNvbnRhaW5zIHNvbWUgbWV0YWRhdGEgdGhhdCB3ZSBkb24ndCBuZWVkIHRvIGhvbGQgb250bywgaW4gYWRkaXRpb24gdG8gdGhlIHNoYXBlZmlsZSwgc28gd2UnbGwgb25seSB0YWtlIHdoYXQgd2UgbmVlZC4gTm90ZSB0aGF0IGhlcmUgdGhlIGBnZW9tZXRyeWAgdmFyaWFibGUgaXMgYSBgUE9MWUdPTmAsIHdoZXJlYXMgaW4gdGhlIGBncHNgIGRhdGEgaXQgaXMgYSBgUE9JTlRgLgoKYGBge3J9CmJmXzEgPC0gZ2FkbV9zZl9sb2FkQ291bnRyaWVzKAogIGZpbGVOYW1lcyA9ICJCRkEiLCAjIHRoZSBJU08tMzE2Ni0xIGNvdW50cnkgY29kZSAKICBiYXNlZmlsZSA9ICJkYXRhLyIsICMgdGhlIGRpcmVjdG9yeSB3aGVyZSB0aGUgc2hhcGVmaWxlIHdpbGwgYmUgc2F2ZWQKICBsZXZlbCA9IDEpICMgaW5kaWNhdGVzIHRoYXQgd2Ugd2FudCBhZG1pbmlzdHJhdGl2ZSBsZXZlbCAxCgpiZl8xIDwtIGJmXzEkc2YKYmZfMQpgYGAKCgojIE1lcmdlIGFuZCBNYXAKTm93IHRoYXQgd2UgaGF2ZSBhbGwgb3VyIGRhdGEsIHdlJ2xsIHNob3cgeW91IGhvdyB0byBtYXAgdmFyaWFibGVzLi4uIEJ1dCBiZWZvcmUgd2UgZG8gdGhhdCwgbGV0J3MgZG8gc29tZSBiYXNpYywgZXhwbG9yYXRvcnkgbWFwcGluZy4KCiMjIEV4cGxvcmF0b3J5IE1hcHMKYGdncGxvdDJgIGhhcyBzdXBwb3J0IGZvciBgc2ZgIG9iamVjdHMsIHdoaWNoIG1ha2VzIGl0IHJlYWxseSBlYXN5IHRvIG1hcCB0aGluZ3MgdXNpbmcgdGhlIGBnZ3Bsb3QyOjpnZW9tX3NmKClgLiBgZ2VvbV9zZigpYCB3aWxsIGF1dG9tYXRpY2FsbHkgaWRlbnRpZnkgd2hhdCBraW5kIG9mIHNwYXRpYWwgZGF0YSB5b3UncmUgcGxvdHRpbmcgYW5kIGhhbmRsZSBpdCBhcHByb3ByaWF0ZWx5LiBGb3IgZXhhbXBsZSwgbGV0J3MgcGxvdCB0aGUgYGdwc2AgZGF0YSAod2hpY2ggYXJlIHBvaW50cykgYW5kIHRoZSBhZG1pbmlzdHJhdGl2ZSByZWdpb24gKHdoaWNoIGFyZSBwb2x5Z29ucykuCgpgYGB7cn0KIyBQbG90IEVBIGNlbnRyb2lkcwpnZ3Bsb3QoKSArCiAgZ2VvbV9zZihkYXRhID0gZ3BzKQoKIyBQbG90IHJlZ2lvbnMgb2YgQnVya2luYSBGYXNvCmdncGxvdCgpICsKICBnZW9tX3NmKGRhdGEgPSBiZl8xKQoKYGBgCgpUaGUgYnVpbGRpbmctYmxvY2sgYXBwcm9hY2ggb2YgYGdncGxvdDJgICgiR3JhbW1hciBvZiBHcmFwaGljcyIpIGFsc28gbWFrZXMgaXQgcmVhbGx5IGVhc3kgdG8gbGF5ZXIgZGlmZmVyZW50IHNwYXRpYWwgZmVhdHVyZXMgb24gdGhlIHNhbWUgbWFwLgoKYGBge3J9CiMgUGxvdCByZWdpb25zIG9mIEJ1cmtpbmEgRmFzbyAmIEVBIGNlbnRyb2lkcyBvbiB0aGUgc2FtZSBtYXAKZ2dwbG90KCkgKwogIGdlb21fc2YoZGF0YSA9IGJmXzEpICsKICBnZW9tX3NmKGRhdGEgPSBncHMpCiAgCmBgYAoKIyMgTWVyZ2UgR1BTIGFuZCBTRFAgRGF0YQpUbyBtYXAgdGhlIEVBLWxldmVsIHZhcmlhYmxlcyBjb25zdHJ1Y3RlZCBpbiB0aGUgbGFzdCBwb3N0LCB3ZSBuZWVkIHRvIG1lcmdlIHRoZSBgc2RwYCBkYXRhIGFuZCB0aGUgYGdwc2AgZGF0YSBieSBgRUFfSURgLiBGaXJzdCwgbGV0J3MgcmVuYW1lIHRoZSBgRUFTRUFSVkVEYCB2YXJpYWJsZSB0byBtYXRjaCB0aGUgR1BTIGRhdGEgYW5kIHRoZW4gdXNlIGEgYGRwbHlyOjpyaWdodF9qb2luYCB0byBtZXJnZSBpbiB0aGUgU0RQIGRhdGEuIFdlIG5lZWQgdG8gdXNlIGEgYHJpZ2h0X2pvaW4oKWAgYmVjYXVzZSB0aGUgc2Ygb2JqZWN0IG11c3QgYmUgbGlzdGVkIGZpcnN0IGluIG91ciBqb2luIGNvbW1hbmQgdG8gcmV0YWluIHRoZSBzZiBjbGFzcywgYnV0IHdlIHdhbnQgdG8gZW5zdXJlIHRoYXQgYWxsIHJvd3MgZnJvbSBgc2RwYCBhcmUgcHJlc2VydmVkLgoKPGFzaWRlPgpSZW1lbWJlciwgdGhlIFNEUCBkYXRhIGNvbnRhaW5zIGluZm9ybWF0aW9uIGZyb20gYm90aCAyMDE3IGFuZCAyMDE4LCB3aGlsZSB0aGUgR1BTIGRhdGEgaGFzIGEgc2luZ2xlIG9ic2VydmF0aW9uIHBlciBFQS4KPC9hc2lkZT4KYGBge3J9CiMgY2hlY2sgPC0gc2RwICU+JQojICAgZ3JvdXBfYnkoRUFfSUQpICU+JQojICAgdGFsbHkoKSAlPiUKIyAgIGZpbHRlcihuID09IDEpCiMgCiMgc2RwW3NkcCRFQV9JRCAlaW4lIGNoZWNrJEVBX0lELF0KCiMgcmVuYW1lIHRvIGJlIGNvbnNpc3RlbnQgd2l0aCBHUFMgZGF0YQpzZHAgPC0gc2RwICU+JQogIHJlbmFtZSgKICAgIEVBX0lEID0gRUFTRVJWRUQgCiAgKQoKc2RwIDwtIHJpZ2h0X2pvaW4oZ3BzLCBzZHAsIGJ5ID0gIkVBX0lEIikKCnNkcCAjIG5vdyB0aGUgc2RwIGRhdGEgaXMgYW4gc2Ygb2JqZWN0CmBgYAoKIyBNYXAgU0RQIGRhdGEKUmVtZW1iZXIsIHRoZSBgc2RwYCBkYXRhIGNvbnRhaW5zIGluZm9ybWF0aW9uIGZyb20gMjAxNyAmIDIwMTgsIHdoaWNoIGNhbiBjbG9nIHVwIHRoZSBtYXAgZGVwZW5kaW5nIG9uIGhvdyB3ZSB1c2UgdGhpcyBpbmZvcm1hdGlvbi4gVG8gc3RhcnQgb3V0LCBsZXQncyB1c2Ugb25seSB0aGUgMjAxNyBkYXRhIGFuZCBhZGQgaW5mb3JtYXRpb24gYWJvdXQgdGhlIG51bWJlciBvZiBzZXJ2aWNlIGRlbGl2ZXJ5IHByb3ZpZGVycyB0aGF0IHNlcnZlIGEgZ2l2ZW4gRUEgKGBOX1NEUGApLiBCeSBwYXNzaW5nIGBOX1NEUGAgdG8gdGhlIHNpemUgYWVzdGh0aWMsIHdlIGNhbiBtb3JlIGVhc2lseSB2aXN1YWxpemUgaG93IEVBcyB2YXJ5IGluIHRoZWlyIGFjY2VzcyB0byBzZXJ2aWNlIGRlbGl2ZXJ5IHByb3ZpZGVycy4KCmBgYHtyfQpzZHAyMDE3IDwtIHNkcCAlPiUKICBmaWx0ZXIoWUVBUiA9PSAyMDE3KQoKZ2dwbG90KCkgKwogIGdlb21fc2YoZGF0YSA9IGJmXzEpICsKICBnZW9tX3NmKGRhdGEgPSBzZHAyMDE3LCBhZXMoc2l6ZSA9IE5fU0RQKSwKICAgICAgICAgIGFscGhhID0gMC40KSAKICAKCmBgYA==" download="mapping-sdp-variables.Rmd">
+<button class="btn btn-default"><i class="fa fa-save"></i> Download this page as R code</button>
+</a>
+</div>
+<p>In our last post, we showed how PMA Service Delivery Point (SDP) data can be aggregated to the enumeration area they serve (captured by <a href="https://pma.ipums.org/pma-action/variables/EASERVED">EASERVED</a>) and linked to the individual-level PMA survey data. In this post, we’ll show how the SDP data can be linked to the PMA GPS datasets. Then, we’ll map different variables to show how variation in variables can be understood spatially.</p>
+<h1 id="data">Data</h1>
+<p>We’ll be working with the final <code>sdp</code> dataset created in the previous post. You can either check out that post <a href="how%20to%20link%20between%20posts?">here</a> or just load the <code>sdp</code> dataset from the “data” folder for this post in the PMA Data Hub repository on GitHub (add link). We’ll focus on a few of the <code>EASEARVED</code>-level variables created in the last post:</p>
+<ul>
+<li><code>NUM_METHODS_PROV</code> - number of methods provided by at least one SDP</li>
+<li><code>NUM_METHODS_OUT</code> - number of methods out of stock with at least one SDP</li>
+<li><code>NUM_METHODS_INSTOCK</code> - number of methods in-stock with at least one SDP</li>
+<li><code>NUM_METHODS_OUT3MO</code> - number of methods out of stock any time in the last 3 months with at least one SDP</li>
+<li><code>MEAN_OUTDAY</code> - the mean length of a stockout for any family planning method (measured in days)</li>
+<li><code>N_SDP</code> - number of SDPs</li>
+</ul>
+<p>We’ll also use the <code>STRATA</code> variable, which identifies whether an EA is in an urban or rural area.</p>
+<p>We’ll also be working with the PMA GPS datasets for Burkina Faso. The GPS data include one GPS coordinate per enumeration area. The Burkina Faso Round 5 and 6 surveys sampled the same enumeration areas, which means we can link the GPS data to both rounds (either mention here or in the aside later on).</p>
+<aside>
+Read more about the GPS data and request access on the PMA on the <a href="https://www.pmadata.org/data/about-data">PMA Data website</a>.
+</aside>
+<p>The last dataset we’ll use in this post are the adminstrative boundaries for Burkina Faso. Shapefiles with administrative boundaries are widely available for download, but we’ll use the R package <a href="https://cran.r-project.org/web/packages/GADMTools/index.html">GADMTools</a>, which allows you to download shapefiles directly in R.</p>
+<h1 id="setup">Setup</h1>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre><code><span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://www.ipums.org'>ipumsr</a></span><span class='op'>)</span>
+<span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://r-spatial.github.io/sf/'>sf</a></span><span class='op'>)</span> <span class='co'># primary spatial package</span>
+<span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://github.com/IamKDO/GADMTools'>GADMTools</a></span><span class='op'>)</span> <span class='co'># for downloading shapefiles</span>
+<span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://github.com/sjmgarnier/viridis'>viridis</a></span><span class='op'>)</span> <span class='co'># for color palettes</span>
+<span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='http://tidyverse.tidyverse.org'>tidyverse</a></span><span class='op'>)</span>
+</code></pre>
+</div>
+</div>
+<p>Load the SDP data and the GPS data from the data folder and check out what the GPS data contains:</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre><code><span class='fu'><a href='https://rdrr.io/r/base/load.html'>load</a></span><span class='op'>(</span><span class='st'>"data/sdp.Rdata"</span><span class='op'>)</span> 
+
+<span class='va'>gps</span> <span class='op'>&lt;-</span> <span class='fu'>read_csv</span><span class='op'>(</span><span class='st'>"data/PMA_BF_GPS_v1_24Jul2018.csv"</span><span class='op'>)</span>
+<span class='va'>gps</span>
+</code></pre>
+</div>
+<pre><code># A tibble: 83 x 7
+   PMACC PMAYEAR REGION               EA_ID GPSLONG GPSLAT DATUM
+   &lt;chr&gt;   &lt;dbl&gt; &lt;chr&gt;                &lt;dbl&gt;   &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;
+ 1 BF       2017 5. centre-nord        7610  -1.07    12.9 WGS84
+ 2 BF       2017 1. boucle-du-mouhoun  7820  -4.07    12.7 WGS84
+ 3 BF       2017 3. centre             7271  -1.58    12.4 WGS84
+ 4 BF       2017 3. centre             7799  -1.54    12.4 WGS84
+ 5 BF       2017 8. est                7243   0.380   12.1 WGS84
+ 6 BF       2017 6. centre-ouest       7026  -2.37    12.3 WGS84
+ 7 BF       2017 3. centre             7859  -1.57    12.3 WGS84
+ 8 BF       2017 3. centre             7725  -1.55    12.3 WGS84
+ 9 BF       2017 6. centre-ouest       7390  -2.21    12.1 WGS84
+10 BF       2017 11. plateau-central   7104  -1.91    12.8 WGS84
+# … with 73 more rows</code></pre>
+</div>
+<p>The <code>gps</code> data has 7 variables:</p>
+<ul>
+<li>PMACC: the 3-letter country code (ask Devon about this - they seem to be 2-letters?)</li>
+<li>PMAYEAR: the 4-digit year of data collection</li>
+<li>REGION: sub-national administrative division name</li>
+<li>EA_ID: the enumeration area ID (and how we’ll merge this data into other PMA datasets)</li>
+<li>GPSLAT: the displaced EA’s centroid latitude coordinate in decimal degrees</li>
+<li>GPSLONG: the displaced EA’s centroid longitude coordinate in decimal degrees</li>
+<li>DATUM: the coordinate reference system and geographic datum. This variable is always “WGS84” for the World Geodetic System 1984.</li>
+</ul>
+<aside>
+Note that while the <code>PMAYEAR</code> variable is 2017 for all EAs, because the same EAs were sampled in the 2017 (Round 5) and 2018 (Round 6) surveys, we can link these coordinates to both samples.
+</aside>
+<aside>
+The <code>REGION</code> variable corresponds to the first administrative level in a given country or <code>adm_1</code> in GADM language.
+</aside>
+<p>Note that the <code>GPSLAT</code> and <code>GPSLONG</code> are <strong>displaced</strong> coordinates of the EA centroid. This is because PMA randomly displaces the geographic coordinates to preserve the privacy of survey respondents. Coordinates are displaced randomly by both angle and distance. Urban EAs are displaced from their true location up to 2 km. Rural EAs are displaced from their true location up to 5 km. Additionally, a random sample of 1% of rural EAs are displaced up to 10km. The PMA GPS data come with documentation that explains the displacement in more detail. The primary spatial package we’ll use is simple features or <code>sf</code>. We’ll use <code>sf::st_as_sf()</code> to convert the GPS data to a spatial data object (known as a simple feature collection).</p>
+<aside>
+PMA follows the same displacement protocol as the Demographic and Health Surveys, for those familiar the the DHS spatial data.
+</aside>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre><code><span class='va'>gps</span> <span class='op'>&lt;-</span> <span class='va'>gps</span> <span class='op'>%&gt;%</span>
+    <span class='fu'><a href='https://r-spatial.github.io/sf/reference/st_as_sf.html'>st_as_sf</a></span><span class='op'>(</span>
+      coords <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"GPSLONG"</span>, <span class='st'>"GPSLAT"</span><span class='op'>)</span>, 
+      crs <span class='op'>=</span> <span class='fl'>4326</span><span class='op'>)</span> <span class='co'># 4326 is the coordinate reference system (CRS) identifier for WGS84</span>
+<span class='va'>gps</span>
+</code></pre>
+</div>
+<pre><code>Simple feature collection with 83 features and 5 fields
+geometry type:  POINT
+dimension:      XY
+bbox:           xmin: -5.18865 ymin: 9.883331 xmax: 1.634087 ymax: 14.39679
+geographic CRS: WGS 84
+# A tibble: 83 x 6
+   PMACC PMAYEAR REGION               EA_ID DATUM             geometry
+ * &lt;chr&gt;   &lt;dbl&gt; &lt;chr&gt;                &lt;dbl&gt; &lt;chr&gt;          &lt;POINT [°]&gt;
+ 1 BF       2017 5. centre-nord        7610 WGS84 (-1.065238 12.93839)
+ 2 BF       2017 1. boucle-du-mouhoun  7820 WGS84 (-4.065366 12.72985)
+ 3 BF       2017 3. centre             7271 WGS84 (-1.583361 12.37884)
+ 4 BF       2017 3. centre             7799 WGS84 (-1.540024 12.40452)
+ 5 BF       2017 8. est                7243 WGS84 (0.3797186 12.07097)
+ 6 BF       2017 6. centre-ouest       7026 WGS84 (-2.366313 12.26087)
+ 7 BF       2017 3. centre             7859 WGS84 (-1.570808 12.33761)
+ 8 BF       2017 3. centre             7725 WGS84 (-1.552744 12.33411)
+ 9 BF       2017 6. centre-ouest       7390 WGS84 (-2.211783 12.09784)
+10 BF       2017 11. plateau-central   7104 WGS84 (-1.909244 12.76427)
+# … with 73 more rows</code></pre>
+</div>
+<p>Now that <code>gps</code> is a simple features object, we’ve lost the <code>GPSLAT</code> and <code>GPSLONG</code> variables and gained a variable called <code>geometry</code>, which contains the spatial information for this data.</p>
+<p>The last thing we need is the Burkina Faso shapefile. <a href="https://cran.r-project.org/web/packages/GADMTools/index.html">GADMTools</a> will allow us to download and load shapefiles. Conveniently, <code>GADMTools::gadm_sf_loadCountries()</code> will load the shapefile as an <code>sf</code> object. The <code>bf_1</code> object is a list which contains some metadata that we don’t need to hold onto, in addition to the shapefile, so we’ll only take what we need. Note that here the <code>geometry</code> variable is a <code>POLYGON</code>, whereas in the <code>gps</code> data it is a <code>POINT</code>.</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre><code><span class='va'>bf_1</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/pkg/GADMTools/man/gadm_sf_loadCountries.html'>gadm_sf_loadCountries</a></span><span class='op'>(</span>
+  fileNames <span class='op'>=</span> <span class='st'>"BFA"</span>, <span class='co'># the ISO-3166-1 country code </span>
+  basefile <span class='op'>=</span> <span class='st'>"data/"</span>, <span class='co'># the directory where the shapefile will be saved</span>
+  level <span class='op'>=</span> <span class='fl'>1</span><span class='op'>)</span> <span class='co'># indicates that we want administrative level 1</span>
+
+<span class='va'>bf_1</span> <span class='op'>&lt;-</span> <span class='va'>bf_1</span><span class='op'>$</span><span class='va'>sf</span>
+<span class='va'>bf_1</span>
+</code></pre>
+</div>
+<pre><code>Simple feature collection with 13 features and 5 fields
+geometry type:  POLYGON
+dimension:      XY
+bbox:           xmin: -5.518918 ymin: 9.401108 xmax: 2.4054 ymax: 15.08259
+geographic CRS: WGS 84
+First 10 features:
+   ISO       NAME_0            NAME_1 TYPE_1 ENGTYPE_1
+1  BFA Burkina Faso Boucle du Mouhoun Région    Region
+6  BFA Burkina Faso          Cascades Région    Region
+11 BFA Burkina Faso            Centre Région    Region
+7  BFA Burkina Faso        Centre-Est Région    Region
+8  BFA Burkina Faso       Centre-Nord Région    Region
+9  BFA Burkina Faso      Centre-Ouest Région    Region
+10 BFA Burkina Faso        Centre-Sud Région    Region
+12 BFA Burkina Faso               Est Région    Region
+13 BFA Burkina Faso      Haut-Bassins Région    Region
+2  BFA Burkina Faso              Nord Région    Region
+                         geometry
+1  POLYGON ((-4.48801 11.79912...
+6  POLYGON ((-4.16146 9.801042...
+11 POLYGON ((-1.72342 12.09224...
+7  POLYGON ((-0.4919499 11.014...
+8  POLYGON ((-0.6313 12.54146,...
+9  POLYGON ((-1.88221 10.98227...
+10 POLYGON ((-0.9030276 10.971...
+12 POLYGON ((0.7639515 10.9973...
+13 POLYGON ((-5.08715 10.82588...
+2  POLYGON ((-2.3256 12.65788,...</code></pre>
+</div>
+<h1 id="merge-and-map">Merge and Map</h1>
+<p>Now that we have all our data, we’ll show you how to map variables… But before we do that, let’s do some basic, exploratory mapping.</p>
+<h2 id="exploratory-maps">Exploratory Maps</h2>
+<p><code>ggplot2</code> has support for <code>sf</code> objects, which makes it really easy to map things using the <code>ggplot2::geom_sf()</code>. <code>geom_sf()</code> will automatically identify what kind of spatial data you’re plotting and handle it appropriately. For example, let’s plot the <code>gps</code> data (which are points) and the administrative region (which are polygons).</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre><code><span class='co'># Plot EA centroids</span>
+<span class='fu'>ggplot</span><span class='op'>(</span><span class='op'>)</span> <span class='op'>+</span>
+  <span class='fu'>geom_sf</span><span class='op'>(</span>data <span class='op'>=</span> <span class='va'>gps</span><span class='op'>)</span>
+</code></pre>
+</div>
+<img src="mapping-sdp-variables_files/figure-html5/unnamed-chunk-4-1.png" width="624" />
+<div class="sourceCode">
+<pre><code><span class='co'># Plot regions of Burkina Faso</span>
+<span class='fu'>ggplot</span><span class='op'>(</span><span class='op'>)</span> <span class='op'>+</span>
+  <span class='fu'>geom_sf</span><span class='op'>(</span>data <span class='op'>=</span> <span class='va'>bf_1</span><span class='op'>)</span>
+</code></pre>
+</div>
+<p><img src="mapping-sdp-variables_files/figure-html5/unnamed-chunk-4-2.png" width="624" /></p>
+</div>
+<p>The building-block approach of <code>ggplot2</code> (“Grammar of Graphics”) also makes it really easy to layer different spatial features on the same map.</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre><code><span class='co'># Plot regions of Burkina Faso &amp; EA centroids on the same map</span>
+<span class='fu'>ggplot</span><span class='op'>(</span><span class='op'>)</span> <span class='op'>+</span>
+  <span class='fu'>geom_sf</span><span class='op'>(</span>data <span class='op'>=</span> <span class='va'>bf_1</span><span class='op'>)</span> <span class='op'>+</span>
+  <span class='fu'>geom_sf</span><span class='op'>(</span>data <span class='op'>=</span> <span class='va'>gps</span><span class='op'>)</span>
+</code></pre>
+</div>
+<p><img src="mapping-sdp-variables_files/figure-html5/unnamed-chunk-5-1.png" width="624" /></p>
+</div>
+<h2 id="merge-gps-and-sdp-data">Merge GPS and SDP Data</h2>
+<p>To map the EA-level variables constructed in the last post, we need to merge the <code>sdp</code> data and the <code>gps</code> data by <code>EA_ID</code>. First, let’s rename the <code>EASEARVED</code> variable to match the GPS data and then use a <code>dplyr::right_join</code> to merge in the SDP data. We need to use a <code>right_join()</code> because the sf object must be listed first in our join command to retain the sf class, but we want to ensure that all rows from <code>sdp</code> are preserved.</p>
+<aside>
+Remember, the SDP data contains information from both 2017 and 2018, while the GPS data has a single observation per EA.
+</aside>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre><code><span class='co'># check &lt;- sdp %&gt;%</span>
+<span class='co'>#   group_by(EA_ID) %&gt;%</span>
+<span class='co'>#   tally() %&gt;%</span>
+<span class='co'>#   filter(n == 1)</span>
+<span class='co'># </span>
+<span class='co'># sdp[sdp$EA_ID %in% check$EA_ID,]</span>
+
+<span class='co'># rename to be consistent with GPS data</span>
+<span class='va'>sdp</span> <span class='op'>&lt;-</span> <span class='va'>sdp</span> <span class='op'>%&gt;%</span>
+  <span class='fu'>rename</span><span class='op'>(</span>
+    EA_ID <span class='op'>=</span> <span class='va'>EASERVED</span> 
+  <span class='op'>)</span>
+
+<span class='va'>sdp</span> <span class='op'>&lt;-</span> <span class='fu'>right_join</span><span class='op'>(</span><span class='va'>gps</span>, <span class='va'>sdp</span>, by <span class='op'>=</span> <span class='st'>"EA_ID"</span><span class='op'>)</span>
+
+<span class='va'>sdp</span> <span class='co'># now the sdp data is an sf object</span>
+</code></pre>
+</div>
+<pre><code>Simple feature collection with 149 features and 20 fields
+geometry type:  POINT
+dimension:      XY
+bbox:           xmin: -5.18865 ymin: 9.883331 xmax: 1.634087 ymax: 14.39679
+geographic CRS: WGS 84
+# A tibble: 149 x 21
+   PMACC PMAYEAR REGION EA_ID DATUM                  geometry  YEAR
+   &lt;chr&gt;   &lt;dbl&gt; &lt;chr&gt;  &lt;dbl&gt; &lt;chr&gt;               &lt;POINT [°]&gt; &lt;int&gt;
+ 1 BF       2017 5. ce…  7610 WGS84      (-1.065238 12.93839)  2017
+ 2 BF       2017 5. ce…  7610 WGS84      (-1.065238 12.93839)  2018
+ 3 BF       2017 1. bo…  7820 WGS84      (-4.065366 12.72985)  2017
+ 4 BF       2017 1. bo…  7820 WGS84      (-4.065366 12.72985)  2018
+ 5 BF       2017 3. ce…  7271 WGS84      (-1.583361 12.37884)  2017
+ 6 BF       2017 3. ce…  7799 WGS84      (-1.540024 12.40452)  2017
+ 7 BF       2017 8. est  7243 WGS84      (0.3797186 12.07097)  2017
+ 8 BF       2017 8. est  7243 WGS84      (0.3797186 12.07097)  2018
+ 9 BF       2017 6. ce…  7026 WGS84      (-2.366313 12.26087)  2017
+10 BF       2017 6. ce…  7026 WGS84      (-2.366313 12.26087)  2018
+# … with 139 more rows, and 14 more variables: N_SDP &lt;int&gt;,
+#   N_SDP_INT &lt;int&gt;, HOSPITAL &lt;int&gt;, HCENTER &lt;int&gt;, PHARM &lt;int&gt;, …</code></pre>
+</div>
+<h1 id="map-sdp-data">Map SDP data</h1>
+<p>Remember, the <code>sdp</code> data contains information from 2017 &amp; 2018, which can clog up the map depending on how we use this information. To start out, let’s use only the 2017 data and add information about the number of service delivery providers that serve a given EA (<code>N_SDP</code>). By passing <code>N_SDP</code> to the size aesthtic, we can more easily visualize how EAs vary in their access to service delivery providers.</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre><code><span class='va'>sdp2017</span> <span class='op'>&lt;-</span> <span class='va'>sdp</span> <span class='op'>%&gt;%</span>
+  <span class='fu'><a href='https://rdrr.io/r/stats/filter.html'>filter</a></span><span class='op'>(</span><span class='va'>YEAR</span> <span class='op'>==</span> <span class='fl'>2017</span><span class='op'>)</span>
+
+<span class='fu'>ggplot</span><span class='op'>(</span><span class='op'>)</span> <span class='op'>+</span>
+  <span class='fu'>geom_sf</span><span class='op'>(</span>data <span class='op'>=</span> <span class='va'>bf_1</span><span class='op'>)</span> <span class='op'>+</span>
+  <span class='fu'>geom_sf</span><span class='op'>(</span>data <span class='op'>=</span> <span class='va'>sdp2017</span>, <span class='fu'>aes</span><span class='op'>(</span>size <span class='op'>=</span> <span class='va'>N_SDP</span><span class='op'>)</span>,
+          alpha <span class='op'>=</span> <span class='fl'>0.4</span><span class='op'>)</span> 
+</code></pre>
+</div>
+<p><img src="mapping-sdp-variables_files/figure-html5/unnamed-chunk-7-1.png" width="624" /></p>
+</div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
+<!--radix_placeholder_article_footer-->
+<!--/radix_placeholder_article_footer-->
+</div>
+
+<div class="d-appendix">
+</div>
+
+
+<!--radix_placeholder_site_after_body-->
+<!--/radix_placeholder_site_after_body-->
+<!--radix_placeholder_appendices-->
+<div class="appendix-bottom"></div>
+<!--/radix_placeholder_appendices-->
+<!--radix_placeholder_navigation_after_body-->
+<!--/radix_placeholder_navigation_after_body-->
+
+</body>
+
+</html>
