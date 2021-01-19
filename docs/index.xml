@@ -12,20 +12,7 @@
       <link>https://matt-gunther.github.io/pma-data-hub/</link>
     </image>
     <generator>Distill</generator>
-    <lastBuildDate>Fri, 15 Jan 2021 00:00:00 +0000</lastBuildDate>
-    <item>
-      <title>Mapping Service Delivery Point Data</title>
-      <dc:creator>Nina Brooks</dc:creator>
-      <link>https://matt-gunther.github.io/pma-data-hub/posts/2021-01-15-mapping-sdp-variables</link>
-      <description>Map spatial variation in the service delivery environment across enumeration areas.</description>
-      <category>Individual in Context</category>
-      <category>Serivce Delivery Points</category>
-      <category>Mapping</category>
-      <category>sf</category>
-      <guid>https://matt-gunther.github.io/pma-data-hub/posts/2021-01-15-mapping-sdp-variables</guid>
-      <pubDate>Fri, 15 Jan 2021 00:00:00 +0000</pubDate>
-      <media:content url="https://matt-gunther.github.io/pma-data-hub/posts/2021-01-15-mapping-sdp-variables/mapping-sdp-variables_files/figure-html5/unnamed-chunk-4-1.png" medium="image" type="image/png" width="1248" height="768"/>
-    </item>
+    <lastBuildDate>Thu, 17 Dec 2020 00:00:00 +0000</lastBuildDate>
     <item>
       <title>Mapping contraceptive stockouts</title>
       <dc:creator>Matt Gunther</dc:creator>
