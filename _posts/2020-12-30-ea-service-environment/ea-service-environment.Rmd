@@ -140,7 +140,7 @@ Load your data extract with `read_ipums_micro` *making sure to change the file p
 sdp <- ipumsr::read_ipums_micro(
   ddi = "data/pma_00008.xml",
   data = "data/pma_00008.dat.gz"
-) 
+)
 ```
 
 ```{r, echo=F}
@@ -273,7 +273,7 @@ sdp %>%
 
 We see that we have at least one service area listed for all 202 public SDPs in our dataset (the calculated total number of non-missing values for `EASERVED1` is zero). However, 156 public SDPs serve only one enumeration area, so their remaining `EASERVED` values are all missing (`NA`). There are 173 public SDPs that serve only 2 enumeration areas, 181 that serve only 3, and so on. 
 
-What about non-public SDPs? **For all other types of SDPs where the respondent consented to be interviewed** (`CONSENTSQ == 1`)**, `EASERVED1` will represent the enumeration area where the SDP is located.** However, the remaining `EASERVED` variables will each be missing.
+What about non-public SDPs? **For all other types of SDPs where the respondent consented to be interviewed** (`CONSENTSQ == 1`)**, `EASERVED1` will represent the enumeration area where the SDP is located.** However, the remaining `EASERVED` variables will each be missing:
 
 ```{r}
 sdp %>% 
@@ -389,14 +389,14 @@ sdp %>%
 Now that we know how to `pivot_longer`, let's apply the function to our full dataset:
 
 ```{r}
-sdp <- sdp %>% 
+sdp <- sdp %>%
   pivot_longer(
     cols = starts_with("EASERVED"),
     values_to = "EASERVED",
     values_drop_na = T,
     names_to = NULL
-  ) %>% 
-  distinct()  # in case any facility listed the same EASERVED twice
+  ) %>%
+  distinct() # in case any facility listed the same EASERVED twice
 ```
 
 Dropping each row where `EASERVED` is missing, we're left with 372 rows where information about each SDP gets repeated once for every enumeration area that it serves. (Remember: our original dataset contained only 234 rows because SDPs occupied just one row apiece). 
@@ -532,7 +532,7 @@ hhf <- read_ipums_micro(
   ddi = "data/pma_00011.xml",
   data = "data/pma_00011.dat.gz"
 ) %>% 
-  select(PERSONID, EAID, YEAR, FPCURRUSE) %>% 
+  select(PERSONID, EAID, YEAR, URBAN, FPCURRUSE) %>% 
   mutate(
     across(everything(), ~lbl_na_if(
       .x,
@@ -551,7 +551,7 @@ hhf
 To merge the SDP variables we've created, we'll use [dplyr::right_join](https://dplyr.tidyverse.org/reference/join.html) to ensure that all rows from `hhf` are preserved. In the process, we'll be attaching one row of the `sdp` data to each woman by matching her `EAID` to an `EASERVED`, and by matching her survey `YEAR` to an SDP survey `YEAR`.
 
 ```{r}
-hhf <- sdp %>% 
+bf_merged <- sdp %>% 
   rename(EAID = EASERVED) %>% 
   right_join(hhf, by = c("EAID", "YEAR"))
 ```
@@ -559,7 +559,7 @@ hhf <- sdp %>%
 Now, each woman's record contains all of the variables we created above summarizing the SDPs that serve her enumeration area. For example, for all women living in `EAID == 7003` in `YEAR == 2017`, the value in `NUM_METHODS_OUT3MO` shows the number of family planning methods that were out of stock with any SDP serving the woman's enumeration area within three months prior to the survey:
 
 ```{r}
-hhf %>% 
+bf_merged %>% 
   filter(EAID == 7003, YEAR == 2017) %>% 
   select(PERSONID, EAID, YEAR, NUM_METHODS_OUT3MO)
 ```
@@ -569,7 +569,7 @@ You'll notice that 55 women were surveyed in `EAID` 7003 in 2017, and each one h
 We'll dig deeper into the types of research questions that our new combined dataset can answer in our upcoming Data Analysis post. For now, take a look at the apparent relationship between `FPCURRUSE` and `NUM_METHODS_OUT3MO` for all of the women with non-missing responses for both variables:
 
 ```{r}
-hhf %>% 
+bf_merged %>% 
   filter(!is.na(FPCURRUSE) & !is.na(NUM_METHODS_OUT3MO)) %>% 
   group_by(NUM_METHODS_OUT3MO > 0) %>% 
   count(FPCURRUSE) %>% 
@@ -582,63 +582,7 @@ While a 5% difference may or may not prove to be statistically significant under
 
 As always, let us know what kinds of questions about fertility and family planning you're answering with data merged from service providers! 
 
-```{r, eval=F, include=F}
-# sdp <- map(c("_inEA", "_outEA", "_all"), ~{
-# 
-#   name <- .x
-# 
-#   ea_filter <- function(data, name){
-#     if(name == "_inEA"){filter(data, EAID == EASERVED)}
-#     else if(name == "_outEA"){filter(data, EAID != EASERVED)}
-#     else {filter(data)}
-#   }
-# 
-#   sdp %>%
-#     ea_filter(name) %>%
-#     group_by(EASERVED, YEAR) %>%
-#     summarise(
-#       .groups = "keep",
-#       N_FAC = n(),
-#       N_INTRVWD = sum(CONSENTSQ == 1),
-#       HOSPITAL = sum(FACILITYTYPEGEN == 1),
-#       HCENTER = sum(FACILITYTYPEGEN == 2),
-#       PHARM = sum(FACILITYTYPEGEN == 7),
-#       OTHER = sum(FACILITYTYPEGEN == 9),
-#       GOV  = sum(AUTHORITY == 1),
-#       FAITH = sum(AUTHORITY == 3),
-#       PRIV = sum(AUTHORITY == 4),
-#       across(ends_with("PROV"), ~any(.x == 1), .names = "ANY_{.col}"),
-#       across(ends_with("OBS"), ~any(.x == 0), .names = "ANY_{.col}_OUT"),
-#       across(ends_with("OBS"), ~any(.x == 1), .names = "ANY_{.col}_INSTOCK"),
-#       across(ends_with("OUT3MO"), ~any(.x == 1), .names = "ANY_{.col}"),
-#       across(ends_with("OUTEV"), ~any(.x == 1), .names = "ANY_{.col}")
-#     ) %>%
-#     mutate(
-#       NUM_METHODS_PROV = sum(c_across(ends_with("PROV")), na.rm = T),
-#       NUM_METHODS_OUT = sum(c_across(ends_with("OBS_OUT")), na.rm = T),
-#       NUM_METHODS_INSTOCK = sum(c_across(ends_with("OBS_INSTOCK")), na.rm = T),
-#       NUM_METHODS_OUT3MO = sum(c_across(ends_with("OUT3MO")), na.rm = T)
-#     ) %>%
-#     select(
-#       -ends_with("PROV"),
-#       NUM_METHODS_PROV, 
-#       -ends_with("OBS_OUT"),
-#       -ends_with("OBS_INSTOCK"),
-#       -ends_with("OUT3MO"),
-#       NUM_METHODS_OUT3MO
-#     ) %>% 
-#     rename_with(~paste0(.x, name), -c(EASERVED, YEAR))
-# })
-# 
-# sdp <- sdp %>%
-#   reduce(full_join, by = c("EASERVED", "YEAR")) %>%
-#   arrange(EASERVED, YEAR) %>%
-#   mutate(across(everything(), ~replace_na(.x, 0)))
-```
-
-```{r, eval=F, include=F}
-# sdp %>% summarise_all(sum) %>% str()
-
-#We are currently losing any facility that was interviewed (CONSENTSQ == 1) and doesn't serve the ea that it's located in! This is a problem only once: EA 7554 contains only one facility (id 7582) and it does not serve the EA*
+```{r, echo = F}
+bf_merged %>% write_rds("data/bf_merged.rds")
 ```
 
