@@ -20,19 +20,18 @@
 
 <style type="text/css">code{white-space: pre;}</style>
 <style type="text/css" data-origin="pandoc">
-code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
-code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode { white-space: pre; position: relative; }
 div.sourceCode { margin: 1em 0; }
 pre.sourceCode { margin: 0; }
 @media screen {
 div.sourceCode { overflow: auto; }
 }
 @media print {
-code.sourceCode { white-space: pre-wrap; }
-code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -52,7 +51,7 @@ pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-le
 div.sourceCode
   {   }
 @media screen {
-code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 code span.al { color: #ad0000; } /* Alert */
 code span.an { color: #5e5e5e; } /* Annotation */
@@ -87,75 +86,75 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
   <!--radix_placeholder_meta_tags-->
   <title>Mapping Service Delivery Point Data</title>
-  
+
   <meta property="description" itemprop="description" content="Map spatial variation in the service delivery environment across enumeration areas."/>
-  
-  
+
+
   <!--  https://schema.org/Article -->
   <meta property="article:published" itemprop="datePublished" content="2021-01-15"/>
   <meta property="article:created" itemprop="dateCreated" content="2021-01-15"/>
   <meta name="article:author" content="Nina Brooks"/>
-  
+
   <!--  https://developers.facebook.com/docs/sharing/webmasters#markup -->
   <meta property="og:title" content="Mapping Service Delivery Point Data"/>
   <meta property="og:type" content="article"/>
   <meta property="og:description" content="Map spatial variation in the service delivery environment across enumeration areas."/>
   <meta property="og:locale" content="en_US"/>
-  
+
   <!--  https://dev.twitter.com/cards/types/summary -->
   <meta property="twitter:card" content="summary"/>
   <meta property="twitter:title" content="Mapping Service Delivery Point Data"/>
   <meta property="twitter:description" content="Map spatial variation in the service delivery environment across enumeration areas."/>
-  
+
   <!--/radix_placeholder_meta_tags-->
   <!--radix_placeholder_rmarkdown_metadata-->
-  
+
   <script type="text/json" id="radix-rmarkdown-metadata">
   {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","author","categories","date","output","draft"]}},"value":[{"type":"character","attributes":{},"value":["Mapping Service Delivery Point Data"]},{"type":"character","attributes":{},"value":["Map spatial variation in the service delivery environment across enumeration areas.\n"]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","affiliation"]}},"value":[{"type":"character","attributes":{},"value":["Nina Brooks"]},{"type":"character","attributes":{},"value":["IPUMS PMA Postdoctoral Associate"]}]}]},{"type":"character","attributes":{},"value":["Individual in Context","Serivce Delivery Points","Mapping","sf"]},{"type":"character","attributes":{},"value":["01-15-2021"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained","toc","toc_depth","toc_float"]}},"value":[{"type":"logical","attributes":{},"value":[false]},{"type":"logical","attributes":{},"value":[true]},{"type":"integer","attributes":{},"value":[3]},{"type":"logical","attributes":{},"value":[true]}]}]},{"type":"logical","attributes":{},"value":[true]}]}
   </script>
   <!--/radix_placeholder_rmarkdown_metadata-->
   
   <script type="text/json" id="radix-resource-manifest">
-  {"type":"character","attributes":{},"value":["data/BFA_adm1.sf.rds","data/PMA_BF_GPS_v1_24Jul2018.csv","data/sdp.Rdata","mapping-sdp-variables_files/anchor-4.2.2/anchor.min.js","mapping-sdp-variables_files/bowser-1.9.3/bowser.min.js","mapping-sdp-variables_files/distill-2.2.21/template.v2.js","mapping-sdp-variables_files/figure-html5/unnamed-chunk-10-1.png","mapping-sdp-variables_files/figure-html5/unnamed-chunk-11-1.png","mapping-sdp-variables_files/figure-html5/unnamed-chunk-12-1.png","mapping-sdp-variables_files/figure-html5/unnamed-chunk-4-1.png","mapping-sdp-variables_files/figure-html5/unnamed-chunk-4-2.png","mapping-sdp-variables_files/figure-html5/unnamed-chunk-5-1.png","mapping-sdp-variables_files/figure-html5/unnamed-chunk-6-1.png","mapping-sdp-variables_files/figure-html5/unnamed-chunk-7-1.png","mapping-sdp-variables_files/figure-html5/unnamed-chunk-8-1.png","mapping-sdp-variables_files/figure-html5/unnamed-chunk-9-1.png","mapping-sdp-variables_files/font-awesome-5.13.0/css/all.min.css","mapping-sdp-variables_files/font-awesome-5.13.0/css/v4-shims.min.css","mapping-sdp-variables_files/font-awesome-5.13.0/js/script.js","mapping-sdp-variables_files/font-awesome-5.13.0/webfonts/fa-brands-400.eot","mapping-sdp-variables_files/font-awesome-5.13.0/webfonts/fa-brands-400.svg","mapping-sdp-variables_files/font-awesome-5.13.0/webfonts/fa-brands-400.ttf","mapping-sdp-variables_files/font-awesome-5.13.0/webfonts/fa-brands-400.woff","mapping-sdp-variables_files/font-awesome-5.13.0/webfonts/fa-brands-400.woff2","mapping-sdp-variables_files/font-awesome-5.13.0/webfonts/fa-regular-400.eot","mapping-sdp-variables_files/font-awesome-5.13.0/webfonts/fa-regular-400.svg","mapping-sdp-variables_files/font-awesome-5.13.0/webfonts/fa-regular-400.ttf","mapping-sdp-variables_files/font-awesome-5.13.0/webfonts/fa-regular-400.woff","mapping-sdp-variables_files/font-awesome-5.13.0/webfonts/fa-regular-400.woff2","mapping-sdp-variables_files/font-awesome-5.13.0/webfonts/fa-solid-900.eot","mapping-sdp-variables_files/font-awesome-5.13.0/webfonts/fa-solid-900.svg","mapping-sdp-variables_files/font-awesome-5.13.0/webfonts/fa-solid-900.ttf","mapping-sdp-variables_files/font-awesome-5.13.0/webfonts/fa-solid-900.woff","mapping-sdp-variables_files/font-awesome-5.13.0/webfonts/fa-solid-900.woff2","mapping-sdp-variables_files/header-attrs-2.6/header-attrs.js","mapping-sdp-variables_files/jquery-1.11.3/jquery.min.js","mapping-sdp-variables_files/webcomponents-2.0.0/webcomponents.js"]}
+  {"type":"character","attributes":{},"value":["data/bf_gps_fake.csv","data/bf_merged.rds","data/BFA_adm1.sf.rds","data/PMA_BF_GPS_v1_24Jul2018.csv","data/sdp.Rdata","mapping-sdp-variables_files/anchor-4.2.2/anchor.min.js","mapping-sdp-variables_files/bowser-1.9.3/bowser.min.js","mapping-sdp-variables_files/distill-2.2.21/template.v2.js","mapping-sdp-variables_files/figure-html5/unnamed-chunk-10-1.png","mapping-sdp-variables_files/figure-html5/unnamed-chunk-11-1.png","mapping-sdp-variables_files/figure-html5/unnamed-chunk-12-1.png","mapping-sdp-variables_files/figure-html5/unnamed-chunk-13-1.png","mapping-sdp-variables_files/figure-html5/unnamed-chunk-14-1.png","mapping-sdp-variables_files/figure-html5/unnamed-chunk-4-1.png","mapping-sdp-variables_files/figure-html5/unnamed-chunk-4-2.png","mapping-sdp-variables_files/figure-html5/unnamed-chunk-5-1.png","mapping-sdp-variables_files/figure-html5/unnamed-chunk-5-2.png","mapping-sdp-variables_files/figure-html5/unnamed-chunk-6-1.png","mapping-sdp-variables_files/figure-html5/unnamed-chunk-6-2.png","mapping-sdp-variables_files/figure-html5/unnamed-chunk-7-1.png","mapping-sdp-variables_files/figure-html5/unnamed-chunk-8-1.png","mapping-sdp-variables_files/figure-html5/unnamed-chunk-9-1.png","mapping-sdp-variables_files/font-awesome-5.13.0/css/all.min.css","mapping-sdp-variables_files/font-awesome-5.13.0/css/v4-shims.min.css","mapping-sdp-variables_files/font-awesome-5.13.0/js/script.js","mapping-sdp-variables_files/font-awesome-5.13.0/webfonts/fa-brands-400.eot","mapping-sdp-variables_files/font-awesome-5.13.0/webfonts/fa-brands-400.svg","mapping-sdp-variables_files/font-awesome-5.13.0/webfonts/fa-brands-400.ttf","mapping-sdp-variables_files/font-awesome-5.13.0/webfonts/fa-brands-400.woff","mapping-sdp-variables_files/font-awesome-5.13.0/webfonts/fa-brands-400.woff2","mapping-sdp-variables_files/font-awesome-5.13.0/webfonts/fa-regular-400.eot","mapping-sdp-variables_files/font-awesome-5.13.0/webfonts/fa-regular-400.svg","mapping-sdp-variables_files/font-awesome-5.13.0/webfonts/fa-regular-400.ttf","mapping-sdp-variables_files/font-awesome-5.13.0/webfonts/fa-regular-400.woff","mapping-sdp-variables_files/font-awesome-5.13.0/webfonts/fa-regular-400.woff2","mapping-sdp-variables_files/font-awesome-5.13.0/webfonts/fa-solid-900.eot","mapping-sdp-variables_files/font-awesome-5.13.0/webfonts/fa-solid-900.svg","mapping-sdp-variables_files/font-awesome-5.13.0/webfonts/fa-solid-900.ttf","mapping-sdp-variables_files/font-awesome-5.13.0/webfonts/fa-solid-900.woff","mapping-sdp-variables_files/font-awesome-5.13.0/webfonts/fa-solid-900.woff2","mapping-sdp-variables_files/header-attrs-2.6/header-attrs.js","mapping-sdp-variables_files/jquery-1.11.3/jquery.min.js","mapping-sdp-variables_files/webcomponents-2.0.0/webcomponents.js"]}
   </script>
   <!--radix_placeholder_navigation_in_header-->
   <!--/radix_placeholder_navigation_in_header-->
   <!--radix_placeholder_distill-->
-  
+
   <style type="text/css">
-  
+
   body {
     background-color: white;
   }
-  
+
   .pandoc-table {
     width: 100%;
   }
-  
+
   .pandoc-table>caption {
     margin-bottom: 10px;
   }
-  
+
   .pandoc-table th:not([align]) {
     text-align: left;
   }
-  
+
   .pagedtable-footer {
     font-size: 15px;
   }
-  
+
   d-byline .byline {
     grid-template-columns: 2fr 2fr;
   }
-  
+
   d-byline .byline h3 {
     margin-block-start: 1.5em;
   }
-  
+
   d-byline .byline .authors-affiliations h3 {
     margin-block-start: 0.5em;
   }
-  
+
   .authors-affiliations .orcid-id {
     width: 16px;
     height:16px;
@@ -164,12 +163,12 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     vertical-align: middle;
     padding-bottom: 2px;
   }
-  
+
   d-title .dt-tags {
     margin-top: 1em;
     grid-column: text;
   }
-  
+
   .dt-tags .dt-tag {
     text-decoration: none;
     display: inline-block;
@@ -183,24 +182,24 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     text-transform: uppercase;
     font-weight: 500;
   }
-  
+
   d-article table.gt_table td,
   d-article table.gt_table th {
     border-bottom: none;
   }
-  
+
   .html-widget {
     margin-bottom: 2.0em;
   }
-  
+
   .l-screen-inset {
     padding-right: 16px;
   }
-  
+
   .l-screen .caption {
     margin-left: 10px;
   }
-  
+
   .shaded {
     background: rgb(247, 247, 247);
     padding-top: 20px;
@@ -208,75 +207,75 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     border-top: 1px solid rgba(0, 0, 0, 0.1);
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
   }
-  
+
   .shaded .html-widget {
     margin-bottom: 0;
     border: 1px solid rgba(0, 0, 0, 0.1);
   }
-  
+
   .shaded .shaded-content {
     background: white;
   }
-  
+
   .text-output {
     margin-top: 0;
     line-height: 1.5em;
   }
-  
+
   .hidden {
     display: none !important;
   }
-  
+
   d-article {
     padding-top: 2.5rem;
     padding-bottom: 30px;
   }
-  
+
   d-appendix {
     padding-top: 30px;
   }
-  
+
   d-article>p>img {
     width: 100%;
   }
-  
+
   d-article h2 {
     margin: 1rem 0 1.5rem 0;
   }
-  
+
   d-article h3 {
     margin-top: 1.5rem;
   }
-  
+
   d-article iframe {
     border: 1px solid rgba(0, 0, 0, 0.1);
     margin-bottom: 2.0em;
     width: 100%;
   }
-  
+
   /* Tweak code blocks */
-  
+
   d-article div.sourceCode code,
   d-article pre code {
     font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
   }
-  
+
   d-article pre,
   d-article div.sourceCode,
   d-article div.sourceCode pre {
     overflow: auto;
   }
-  
+
   d-article div.sourceCode {
     background-color: white;
   }
-  
+
   d-article div.sourceCode pre {
     padding-left: 10px;
     font-size: 12px;
     border-left: 2px solid rgba(0,0,0,0.1);
   }
-  
+
   d-article pre {
     font-size: 12px;
     color: black;
@@ -288,45 +287,45 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     word-break: normal;
     word-wrap: normal;
     line-height: 1.5;
-  
+
     -moz-tab-size: 4;
     -o-tab-size: 4;
     tab-size: 4;
-  
+
     -webkit-hyphens: none;
     -moz-hyphens: none;
     -ms-hyphens: none;
     hyphens: none;
   }
-  
+
   d-article pre a {
     border-bottom: none;
   }
-  
+
   d-article pre a:hover {
     border-bottom: none;
     text-decoration: underline;
   }
-  
+
   @media(min-width: 768px) {
-  
+
   d-article pre,
   d-article div.sourceCode,
   d-article div.sourceCode pre {
     overflow: visible !important;
   }
-  
+
   d-article div.sourceCode pre {
     padding-left: 18px;
     font-size: 14px;
   }
-  
+
   d-article pre {
     font-size: 14px;
   }
-  
+
   }
-  
+
   figure img.external {
     background: white;
     border: 1px solid rgba(0, 0, 0, 0.1);
@@ -334,9 +333,9 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     padding: 18px;
     box-sizing: border-box;
   }
-  
+
   /* CSS for d-contents */
-  
+
   .d-contents {
     grid-column: text;
     color: rgba(0,0,0,0.8);
@@ -348,7 +347,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     padding-left: 0.25em;
     justify-self: start;
   }
-  
+
   @media(min-width: 1000px) {
     .d-contents.d-contents-float {
       height: 0;
@@ -359,82 +358,82 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
       padding-left: 2em;
     }
   }
-  
+
   .d-contents nav h3 {
     font-size: 18px;
     margin-top: 0;
     margin-bottom: 1em;
   }
-  
+
   .d-contents li {
     list-style-type: none
   }
-  
+
   .d-contents nav > ul {
     padding-left: 0;
   }
-  
+
   .d-contents ul {
     padding-left: 1em
   }
-  
+
   .d-contents nav ul li {
     margin-top: 0.6em;
     margin-bottom: 0.2em;
   }
-  
+
   .d-contents nav a {
     font-size: 13px;
     border-bottom: none;
     text-decoration: none
     color: rgba(0, 0, 0, 0.8);
   }
-  
+
   .d-contents nav a:hover {
     text-decoration: underline solid rgba(0, 0, 0, 0.6)
   }
-  
+
   .d-contents nav > ul > li > a {
     font-weight: 600;
   }
-  
+
   .d-contents nav > ul > li > ul {
     font-weight: inherit;
   }
-  
+
   .d-contents nav > ul > li > ul > li {
     margin-top: 0.2em;
   }
-  
-  
+
+
   .d-contents nav ul {
     margin-top: 0;
     margin-bottom: 0.25em;
   }
-  
+
   .d-article-with-toc h2:nth-child(2) {
     margin-top: 0;
   }
-  
-  
+
+
   /* Figure */
-  
+
   .figure {
     position: relative;
     margin-bottom: 2.5em;
     margin-top: 1.5em;
   }
-  
+
   .figure img {
     width: 100%;
   }
-  
+
   .figure .caption {
     color: rgba(0, 0, 0, 0.6);
     font-size: 12px;
     line-height: 1.5em;
   }
-  
+
   .figure img.external {
     background: white;
     border: 1px solid rgba(0, 0, 0, 0.1);
@@ -442,31 +441,31 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     padding: 18px;
     box-sizing: border-box;
   }
-  
+
   .figure .caption a {
     color: rgba(0, 0, 0, 0.6);
   }
-  
+
   .figure .caption b,
   .figure .caption strong, {
     font-weight: 600;
     color: rgba(0, 0, 0, 1.0);
   }
-  
+
   /* Citations */
-  
+
   d-article .citation {
     color: inherit;
     cursor: inherit;
   }
-  
+
   div.hanging-indent{
     margin-left: 1em; text-indent: -1em;
   }
-  
-  
+
+
   /* Tweak 1000px media break to show more text */
-  
+
   @media(min-width: 1000px) {
     .base-grid,
     distill-header,
@@ -482,11 +481,11 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
       grid-template-columns: [screen-start] 1fr [page-start kicker-start] 80px [middle-start] 50px [text-start kicker-end] 65px 65px 65px 65px 65px 65px 65px 65px [text-end gutter-start] 65px [middle-end] 65px [page-end gutter-end] 1fr [screen-end];
       grid-column-gap: 16px;
     }
-  
+
     .grid {
       grid-column-gap: 16px;
     }
-  
+
     d-article {
       font-size: 1.06rem;
       line-height: 1.7em;
@@ -495,7 +494,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
       font-size: 13px;
     }
   }
-  
+
   @media(min-width: 1180px) {
     .base-grid,
     distill-header,
@@ -511,16 +510,16 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
       grid-template-columns: [screen-start] 1fr [page-start kicker-start] 60px [middle-start] 60px [text-start kicker-end] 60px 60px 60px 60px 60px 60px 60px 60px [text-end gutter-start] 60px [middle-end] 60px [page-end gutter-end] 1fr [screen-end];
       grid-column-gap: 32px;
     }
-  
+
     .grid {
       grid-column-gap: 32px;
     }
   }
-  
-  
+
+
   /* Get the citation styles for the appendix (not auto-injected on render since
      we do our own rendering of the citation appendix) */
-  
+
   d-appendix .citation-appendix,
   .d-appendix .citation-appendix {
     font-size: 11px;
@@ -537,9 +536,9 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     white-space: pre-wrap;
     word-wrap: break-word;
   }
-  
+
   /* Include appendix styles here so they can be overridden */
-  
+
   d-appendix {
     contain: layout style;
     font-size: 0.8em;
@@ -551,7 +550,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     padding-top: 60px;
     padding-bottom: 48px;
   }
-  
+
   d-appendix h3 {
     grid-column: page-start / text-start;
     font-size: 15px;
@@ -560,59 +559,59 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     margin-bottom: 0;
     color: rgba(0,0,0,0.65);
   }
-  
+
   d-appendix h3 + * {
     margin-top: 1em;
   }
-  
+
   d-appendix ol {
     padding: 0 0 0 15px;
   }
-  
+
   @media (min-width: 768px) {
     d-appendix ol {
       padding: 0 0 0 30px;
       margin-left: -30px;
     }
   }
-  
+
   d-appendix li {
     margin-bottom: 1em;
   }
-  
+
   d-appendix a {
     color: rgba(0, 0, 0, 0.6);
   }
-  
+
   d-appendix > * {
     grid-column: text;
   }
-  
+
   d-appendix > d-footnote-list,
   d-appendix > d-citation-list,
   d-appendix > distill-appendix {
     grid-column: screen;
   }
-  
+
   /* Include footnote styles here so they can be overridden */
-  
+
   d-footnote-list {
     contain: layout style;
   }
-  
+
   d-footnote-list > * {
     grid-column: text;
   }
-  
+
   d-footnote-list a.footnote-backlink {
     color: rgba(0,0,0,0.3);
     padding-left: 0.5em;
   }
-  
-  
-  
+
+
+
   /* Anchor.js */
-  
+
   .anchorjs-link {
     /*transition: all .25s linear; */
     text-decoration: none;
@@ -623,86 +622,86 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     text-decoration: none;
     border-bottom: none;
   }
-  
+
   /* Social footer */
-  
+
   .social_footer {
     margin-top: 30px;
     margin-bottom: 0;
     color: rgba(0,0,0,0.67);
   }
-  
+
   .disqus-comments {
     margin-right: 30px;
   }
-  
+
   .disqus-comment-count {
     border-bottom: 1px solid rgba(0, 0, 0, 0.4);
     cursor: pointer;
   }
-  
+
   #disqus_thread {
     margin-top: 30px;
   }
-  
+
   .article-sharing a {
     border-bottom: none;
     margin-right: 8px;
   }
-  
+
   .article-sharing a:hover {
     border-bottom: none;
   }
-  
+
   .sidebar-section.subscribe {
     font-size: 12px;
     line-height: 1.6em;
   }
-  
+
   .subscribe p {
     margin-bottom: 0.5em;
   }
-  
-  
+
+
   .article-footer .subscribe {
     font-size: 15px;
     margin-top: 45px;
   }
-  
-  
+
+
   .sidebar-section.custom {
     font-size: 12px;
     line-height: 1.6em;
   }
-  
+
   .custom p {
     margin-bottom: 0.5em;
   }
-  
+
   /* Styles for listing layout (hide title) */
   .layout-listing d-title, .layout-listing .d-title {
     display: none;
   }
-  
+
   /* Styles for posts lists (not auto-injected) */
-  
-  
+
+
   .posts-with-sidebar {
     padding-left: 45px;
     padding-right: 45px;
   }
-  
+
   .posts-list .description h2,
   .posts-list .description p {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif;
   }
-  
+
   .posts-list .description h2 {
     font-weight: 700;
     border-bottom: none;
     padding-bottom: 0;
   }
-  
+
   .posts-list h2.post-tag {
     border-bottom: 1px solid rgba(0, 0, 0, 0.2);
     padding-bottom: 12px;
@@ -711,7 +710,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     margin-top: 60px;
     margin-bottom: 24px;
   }
-  
+
   .posts-list .post-preview {
     text-decoration: none;
     overflow: hidden;
@@ -719,29 +718,29 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
     padding: 24px 0;
   }
-  
+
   .post-preview-last {
     border-bottom: none !important;
   }
-  
+
   .posts-list .posts-list-caption {
     grid-column: screen;
     font-weight: 400;
   }
-  
+
   .posts-list .post-preview h2 {
     margin: 0 0 6px 0;
     line-height: 1.2em;
     font-style: normal;
     font-size: 24px;
   }
-  
+
   .posts-list .post-preview p {
     margin: 0 0 12px 0;
     line-height: 1.4em;
     font-size: 16px;
   }
-  
+
   .posts-list .post-preview .thumbnail {
     box-sizing: border-box;
     margin-bottom: 24px;
@@ -752,32 +751,32 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     width: 100%;
     display: block;
   }
-  
+
   .posts-list .metadata {
     font-size: 12px;
     line-height: 1.4em;
     margin-bottom: 18px;
   }
-  
+
   .posts-list .metadata > * {
     display: inline-block;
   }
-  
+
   .posts-list .metadata .publishedDate {
     margin-right: 2em;
   }
-  
+
   .posts-list .metadata .dt-authors {
     display: block;
     margin-top: 0.3em;
     margin-right: 2em;
   }
-  
+
   .posts-list .dt-tags {
     display: block;
     line-height: 1em;
   }
-  
+
   .posts-list .dt-tags .dt-tag {
     display: inline-block;
     color: rgba(0,0,0,0.6);
@@ -790,24 +789,24 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     text-transform: uppercase;
     font-weight: 500;
   }
-  
+
   .posts-list img {
     opacity: 1;
   }
-  
+
   .posts-list img[data-src] {
     opacity: 0;
   }
-  
+
   .posts-more {
     clear: both;
   }
-  
-  
+
+
   .posts-sidebar {
     font-size: 16px;
   }
-  
+
   .posts-sidebar h3 {
     font-size: 16px;
     margin-top: 0;
@@ -815,39 +814,39 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     font-weight: 400;
     text-transform: uppercase;
   }
-  
+
   .sidebar-section {
     margin-bottom: 30px;
   }
-  
+
   .categories ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
   }
-  
+
   .categories li {
     color: rgba(0, 0, 0, 0.8);
     margin-bottom: 0;
   }
-  
+
   .categories li>a {
     border-bottom: none;
   }
-  
+
   .categories li>a:hover {
     border-bottom: 1px solid rgba(0, 0, 0, 0.4);
   }
-  
+
   .categories .active {
     font-weight: 600;
   }
-  
+
   .categories .category-count {
     color: rgba(0, 0, 0, 0.4);
   }
-  
-  
+
+
   @media(min-width: 768px) {
     .posts-list .post-preview h2 {
       font-size: 26px;
@@ -883,55 +882,55 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
       padding-bottom: 24px;
     }
   }
-  
-  
+
+
   /* Improve display for browsers without grid (IE/Edge <= 15) */
-  
+
   .downlevel {
     line-height: 1.6em;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif;
     margin: 0;
   }
-  
+
   .downlevel .d-title {
     padding-top: 6rem;
     padding-bottom: 1.5rem;
   }
-  
+
   .downlevel .d-title h1 {
     font-size: 50px;
     font-weight: 700;
     line-height: 1.1em;
     margin: 0 0 0.5rem;
   }
-  
+
   .downlevel .d-title p {
     font-weight: 300;
     font-size: 1.2rem;
     line-height: 1.55em;
     margin-top: 0;
   }
-  
+
   .downlevel .d-byline {
     padding-top: 0.8em;
     padding-bottom: 0.8em;
     font-size: 0.8rem;
     line-height: 1.8em;
   }
-  
+
   .downlevel .section-separator {
     border: none;
     border-top: 1px solid rgba(0, 0, 0, 0.1);
   }
-  
+
   .downlevel .d-article {
     font-size: 1.06rem;
     line-height: 1.7em;
     padding-top: 1rem;
     padding-bottom: 2rem;
   }
-  
-  
+
+
   .downlevel .d-appendix {
     padding-left: 0;
     padding-right: 0;
@@ -943,11 +942,11 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     padding-top: 40px;
     padding-bottom: 48px;
   }
-  
+
   .downlevel .footnotes ol {
     padding-left: 13px;
   }
-  
+
   .downlevel .base-grid,
   .downlevel .distill-header,
   .downlevel .d-title,
@@ -964,7 +963,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     padding-left: 40px;
     padding-right: 40px;
   }
-  
+
   @media(min-width: 768px) {
     .downlevel .base-grid,
     .downlevel .distill-header,
@@ -984,14 +983,14 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     max-width: 900px;
   }
   }
-  
+
   .downlevel pre code {
     display: block;
     border-left: 2px solid rgba(0, 0, 0, .1);
     padding: 0 0 0 20px;
     font-size: 14px;
   }
-  
+
   .downlevel code, .downlevel pre {
     color: black;
     background: none;
@@ -1002,27 +1001,27 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     word-break: normal;
     word-wrap: normal;
     line-height: 1.5;
-  
+
     -moz-tab-size: 4;
     -o-tab-size: 4;
     tab-size: 4;
-  
+
     -webkit-hyphens: none;
     -moz-hyphens: none;
     -ms-hyphens: none;
     hyphens: none;
   }
-  
+
   .downlevel .posts-list .post-preview {
     color: inherit;
   }
-  
-  
-  
+
+
+
   </style>
-  
+
   <script type="application/javascript">
-  
+
   function is_downlevel_browser() {
     if (bowser.isUnsupportedBrowser({ msie: "12", msedge: "16"},
                                    window.navigator.userAgent)) {
@@ -1031,20 +1030,20 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
       return window.load_distill_framework === undefined;
     }
   }
-  
+
   // show body when load is complete
   function on_load_complete() {
-  
+
     // add anchors
     if (window.anchors) {
       window.anchors.options.placement = 'left';
       window.anchors.add('d-article > h2, d-article > h3, d-article > h4, d-article > h5');
     }
-  
-  
+
+
     // set body to visible
     document.body.style.visibility = 'visible';
-  
+
     // force redraw for leaflet widgets
     if (window.HTMLWidgets) {
       var maps = window.HTMLWidgets.findAll(".leaflet");
@@ -1057,39 +1056,39 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
         });
       });
     }
-  
+
     // trigger 'shown' so htmlwidgets resize
     $('d-article').trigger('shown');
   }
-  
+
   function init_distill() {
-  
+
     init_common();
-  
+
     // create front matter
     var front_matter = $('<d-front-matter></d-front-matter>');
     $('#distill-front-matter').wrap(front_matter);
-  
+
     // create d-title
     $('.d-title').changeElementType('d-title');
-  
+
     // create d-byline
     var byline = $('<d-byline></d-byline>');
     $('.d-byline').replaceWith(byline);
-  
+
     // create d-article
     var article = $('<d-article></d-article>');
     $('.d-article').wrap(article).children().unwrap();
-  
+
     // move posts container into article
     $('.posts-container').appendTo($('d-article'));
-  
+
     // create d-appendix
     $('.d-appendix').changeElementType('d-appendix');
-  
+
     // flag indicating that we have appendix items
     var appendix = $('.appendix-bottom').children('h3').length > 0;
-  
+
     // replace footnotes with <d-footnote>
     $('.footnote-ref').each(function(i, val) {
       appendix = true;
@@ -1105,10 +1104,10 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     });
     // remove footnotes
     $('.footnotes').remove();
-  
+
     // move refs into #references-listing
     $('#references-listing').replaceWith($('#refs'));
-  
+
     $('h1.appendix, h2.appendix').each(function(i, val) {
       $(this).changeElementType('h3');
     });
@@ -1118,16 +1117,16 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
       appendix = true;
       $(this).nextUntil($('h1, h2, h3')).addBack().appendTo($('d-appendix'));
     });
-  
+
     // show d-appendix if we have appendix content
     $("d-appendix").css('display', appendix ? 'grid' : 'none');
-  
+
     // localize layout chunks to just output
     $('.layout-chunk').each(function(i, val) {
-  
+
       // capture layout
       var layout = $(this).attr('data-layout');
-  
+
       // apply layout to markdown level block elements
       var elements = $(this).children().not('div.sourceCode, pre, script');
       elements.each(function(i, el) {
@@ -1140,40 +1139,40 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
           $(this).wrap(layout_div);
         }
       });
-  
-  
+
+
       // unwrap the layout-chunk div
       $(this).children().unwrap();
     });
-  
+
     // remove code block used to force  highlighting css
     $('.distill-force-highlighting-css').parent().remove();
-  
+
     // remove empty line numbers inserted by pandoc when using a
     // custom syntax highlighting theme
     $('code.sourceCode a:empty').remove();
-  
+
     // load distill framework
     load_distill_framework();
-  
+
     // wait for window.distillRunlevel == 4 to do post processing
     function distill_post_process() {
-  
+
       if (!window.distillRunlevel || window.distillRunlevel < 4)
         return;
-  
+
       // hide author/affiliations entirely if we have no authors
       var front_matter = JSON.parse($("#distill-front-matter").html());
       var have_authors = front_matter.authors && front_matter.authors.length > 0;
       if (!have_authors)
         $('d-byline').addClass('hidden');
-  
+
       // article with toc class
       $('.d-contents').parent().addClass('d-article-with-toc');
-  
+
       // strip links that point to #
       $('.authors-affiliations').find('a[href="#"]').removeAttr('href');
-  
+
       // add orcid ids
       $('.authors-affiliations').find('.author').each(function(i, el) {
         var orcid_id = front_matter.authors[i].orcidID;
@@ -1188,12 +1187,12 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
           $(this).append(a);
         }
       });
-  
+
       // hide elements of author/affiliations grid that have no value
       function hide_byline_column(caption) {
         $('d-byline').find('h3:contains("' + caption + '")').parent().css('visibility', 'hidden');
       }
-  
+
       // affiliations
       var have_affiliations = false;
       for (var i = 0; i<front_matter.authors.length; ++i) {
@@ -1205,11 +1204,11 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
       }
       if (!have_affiliations)
         $('d-byline').find('h3:contains("Affiliations")').css('visibility', 'hidden');
-  
+
       // published date
       if (!front_matter.publishedDate)
         hide_byline_column("Published");
-  
+
       // document object identifier
       var doi = $('d-byline').find('h3:contains("DOI")');
       var doi_p = doi.next().empty();
@@ -1229,54 +1228,54 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
            .html(front_matter.doi)
            .appendTo(doi_p);
       }
-  
+
        // change plural form of authors/affiliations
       if (front_matter.authors.length === 1) {
         var grid = $('.authors-affiliations');
         grid.children('h3:contains("Authors")').text('Author');
         grid.children('h3:contains("Affiliations")').text('Affiliation');
       }
-  
+
       // remove d-appendix and d-footnote-list local styles
       $('d-appendix > style:first-child').remove();
       $('d-footnote-list > style:first-child').remove();
-  
+
       // move appendix-bottom entries to the bottom
       $('.appendix-bottom').appendTo('d-appendix').children().unwrap();
       $('.appendix-bottom').remove();
-  
+
       // clear polling timer
       clearInterval(tid);
-  
+
       // show body now that everything is ready
       on_load_complete();
     }
-  
+
     var tid = setInterval(distill_post_process, 50);
     distill_post_process();
-  
+
   }
-  
+
   function init_downlevel() {
-  
+
     init_common();
-  
+
      // insert hr after d-title
     $('.d-title').after($('<hr class="section-separator"/>'));
-  
+
     // check if we have authors
     var front_matter = JSON.parse($("#distill-front-matter").html());
     var have_authors = front_matter.authors && front_matter.authors.length > 0;
-  
+
     // manage byline/border
     if (!have_authors)
       $('.d-byline').remove();
     $('.d-byline').after($('<hr class="section-separator"/>'));
     $('.d-byline a').remove();
-  
+
     // remove toc
     $('.d-contents').remove();
-  
+
     // move appendix elements
     $('h1.appendix, h2.appendix').each(function(i, val) {
       $(this).changeElementType('h3');
@@ -1284,62 +1283,62 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     $('h3.appendix').each(function(i, val) {
       $(this).nextUntil($('h1, h2, h3')).addBack().appendTo($('.d-appendix'));
     });
-  
-  
+
+
     // inject headers into references and footnotes
     var refs_header = $('<h3></h3>');
     refs_header.text('References');
     $('#refs').prepend(refs_header);
-  
+
     var footnotes_header = $('<h3></h3');
     footnotes_header.text('Footnotes');
     $('.footnotes').children('hr').first().replaceWith(footnotes_header);
-  
+
     // move appendix-bottom entries to the bottom
     $('.appendix-bottom').appendTo('.d-appendix').children().unwrap();
     $('.appendix-bottom').remove();
-  
+
     // remove appendix if it's empty
     if ($('.d-appendix').children().length === 0)
       $('.d-appendix').remove();
-  
+
     // prepend separator above appendix
     $('.d-appendix').before($('<hr class="section-separator" style="clear: both"/>'));
-  
+
     // trim code
     $('pre>code').each(function(i, val) {
       $(this).html($.trim($(this).html()));
     });
-  
+
     // move posts-container right before article
     $('.posts-container').insertBefore($('.d-article'));
-  
+
     $('body').addClass('downlevel');
-  
+
     on_load_complete();
   }
-  
-  
+
+
   function init_common() {
-  
+
     // jquery plugin to change element types
     (function($) {
       $.fn.changeElementType = function(newType) {
         var attrs = {};
-  
+
         $.each(this[0].attributes, function(idx, attr) {
           attrs[attr.nodeName] = attr.nodeValue;
         });
-  
+
         this.replaceWith(function() {
           return $("<" + newType + "/>", attrs).append($(this).contents());
         });
       };
     })(jQuery);
-  
+
     // prevent underline for linked images
     $('a > img').parent().css({'border-bottom' : 'none'});
-  
+
     // mark non-body figures created by knitr chunks as 100% width
     $('.layout-chunk').each(function(i, val) {
       var figures = $(this).find('img, .html-widget');
@@ -1351,35 +1350,35 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
           var fig = $(this);
           fig.css('width', fig.attr('width') + 'px');
         });
-  
+
       }
     });
-  
+
     // auto-append index.html to post-preview links in file: protocol
     // and in rstudio ide preview
     $('.post-preview').each(function(i, val) {
       if (window.location.protocol === "file:")
         $(this).attr('href', $(this).attr('href') + "index.html");
     });
-  
+
     // get rid of index.html references in header
     if (window.location.protocol !== "file:") {
       $('.distill-site-header a[href]').each(function(i,val) {
         $(this).attr('href', $(this).attr('href').replace("index.html", "./"));
       });
     }
-  
+
     // add class to pandoc style tables
     $('tr.header').parent('thead').parent('table').addClass('pandoc-table');
     $('.kable-table').children('table').addClass('pandoc-table');
-  
+
     // add figcaption style to table captions
     $('caption').parent('table').addClass("figcaption");
-  
+
     // initialize posts list
     if (window.init_posts_list)
       window.init_posts_list();
-  
+
     // implmement disqus comment link
     $('.disqus-comment-count').click(function() {
       window.headroom_prevent_pin = true;
@@ -1393,17 +1392,18 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
       }
     });
   }
-  
+
   document.addEventListener('DOMContentLoaded', function() {
     if (is_downlevel_browser())
       init_downlevel();
     else
       window.addEventListener('WebComponentsReady', init_distill);
   });
-  
+
   </script>
-  
+
   <!--/radix_placeholder_distill-->
+  <script src="mapping-sdp-variables_files/header-attrs-2.6/header-attrs.js"></script>
   <script src="mapping-sdp-variables_files/font-awesome-5.13.0/js/script.js"></script>
   <script src="mapping-sdp-variables_files/jquery-1.11.3/jquery.min.js"></script>
   <script src="mapping-sdp-variables_files/anchor-4.2.2/anchor.min.js"></script>
@@ -1456,7 +1456,8 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <ul>
 <li><a href="#data">Data</a></li>
 <li><a href="#setup">Setup</a></li>
-<li><a href="#merge-and-map">Merge and Map</a><ul>
+<li><a href="#merge-and-map">Merge and Map</a>
+<ul>
 <li><a href="#basic-maps">Basic Maps</a></li>
 <li><a href="#merge-gps-and-sdp-data">Merge GPS and SDP Data</a></li>
 <li><a href="#map-sdp-data">Map SDP data</a></li>
@@ -1466,13 +1467,13 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 </nav>
 </div>
 <div class="layout-chunk" data-layout="l-body">
-<a href="data:text/x-markdown;base64,LS0tCnRpdGxlOiAiTWFwcGluZyBTZXJ2aWNlIERlbGl2ZXJ5IFBvaW50IERhdGEiCmRlc2NyaXB0aW9uOiB8CiAgTWFwIHNwYXRpYWwgdmFyaWF0aW9uIGluIHRoZSBzZXJ2aWNlIGRlbGl2ZXJ5IGVudmlyb25tZW50IGFjcm9zcyBlbnVtZXJhdGlvbiBhcmVhcy4KYXV0aG9yOgogIC0gbmFtZTogTmluYSBCcm9va3MKICAgIGFmZmlsaWF0aW9uOiBJUFVNUyBQTUEgUG9zdGRvY3RvcmFsIEFzc29jaWF0ZQpjYXRlZ29yaWVzOgogIC0gSW5kaXZpZHVhbCBpbiBDb250ZXh0CiAgLSBTZXJpdmNlIERlbGl2ZXJ5IFBvaW50cwogIC0gTWFwcGluZwogIC0gc2YKZGF0ZTogMDEtMTUtMjAyMQpvdXRwdXQ6CiAgZGlzdGlsbDo6ZGlzdGlsbF9hcnRpY2xlOgogICAgc2VsZl9jb250YWluZWQ6IGZhbHNlCiAgICB0b2M6IHRydWUKICAgIHRvY19kZXB0aDogMwogICAgdG9jX2Zsb2F0OiB0cnVlCmRyYWZ0OiB0cnVlCi0tLQoKCmBgYHtyIGRvd25sb2FkX2J1dHRvbiwgZWNobz1GfQpkb3dubG9hZHRoaXM6OmRvd25sb2FkX2ZpbGUoCiAgcGF0aCA9ICJtYXBwaW5nLXNkcC12YXJpYWJsZXMuUm1kIiwKICBidXR0b25fbGFiZWwgPSAiRG93bmxvYWQgdGhpcyBwYWdlIGFzIFIgY29kZSIsCiAgYnV0dG9uX3R5cGUgPSAiZGVmYXVsdCIsCiAgaGFzX2ljb24gPSBULAogIGljb24gPSAiZmEgZmEtc2F2ZSIKKQpgYGAKCmBgYHtyIHNldHVwLCBpbmNsdWRlPUZ9CmtuaXRyOjpvcHRzX2NodW5rJHNldChlY2hvID0gVCwgZXZhbCA9IFQsIG1lc3NhZ2UgPSBGKQpvcHRpb25zKHRpYmJsZS5wcmludF9taW49MTAsIHRpYmJsZS5tYXhfZXh0cmFfY29scyA9IDUpCmBgYAoKSW4gb3VyIGxhc3QgcG9zdCwgd2Ugc2hvd2VkIGhvdyBQTUEgU2VydmljZSBEZWxpdmVyeSBQb2ludCAoU0RQKSBkYXRhIGNhbiBiZSBhZ2dyZWdhdGVkIHRvIHRoZSBlbnVtZXJhdGlvbiBhcmVhIHRoZXkgc2VydmUgKGNhcHR1cmVkIGJ5IFtFQVNFUlZFRF0oaHR0cHM6Ly9wbWEuaXB1bXMub3JnL3BtYS1hY3Rpb24vdmFyaWFibGVzL0VBU0VSVkVEKSkgYW5kIGxpbmtlZCB0byB0aGUgaW5kaXZpZHVhbC1sZXZlbCBQTUEgc3VydmV5IGRhdGEuIEluIHRoaXMgcG9zdCwgd2UnbGwgc2hvdyBob3cgdGhlIFNEUCBkYXRhIGNhbiBiZSBsaW5rZWQgdG8gdGhlIFBNQSBHUFMgZGF0YXNldHMuIFRoZW4sIHdlJ2xsIG1hcCBkaWZmZXJlbnQgdmFyaWFibGVzIHRvIHNob3cgaG93IHZhcmlhdGlvbiBpbiB2YXJpYWJsZXMgY2FuIGJlIHVuZGVyc3Rvb2Qgc3BhdGlhbGx5LgoKIyBEYXRhCgpXZSdsbCBiZSB3b3JraW5nIHdpdGggdGhlIGZpbmFsIGBzZHBgIGRhdGFzZXQgY3JlYXRlZCBpbiB0aGUgcHJldmlvdXMgcG9zdC4gWW91IGNhbiBlaXRoZXIgY2hlY2sgb3V0IHRoYXQgcG9zdCBbaGVyZV0oaG93IHRvIGxpbmsgYmV0d2VlbiBwb3N0cz8pIG9yIGp1c3QgbG9hZCB0aGUgYHNkcGAgZGF0YXNldCBmcm9tIHRoZSDigJxkYXRh4oCdIGZvbGRlciBmb3IgdGhpcyBwb3N0IGluIHRoZSBQTUEgRGF0YSBIdWIgcmVwb3NpdG9yeSBvbiBHaXRIdWIgKGFkZCBsaW5rKS4gV2UnbGwgZm9jdXMgb24gYSBmZXcgb2YgdGhlIGBFQVNFQVJWRURgLWxldmVsIHZhcmlhYmxlcyBjcmVhdGVkIGluIHRoZSBsYXN0IHBvc3Q6CgogICogYE5VTV9NRVRIT0RTX1BST1ZgIC0gbnVtYmVyIG9mIG1ldGhvZHMgcHJvdmlkZWQgYnkgYXQgbGVhc3Qgb25lIFNEUAogICogYE5VTV9NRVRIT0RTX09VVGAgLSBudW1iZXIgb2YgbWV0aG9kcyBvdXQgb2Ygc3RvY2sgd2l0aCBhdCBsZWFzdCBvbmUgU0RQCiAgKiBgTlVNX01FVEhPRFNfSU5TVE9DS2AgLSBudW1iZXIgb2YgbWV0aG9kcyBpbi1zdG9jayB3aXRoIGF0IGxlYXN0IG9uZSBTRFAKICAqIGBOVU1fTUVUSE9EU19PVVQzTU9gIC0gbnVtYmVyIG9mIG1ldGhvZHMgb3V0IG9mIHN0b2NrIGFueSB0aW1lIGluIHRoZSBsYXN0IDMgbW9udGhzIHdpdGggYXQgbGVhc3Qgb25lIFNEUAogICogYE1FQU5fT1VUREFZYCAtIHRoZSBtZWFuIGxlbmd0aCBvZiBhIHN0b2Nrb3V0IGZvciBhbnkgZmFtaWx5IHBsYW5uaW5nIG1ldGhvZCAobWVhc3VyZWQgaW4gZGF5cykKICAqIGBOX1NEUGAgLSBudW1iZXIgb2YgU0RQcyAKICAKV2UnbGwgYWxzbyB1c2UgdGhlIGBTVFJBVEFgIHZhcmlhYmxlLCB3aGljaCBpZGVudGlmaWVzIHdoZXRoZXIgYW4gRUEgaXMgaW4gYW4gdXJiYW4gb3IgcnVyYWwgYXJlYS4gCgpXZSdsbCBhbHNvIGJlIHdvcmtpbmcgd2l0aCB0aGUgUE1BIEdQUyBkYXRhc2V0cyBmb3IgQnVya2luYSBGYXNvLiBUaGUgR1BTIGRhdGEgaW5jbHVkZSBvbmUgR1BTIGNvb3JkaW5hdGUgcGVyIGVudW1lcmF0aW9uIGFyZWEuIFRoZSBCdXJraW5hIEZhc28gUm91bmQgNSBhbmQgNiBzdXJ2ZXlzIHNhbXBsZWQgdGhlIHNhbWUgZW51bWVyYXRpb24gYXJlYXMsIHdoaWNoIG1lYW5zIHdlIGNhbiBsaW5rIHRoZSBHUFMgZGF0YSB0byBib3RoIHJvdW5kcyAoZWl0aGVyIG1lbnRpb24gaGVyZSBvciBpbiB0aGUgYXNpZGUgbGF0ZXIgb24pLgoKPGFzaWRlPgpSZWFkIG1vcmUgYWJvdXQgdGhlIEdQUyBkYXRhIGFuZCByZXF1ZXN0IGFjY2VzcyBvbiB0aGUgUE1BIG9uIHRoZSA8YSBocmVmPSJodHRwczovL3d3dy5wbWFkYXRhLm9yZy9kYXRhL2Fib3V0LWRhdGEiPlBNQSBEYXRhIHdlYnNpdGU8L2E+Lgo8L2FzaWRlPgoKVGhlIGxhc3QgZGF0YXNldCB3ZSdsbCB1c2UgaW4gdGhpcyBwb3N0IGFyZSB0aGUgYWRtaW5pc3RyYXRpdmUgYm91bmRhcmllcyBmb3IgQnVya2luYSBGYXNvLiBTaGFwZWZpbGVzIHdpdGggYWRtaW5pc3RyYXRpdmUgYm91bmRhcmllcyBhcmUgd2lkZWx5IGF2YWlsYWJsZSBmb3IgZG93bmxvYWQsIGJ1dCB3ZSdsbCB1c2UgdGhlIFIgcGFja2FnZSBbR0FETVRvb2xzXShodHRwczovL2NyYW4uci1wcm9qZWN0Lm9yZy93ZWIvcGFja2FnZXMvR0FETVRvb2xzL2luZGV4Lmh0bWwpLCB3aGljaCBhbGxvd3MgeW91IHRvIGRvd25sb2FkIHNoYXBlZmlsZXMgZGlyZWN0bHkgaW4gUi4gCgoKIyBTZXR1cApNYWtlIHN1cmUgeW91IGhhdmUgYWxsIG9mIHRoZSBmb2xsb3dpbmcgcGFja2FnZXMgaW5zdGFsbGVkLiBPbmNlIGluc3RhbGxlZCwgbG9hZCB0aGUgcGFja2FnZXMgd2UnbGwgYmUgdXNpbmcgdG9kYXk6CgpgYGB7ciBsb2NhbH0KbGlicmFyeShpcHVtc3IpCmxpYnJhcnkoc2YpICMgcHJpbWFyeSBzcGF0aWFsIHBhY2thZ2UKbGlicmFyeShHQURNVG9vbHMpICMgZm9yIGRvd25sb2FkaW5nIHNoYXBlZmlsZXMKbGlicmFyeSh2aXJpZGlzKSAjIGZvciBjb2xvciBwYWxldHRlcwpsaWJyYXJ5KHRhYnVsYXRvcikgIyBmb3IgcGlwZS1mcmllbmRseSB0YWJzICYgY3Jvc3MtdGFicwpsaWJyYXJ5KHRpZHl2ZXJzZSkKYGBgCgpMb2FkIHRoZSBTRFAgZGF0YSBhbmQgdGhlIEdQUyBkYXRhIGZyb20gdGhlIGRhdGEgZm9sZGVyIGFuZCBjaGVjayBvdXQgd2hhdCB0aGUgR1BTIGRhdGEgY29udGFpbnM6CgpgYGB7cn0KbG9hZCgiZGF0YS9zZHAuUmRhdGEiKSAKCmdwcyA8LSByZWFkX2NzdigiZGF0YS9QTUFfQkZfR1BTX3YxXzI0SnVsMjAxOC5jc3YiKQpncHMKYGBgCgpUaGUgYGdwc2AgZGF0YSBoYXMgNyB2YXJpYWJsZXM6CgogICogUE1BQ0M6IHRoZSAzLWxldHRlciBjb3VudHJ5IGNvZGUgKGFzayBEZXZvbiBhYm91dCB0aGlzIC0gdGhleSBzZWVtIHRvIGJlIDItbGV0dGVycz8pCiAgKiBQTUFZRUFSOiB0aGUgNC1kaWdpdCB5ZWFyIG9mIGRhdGEgY29sbGVjdGlvbgogICogUkVHSU9OOiBzdWItbmF0aW9uYWwgYWRtaW5pc3RyYXRpdmUgZGl2aXNpb24gbmFtZQogICogRUFfSUQ6IHRoZSBlbnVtZXJhdGlvbiBhcmVhIElEIChhbmQgaG93IHdlJ2xsIG1lcmdlIHRoaXMgZGF0YSBpbnRvIG90aGVyIFBNQSBkYXRhc2V0cykKICAqIEdQU0xBVDogdGhlIGRpc3BsYWNlZCBFQSdzIGNlbnRyb2lkIGxhdGl0dWRlIGNvb3JkaW5hdGUgaW4gZGVjaW1hbCBkZWdyZWVzCiAgKiBHUFNMT05HOiB0aGUgZGlzcGxhY2VkIEVBJ3MgY2VudHJvaWQgbG9uZ2l0dWRlIGNvb3JkaW5hdGUgaW4gZGVjaW1hbCBkZWdyZWVzCiAgKiBEQVRVTTogdGhlIGNvb3JkaW5hdGUgcmVmZXJlbmNlIHN5c3RlbSBhbmQgZ2VvZ3JhcGhpYyBkYXR1bS4gVGhpcyB2YXJpYWJsZSBpcyBhbHdheXMgIldHUzg0IiBmb3IgdGhlIFdvcmxkIEdlb2RldGljIFN5c3RlbSAxOTg0LgoKPGFzaWRlPgpOb3RlIHRoYXQgd2hpbGUgdGhlIGBQTUFZRUFSYCB2YXJpYWJsZSBpcyAyMDE3IGZvciBhbGwgRUFzLCBiZWNhdXNlIHRoZSBzYW1lIEVBcyB3ZXJlIHNhbXBsZWQgaW4gdGhlIDIwMTcgKFJvdW5kIDUpIGFuZCAyMDE4IChSb3VuZCA2KSBzdXJ2ZXlzLCB3ZSBjYW4gbGluayB0aGVzZSBjb29yZGluYXRlcyB0byBib3RoIHNhbXBsZXMuCjwvYXNpZGU+Cgo8YXNpZGU+ClRoZSBgUkVHSU9OYCB2YXJpYWJsZSBjb3JyZXNwb25kcyB0byB0aGUgZmlyc3QgYWRtaW5pc3RyYXRpdmUgbGV2ZWwgaW4gYSBnaXZlbiBjb3VudHJ5IG9yIGBhZG1fMWAgaW4gR0FETSBsYW5ndWFnZS4KPC9hc2lkZT4KCk5vdGUgdGhhdCB0aGUgYEdQU0xBVGAgYW5kIGBHUFNMT05HYCBhcmUgKipkaXNwbGFjZWQqKiBjb29yZGluYXRlcyBvZiB0aGUgRUEgY2VudHJvaWQuIFRoaXMgaXMgYmVjYXVzZSBQTUEgcmFuZG9tbHkgZGlzcGxhY2VzIHRoZSBnZW9ncmFwaGljIGNvb3JkaW5hdGVzIHRvIHByZXNlcnZlIHRoZSBwcml2YWN5IG9mIHN1cnZleSByZXNwb25kZW50cy4gQ29vcmRpbmF0ZXMgYXJlIGRpc3BsYWNlZCByYW5kb21seSBieSBib3RoIGFuZ2xlIGFuZCBkaXN0YW5jZS4gVXJiYW4gRUFzIGFyZSBkaXNwbGFjZWQgZnJvbSB0aGVpciB0cnVlIGxvY2F0aW9uIHVwIHRvIDIga20uIFJ1cmFsIEVBcyBhcmUgZGlzcGxhY2VkIGZyb20gdGhlaXIgdHJ1ZSBsb2NhdGlvbiB1cCB0byA1IGttLiBBZGRpdGlvbmFsbHksIGEgcmFuZG9tIHNhbXBsZSBvZiAxJSBvZiBydXJhbCBFQXMgYXJlIGRpc3BsYWNlZCB1cCB0byAxMGttLiBUaGUgUE1BIEdQUyBkYXRhIGNvbWUgd2l0aCBkb2N1bWVudGF0aW9uIHRoYXQgZXhwbGFpbnMgdGhlIGRpc3BsYWNlbWVudCBpbiBtb3JlIGRldGFpbC4gVGhlIHByaW1hcnkgc3BhdGlhbCBwYWNrYWdlIHdlJ2xsIHVzZSBpcyBzaW1wbGUgZmVhdHVyZXMgb3IgYHNmYC4gV2UnbGwgdXNlIGBzZjo6c3RfYXNfc2YoKWAgdG8gY29udmVydCB0aGUgR1BTIGRhdGEgdG8gYSBzcGF0aWFsIGRhdGEgb2JqZWN0IChrbm93biBhcyBhIHNpbXBsZSBmZWF0dXJlIGNvbGxlY3Rpb24pLgoKPGFzaWRlPgpQTUEgZm9sbG93cyB0aGUgc2FtZSBkaXNwbGFjZW1lbnQgcHJvdG9jb2wgYXMgdGhlIERlbW9ncmFwaGljIGFuZCBIZWFsdGggU3VydmV5cywgZm9yIHRob3NlIGZhbWlsaWFyIHRoZSB0aGUgREhTIHNwYXRpYWwgZGF0YS4KPC9hc2lkZT4KCmBgYHtyfQpncHMgPC0gZ3BzICU+JQogICAgc3RfYXNfc2YoCiAgICAgIGNvb3JkcyA9IGMoIkdQU0xPTkciLCAiR1BTTEFUIiksIAogICAgICBjcnMgPSA0MzI2KSAjIDQzMjYgaXMgdGhlIGNvb3JkaW5hdGUgcmVmZXJlbmNlIHN5c3RlbSAoQ1JTKSBpZGVudGlmaWVyIGZvciBXR1M4NApncHMKYGBgCgpOb3cgdGhhdCBgZ3BzYCBpcyBhIHNpbXBsZSBmZWF0dXJlcyBvYmplY3QsIHdlJ3ZlIGxvc3QgdGhlIGBHUFNMQVRgIGFuZCBgR1BTTE9OR2AgdmFyaWFibGVzIGFuZCBnYWluZWQgYSB2YXJpYWJsZSBjYWxsZWQgYGdlb21ldHJ5YCwgd2hpY2ggY29udGFpbnMgdGhlIHNwYXRpYWwgaW5mb3JtYXRpb24gZm9yIHRoaXMgZGF0YS4gCgpUaGUgbGFzdCB0aGluZyB3ZSBuZWVkIGlzIHRoZSBCdXJraW5hIEZhc28gc2hhcGVmaWxlLiBbR0FETVRvb2xzXShodHRwczovL2NyYW4uci1wcm9qZWN0Lm9yZy93ZWIvcGFja2FnZXMvR0FETVRvb2xzL2luZGV4Lmh0bWwpIHdpbGwgYWxsb3cgdXMgdG8gZG93bmxvYWQgYW5kIGxvYWQgc2hhcGVmaWxlcyBkaXJlY3RseSBmcm9tIFIuIENvbnZlbmllbnRseSwgYEdBRE1Ub29sczo6Z2FkbV9zZl9sb2FkQ291bnRyaWVzKClgIHdpbGwgbG9hZCB0aGUgc2hhcGVmaWxlIGFzIGFuIGBzZmAgb2JqZWN0LiBUaGUgYGJmXzFgIG9iamVjdCBpcyBhIGxpc3Qgd2hpY2ggY29udGFpbnMgc29tZSBtZXRhZGF0YSBpbiBhZGRpdGlvbiB0byB0aGUgc2hhcGVmaWxlLCBidXQgd2UgZG9uJ3QgbmVlZCBhbnl0IG9mIGl0IHJpZ2h0IG5vdywgc28gd2UnbGwgb25seSB0YWtlIHRoZSBgc2ZgIG9iamVjdC4gTm90ZSB0aGF0IGhlcmUgdGhlIGBnZW9tZXRyeWAgdmFyaWFibGUgaXMgYSBgUE9MWUdPTmAsIHdoZXJlYXMgaW4gdGhlIGBncHNgIGRhdGEgaXQgaXMgYSBgUE9JTlRgLgoKPGFzaWRlPgpZb3UnbGwgbmVlZCBgR0RBTGAgYW5kIGByZ2RhbGAgaW5zdGFsbGVkIHRvIHVzZSBgR0FETVRvb2xzYC4gQ2hlY2sgb3VyIG91ciBbUiBTcGF0aWFsIFRpcHNdKGxpbmspIHBvc3QgZm9yIGEgcHJpbWVyIG9uIHNwYXRpYWwgcGFja2FnZXMgYW5kIGluc3RhbGxhdGlvbi4gSWYgeW91IGhhdmUgaXNzdWVzIHVzaW5nIGBHQURNVG9vbHNgLCBmZWVsIGZyZWUgdG8ganVzdCBsb2FkIHRoZSBzaGFwZWZpbGUgZGlyZWN0bHkgZnJvbSB0aGUgImRhdGEiIGRpcmVjdG9yeSBmb3IgdGhpcyBwb3N0Lgo8L2FzaWRlPgoKCmBgYHtyfQpiZl8xIDwtIGdhZG1fc2ZfbG9hZENvdW50cmllcygKICBmaWxlTmFtZXMgPSAiQkZBIiwgIyB0aGUgSVNPLTMxNjYtMSBjb3VudHJ5IGNvZGUgCiAgYmFzZWZpbGUgPSAiZGF0YS8iLCAjIHRoZSBkaXJlY3Rvcnkgd2hlcmUgdGhlIHNoYXBlZmlsZSB3aWxsIGJlIHNhdmVkCiAgbGV2ZWwgPSAxKSAjIGluZGljYXRlcyB0aGF0IHdlIHdhbnQgYWRtaW5pc3RyYXRpdmUgbGV2ZWwgMQoKYmZfMSA8LSBiZl8xJHNmCgojIGlmIHlvdSBkb24ndCBoYXZlIEdBRE1Ub29scyBpbnN0YWxsZWQsIHVuY29tbWVudCB0aGUgY29kZSBiZWxvdyB0byBsb2FkIHRoZSBzaGFwZWZpbGUKIyBiZl8xIDwtIHJlYWRSRFMoImRhdGEvQkZBX2FkbTEuc2YucmRzIikKCmJmXzEKCmBgYAoKCiMgTWVyZ2UgYW5kIE1hcApOb3cgdGhhdCB3ZSBoYXZlIGFsbCBvdXIgZGF0YSwgd2UnbGwgc2hvdyB5b3UgaG93IHRvIG1hcCB2YXJpYWJsZXMuLi4gQnV0IGJlZm9yZSB3ZSBkbyB0aGF0LCBsZXQncyBkbyBzb21lIGJhc2ljLCBleHBsb3JhdG9yeSBtYXBwaW5nLgoKIyMgQmFzaWMgTWFwcwpgZ2dwbG90MmAgaGFzIHN1cHBvcnQgZm9yIGBzZmAgb2JqZWN0cywgd2hpY2ggbWFrZXMgaXQgcmVhbGx5IGVhc3kgdG8gbWFwIHRoaW5ncyB1c2luZyB0aGUgYGdncGxvdDI6Omdlb21fc2YoKWAuIGBnZW9tX3NmKClgIHdpbGwgYXV0b21hdGljYWxseSBpZGVudGlmeSB3aGF0IGtpbmQgb2Ygc3BhdGlhbCBkYXRhIHlvdSdyZSBwbG90dGluZyBhbmQgaGFuZGxlIGl0IGFwcHJvcHJpYXRlbHkuIEZvciBleGFtcGxlLCBsZXQncyBwbG90IHRoZSBgZ3BzYCBkYXRhICh3aGljaCBhcmUgcG9pbnRzKSBhbmQgdGhlIGFkbWluaXN0cmF0aXZlIHJlZ2lvbiAod2hpY2ggYXJlIHBvbHlnb25zKS4KCmBgYHtyfQojIFBsb3QgRUEgY2VudHJvaWRzCmdncGxvdCgpICsKICBnZW9tX3NmKGRhdGEgPSBncHMpCgojIFBsb3QgcmVnaW9ucyBvZiBCdXJraW5hIEZhc28KZ2dwbG90KCkgKwogIGdlb21fc2YoZGF0YSA9IGJmXzEpCgpgYGAKClRoZSBidWlsZGluZy1ibG9jayBhcHByb2FjaCBvZiBgZ2dwbG90MmAgKCJHcmFtbWFyIG9mIEdyYXBoaWNzIikgYWxzbyBtYWtlcyBpdCByZWFsbHkgZWFzeSB0byBsYXllciBkaWZmZXJlbnQgc3BhdGlhbCBmZWF0dXJlcyBvbiB0aGUgc2FtZSBtYXAuCgpgYGB7cn0KIyBQbG90IHJlZ2lvbnMgb2YgQnVya2luYSBGYXNvICYgRUEgY2VudHJvaWRzIG9uIHRoZSBzYW1lIG1hcApnZ3Bsb3QoKSArCiAgZ2VvbV9zZihkYXRhID0gYmZfMSkgKwogIGdlb21fc2YoZGF0YSA9IGdwcykKICAKYGBgCgojIyBNZXJnZSBHUFMgYW5kIFNEUCBEYXRhClRvIG1hcCB0aGUgRUEtbGV2ZWwgdmFyaWFibGVzIGNvbnN0cnVjdGVkIGluIHRoZSBsYXN0IHBvc3QsIHdlIG5lZWQgdG8gbWVyZ2UgdGhlIGBzZHBgIGRhdGEgYW5kIHRoZSBgZ3BzYCBkYXRhIGJ5IGBFQV9JRGAuIEZpcnN0LCBsZXQncyByZW5hbWUgdGhlIGBFQVNFQVJWRURgIHZhcmlhYmxlIHRvIG1hdGNoIHRoZSBHUFMgZGF0YSBhbmQgdGhlbiB1c2UgYSBgZHBseXI6OnJpZ2h0X2pvaW5gIHRvIG1lcmdlIGluIHRoZSBTRFAgZGF0YS4gV2UgbmVlZCB0byB1c2UgYSBgcmlnaHRfam9pbigpYCBiZWNhdXNlIHRoZSBzZiBvYmplY3QgbXVzdCBiZSBsaXN0ZWQgZmlyc3QgaW4gb3VyIGpvaW4gY29tbWFuZCB0byByZXRhaW4gdGhlIHNmIGNsYXNzLCBidXQgd2Ugd2FudCB0byBlbnN1cmUgdGhhdCBhbGwgcm93cyBmcm9tIGBzZHBgIGFyZSBwcmVzZXJ2ZWQuCgo8YXNpZGU+ClJlbWVtYmVyLCB0aGUgU0RQIGRhdGEgY29udGFpbnMgaW5mb3JtYXRpb24gZnJvbSBib3RoIDIwMTcgYW5kIDIwMTgsIHdoaWxlIHRoZSBHUFMgZGF0YSBoYXMgYSBzaW5nbGUgb2JzZXJ2YXRpb24gcGVyIEVBLgo8L2FzaWRlPgoKYGBge3J9CiMgcmVuYW1lIHRvIGJlIGNvbnNpc3RlbnQgd2l0aCBHUFMgZGF0YQpzZHAgPC0gc2RwICU+JQogIHJlbmFtZSgKICAgIEVBX0lEID0gRUFTRVJWRUQgCiAgKQoKc2RwIDwtIHJpZ2h0X2pvaW4oZ3BzLCBzZHAsIGJ5ID0gIkVBX0lEIikKCnNkcCAjIG5vdyB0aGUgc2RwIGRhdGEgaXMgYW4gc2Ygb2JqZWN0CmBgYAoKIyMgTWFwIFNEUCBkYXRhClJlbWVtYmVyLCB0aGUgYHNkcGAgZGF0YSBjb250YWlucyBpbmZvcm1hdGlvbiBmcm9tIDIwMTcgJiAyMDE4IGZvciB0aGUgc2FtZSBFQSwgd2hpY2ggY2FuIGNsb2cgdXAgdGhlIG1hcCBkZXBlbmRpbmcgb24gaG93IHdlIHVzZSB0aGlzIGluZm9ybWF0aW9uLiBUbyBzdGFydCBvdXQsIGxldCdzIHVzZSBvbmx5IHRoZSAyMDE3IGRhdGEgYW5kIGFkZCBpbmZvcm1hdGlvbiBhYm91dCB0aGUgbnVtYmVyIG9mIHNlcnZpY2UgZGVsaXZlcnkgcHJvdmlkZXJzIHRoYXQgc2VydmUgYSBnaXZlbiBFQSAoYE5fU0RQYCkuIEJ5IHBhc3NpbmcgYE5fU0RQYCB0byB0aGUgc2l6ZSBhZXN0aGV0aWMsIHdlIGNhbiBtb3JlIGVhc2lseSB2aXN1YWxpemUgaG93IEVBcyB2YXJ5IGluIHRoZWlyIGFjY2VzcyB0byBzZXJ2aWNlIGRlbGl2ZXJ5IHByb3ZpZGVycy4KCmBgYHtyfQpzZHAyMDE3IDwtIHNkcCAlPiUKICBmaWx0ZXIoWUVBUiA9PSAyMDE3KQoKZ2dwbG90KCkgKwogIGdlb21fc2YoZGF0YSA9IGJmXzEpICsKICBnZW9tX3NmKGRhdGEgPSBzZHAyMDE3LCAKICAgICAgICAgIGFlcyhzaXplID0gTl9TRFApLAogICAgICAgICAgYWxwaGEgPSAwLjQpIAoKCmBgYAoKRnJvbSB0aGUgbWFwLCBpdCBsb29rcyBsaWtlIHRoZXJlIG1heSBiZSBhIGZldyBsb2NhdGlvbnMgd2hlcmUgdGhlcmUgRUFzIGFyZSBib3RoIGNsb3NlIHRvZ2V0aGVyIGFuZCBzZXJ2ZWQgYnkgbWFueSBTRFBzLCB3aGljaCBhcmUgbGlrZWx5IGluIHVyYmFuIGFyZWFzLiBGb3IgZXhhbXBsZSwgdGhlIGNhcGl0YWwgb2YgQnVya2luYSBGYXNvLCBPdWFnYWRvdWdvdSwgaXMgaW4gdGhlIGNlbnRlciBvZiB0aGUgbWFwIHdoZXJlIHRoZXJlIGFyZSBhIG51bWJlciBvZiBFQXMgb24gdG9wIG9mIGVhY2ggb3RoZXIuIEJ1dCwgaXQncyBhIGxpdHRsZSBoYXJkIHRvIHNlZSB0aGUgdmFyaWF0aW9uIGluIHNpemUgd2hlbiB0aGVyZSBhcmUgc28gbWFueSB2YWx1ZXMgZm9yIGBOX1NEUGAgYW5kIHNvIG1hbnkgRUFzIG9uIHRvcCBvZiBlYWNoIG90aGVyLiBMZXQncyBkbyB0d28gdGhpbmdzIHRvIG1ha2UgdGhpcyBtb3JlIHJlYWRhYmxlLiBGaXJzdCwgd2UnbGwgY3JlYXRlIHNtYWxsZXIgY2F0ZWdvcmllcyBvZiB0aGUgYE5fU0RQYCB2YXJpYWJsZSwgYW5kIHNlY29uZCwgd2UnbGwgbWFwIHRoZSBgU1RSQVRBYCB2YXJpYWJsZSB0byB0aGUgY29sb3IgYWVzdGhldGljLgoKYGBge3J9CnNkcDIwMTcgPC0gc2RwMjAxNyAlPiUKICBtdXRhdGUoCiAgICBOX1NEUF9DQVQgPSBjYXNlX3doZW4oCiAgICAgIE5fU0RQIDw9IDIgfiAxLAogICAgICBOX1NEUCA+MiAmIE5fU0RQIDw9IDQgfiAyLAogICAgICBOX1NEUCA+NCB+IDMpLAogICAgTl9TRFBfQ0FUID0gZmFjdG9yKE5fU0RQX0NBVCwKICAgICAgICAgICAgICAgICAgICAgICBsZXZlbHMgPSBjKDEsIDIsIDMpLAogICAgICAgICAgICAgICAgICAgICAgIGxhYmVscyA9IGMoIkxvdyIsICJNaWQiLCAiSGlnaCIpLAogICAgICAgICAgICAgICAgICAgICAgIG9yZGVyZWQgPSBUKSwgIyBuZWVkcyB0byBiZSBhbiBPUkRFUkVEIGZhY3RvciB0byBtYXAgdG8gdGhlIHNpemUgYWVzdGhldGljCiAgICBNRUFOX09VVERBWSA9IGlmZWxzZShpcy5uYShNRUFOX09VVERBWSksIDAsIE1FQU5fT1VUREFZKQogICkKCnNkcDIwMTcgPC0gc2RwMjAxNyAlPiUKICBtdXRhdGUoU1RSQVRBID0gZmFjdG9yKHNhbXBsZShjKDAsMSksIHNpemUgPSBucm93KHNkcDIwMTcpLCByZXBsYWNlID0gVCkpKQoKZ2dwbG90KCkgKwogIGdlb21fc2YoZGF0YSA9IGJmXzEpICsKICBnZW9tX3NmKGRhdGEgPSBzZHAyMDE3LCAKICAgICAgICAgIGFlcyhzaXplID0gTl9TRFBfQ0FULAogICAgICAgICAgICAgIGNvbG9yID0gU1RSQVRBKSwKICAgICAgICAgIGFscGhhID0gMC40KSArCiAgc2NhbGVfY29sb3JfdmlyaWRpc19kKCkgIyB0aGlzIGdpdmVzIHVzIHNvbWUgbmljZXIgY29sb3JzIHRoYW4gdGhlIGdncGxvdCBkZWZhdWx0cyAodGhlIGQgaXMgZm9yIGEgZGlzY3JldGUgdmFyaWFibGUpCgoKYGBgClVyYmFuIGFyZWFzIGFyZSBjbGVhcmx5IHNlcnZlZCBieSBtb3JlIFNEUHMsIHdoaWNoIGlzIG5vdCByZWFsbHkgc3VycHJpc2luZy4gQnV0LCB3aGF0IGlzIHRoZSBzZXJ2aWNlIGVudmlyb25tZW50IGxpa2U/IERvIHVyYmFuIGFyZWFzIGhhdmUgbW9yZSBzdG9jay1vdXRzIHRoYW4gcnVyYWwgYXJlYXM/IERvIFNEUHMgaW4gdXJiYW4gYXJlYXMgb2ZmZXIgYSBncmVhdGVyIHNlbGVjdGlvbiBvZiBmYW1pbHkgcGxhbm5pbmcgbWV0aG9kcz8gRGlkIHRoZSBzZXJ2aWNlIGVudmlyb25tZW50IGNoYW5nZSBiZXR3ZWVuIDIwMTcgYW5kIDIwMTg/IE1hcHBpbmcgY2FuIHNoZWQgYSBsb3Qgb2YgbGlnaHQgb24gdGhlc2UgcXVlc3Rpb25zLiAKCkxldCdzIGxvb2sgYXQgdGhlIGBOVU1fTUVUSE9EU19QUk9WYCB2YXJpYWJsZSBjcmVhdGVkIGluIHRoZSBsYXN0IHBvc3QuIFRoaXMgdmFyaWFibGUgY2FwdHVyZXMgdGhlIG51bWJlciBvZiBmYW1pbHkgcGxhbm5pbmcgbWV0aG9kcyBwcm92aWRlZCBieSBhdCBsZWFzdCBvbmUgU0RQIHRoYXQgc2VydmVzIGEgZ2l2ZW4gRUEuCgpgYGB7cn0KCnNkcDIwMTcgJT4lCiAgdGFiKE5VTV9NRVRIT0RTX1BST1YpICU+JQogIGFycmFuZ2UoTlVNX01FVEhPRFNfUFJPVikKCmBgYApTaW5jZSB0aGVyZSBpcyBub3QgYSBsYXJnZSByYW5nZSBvZiBudW1iZXIgb2YgRlAgbWV0aG9kcyBwcm92aWRlZCwgbGV0J3MgZGljaG90b21pemUgdGhpcyBzbyB3ZSBjYW4gbWFwIGl0IHRvIHRoZSBgc2hhcGVgIGFlc3RoZXRpYy4KCmBgYHtyfQpzZHAyMDE3IDwtIHNkcDIwMTcgJT4lCiAgbXV0YXRlKAogICAgTlVNX01FVEhPRFNfQ0FUID0gY2FzZV93aGVuKAogICAgICBOVU1fTUVUSE9EU19QUk9WIDw9IDkgfiAxLAogICAgICBOVU1fTUVUSE9EU19QUk9WID45ICB+IDIpLAogICAgTlVNX01FVEhPRFNfQ0FUID0gZmFjdG9yKE5VTV9NRVRIT0RTX0NBVCwKICAgICAgICAgICAgICAgICAgICAgICBsZXZlbHMgPSBjKDEsIDIpLAogICAgICAgICAgICAgICAgICAgICAgIGxhYmVscyA9IGMoIkxvdyAoPD05KSIsICJIaWdoICg+OSkiKSwKICAgICAgICAgICAgICAgICAgICAgICBvcmRlcmVkID0gVCkKICApCgojIHNoYXBlIGFzIGNhdGVnb3JpY2FsIG51bSBtZXRob2RzLCBjb2xvciBhcyBzdHJhdGEsIGFuZCBzaXplIGFzIHN0b2Nrb3V0cyB3b3JrcyBwcmV0dHkgd2VsbAojIHNoYXBlIGFzIHN0cmF0YSwgc2l6ZSBhcyBudW0gbWV0aG9kcywgYW5kIGNvbG9yIGFzIG51bSBzdG9ja291dHMgYWxzbyB3b3JrcyB3ZWxsCiMgY291bGQgdHJ5IGRvaW5nIGFuIGludGVyYWN0aW9uIG9mIHN0cmF0YSAmIG51bSBtZXRob2RzIHByb3ZpZGVkCmdncGxvdCgpICsKICBnZW9tX3NmKGRhdGEgPSBiZl8xKSArCiAgZ2VvbV9zZihkYXRhID0gc2RwMjAxNywgCiAgICAgICAgICBhZXMoc2l6ZSA9IE5VTV9NRVRIT0RTX0NBVCwKICAgICAgICAgICAgICBzaGFwZSA9IFNUUkFUQSwKICAgICAgICAgICAgICBjb2xvciA9IE5VTV9NRVRIT0RTX09VVDNNTyksCiAgICAgICAgICBhbHBoYSA9IDAuNCkgKwogIHNjYWxlX2NvbG9yX3ZpcmlkaXNfYygpIAoKCmBgYAoKIyBQdXR0aW5nIGl0IGFsbCB0b2dldGhlcgpOb3cgd2UgaGF2ZSBhIG1hcCB0aGF0IHNob3dzIHNwYXRpYWwgdmFyaWF0aW9uIGluIGF2YWlsYWJpbGl0eSBvZiBkaWZmZXJlbnQgbWV0aG9kcyBvZiBmYW1pbHkgcGxhbm5pbmcgYW5kIHByZXZhbGVuY2Ugb2Ygc3RvY2stb3V0cywgYXMgd2VsbCBhcyBkZW1vbnN0cmF0ZXMgaG93IHRoZXNlIGNoYXJhY3RlcmlzdGljIGRpZmZlciBhY3Jvc3MgdXJiYW4gdnMuIHJ1cmFsIEVBcy4gSXQncyBzdXBlciBxdWljayB0byBtYWtlIGEgYmFzaWMgbWFwIGxpa2UgdGhpcywgYnV0IGxldCdzIGNsZWFuIHVwIGEgZmV3IHRoaW5ncyB0byBtYWtlIGl0IGxvb2sgbmljZXIuIAoKYGBge3J9CmdncGxvdCgpICsKICBnZW9tX3NmKGRhdGEgPSBiZl8xLCBmaWxsID0gIiNmMmYyZjUiKSArCiAgZ2VvbV9zZihkYXRhID0gc2RwMjAxNywgCiAgICAgICAgICBhZXMoc2l6ZSA9IE5VTV9NRVRIT0RTX0NBVCwKICAgICAgICAgICAgICBzaGFwZSA9IFNUUkFUQSwKICAgICAgICAgICAgICBjb2xvciA9IE5VTV9NRVRIT0RTX09VVDNNTyksCiAgICAgICAgICBhbHBoYSA9IDAuNCkgKwogIHNjYWxlX2NvbG9yX3ZpcmlkaXNfYyhkaXJlY3Rpb24gPSAtMSkgKyAjIHJldmVyc2luZyB0aGUgZGlyZWN0aW9uIG1ha2VzIHRoZSBoaWdoICNzIHN0YW5kIG91dCBtb3JlCiAgbGFicyh0aXRsZSA9ICJTcGF0aWFsIFZhcmlhdGlvbiBpbiBGYW1pbHkgUGxhbm5pbmcgU2VydmljZSBFbnZpcm9ubWVudCIsCiAgICAgICBzdWJ0aXRsZSA9ICJCdXJraW5hIEZhc28gMjAxNy0yMDE4IiwKICAgICAgIGNhcHRpb24gPSAiU291cmNlOiBJUFVNUyBQTUEiLAogICAgICAgc2hhcGUgPSAiIiwKICAgICAgIHNpemUgPSAiTWV0aG9kc1xuUHJvdmlkZWQiLAogICAgICAgY29sb3IgPSAiT3V0IG9mIFN0b2NrXG4oUGFzdCAzIE1vbnRocykiLAogICAgICAgeCA9IE5VTEwsCiAgICAgICB5ID0gTlVMTCkgKwogIHRoZW1lX21pbmltYWwoKSArCiAgdGhlbWUoCiAgICBheGlzLmxpbmUgPSBlbGVtZW50X2JsYW5rKCksCiAgICBheGlzLnRleHQueCA9IGVsZW1lbnRfYmxhbmsoKSwKICAgIGF4aXMudGV4dC55ID0gZWxlbWVudF9ibGFuaygpLAogICAgYXhpcy50aWNrcyA9IGVsZW1lbnRfYmxhbmsoKSwKICAgIGF4aXMudGl0bGUueCA9IGVsZW1lbnRfYmxhbmsoKSwKICAgIGF4aXMudGl0bGUueSA9IGVsZW1lbnRfYmxhbmsoKSkKCiMgaWYgeW91IHdhbnQgdG8gZXhwb3J0IHlvdXIgbWFwLCB1bmNvbW1lbnQgdGhlIGZvbGxvd2luZyBsaW5lIG9mIGNvZGUKIyBnZ3NhdmUoZmlsZW5hbWUgPSAiZGF0YS9iZl9mcF9tYXAucGRmIiwgCiMgICAgICAgIGhlaWdodCA9IDQuNSwgd2lkdGggPSA3KQpgYGAKVGhpcyBtYXAgc3VnZ2VzdHMgdGhlcmUgaXMgc3BhdGlhbCBjb3JyZWxhdGlvbiB0byB0aGUgc3RvY2tvdXRzIC0tIHdpdGggMiByZWdpb25zIHJlc3BvbnNpYmxlIGZvciB0aGUgbWFqb3JpdHkgb2YgRUFzIHdpdGggc3RvY2tvdXRzLiBJdCBhbHNvIGxvb2tzIGxpa2UgdGhlc2UgRUFzIHRlbmQgdG8gaGF2ZSBtb3JlIG1ldGhvZHMgcHJvdmlkZWQgYnkgdGhlIFNEUHMgdGhhdCBzZXJ2ZSB0aGVtLiBGaW5hbGx5LCBsZXQncyB1c2UgYm90aCB5ZWFycyBvZiBkYXRhIGFuZCBzZWUgaWYgdGhlcmUgaXMgYW55IHRlbXBvcmFsIHZhcmlhdGlvbi4gVG8gZG8gdGhpcywgd2UnbGwgdXNlIHRoZSBvcmlnaW5hbCBgc2RwYCBkYXRhc2V0IChpbnN0ZWFkIG9mIGBzZHAyMDE3YCkgYW5kIHJlLWNyZWF0ZSB0aGUgc21hZSBgTlVNX01FVEhPRFNfQ0FUYCBmYWN0b3IgdmFyaWFibGUgdGhhdCBkaWNob3RvbWl6ZXMgdGhlIGBOVU1fTUVUSE9EU19QUk9WYCB2YXJpYWJsZS4gVGhlbiwgd2UnbGwgdXNlIGBmYWNldF93cmFwKClgIHRvIG1ha2UgYSBtdWx0aS1wYW5lbCBwbG90LCB3aXRoIG9uZSBwYW5lbCBwZXIgeWVhci4KCmBgYHtyLCBsYXlvdXQ9ImwtYm9keS1vdXRzZXQiLCBmaWcud2lkdGg9NywgZmlnLmhlaWdodD00fQpzZHAgPC0gc2RwICU+JQogIG11dGF0ZSgKICAgIE5VTV9NRVRIT0RTX0NBVCA9IGNhc2Vfd2hlbigKICAgICAgTlVNX01FVEhPRFNfUFJPViA8PSA5IH4gMSwKICAgICAgTlVNX01FVEhPRFNfUFJPViA+OSAgfiAyKSwKICAgIE5VTV9NRVRIT0RTX0NBVCA9IGZhY3RvcihOVU1fTUVUSE9EU19DQVQsCiAgICAgICAgICAgICAgICAgICAgICAgbGV2ZWxzID0gYygxLCAyKSwKICAgICAgICAgICAgICAgICAgICAgICBsYWJlbHMgPSBjKCJMb3cgKDw9OSkiLCAiSGlnaCAoPjkpIiksCiAgICAgICAgICAgICAgICAgICAgICAgb3JkZXJlZCA9IFQpLAogICAgU1RSQVRBID0gZmFjdG9yKHNhbXBsZShjKDAsMSksIHNpemUgPSBucm93KHNkcCksIHJlcGxhY2UgPSBUKSwKICAgICAgICAgICAgICAgICAgICBsZXZlbHMgPSBjKDAsMSksCiAgICAgICAgICAgICAgICAgICAgbGFiZWxzID0gYygiVXJiYW4iLCAiUnVyYWwiKSkKICApCgpnZ3Bsb3QoKSArCiAgZ2VvbV9zZihkYXRhID0gYmZfMSwgZmlsbCA9ICIjZjJmMmY1IikgKwogIGdlb21fc2YoZGF0YSA9IHNkcCwgCiAgICAgICAgICBhZXMoc2l6ZSA9IE5VTV9NRVRIT0RTX0NBVCwKICAgICAgICAgICAgICBzaGFwZSA9IFNUUkFUQSwKICAgICAgICAgICAgICBjb2xvciA9IE5VTV9NRVRIT0RTX09VVDNNTyksCiAgICAgICAgICBhbHBoYSA9IDAuNCkgKwogIGZhY2V0X3dyYXAofiBZRUFSKSArCiAgIyByZXZlcnNpbmcgdGhlIGRpcmVjdGlvbiBtYWtlcyB0aGUgaGlnaCAjcyBzdGFuZCBvdXQgbW9yZQogIHNjYWxlX2NvbG9yX3ZpcmlkaXNfYyhkaXJlY3Rpb24gPSAtMSkgKyAKICBndWlkZXMoY29sb3IgPSBndWlkZV9jb2xvcmJhcihiYXJoZWlnaHQgPSAuNzUsCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgYmFyd2lkdGggPSA0LjUsCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgbGFiZWwucG9zaXRpb24gPSAidG9wIiwKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBsYWJlbC5oanVzdCA9IDApKSArIAogIGxhYnModGl0bGUgPSAiU3BhdGlhbCBWYXJpYXRpb24gaW4gRmFtaWx5IFBsYW5uaW5nIFNlcnZpY2UgRW52aXJvbm1lbnQiLAogICAgICAgc3VidGl0bGUgPSAiQnVya2luYSBGYXNvIDIwMTctMjAxOCIsCiAgICAgICBjYXB0aW9uID0gIlNvdXJjZTogSVBVTVMgUE1BIiwKICAgICAgIHNoYXBlID0gIiIsCiAgICAgICBzaXplID0gIk1ldGhvZHNcblByb3ZpZGVkIiwKICAgICAgIGNvbG9yID0gIiMgTWV0aG9kc1xuT3V0IG9mIFN0b2NrXG4oUGFzdCAzIE1vbnRocykiLAogICAgICAgeCA9IE5VTEwsCiAgICAgICB5ID0gTlVMTCkgKwogIHRoZW1lX21pbmltYWwoKSArCiAgdGhlbWUoCiAgICBheGlzLmxpbmUgPSBlbGVtZW50X2JsYW5rKCksCiAgICBheGlzLnRleHQueCA9IGVsZW1lbnRfYmxhbmsoKSwKICAgIGF4aXMudGV4dC55ID0gZWxlbWVudF9ibGFuaygpLAogICAgYXhpcy50aWNrcyA9IGVsZW1lbnRfYmxhbmsoKSwKICAgIGF4aXMudGl0bGUueCA9IGVsZW1lbnRfYmxhbmsoKSwKICAgIGF4aXMudGl0bGUueSA9IGVsZW1lbnRfYmxhbmsoKSwKICAgIGxlZ2VuZC50aXRsZSA9IGVsZW1lbnRfdGV4dChzaXplID0gOCksCiAgICBsZWdlbmQucG9zaXRpb24gPSAiYm90dG9tIikgCgpgYGAKQWRkaW5nIGluIHRoZSAyMDE4IGRhdGEgZGVtb25zdHJhdGVzIHRoYXQgdGhlIEVBcyBmYWNpbmcgbW9yZSBzdG9ja291dHMgaW4gMjAxNyBhcmUgbW9zdGx5IG5vdCB0aGUgc2FtZSBhcyB0aG9zZSBmYWNpbmcgc3RvY2tvdXRzIGluIDIwMTguICoqQnV0LCB0aGVyZSBpcyBzdGlsbCBhIHNwYXRpYWwgcGF0dGVybiB0byB0aGUgc3RvY2tvdXRzIGluIDIwMTguKiogSXQgYWxzbyBsb29rcyBsaWtlIHNvbWUgRUFzIGhhdmUgZmV3ZXIgZmFtaWx5IHBsYW5uaW5nIG1ldGhvZHMgYXZhaWxhYmxlIGZyb20gU0RQcyBpbiAyMDE4IHRoYW4gaW4gMjAxNy4KCkZ1dHVyZSBwb3N0cyBtYXkgZXhwbG9yZSBvdGhlciBzdXBwbHktc2lkZSBmYWN0b3JzIHRoYXQgY291bGQgaW5mbHVlbmNlIHRoZSBTRFBzIChhbmQgbG9vayBhdCBob3cgdGhlc2UgY2hhbmdlIG92ZXIgdGltZSkgb3IgZXhhbWluZSBkZW1hbmQtc2lkZSBmYWN0b3JzLCBieSBtZXJnaW5nIGluIHRoZSBpbmRpdmlkdWFsLWxldmVsIGRhdGEuCgoKQXMgYWx3YXlzLCBsZXQgdXMga25vdyB3aGF0IGtpbmRzIG9mIHF1ZXN0aW9ucyBhYm91dCBmZXJ0aWxpdHkgYW5kIGZhbWlseSBwbGFubmluZyB5b3UncmUgYW5zd2VyaW5nIC0tIGVzcGVjaWFsbHkgaWYgeW91J3JlIGRvaW5nIGFueXRoaW5nIHNwYXRpYWwhIAo=" download="mapping-sdp-variables.Rmd">
+<a href="data:text/x-markdown;base64,LS0tCnRpdGxlOiAiTWFwcGluZyBTZXJ2aWNlIERlbGl2ZXJ5IFBvaW50IERhdGEiCmRlc2NyaXB0aW9uOiB8CiAgTWFwIHNwYXRpYWwgdmFyaWF0aW9uIGluIHRoZSBzZXJ2aWNlIGRlbGl2ZXJ5IGVudmlyb25tZW50IGFjcm9zcyBlbnVtZXJhdGlvbiBhcmVhcy4KYXV0aG9yOgogIC0gbmFtZTogTmluYSBCcm9va3MKICAgIGFmZmlsaWF0aW9uOiBJUFVNUyBQTUEgUG9zdGRvY3RvcmFsIEFzc29jaWF0ZQpjYXRlZ29yaWVzOgogIC0gSW5kaXZpZHVhbCBpbiBDb250ZXh0CiAgLSBTZXJpdmNlIERlbGl2ZXJ5IFBvaW50cwogIC0gTWFwcGluZwogIC0gc2YKZGF0ZTogMDEtMTUtMjAyMQpvdXRwdXQ6CiAgZGlzdGlsbDo6ZGlzdGlsbF9hcnRpY2xlOgogICAgc2VsZl9jb250YWluZWQ6IGZhbHNlCiAgICB0b2M6IHRydWUKICAgIHRvY19kZXB0aDogMwogICAgdG9jX2Zsb2F0OiB0cnVlCmRyYWZ0OiB0cnVlCi0tLQoKCmBgYHtyIGRvd25sb2FkX2J1dHRvbiwgZWNobz1GfQpkb3dubG9hZHRoaXM6OmRvd25sb2FkX2ZpbGUoCiAgcGF0aCA9ICJtYXBwaW5nLXNkcC12YXJpYWJsZXMuUm1kIiwKICBidXR0b25fbGFiZWwgPSAiRG93bmxvYWQgdGhpcyBwYWdlIGFzIFIgY29kZSIsCiAgYnV0dG9uX3R5cGUgPSAiZGVmYXVsdCIsCiAgaGFzX2ljb24gPSBULAogIGljb24gPSAiZmEgZmEtc2F2ZSIKKQpgYGAKCmBgYHtyIHNldHVwLCBpbmNsdWRlPUZ9CmtuaXRyOjpvcHRzX2NodW5rJHNldChlY2hvID0gVCwgZXZhbCA9IFQsIG1lc3NhZ2UgPSBGKQpvcHRpb25zKHRpYmJsZS5wcmludF9taW49MTAsIHRpYmJsZS5tYXhfZXh0cmFfY29scyA9IDUpCmBgYAoKSW4gb3VyIGxhc3QgcG9zdCwgd2Ugc2hvd2VkIGhvdyBQTUEgU2VydmljZSBEZWxpdmVyeSBQb2ludCAoU0RQKSBkYXRhIGNhbiBiZSBhZ2dyZWdhdGVkIHRvIHRoZSBlbnVtZXJhdGlvbiBhcmVhIHRoZXkgc2VydmUgKGNhcHR1cmVkIGJ5IFtFQVNFUlZFRF0oaHR0cHM6Ly9wbWEuaXB1bXMub3JnL3BtYS1hY3Rpb24vdmFyaWFibGVzL0VBU0VSVkVEKSkgYW5kIGxpbmtlZCB0byB0aGUgaW5kaXZpZHVhbC1sZXZlbCBQTUEgc3VydmV5IGRhdGEuIEluIHRoaXMgcG9zdCwgd2UnbGwgc2hvdyBob3cgdGhhdCBkYXRhIGNhbiBiZSBsaW5rZWQgdG8gdGhlIFBNQSBHUFMgZGF0YXNldHMuIFRoZW4sIHdlJ2xsIG1hcCBkaWZmZXJlbnQgdmFyaWFibGVzIHRvIHNob3cgaG93IHZhcmlhdGlvbiBpbiB2YXJpYWJsZXMgY2FuIGJlIHVuZGVyc3Rvb2Qgc3BhdGlhbGx5LgoKIyBEYXRhCgpXZSdsbCBiZSB3b3JraW5nIHdpdGggdGhlIGZpbmFsIGBiZl9tZXJnZWRgIGRhdGFzZXQgY3JlYXRlZCBpbiB0aGUgcHJldmlvdXMgcG9zdC4gWW91IGNhbiBlaXRoZXIgY2hlY2sgb3V0IHRoYXQgcG9zdCBbaGVyZV0oaHR0cHM6Ly9pcHVtcy1wbWEuZ2l0aHViLmlvL3BtYS1kYXRhLWh1Yi9wb3N0cy8yMDIwLTEyLTMwLWVhLXNlcnZpY2UtZW52aXJvbm1lbnQpIG9yIGp1c3QgbG9hZCB0aGUgYGJmX21lcmdlZGAgZGF0YXNldCBmcm9tIHRoZSDigJxkYXRh4oCdIGZvbGRlciBmb3IgUE1BIERhdGEgSHViIHJlcG9zaXRvcnkgb24gW0dpdEh1Yl0oaHR0cHM6Ly9naXRodWIuY29tL2lwdW1zLXBtYS9wbWEtZGF0YS1odWIvdHJlZS9tYXN0ZXIvZGF0YSkuIFdlJ2xsIGZvY3VzIG9uIGEgZmV3IG9mIHRoZSBgRUFTRUFSVkVEYC1sZXZlbCB2YXJpYWJsZXMgY3JlYXRlZCBpbiB0aGUgbGFzdCBwb3N0OgoKICAqIGBOVU1fTUVUSE9EU19QUk9WYCAtIG51bWJlciBvZiBtZXRob2RzIHByb3ZpZGVkIGJ5IGF0IGxlYXN0IG9uZSBTRFAKICAqIGBOVU1fTUVUSE9EU19PVVRgIC0gbnVtYmVyIG9mIG1ldGhvZHMgb3V0IG9mIHN0b2NrIHdpdGggYXQgbGVhc3Qgb25lIFNEUAogICogYE5VTV9NRVRIT0RTX0lOU1RPQ0tgIC0gbnVtYmVyIG9mIG1ldGhvZHMgaW4tc3RvY2sgd2l0aCBhdCBsZWFzdCBvbmUgU0RQCiAgKiBgTlVNX01FVEhPRFNfT1VUM01PYCAtIG51bWJlciBvZiBtZXRob2RzIG91dCBvZiBzdG9jayBhbnkgdGltZSBpbiB0aGUgbGFzdCAzIG1vbnRocyB3aXRoIGF0IGxlYXN0IG9uZSBTRFAKICAqIGBNRUFOX09VVERBWWAgLSB0aGUgbWVhbiBsZW5ndGggb2YgYSBzdG9ja291dCBmb3IgYW55IGZhbWlseSBwbGFubmluZyBtZXRob2QgKG1lYXN1cmVkIGluIGRheXMpCiAgKiBgTl9TRFBgIC0gbnVtYmVyIG9mIFNEUHMgCiAgCldlJ2xsIGFsc28gdXNlIHRoZSBgVVJCQU5gIHZhcmlhYmxlLCB3aGljaCBpZGVudGlmaWVzIHdoZXRoZXIgYW4gRUEgaXMgaW4gYW4gdXJiYW4gb3IgcnVyYWwgYXJlYS4gCgpXZSdsbCBhbHNvIGJlIHdvcmtpbmcgd2l0aCB0aGUgUE1BIEdQUyBkYXRhc2V0cyBmb3IgQnVya2luYSBGYXNvLiBUaGUgR1BTIGRhdGEgaW5jbHVkZSBvbmUgR1BTIGNvb3JkaW5hdGUgcGVyIGVudW1lcmF0aW9uIGFyZWEuIFRoZSBCdXJraW5hIEZhc28gUm91bmQgNSBhbmQgNiBzdXJ2ZXlzIHNhbXBsZWQgdGhlIHNhbWUgZW51bWVyYXRpb24gYXJlYXMsIHdoaWNoIG1lYW5zIHdlIGNhbiBsaW5rIHRoZSBHUFMgZGF0YSB0byBib3RoIHJvdW5kcyAoZWl0aGVyIG1lbnRpb24gaGVyZSBvciBpbiB0aGUgYXNpZGUgbGF0ZXIgb24pLiAqKlRvIHVzZSB0aGUgR1BTIGRhdGEgeW91IG11c3QgcmVxdWVzdCBhY2Nlc3MgZGlyZWN0bHkgZnJvbSBbUE1BXShodHRwczovL3d3dy5wbWFkYXRhLm9yZy9kYXRhL2Fib3V0LWRhdGEpLioqIElmIHlvdSB3YW50IHRvIGZvbGxvdyBhbG9uZyB3aXRoIHRoaXMgcG9zdCB3aXRob3V0IGFjY2Vzc2luZyB0aGUgR1BTIGRhdGEsIHdlIGhhdmUgcHJvdmlkZWQgYSAidG95IiBHUFMgZGF0YXNldCBpbiB0aGUgYGRhdGFgIGZvbGRlciBmb3IgdGhpcyBwb3N0LiAqKlRoZSB0b3kgZGF0YSBjb250YWlucyByYW5kb21seSBzYW1wbGVkIGxvY2F0aW9ucyB3aXRoaW4gQnVya2luYSBGYXNvIHdoaWNoIGhhdmUgbm8gYWN0dWFsIHJlbGF0aW9uc2hpcCB0byB0aGUgRUFzIGluIHRoZSBQTUEgZGF0YS4qKiBUaGlzIG1lYW5zIG5vbmUgb2YgdGhlIGludGVycHJldGF0aW9ucyBvZiBzcGF0aWFsIHBhdHRlcm5zIHdpbGwgaG9sZCwgYnV0IGFsbCB0aGUgY29kZSB3aWxsIHJ1bi4KCjxhc2lkZT4KSWYgeW91IHJlcXVlc3QgYWNjZXNzIHRvIHRoZSBHUFMgZGF0YSwgbWFrZSBzdXJlIHRvIGRyb3AgdGhlIGZpbGUgaW50byB0aGUgYGRhdGFgIGZvbGRlciBmb3IgeW91ciBsb2NhbCB2ZXJzaW9uIG9mIHRoaXMgcG9zdCBzbyB5b3UgY2FuIHJ1biBldmVyeXRoaW5nIHNtb290aGx5Lgo8L2FzaWRlPiAgICAKClRoZSBsYXN0IGRhdGFzZXQgd2UnbGwgdXNlIGluIHRoaXMgcG9zdCBhcmUgdGhlIGFkbWluaXN0cmF0aXZlIGJvdW5kYXJpZXMgZm9yIEJ1cmtpbmEgRmFzby4gU2hhcGVmaWxlcyB3aXRoIGFkbWluaXN0cmF0aXZlIGJvdW5kYXJpZXMgYXJlIHdpZGVseSBhdmFpbGFibGUgZm9yIGRvd25sb2FkLCBidXQgd2UnbGwgdXNlIHRoZSBSIHBhY2thZ2UgW0dBRE1Ub29sc10oaHR0cHM6Ly9jcmFuLnItcHJvamVjdC5vcmcvd2ViL3BhY2thZ2VzL0dBRE1Ub29scy9pbmRleC5odG1sKSwgd2hpY2ggYWxsb3dzIHlvdSB0byBkb3dubG9hZCBzaGFwZWZpbGVzIGRpcmVjdGx5IGluIFIuIAoKCiMgU2V0dXAKTWFrZSBzdXJlIHlvdSBoYXZlIGFsbCBvZiB0aGUgZm9sbG93aW5nIHBhY2thZ2VzIGluc3RhbGxlZC4gT25jZSBpbnN0YWxsZWQsIGxvYWQgdGhlIHBhY2thZ2VzIHdlJ2xsIGJlIHVzaW5nIHRvZGF5OgoKYGBge3IgbG9jYWx9CmxpYnJhcnkoaXB1bXNyKQpsaWJyYXJ5KHNmKSAjIHByaW1hcnkgc3BhdGlhbCBwYWNrYWdlCmxpYnJhcnkoR0FETVRvb2xzKSAjIGZvciBkb3dubG9hZGluZyBzaGFwZWZpbGVzCmxpYnJhcnkodmlyaWRpcykgIyBmb3IgY29sb3IgcGFsZXR0ZXMKbGlicmFyeSh0YWJ1bGF0b3IpICMgZm9yIHBpcGUtZnJpZW5kbHkgdGFicyAmIGNyb3NzLXRhYnMKbGlicmFyeSh0aWR5dmVyc2UpCmBgYAoKTGV0J3Mgc3RhcnQgYnkgbG9hZGluZyB0aGUgYGJmX21lcmdlZGAgZGF0YS4gUmVtZW1iZXIgdGhhdCB3ZSBtZXJnZWQgdGhlIEVBLWxldmVsIGRhdGEgaW50byB0aGUgaW5kaXZpZHVhbC1sZXZlbCBkYXRhLCBidXQgdGhlIEdQUyBkYXRhc2V0cyBwcm92aWRlIGNvb3JkaW5hdGVzIGZvciB0aGUgZW51bWVyYXRpb24gYXJlYS4gU28gdGhlIGZpcnN0IHRoaW5nIHdlJ2xsIGRvIGlzIGFnZ3JlZ2F0ZSBgYmZfbWVyZ2VkYCB0byB0aGUgRUEtbGV2ZWwuCgpgYGB7cn0KYmZfbWVyZ2VkIDwtIHJlYWRSRFMoIi4vLi9kYXRhL2JmX21lcmdlZC5yZHMiKSAKCmJmX2VhIDwtIGJmX21lcmdlZCAlPiUKICBkcGx5cjo6c2VsZWN0KC1QRVJTT05JRCkgJT4lCiAgZ3JvdXBfYnkoRUFJRCwgWUVBUikgJT4lCiAgc3VtbWFyaXNlX2FsbChtZWFuLCBuYS5ybSA9IFQpICU+JQogIGZpbHRlcighaXMubmEoTl9TRFApKSAKCgpgYGAKPGFzaWRlPgpSZW1lbWJlciwgZHVlIHRvIGEgc2FtcGxpbmcgY2hhbmdlIGJldHdlZW4gMjAxNyBhbmQgMjAxOCwgdGhlcmUgYXJlIDE3IEVBcyB3aXRoIG1pc3NpbmcgU0RQIGRhdGEgaW4gMjAxOC4gU2VlIG91ciBbRGF0YSBEaXNjb3ZlcnldKGxpbmspIHBvc3QgZm9yIG1vcmUgZGV0YWlscy4KPC9hc2lkZT4KCk5vdywgbGV0J3MgcmVhZCBpbiB0aGUgR1BTIGRhdGEgZnJvbSB0aGUgZGF0YSBmb2xkZXIgYW5kIHNlZSB3aGF0IHRoZSBpdCBjb250YWlucy4gSWYgeW91IHJlcXVlc3RlZCBhY2Nlc3MgdG8gdGhlIGFjdHVhbCBHUFMgZGF0YXNldHMsIG1ha2Ugc3VyZSB0byByZXBsYWNlIHRoZSBgYmZfZ3BzX2Zha2UuY3N2YCB3aXRoIHRoZSBmaWxlbmFtZSBvZiB0aGUgcmVhbCBkYXRhIQoKYGBge3J9CmdwcyA8LSByZWFkX2NzdigiZGF0YS9iZl9ncHNfZmFrZS5jc3YiKQpncHMKCmBgYAoKYGBge3IsIGVjaG8gPSBGfQoKZ3BzIDwtIHJlYWRfY3N2KCJkYXRhL1BNQV9CRl9HUFNfdjFfMjRKdWwyMDE4LmNzdiIpCgpgYGAKVGhlIGBncHNgIGRhdGEgaGFzIDcgdmFyaWFibGVzOgoKICAqIFBNQUNDOiB0aGUgY291bnRyeSBjb2RlIAogICogUE1BWUVBUjogdGhlIDQtZGlnaXQgeWVhciBvZiBkYXRhIGNvbGxlY3Rpb24KICAqIFJFR0lPTjogc3ViLW5hdGlvbmFsIGFkbWluaXN0cmF0aXZlIGRpdmlzaW9uIG5hbWUKICAqIEVBX0lEOiB0aGUgZW51bWVyYXRpb24gYXJlYSBJRCAoYW5kIGhvdyB3ZSdsbCBtZXJnZSB0aGlzIGRhdGEgaW50byBvdGhlciBQTUEgZGF0YXNldHMpCiAgKiBHUFNMQVQ6IHRoZSBkaXNwbGFjZWQgRUEncyBjZW50cm9pZCBsYXRpdHVkZSBjb29yZGluYXRlIGluIGRlY2ltYWwgZGVncmVlcwogICogR1BTTE9ORzogdGhlIGRpc3BsYWNlZCBFQSdzIGNlbnRyb2lkIGxvbmdpdHVkZSBjb29yZGluYXRlIGluIGRlY2ltYWwgZGVncmVlcwogICogREFUVU06IHRoZSBjb29yZGluYXRlIHJlZmVyZW5jZSBzeXN0ZW0gYW5kIGdlb2dyYXBoaWMgZGF0dW0uIFRoaXMgdmFyaWFibGUgaXMgYWx3YXlzICJXR1M4NCIgZm9yIHRoZSBXb3JsZCBHZW9kZXRpYyBTeXN0ZW0gMTk4NC4KCjxhc2lkZT4KTm90ZSB0aGF0IHdoaWxlIHRoZSBgUE1BWUVBUmAgdmFyaWFibGUgaXMgMjAxNyBmb3IgYWxsIEVBcywgYmVjYXVzZSB0aGUgc2FtZSBFQXMgd2VyZSBzYW1wbGVkIGluIHRoZSAyMDE3IChSb3VuZCA1KSBhbmQgMjAxOCAoUm91bmQgNikgc3VydmV5cywgd2UgY2FuIGxpbmsgdGhlc2UgY29vcmRpbmF0ZXMgdG8gYm90aCBzYW1wbGVzLgo8L2FzaWRlPgoKPCEtLSA8YXNpZGU+IC0tPgo8IS0tIFRoZSBgUkVHSU9OYCB2YXJpYWJsZSBjb3JyZXNwb25kcyB0byB0aGUgZmlyc3QgYWRtaW5pc3RyYXRpdmUgbGV2ZWwgaW4gYSBnaXZlbiBjb3VudHJ5IG9yIGBhZG1fMWAgaW4gR0FETSBsYW5ndWFnZS4gLS0+CjwhLS0gPC9hc2lkZT4gLS0+CgpOb3RlIHRoYXQgdGhlIGBHUFNMQVRgIGFuZCBgR1BTTE9OR2AgYXJlICoqZGlzcGxhY2VkKiogY29vcmRpbmF0ZXMgb2YgdGhlIEVBIGNlbnRyb2lkLiBUaGlzIGlzIGJlY2F1c2UgUE1BIHJhbmRvbWx5IGRpc3BsYWNlcyB0aGUgZ2VvZ3JhcGhpYyBjb29yZGluYXRlcyB0byBwcmVzZXJ2ZSB0aGUgcHJpdmFjeSBvZiBzdXJ2ZXkgcmVzcG9uZGVudHMuIENvb3JkaW5hdGVzIGFyZSBkaXNwbGFjZWQgcmFuZG9tbHkgYnkgYm90aCBhbmdsZSBhbmQgZGlzdGFuY2UuIFVyYmFuIEVBcyBhcmUgZGlzcGxhY2VkIGZyb20gdGhlaXIgdHJ1ZSBsb2NhdGlvbiB1cCB0byAyIGttLiBSdXJhbCBFQXMgYXJlIGRpc3BsYWNlZCBmcm9tIHRoZWlyIHRydWUgbG9jYXRpb24gdXAgdG8gNSBrbS4gQWRkaXRpb25hbGx5LCBhIHJhbmRvbSBzYW1wbGUgb2YgMSUgb2YgcnVyYWwgRUFzIGFyZSBkaXNwbGFjZWQgdXAgdG8gMTBrbS4gVGhlIFBNQSBHUFMgZGF0YSBjb21lIHdpdGggZG9jdW1lbnRhdGlvbiB0aGF0IGV4cGxhaW5zIHRoZSBkaXNwbGFjZW1lbnQgaW4gbW9yZSBkZXRhaWwuIFRoZSBwcmltYXJ5IHNwYXRpYWwgcGFja2FnZSB3ZSdsbCB1c2UgaXMgc2ltcGxlIGZlYXR1cmVzIG9yIGBzZmAuIFdlJ2xsIHVzZSBgc2Y6OnN0X2FzX3NmKClgIHRvIGNvbnZlcnQgdGhlIEdQUyBkYXRhIHRvIGEgc3BhdGlhbCBkYXRhIG9iamVjdCAoa25vd24gYXMgYSBzaW1wbGUgZmVhdHVyZSBjb2xsZWN0aW9uKS4KCgpgYGB7cn0KZ3BzIDwtIGdwcyAlPiUKICAgIHJlbmFtZShFQUlEID0gRUFfSUQpICU+JSAjIHJlbmFtZSB0byBiZSBjb25zaXN0ZW50IHdpdGggb3RoZXIgUE1BIGRhdGEKICAgIHN0X2FzX3NmKAogICAgICBjb29yZHMgPSBjKCJHUFNMT05HIiwgIkdQU0xBVCIpLCAKICAgICAgY3JzID0gNDMyNikgIyA0MzI2IGlzIHRoZSBjb29yZGluYXRlIHJlZmVyZW5jZSBzeXN0ZW0gKENSUykgaWRlbnRpZmllciBmb3IgV0dTODQKZ3BzCmBgYAoKTm93IHRoYXQgYGdwc2AgaXMgYSBzaW1wbGUgZmVhdHVyZXMgb2JqZWN0LCB3ZSd2ZSBsb3N0IHRoZSBgR1BTTEFUYCBhbmQgYEdQU0xPTkdgIHZhcmlhYmxlcyBhbmQgZ2FpbmVkIGEgdmFyaWFibGUgY2FsbGVkIGBnZW9tZXRyeWAsIHdoaWNoIGNvbnRhaW5zIHRoZSBzcGF0aWFsIGluZm9ybWF0aW9uIGZvciB0aGlzIGRhdGEuIAoKPCEtLSA8YXNpZGU+IC0tPgo8IS0tIFBNQSBmb2xsb3dzIHRoZSBzYW1lIGRpc3BsYWNlbWVudCBwcm90b2NvbCBhcyB0aGUgRGVtb2dyYXBoaWMgYW5kIEhlYWx0aCBTdXJ2ZXlzLCBmb3IgdGhvc2UgZmFtaWxpYXIgdGhlIHRoZSBESFMgc3BhdGlhbCBkYXRhLiAtLT4KPCEtLSA8L2FzaWRlPiAtLT4KClRoZSBsYXN0IHRoaW5nIHdlIG5lZWQgaXMgdGhlIEJ1cmtpbmEgRmFzbyBzaGFwZWZpbGUuIFtHQURNVG9vbHNdKGh0dHBzOi8vY3Jhbi5yLXByb2plY3Qub3JnL3dlYi9wYWNrYWdlcy9HQURNVG9vbHMvaW5kZXguaHRtbCkgd2lsbCBhbGxvdyB1cyB0byBkb3dubG9hZCBhbmQgbG9hZCBzaGFwZWZpbGVzIGRpcmVjdGx5IGZyb20gUi4gQ29udmVuaWVudGx5LCBgR0FETVRvb2xzOjpnYWRtX3NmX2xvYWRDb3VudHJpZXMoKWAgd2lsbCBsb2FkIHRoZSBzaGFwZWZpbGUgYXMgYW4gYHNmYCBvYmplY3QuIFRoZSBgYmZfMWAgb2JqZWN0IGlzIGEgbGlzdCB3aGljaCBjb250YWlucyBzb21lIG1ldGFkYXRhIGluIGFkZGl0aW9uIHRvIHRoZSBzaGFwZWZpbGUsIGJ1dCB3ZSBkb24ndCBuZWVkIGFueXQgb2YgaXQgcmlnaHQgbm93LCBzbyB3ZSdsbCBvbmx5IHRha2UgdGhlIGBzZmAgb2JqZWN0LiBOb3RlIHRoYXQgaGVyZSB0aGUgYGdlb21ldHJ5YCB2YXJpYWJsZSBpcyBhIGBQT0xZR09OYCwgd2hlcmVhcyBpbiB0aGUgYGdwc2AgZGF0YSBpdCBpcyBhIGBQT0lOVGAuCgo8YXNpZGU+CllvdSdsbCBuZWVkIGBHREFMYCBhbmQgYHJnZGFsYCBpbnN0YWxsZWQgdG8gdXNlIGBHQURNVG9vbHNgLiBDaGVjayBvdXIgb3VyIFtSIFNwYXRpYWwgVGlwc10obGluaykgcG9zdCBmb3IgYSBwcmltZXIgb24gc3BhdGlhbCBwYWNrYWdlcyBhbmQgaW5zdGFsbGF0aW9uLiBJZiB5b3UgaGF2ZSBpc3N1ZXMgdXNpbmcgYEdBRE1Ub29sc2AsIGZlZWwgZnJlZSB0byBqdXN0IGxvYWQgdGhlIHNoYXBlZmlsZSBkaXJlY3RseSBmcm9tIHRoZSBgZGF0YWAgZGlyZWN0b3J5IGZvciB0aGlzIHBvc3QuCjwvYXNpZGU+CgoKYGBge3J9CmJmXzEgPC0gZ2FkbV9zZl9sb2FkQ291bnRyaWVzKAogIGZpbGVOYW1lcyA9ICJCRkEiLCAjIHRoZSBJU08tMzE2Ni0xIGNvdW50cnkgY29kZSAKICBiYXNlZmlsZSA9ICJkYXRhLyIsICMgdGhlIGRpcmVjdG9yeSB3aGVyZSB0aGUgc2hhcGVmaWxlIHdpbGwgYmUgc2F2ZWQKICBsZXZlbCA9IDEpICMgaW5kaWNhdGVzIHRoYXQgd2Ugd2FudCBhZG1pbmlzdHJhdGl2ZSBsZXZlbCAxCgpiZl8xIDwtIGJmXzEkc2YKCiMgaWYgeW91IGRvbid0IGhhdmUgR0FETVRvb2xzIGluc3RhbGxlZCwgdW5jb21tZW50IHRoZSBjb2RlIGJlbG93IHRvIGxvYWQgdGhlIHNoYXBlZmlsZQojIGJmXzEgPC0gcmVhZFJEUygiLi8uL2RhdGEvQkZBX2FkbTEuc2YucmRzIikKCmJmXzEKCmBgYAoKCiMgTWVyZ2UgYW5kIE1hcApOb3cgdGhhdCB3ZSBoYXZlIGFsbCBvdXIgZGF0YSwgd2UnbGwgc2hvdyB5b3UgaG93IHRvIG1hcCB2YXJpYWJsZXMuLi4gQnV0IGJlZm9yZSB3ZSBkbyB0aGF0LCBsZXQncyBkbyBzb21lIGJhc2ljLCBleHBsb3JhdG9yeSBtYXBwaW5nLgoKIyMgQmFzaWMgTWFwcwpgZ2dwbG90MmAgaGFzIHN1cHBvcnQgZm9yIGBzZmAgb2JqZWN0cywgd2hpY2ggbWFrZXMgaXQgcmVhbGx5IGVhc3kgdG8gbWFwIHRoaW5ncyB1c2luZyB0aGUgYGdncGxvdDJgLiBgZ2dwbG90Mjo6Z2VvbV9zZigpYCB3aWxsIGF1dG9tYXRpY2FsbHkgaWRlbnRpZnkgd2hhdCBraW5kIG9mIHNwYXRpYWwgZGF0YSB5b3UncmUgcGxvdHRpbmcgYW5kIGhhbmRsZSBpdCBhcHByb3ByaWF0ZWx5LiBGb3IgZXhhbXBsZSwgbGV0J3MgcGxvdCB0aGUgYGdwc2AgZGF0YSAod2hpY2ggYXJlIHBvaW50cykgYW5kIHRoZSBhZG1pbmlzdHJhdGl2ZSByZWdpb24gKHdoaWNoIGFyZSBwb2x5Z29ucykuCgpgYGB7cn0KIyBQbG90IEVBIGNlbnRyb2lkcwpnZ3Bsb3QoKSArCiAgZ2VvbV9zZihkYXRhID0gZ3BzKQoKIyBQbG90IHJlZ2lvbnMgb2YgQnVya2luYSBGYXNvCmdncGxvdCgpICsKICBnZW9tX3NmKGRhdGEgPSBiZl8xKQoKYGBgCgpUaGUgYnVpbGRpbmctYmxvY2sgYXBwcm9hY2ggb2YgYGdncGxvdDJgICgiR3JhbW1hciBvZiBHcmFwaGljcyIpIGFsc28gbWFrZXMgaXQgcmVhbGx5IGVhc3kgdG8gbGF5ZXIgZGlmZmVyZW50IHNwYXRpYWwgZmVhdHVyZXMgb24gdGhlIHNhbWUgbWFwLgoKYGBge3J9CiMgUGxvdCByZWdpb25zIG9mIEJ1cmtpbmEgRmFzbyAmIEVBIGNlbnRyb2lkcyBvbiB0aGUgc2FtZSBtYXAKZ2dwbG90KCkgKwogIGdlb21fc2YoZGF0YSA9IGJmXzEpICsKICBnZW9tX3NmKGRhdGEgPSBncHMpCiAgCmBgYAoKIyMgTWVyZ2UgR1BTIGFuZCBTRFAgRGF0YQpUbyBtYXAgdGhlIEVBLWxldmVsIHZhcmlhYmxlcyBjb25zdHJ1Y3RlZCBpbiB0aGUgbGFzdCBwb3N0LCB3ZSBuZWVkIHRvIG1lcmdlIHRoZSBgYmZfbWVyZ2VkYCBkYXRhIGFuZCB0aGUgYGdwc2AgZGF0YSBieSBgRUFfSURgLiBGaXJzdCwgbGV0J3MgcmVuYW1lIHRoZSBgRUFTRUFSVkVEYCB2YXJpYWJsZSB0byBtYXRjaCB0aGUgR1BTIGRhdGEgYW5kIHRoZW4gdXNlIGEgYGRwbHlyOjpyaWdodF9qb2luYCB0byBtZXJnZSBpbiB0aGUgU0RQIGRhdGEuIFdlIG5lZWQgdG8gdXNlIGEgYHJpZ2h0X2pvaW4oKWAgYmVjYXVzZSB0aGUgc2Ygb2JqZWN0IG11c3QgYmUgbGlzdGVkIGZpcnN0IGluIG91ciBqb2luIGNvbW1hbmQgdG8gcmV0YWluIHRoZSBzZiBjbGFzcywgYnV0IHdlIHdhbnQgdG8gZW5zdXJlIHRoYXQgYWxsIHJvd3MgZnJvbSBgYmZfbWVyZ2VkYCBhcmUgcHJlc2VydmVkLgoKPGFzaWRlPgpSZW1lbWJlciwgdGhlIFNEUCBkYXRhIGNvbnRhaW5zIGluZm9ybWF0aW9uIGZyb20gYm90aCAyMDE3IGFuZCAyMDE4LCB3aGlsZSB0aGUgR1BTIGRhdGEgaGFzIGEgc2luZ2xlIG9ic2VydmF0aW9uIHBlciBFQS4KPC9hc2lkZT4KCmBgYHtyfQpiZl9lYSA8LSByaWdodF9qb2luKGdwcywgYmZfZWEsIGJ5ID0gIkVBSUQiKQoKYmZfZWEgIyBub3cgdGhlIGJmX2VhIGRhdGEgaXMgYW4gc2Ygb2JqZWN0CgpgYGAKCiMjIE1hcCBTRFAgZGF0YQpSZW1lbWJlciwgdGhlIGBiZl9tZXJnZWRgIGRhdGEgY29udGFpbnMgaW5mb3JtYXRpb24gZnJvbSAyMDE3ICYgMjAxOCBmb3IgdGhlIHNhbWUgRUEsIHdoaWNoIGNhbiBjbG9nIHVwIHRoZSBtYXAgZGVwZW5kaW5nIG9uIGhvdyB3ZSB1c2UgdGhpcyBpbmZvcm1hdGlvbi4gVG8gc3RhcnQgb3V0LCBsZXQncyB1c2Ugb25seSB0aGUgMjAxNyBkYXRhIGFuZCBhZGQgaW5mb3JtYXRpb24gYWJvdXQgdGhlIG51bWJlciBvZiBzZXJ2aWNlIGRlbGl2ZXJ5IHByb3ZpZGVycyB0aGF0IHNlcnZlIGEgZ2l2ZW4gRUEgKGBOX1NEUGApLiBCeSBwYXNzaW5nIGBOX1NEUGAgdG8gdGhlIHNpemUgYWVzdGhldGljLCB3ZSBjYW4gbW9yZSBlYXNpbHkgdmlzdWFsaXplIGhvdyBFQXMgdmFyeSBpbiB0aGVpciBhY2Nlc3MgdG8gc2VydmljZSBkZWxpdmVyeSBwcm92aWRlcnMuCgpgYGB7cn0KYmZfZWEyMDE3IDwtIGJmX2VhICU+JQogIGZpbHRlcihZRUFSID09IDIwMTcpCgpnZ3Bsb3QoKSArCiAgZ2VvbV9zZihkYXRhID0gYmZfMSkgKwogIGdlb21fc2YoZGF0YSA9IGJmX2VhMjAxNywgCiAgICAgICAgICBhZXMoc2l6ZSA9IE5fU0RQKSwKICAgICAgICAgIGFscGhhID0gMC40KSAKCgpgYGAKCkZyb20gdGhlIG1hcCwgaXQgbG9va3MgbGlrZSB0aGVyZSBtYXkgYmUgYSBmZXcgbG9jYXRpb25zIHdoZXJlIHRoZXJlIEVBcyBhcmUgYm90aCBjbG9zZSB0b2dldGhlciBhbmQgc2VydmVkIGJ5IG1hbnkgU0RQcywgd2hpY2ggYXJlIGxpa2VseSBpbiB1cmJhbiBhcmVhcy4gRm9yIGV4YW1wbGUsIHRoZSBjYXBpdGFsIG9mIEJ1cmtpbmEgRmFzbywgT3VhZ2Fkb3Vnb3UsIGlzIGluIHRoZSBjZW50ZXIgb2YgdGhlIG1hcCB3aGVyZSB0aGVyZSBhcmUgYSBudW1iZXIgb2YgRUFzIG9uIHRvcCBvZiBlYWNoIG90aGVyLiBCdXQsIGl0J3MgYSBsaXR0bGUgaGFyZCB0byBzZWUgdGhlIHZhcmlhdGlvbiBpbiBzaXplIHdoZW4gdGhlcmUgYXJlIHNvIG1hbnkgdmFsdWVzIGZvciBgTl9TRFBgIGFuZCBzbyBtYW55IEVBcyBvbiB0b3Agb2YgZWFjaCBvdGhlci4gTGV0J3MgZG8gdHdvIHRoaW5ncyB0byBtYWtlIHRoaXMgbW9yZSByZWFkYWJsZS4gRmlyc3QsIHdlJ2xsIGNyZWF0ZSBzbWFsbGVyIGNhdGVnb3JpZXMgb2YgdGhlIGBOX1NEUGAgdmFyaWFibGUsIGFuZCBzZWNvbmQsIHdlJ2xsIG1hcCB0aGUgYFNUUkFUQWAgdmFyaWFibGUgdG8gdGhlIGNvbG9yIGFlc3RoZXRpYy4KCmBgYHtyfQpiZl9lYTIwMTcgPC0gYmZfZWEyMDE3ICU+JQogIG11dGF0ZSgKICAgIE5fU0RQX0NBVCA9IGNhc2Vfd2hlbigKICAgICAgTl9TRFAgPD0gMiB+IDEsCiAgICAgIE5fU0RQID4yICYgTl9TRFAgPD0gNCB+IDIsCiAgICAgIE5fU0RQID40IH4gMyksCiAgICBOX1NEUF9DQVQgPSBmYWN0b3IoTl9TRFBfQ0FULAogICAgICAgICAgICAgICAgICAgICAgIGxldmVscyA9IGMoMSwgMiwgMyksCiAgICAgICAgICAgICAgICAgICAgICAgbGFiZWxzID0gYygiTG93IiwgIk1pZCIsICJIaWdoIiksCiAgICAgICAgICAgICAgICAgICAgICAgb3JkZXJlZCA9IFQpLCAjIG5lZWRzIHRvIGJlIGFuIE9SREVSRUQgZmFjdG9yIHRvIG1hcCB0byB0aGUgc2l6ZSBhZXN0aGV0aWMKICAgIE1FQU5fT1VUREFZID0gaWZlbHNlKGlzLm5hKE1FQU5fT1VUREFZKSwgMCwgTUVBTl9PVVREQVkpLAogICAgVVJCQU4gPSBmYWN0b3IoVVJCQU4sIAogICAgICAgICAgICAgICAgICAgbGV2ZWxzID0gYygwLDEpLAogICAgICAgICAgICAgICAgICAgbGFiZWxzID0gYygiUnVyYWwiLCAiVXJiYW4iKSkKICApCgoKIyBsZXQncyB0YWtlIGEgbG9vayBhdCB0aGUgZGlzdHJpYnV0aW9uIG9mIHRoaXMgbmV3IGNhdGVnb3JpY2FsIHZhcmlhYmxlCmJmX2VhMjAxNyAlPiUgCiAgdGFiKFVSQkFOLCBOX1NEUF9DQVQpCgpnZ3Bsb3QoKSArCiAgZ2VvbV9zZihkYXRhID0gYmZfMSkgKwogIGdlb21fc2YoZGF0YSA9IGJmX2VhMjAxNywgCiAgICAgICAgICBhZXMoc2l6ZSA9IE5fU0RQX0NBVCwKICAgICAgICAgICAgICBjb2xvciA9IFVSQkFOKSwKICAgICAgICAgIGFscGhhID0gMC40KSArCiAgc2NhbGVfY29sb3JfdmlyaWRpc19kKCkgCgpgYGAKRnJvbSB0aGlzIG1hcCB3ZSBjYW4gc2VlIHRoYXQgdXJiYW4gYXJlYXMgYXJlIGdlbmVyYWxseSBzZXJ2ZWQgYnkgbW9yZSBTRFBzIC0tIGluIGZhY3QsIG5vIHJ1cmFsIEVBcyBmYWxsIGludG8gdGhlICJIaWdoIiBjYXRlZ29yeSAtLSBhbHRob3VnaCB0aGUgZGlmZmVyZW5jZSBpcyBwZXJoYXBzIG5vdCBhcyBzdGFyayBhcyBvbmUgbWlnaHQgaGF2ZSBleHBlY3RlZC4gQnV0LCB3aGF0IGlzIHRoZSBzZXJ2aWNlIGVudmlyb25tZW50IGxpa2U/IERvIHVyYmFuIGFyZWFzIGhhdmUgbW9yZSBzdG9jay1vdXRzIHRoYW4gcnVyYWwgYXJlYXM/IERvIFNEUHMgaW4gdXJiYW4gYXJlYXMgb2ZmZXIgYSBncmVhdGVyIHNlbGVjdGlvbiBvZiBmYW1pbHkgcGxhbm5pbmcgbWV0aG9kcz8gRGlkIHRoZSBzZXJ2aWNlIGVudmlyb25tZW50IGNoYW5nZSBiZXR3ZWVuIDIwMTcgYW5kIDIwMTg/IE1hcHBpbmcgY2FuIHNoZWQgYSBsb3Qgb2YgbGlnaHQgb24gdGhlc2UgcXVlc3Rpb25zLiAKCkxldCdzIGxvb2sgYXQgdGhlIGBOVU1fTUVUSE9EU19QUk9WYCB2YXJpYWJsZSBjcmVhdGVkIGluIHRoZSBsYXN0IHBvc3QuIFRoaXMgdmFyaWFibGUgY2FwdHVyZXMgdGhlIG51bWJlciBvZiBmYW1pbHkgcGxhbm5pbmcgbWV0aG9kcyBwcm92aWRlZCBieSBhdCBsZWFzdCBvbmUgU0RQIHRoYXQgc2VydmVzIGEgZ2l2ZW4gRUEuCgpgYGB7cn0KCmJmX2VhMjAxNyAlPiUKICB0YWIoTlVNX01FVEhPRFNfUFJPVikgJT4lCiAgYXJyYW5nZShOVU1fTUVUSE9EU19QUk9WKQoKYGBgCgpTaW5jZSB0aGVyZSBpcyBub3QgYSBsYXJnZSByYW5nZSBvZiBudW1iZXIgb2YgRlAgbWV0aG9kcyBwcm92aWRlZCwgbGV0J3MgZGljaG90b21pemUgdGhpcyBzbyB3ZSBjYW4gbWFwIGl0IHRvIHRoZSBgc2hhcGVgIGFlc3RoZXRpYy4KCmBgYHtyfQpiZl9lYTIwMTcgPC0gYmZfZWEyMDE3ICU+JQogIG11dGF0ZSgKICAgIE5VTV9NRVRIT0RTX0NBVCA9IGNhc2Vfd2hlbigKICAgICAgTlVNX01FVEhPRFNfUFJPViA8PSA5IH4gMSwKICAgICAgTlVNX01FVEhPRFNfUFJPViA+OSAgfiAyKSwKICAgIE5VTV9NRVRIT0RTX0NBVCA9IGZhY3RvcihOVU1fTUVUSE9EU19DQVQsCiAgICAgICAgICAgICAgICAgICAgICAgbGV2ZWxzID0gYygxLCAyKSwKICAgICAgICAgICAgICAgICAgICAgICBsYWJlbHMgPSBjKCJMb3cgKDw9OSkiLCAiSGlnaCAoPjkpIiksCiAgICAgICAgICAgICAgICAgICAgICAgb3JkZXJlZCA9IFQpCiAgKQoKCmdncGxvdCgpICsKICBnZW9tX3NmKGRhdGEgPSBiZl8xKSArCiAgZ2VvbV9zZihkYXRhID0gYmZfZWEyMDE3LCAKICAgICAgICAgIGFlcyhzaXplID0gTlVNX01FVEhPRFNfQ0FULAogICAgICAgICAgICAgIHNoYXBlID0gVVJCQU4sCiAgICAgICAgICAgICAgY29sb3IgPSBOVU1fTUVUSE9EU19PVVQzTU8pLAogICAgICAgICAgYWxwaGEgPSAwLjQpICsKICBzY2FsZV9jb2xvcl92aXJpZGlzX2MoKSAKCgpgYGAKCiMgUHV0dGluZyBpdCBhbGwgdG9nZXRoZXIKTm93IHdlIGhhdmUgYSBtYXAgdGhhdCBzaG93cyBzcGF0aWFsIHZhcmlhdGlvbiBpbiBhdmFpbGFiaWxpdHkgb2YgZGlmZmVyZW50IG1ldGhvZHMgb2YgZmFtaWx5IHBsYW5uaW5nIGFuZCBwcmV2YWxlbmNlIG9mIHN0b2NrLW91dHMsIGFzIHdlbGwgYXMgZGVtb25zdHJhdGVzIGhvdyB0aGVzZSBjaGFyYWN0ZXJpc3RpYyBkaWZmZXIgYWNyb3NzIHVyYmFuIHZzLiBydXJhbCBFQXMuIEl0J3Mgc3VwZXIgcXVpY2sgdG8gbWFrZSBhIGJhc2ljIG1hcCBsaWtlIHRoaXMsIGJ1dCBsZXQncyBjbGVhbiB1cCBhIGZldyB0aGluZ3MgdG8gbWFrZSBpdCBsb29rIG5pY2VyLiAKCmBgYHtyLCBsYXlvdXQ9ImwtYm9keS1vdXRzZXQiLCBmaWcud2lkdGg9NywgZmlnLmhlaWdodD00LjV9CmdncGxvdCgpICsKICBnZW9tX3NmKGRhdGEgPSBiZl8xLCBmaWxsID0gIiNmMmYyZjUiKSArCiAgZ2VvbV9zZihkYXRhID0gYmZfZWEyMDE3LCAKICAgICAgICAgIGFlcyhzaXplID0gTlVNX01FVEhPRFNfQ0FULAogICAgICAgICAgICAgIHNoYXBlID0gVVJCQU4sCiAgICAgICAgICAgICAgY29sb3IgPSBOVU1fTUVUSE9EU19PVVQzTU8pLAogICAgICAgICAgYWxwaGEgPSAwLjQpICsKICBzY2FsZV9jb2xvcl92aXJpZGlzX2MoZGlyZWN0aW9uID0gLTEpICsgIyByZXZlcnNpbmcgdGhlIGRpcmVjdGlvbiBtYWtlcyB0aGUgaGlnaCAjcyBzdGFuZCBvdXQgbW9yZQogIGxhYnModGl0bGUgPSAiU3BhdGlhbCBWYXJpYXRpb24gaW4gRmFtaWx5IFBsYW5uaW5nIFNlcnZpY2UgRW52aXJvbm1lbnQiLAogICAgICAgc3VidGl0bGUgPSAiQnVya2luYSBGYXNvIDIwMTciLAogICAgICAgY2FwdGlvbiA9ICJTb3VyY2U6IElQVU1TIFBNQSIsCiAgICAgICBzaGFwZSA9ICIiLAogICAgICAgc2l6ZSA9ICJNZXRob2RzXG5Qcm92aWRlZCIsCiAgICAgICBjb2xvciA9ICJPdXQgb2YgU3RvY2tcbihQYXN0IDMgTW9udGhzKSIsCiAgICAgICB4ID0gTlVMTCwKICAgICAgIHkgPSBOVUxMKSArCiAgdGhlbWVfbWluaW1hbCgpICsKICB0aGVtZSgKICAgIGF4aXMubGluZSA9IGVsZW1lbnRfYmxhbmsoKSwKICAgIGF4aXMudGV4dC54ID0gZWxlbWVudF9ibGFuaygpLAogICAgYXhpcy50ZXh0LnkgPSBlbGVtZW50X2JsYW5rKCksCiAgICBheGlzLnRpY2tzID0gZWxlbWVudF9ibGFuaygpLAogICAgYXhpcy50aXRsZS54ID0gZWxlbWVudF9ibGFuaygpLAogICAgYXhpcy50aXRsZS55ID0gZWxlbWVudF9ibGFuaygpKQoKIyBpZiB5b3Ugd2FudCB0byBleHBvcnQgeW91ciBtYXAsIHVuY29tbWVudCB0aGUgZm9sbG93aW5nIGxpbmUgb2YgY29kZQojIGdnc2F2ZShmaWxlbmFtZSA9ICJkYXRhL2JmX2ZwX21hcC5wZGYiLCAKIyAgICAgICAgaGVpZ2h0ID0gNC41LCB3aWR0aCA9IDcpCmBgYApUaGlzIG1hcCBzdWdnZXN0cyB0aGVyZSBpcyBzcGF0aWFsIGNvcnJlbGF0aW9uIHRvIHRoZSBzdG9ja291dHMgLS0gd2l0aCAyIHJlZ2lvbnMgcmVzcG9uc2libGUgZm9yIHRoZSBtYWpvcml0eSBvZiBFQXMgd2l0aCBzdG9ja291dHMuIEl0IGFsc28gbG9va3MgbGlrZSB0aGVzZSBFQXMgdGVuZCB0byBoYXZlIG1vcmUgbWV0aG9kcyBwcm92aWRlZCBieSB0aGUgU0RQcyB0aGF0IHNlcnZlIHRoZW0uIEZpbmFsbHksIGxldCdzIHVzZSBib3RoIHllYXJzIG9mIGRhdGEgYW5kIHNlZSBpZiB0aGVyZSBpcyBhbnkgdGVtcG9yYWwgdmFyaWF0aW9uLiBUbyBkbyB0aGlzLCB3ZSdsbCB1c2UgdGhlIG9yaWdpbmFsIGBiZl9tZXJnZWRgIGRhdGFzZXQgKGluc3RlYWQgb2YgYHNkcDIwMTdgKSBhbmQgcmUtY3JlYXRlIHRoZSBzbWFlIGBOVU1fTUVUSE9EU19DQVRgIGZhY3RvciB2YXJpYWJsZSB0aGF0IGRpY2hvdG9taXplcyB0aGUgYE5VTV9NRVRIT0RTX1BST1ZgIHZhcmlhYmxlLiBUaGVuLCB3ZSdsbCB1c2UgYGZhY2V0X3dyYXAoKWAgdG8gbWFrZSBhIG11bHRpLXBhbmVsIHBsb3QsIHdpdGggb25lIHBhbmVsIHBlciB5ZWFyLgoKYGBge3IsIGxheW91dD0ibC1ib2R5LW91dHNldCIsIGZpZy53aWR0aD03LCBmaWcuaGVpZ2h0PTR9CmJmX2VhIDwtIGJmX2VhICU+JQogIG11dGF0ZSgKICAgIE5VTV9NRVRIT0RTX0NBVCA9IGNhc2Vfd2hlbigKICAgICAgTlVNX01FVEhPRFNfUFJPViA8PSA5IH4gMSwKICAgICAgTlVNX01FVEhPRFNfUFJPViA+OSAgfiAyKSwKICAgIE5VTV9NRVRIT0RTX0NBVCA9IGZhY3RvcihOVU1fTUVUSE9EU19DQVQsCiAgICAgICAgICAgICAgICAgICAgICAgbGV2ZWxzID0gYygxLCAyKSwKICAgICAgICAgICAgICAgICAgICAgICBsYWJlbHMgPSBjKCJMb3cgKDw9OSkiLCAiSGlnaCAoPjkpIiksCiAgICAgICAgICAgICAgICAgICAgICAgb3JkZXJlZCA9IFQpLAogICAgVVJCQU4gPSBmYWN0b3IoVVJCQU4sIAogICAgICAgICAgICAgICAgICAgbGV2ZWxzID0gYygwLDEpLAogICAgICAgICAgICAgICAgICAgbGFiZWxzID0gYygiVXJiYW4iLCAiUnVyYWwiKSkKICApCgpnZ3Bsb3QoKSArCiAgZ2VvbV9zZihkYXRhID0gYmZfMSwgZmlsbCA9ICIjZjJmMmY1IikgKwogIGdlb21fc2YoZGF0YSA9IGJmX2VhLCAKICAgICAgICAgIGFlcyhzaXplID0gTlVNX01FVEhPRFNfQ0FULAogICAgICAgICAgICAgIHNoYXBlID0gVVJCQU4sCiAgICAgICAgICAgICAgY29sb3IgPSBOVU1fTUVUSE9EU19PVVQzTU8pLAogICAgICAgICAgYWxwaGEgPSAwLjQpICsKICBmYWNldF93cmFwKH4gWUVBUikgKwogICMgcmV2ZXJzaW5nIHRoZSBkaXJlY3Rpb24gbWFrZXMgdGhlIGhpZ2ggI3Mgc3RhbmQgb3V0IG1vcmUKICBzY2FsZV9jb2xvcl92aXJpZGlzX2MoZGlyZWN0aW9uID0gLTEpICsgCiAgZ3VpZGVzKGNvbG9yID0gZ3VpZGVfY29sb3JiYXIoYmFyaGVpZ2h0ID0gLjc1LAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIGJhcndpZHRoID0gNC41LAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIGxhYmVsLnBvc2l0aW9uID0gInRvcCIsCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgbGFiZWwuaGp1c3QgPSAwKSkgKyAKICBsYWJzKHRpdGxlID0gIlNwYXRpYWwgVmFyaWF0aW9uIGluIEZhbWlseSBQbGFubmluZyBTZXJ2aWNlIEVudmlyb25tZW50IiwKICAgICAgIHN1YnRpdGxlID0gIkJ1cmtpbmEgRmFzbyAyMDE3LTIwMTgiLAogICAgICAgY2FwdGlvbiA9ICJTb3VyY2U6IElQVU1TIFBNQSIsCiAgICAgICBzaGFwZSA9ICIiLAogICAgICAgc2l6ZSA9ICJNZXRob2RzXG5Qcm92aWRlZCIsCiAgICAgICBjb2xvciA9ICIjIE1ldGhvZHNcbk91dCBvZiBTdG9ja1xuKFBhc3QgMyBNb250aHMpIiwKICAgICAgIHggPSBOVUxMLAogICAgICAgeSA9IE5VTEwpICsKICB0aGVtZV9taW5pbWFsKCkgKwogIHRoZW1lKAogICAgYXhpcy5saW5lID0gZWxlbWVudF9ibGFuaygpLAogICAgYXhpcy50ZXh0LnggPSBlbGVtZW50X2JsYW5rKCksCiAgICBheGlzLnRleHQueSA9IGVsZW1lbnRfYmxhbmsoKSwKICAgIGF4aXMudGlja3MgPSBlbGVtZW50X2JsYW5rKCksCiAgICBheGlzLnRpdGxlLnggPSBlbGVtZW50X2JsYW5rKCksCiAgICBheGlzLnRpdGxlLnkgPSBlbGVtZW50X2JsYW5rKCksCiAgICBsZWdlbmQudGl0bGUgPSBlbGVtZW50X3RleHQoc2l6ZSA9IDgpLAogICAgbGVnZW5kLnBvc2l0aW9uID0gImJvdHRvbSIpIAoKYGBgCndpdGggdGhlIDIwMTggZGF0YSBpbmNsdWRlZCwgaXQgbG9va3MgbGlrZSB0aGUgc2VydmljZSBlbnZpcm9ubWVudCBtYXkgaGF2ZSBpbXByb3ZlZCBiZXR3ZWVuIDIwMTcgYW5kIDIwMTcgd2l0aCBmZXdlciBzdG9ja291dHMuIEhvd2V2ZXIsIGl0IGFsc28gbG9va3MgdGhlIEVBcyB0aGF0IGZhY2VkIG1vcmUgc3RvY2tvdXRzIGluIDIwMTcgYXJlIG5vdCBhbHdheXMgdGhlIHNhbWUgYXMgdGhvc2UgZmFjaW5nIHN0b2Nrb3V0cyBpbiAyMDE4LiAqKkJ1dCwgdGhlcmUgaXMgc3RpbGwgYSBzcGF0aWFsIHBhdHRlcm4gdG8gdGhlIHN0b2Nrb3V0cyBpbiAyMDE4LioqIEl0IGFsc28gbG9va3MgbGlrZSBzb21lIEVBcyBoYWQgZmV3ZXIgZmFtaWx5IHBsYW5uaW5nIG1ldGhvZHMgYXZhaWxhYmxlIGZyb20gU0RQcyBpbiAyMDE4IHRoYW4gaW4gMjAxNywgcGFydGljdWxhcmx5IGluIHRoZSB3ZXN0ZXJuIHBhcnQgb2YgdGhlIGNvdW50cnkuCgpGdXR1cmUgcG9zdHMgbWF5IGV4cGxvcmUgb3RoZXIgc3VwcGx5LXNpZGUgZmFjdG9ycyB0aGF0IGNvdWxkIGluZmx1ZW5jZSB0aGUgU0RQcyAoYW5kIGxvb2sgYXQgaG93IHRoZXNlIGNoYW5nZSBvdmVyIHRpbWUpIG9yIGV4YW1pbmUgZGVtYW5kLXNpZGUgZmFjdG9ycywgYnkgbWVyZ2luZyBpbiB0aGUgaW5kaXZpZHVhbC1sZXZlbCBkYXRhLgoKQXMgYWx3YXlzLCBsZXQgdXMga25vdyB3aGF0IGtpbmRzIG9mIHF1ZXN0aW9ucyBhYm91dCBmZXJ0aWxpdHkgYW5kIGZhbWlseSBwbGFubmluZyB5b3UncmUgYW5zd2VyaW5nIC0tIGVzcGVjaWFsbHkgaWYgeW91J3JlIGRvaW5nIGFueXRoaW5nIHNwYXRpYWwhIAo=" download="mapping-sdp-variables.Rmd">
 <button class="btn btn-default"><i class="fa fa-save"></i> Download this page as R code</button>
 </a>
 </div>
-<p>In our last post, we showed how PMA Service Delivery Point (SDP) data can be aggregated to the enumeration area they serve (captured by <a href="https://pma.ipums.org/pma-action/variables/EASERVED">EASERVED</a>) and linked to the individual-level PMA survey data. In this post, we’ll show how the SDP data can be linked to the PMA GPS datasets. Then, we’ll map different variables to show how variation in variables can be understood spatially.</p>
+<p>In our last post, we showed how PMA Service Delivery Point (SDP) data can be aggregated to the enumeration area they serve (captured by <a href="https://pma.ipums.org/pma-action/variables/EASERVED">EASERVED</a>) and linked to the individual-level PMA survey data. In this post, we’ll show how that data can be linked to the PMA GPS datasets. Then, we’ll map different variables to show how variation in variables can be understood spatially.</p>
 <h1 id="data">Data</h1>
-<p>We’ll be working with the final <code>sdp</code> dataset created in the previous post. You can either check out that post <a href="how%20to%20link%20between%20posts?">here</a> or just load the <code>sdp</code> dataset from the “data” folder for this post in the PMA Data Hub repository on GitHub (add link). We’ll focus on a few of the <code>EASEARVED</code>-level variables created in the last post:</p>
+<p>We’ll be working with the final <code>bf_merged</code> dataset created in the previous post. You can either check out that post <a href="https://ipums-pma.github.io/pma-data-hub/posts/2020-12-30-ea-service-environment">here</a> or just load the <code>bf_merged</code> dataset from the “data” folder for PMA Data Hub repository on <a href="https://github.com/ipums-pma/pma-data-hub/tree/master/data">GitHub</a>. We’ll focus on a few of the <code>EASEARVED</code>-level variables created in the last post:</p>
 <ul>
 <li><code>NUM_METHODS_PROV</code> - number of methods provided by at least one SDP</li>
 <li><code>NUM_METHODS_OUT</code> - number of methods out of stock with at least one SDP</li>
@@ -1481,10 +1482,10 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <li><code>MEAN_OUTDAY</code> - the mean length of a stockout for any family planning method (measured in days)</li>
 <li><code>N_SDP</code> - number of SDPs</li>
 </ul>
-<p>We’ll also use the <code>STRATA</code> variable, which identifies whether an EA is in an urban or rural area.</p>
-<p>We’ll also be working with the PMA GPS datasets for Burkina Faso. The GPS data include one GPS coordinate per enumeration area. The Burkina Faso Round 5 and 6 surveys sampled the same enumeration areas, which means we can link the GPS data to both rounds (either mention here or in the aside later on).</p>
+<p>We’ll also use the <code>URBAN</code> variable, which identifies whether an EA is in an urban or rural area.</p>
+<p>We’ll also be working with the PMA GPS datasets for Burkina Faso. The GPS data include one GPS coordinate per enumeration area. The Burkina Faso Round 5 and 6 surveys sampled the same enumeration areas, which means we can link the GPS data to both rounds (either mention here or in the aside later on). <strong>To use the GPS data you must request access directly from <a href="https://www.pmadata.org/data/about-data">PMA</a>.</strong> If you want to follow along with this post without accessing the GPS data, we have provided a “toy” GPS dataset in the <code>data</code> folder for this post. <strong>The toy data contains randomly sampled locations within Burkina Faso which have no actual relationship to the EAs in the PMA data.</strong> This means none of the interpretations of spatial patterns will hold, but all the code will run.</p>
 <aside>
-Read more about the GPS data and request access on the PMA on the <a href="https://www.pmadata.org/data/about-data">PMA Data website</a>.
+If you request access to the GPS data, make sure to drop the file into the <code>data</code> folder for your local version of this post so you can run everything smoothly.
 </aside>
 <p>The last dataset we’ll use in this post are the administrative boundaries for Burkina Faso. Shapefiles with administrative boundaries are widely available for download, but we’ll use the R package <a href="https://cran.r-project.org/web/packages/GADMTools/index.html">GADMTools</a>, which allows you to download shapefiles directly in R.</p>
 <h1 id="setup">Setup</h1>
@@ -1500,33 +1501,50 @@ Read more about the GPS data and request access on the PMA on the <a href="https
 </code></pre>
 </div>
 </div>
-<p>Load the SDP data and the GPS data from the data folder and check out what the GPS data contains:</p>
+<p>Let’s start by loading the <code>bf_merged</code> data. Remember that we merged the EA-level data into the individual-level data, but the GPS datasets provide coordinates for the enumeration area. So the first thing we’ll do is aggregate <code>bf_merged</code> to the EA-level.</p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
-<pre><code><span class='fu'><a href='https://rdrr.io/r/base/load.html'>load</a></span><span class='op'>(</span><span class='st'>"data/sdp.Rdata"</span><span class='op'>)</span> 
+<pre><code><span class='va'>bf_merged</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/readRDS.html'>readRDS</a></span><span class='op'>(</span><span class='st'>"././data/bf_merged.rds"</span><span class='op'>)</span> 
 
-<span class='va'>gps</span> <span class='op'>&lt;-</span> <span class='fu'>read_csv</span><span class='op'>(</span><span class='st'>"data/PMA_BF_GPS_v1_24Jul2018.csv"</span><span class='op'>)</span>
+<span class='va'>bf_ea</span> <span class='op'>&lt;-</span> <span class='va'>bf_merged</span> <span class='op'>%&gt;%</span>
+  <span class='fu'>dplyr</span><span class='fu'>::</span><span class='fu'><a href='https://dplyr.tidyverse.org/reference/select.html'>select</a></span><span class='op'>(</span><span class='op'>-</span><span class='va'>PERSONID</span><span class='op'>)</span> <span class='op'>%&gt;%</span>
+  <span class='fu'>group_by</span><span class='op'>(</span><span class='va'>EAID</span>, <span class='va'>YEAR</span><span class='op'>)</span> <span class='op'>%&gt;%</span>
+  <span class='fu'>summarise_all</span><span class='op'>(</span><span class='va'>mean</span>, na.rm <span class='op'>=</span> <span class='cn'>T</span><span class='op'>)</span> <span class='op'>%&gt;%</span>
+  <span class='fu'><a href='https://rdrr.io/r/stats/filter.html'>filter</a></span><span class='op'>(</span><span class='op'>!</span><span class='fu'><a href='https://rdrr.io/r/base/NA.html'>is.na</a></span><span class='op'>(</span><span class='va'>N_SDP</span><span class='op'>)</span><span class='op'>)</span> 
+</code></pre>
+</div>
+</div>
+<aside>
+Remember, due to a sampling change between 2017 and 2018, there are 17 EAs with missing SDP data in 2018. See our <a href="link">Data Discovery</a> post for more details.
+</aside>
+<p>Now, let’s read in the GPS data from the data folder and see what the it contains. If you requested access to the actual GPS datasets, make sure to replace the <code>bf_gps_fake.csv</code> with the filename of the real data!</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre><code><span class='va'>gps</span> <span class='op'>&lt;-</span> <span class='fu'>read_csv</span><span class='op'>(</span><span class='st'>"data/bf_gps_fake.csv"</span><span class='op'>)</span>
 <span class='va'>gps</span>
 </code></pre>
 </div>
 <pre><code># A tibble: 83 x 7
-   PMACC PMAYEAR REGION               EA_ID GPSLONG GPSLAT DATUM
-   &lt;chr&gt;   &lt;dbl&gt; &lt;chr&gt;                &lt;dbl&gt;   &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;
- 1 BF       2017 5. centre-nord        7610  -1.07    12.9 WGS84
- 2 BF       2017 1. boucle-du-mouhoun  7820  -4.07    12.7 WGS84
- 3 BF       2017 3. centre             7271  -1.58    12.4 WGS84
- 4 BF       2017 3. centre             7799  -1.54    12.4 WGS84
- 5 BF       2017 8. est                7243   0.380   12.1 WGS84
- 6 BF       2017 6. centre-ouest       7026  -2.37    12.3 WGS84
- 7 BF       2017 3. centre             7859  -1.57    12.3 WGS84
- 8 BF       2017 3. centre             7725  -1.55    12.3 WGS84
- 9 BF       2017 6. centre-ouest       7390  -2.21    12.1 WGS84
-10 BF       2017 11. plateau-central   7104  -1.91    12.8 WGS84
+   PMACC PMAYEAR REGION               EA_ID DATUM GPSLAT  GPSLON
+   &lt;chr&gt;   &lt;dbl&gt; &lt;chr&gt;                &lt;dbl&gt; &lt;chr&gt;  &lt;dbl&gt;   &lt;dbl&gt;
+ 1 BF       2017 5. centre-nord        7610 WGS84   14.2  0.126 
+ 2 BF       2017 1. boucle-du-mouhoun  7820 WGS84   13.5 -3.08  
+ 3 BF       2017 3. centre             7271 WGS84   12.2  1.43  
+ 4 BF       2017 3. centre             7799 WGS84   12.2 -0.799 
+ 5 BF       2017 8. est                7243 WGS84   11.0 -2.58  
+ 6 BF       2017 6. centre-ouest       7026 WGS84   10.9 -4.35  
+ 7 BF       2017 3. centre             7859 WGS84   12.4  0.0703
+ 8 BF       2017 3. centre             7725 WGS84   12.7  1.42  
+ 9 BF       2017 6. centre-ouest       7390 WGS84   10.8 -3.55  
+10 BF       2017 11. plateau-central   7104 WGS84   13.3  0.0957
 # … with 73 more rows</code></pre>
+</div>
+<div class="layout-chunk" data-layout="l-body">
+
 </div>
 <p>The <code>gps</code> data has 7 variables:</p>
 <ul>
-<li>PMACC: the 3-letter country code (ask Devon about this - they seem to be 2-letters?)</li>
+<li>PMACC: the country code</li>
 <li>PMAYEAR: the 4-digit year of data collection</li>
 <li>REGION: sub-national administrative division name</li>
 <li>EA_ID: the enumeration area ID (and how we’ll merge this data into other PMA datasets)</li>
@@ -1537,16 +1555,14 @@ Read more about the GPS data and request access on the PMA on the <a href="https
 <aside>
 Note that while the <code>PMAYEAR</code> variable is 2017 for all EAs, because the same EAs were sampled in the 2017 (Round 5) and 2018 (Round 6) surveys, we can link these coordinates to both samples.
 </aside>
-<aside>
-The <code>REGION</code> variable corresponds to the first administrative level in a given country or <code>adm_1</code> in GADM language.
-</aside>
+<!-- <aside> -->
+<!-- The `REGION` variable corresponds to the first administrative level in a given country or `adm_1` in GADM language. -->
+<!-- </aside> -->
 <p>Note that the <code>GPSLAT</code> and <code>GPSLONG</code> are <strong>displaced</strong> coordinates of the EA centroid. This is because PMA randomly displaces the geographic coordinates to preserve the privacy of survey respondents. Coordinates are displaced randomly by both angle and distance. Urban EAs are displaced from their true location up to 2 km. Rural EAs are displaced from their true location up to 5 km. Additionally, a random sample of 1% of rural EAs are displaced up to 10km. The PMA GPS data come with documentation that explains the displacement in more detail. The primary spatial package we’ll use is simple features or <code>sf</code>. We’ll use <code>sf::st_as_sf()</code> to convert the GPS data to a spatial data object (known as a simple feature collection).</p>
-<aside>
-PMA follows the same displacement protocol as the Demographic and Health Surveys, for those familiar the the DHS spatial data.
-</aside>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
 <pre><code><span class='va'>gps</span> <span class='op'>&lt;-</span> <span class='va'>gps</span> <span class='op'>%&gt;%</span>
+    <span class='fu'>rename</span><span class='op'>(</span>EAID <span class='op'>=</span> <span class='va'>EA_ID</span><span class='op'>)</span> <span class='op'>%&gt;%</span> <span class='co'># rename to be consistent with other PMA data</span>
     <span class='fu'><a href='https://r-spatial.github.io/sf/reference/st_as_sf.html'>st_as_sf</a></span><span class='op'>(</span>
       coords <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"GPSLONG"</span>, <span class='st'>"GPSLAT"</span><span class='op'>)</span>, 
       crs <span class='op'>=</span> <span class='fl'>4326</span><span class='op'>)</span> <span class='co'># 4326 is the coordinate reference system (CRS) identifier for WGS84</span>
@@ -1559,7 +1575,7 @@ dimension:      XY
 bbox:           xmin: -5.18865 ymin: 9.883331 xmax: 1.634087 ymax: 14.39679
 geographic CRS: WGS 84
 # A tibble: 83 x 6
-   PMACC PMAYEAR REGION               EA_ID DATUM             geometry
+   PMACC PMAYEAR REGION                EAID DATUM             geometry
  * &lt;chr&gt;   &lt;dbl&gt; &lt;chr&gt;                &lt;dbl&gt; &lt;chr&gt;          &lt;POINT [°]&gt;
  1 BF       2017 5. centre-nord        7610 WGS84 (-1.065238 12.93839)
  2 BF       2017 1. boucle-du-mouhoun  7820 WGS84 (-4.065366 12.72985)
@@ -1574,9 +1590,12 @@ geographic CRS: WGS 84
 # … with 73 more rows</code></pre>
 </div>
 <p>Now that <code>gps</code> is a simple features object, we’ve lost the <code>GPSLAT</code> and <code>GPSLONG</code> variables and gained a variable called <code>geometry</code>, which contains the spatial information for this data.</p>
+<!-- <aside> -->
+<!-- PMA follows the same displacement protocol as the Demographic and Health Surveys, for those familiar the the DHS spatial data. -->
+<!-- </aside> -->
 <p>The last thing we need is the Burkina Faso shapefile. <a href="https://cran.r-project.org/web/packages/GADMTools/index.html">GADMTools</a> will allow us to download and load shapefiles directly from R. Conveniently, <code>GADMTools::gadm_sf_loadCountries()</code> will load the shapefile as an <code>sf</code> object. The <code>bf_1</code> object is a list which contains some metadata in addition to the shapefile, but we don’t need anyt of it right now, so we’ll only take the <code>sf</code> object. Note that here the <code>geometry</code> variable is a <code>POLYGON</code>, whereas in the <code>gps</code> data it is a <code>POINT</code>.</p>
 <aside>
-You’ll need <code>GDAL</code> and <code>rgdal</code> installed to use <code>GADMTools</code>. Check our our <a href="link">R Spatial Tips</a> post for a primer on spatial packages and installation. If you have issues using <code>GADMTools</code>, feel free to just load the shapefile directly from the “data” directory for this post.
+You’ll need <code>GDAL</code> and <code>rgdal</code> installed to use <code>GADMTools</code>. Check our our <a href="link">R Spatial Tips</a> post for a primer on spatial packages and installation. If you have issues using <code>GADMTools</code>, feel free to just load the shapefile directly from the <code>data</code> directory for this post.
 </aside>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
@@ -1588,7 +1607,7 @@ You’ll need <code>GDAL</code> and <code>rgdal</code> installed to use <code>GA
 <span class='va'>bf_1</span> <span class='op'>&lt;-</span> <span class='va'>bf_1</span><span class='op'>$</span><span class='va'>sf</span>
 
 <span class='co'># if you don't have GADMTools installed, uncomment the code below to load the shapefile</span>
-<span class='co'># bf_1 &lt;- readRDS("data/BFA_adm1.sf.rds")</span>
+<span class='co'># bf_1 &lt;- readRDS("././data/BFA_adm1.sf.rds")</span>
 
 <span class='va'>bf_1</span>
 </code></pre>
@@ -1625,7 +1644,7 @@ First 10 features:
 <h1 id="merge-and-map">Merge and Map</h1>
 <p>Now that we have all our data, we’ll show you how to map variables… But before we do that, let’s do some basic, exploratory mapping.</p>
 <h2 id="basic-maps">Basic Maps</h2>
-<p><code>ggplot2</code> has support for <code>sf</code> objects, which makes it really easy to map things using the <code>ggplot2::geom_sf()</code>. <code>geom_sf()</code> will automatically identify what kind of spatial data you’re plotting and handle it appropriately. For example, let’s plot the <code>gps</code> data (which are points) and the administrative region (which are polygons).</p>
+<p><code>ggplot2</code> has support for <code>sf</code> objects, which makes it really easy to map things using the <code>ggplot2</code>. <code>ggplot2::geom_sf()</code> will automatically identify what kind of spatial data you’re plotting and handle it appropriately. For example, let’s plot the <code>gps</code> data (which are points) and the administrative region (which are polygons).</p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
 <pre><code><span class='co'># Plot EA centroids</span>
@@ -1633,14 +1652,14 @@ First 10 features:
   <span class='fu'>geom_sf</span><span class='op'>(</span>data <span class='op'>=</span> <span class='va'>gps</span><span class='op'>)</span>
 </code></pre>
 </div>
-<img src="mapping-sdp-variables_files/figure-html5/unnamed-chunk-4-1.png" width="624" />
+<img src="mapping-sdp-variables_files/figure-html5/unnamed-chunk-6-1.png" width="624" />
 <div class="sourceCode">
 <pre><code><span class='co'># Plot regions of Burkina Faso</span>
 <span class='fu'>ggplot</span><span class='op'>(</span><span class='op'>)</span> <span class='op'>+</span>
   <span class='fu'>geom_sf</span><span class='op'>(</span>data <span class='op'>=</span> <span class='va'>bf_1</span><span class='op'>)</span>
 </code></pre>
 </div>
-<p><img src="mapping-sdp-variables_files/figure-html5/unnamed-chunk-4-2.png" width="624" /></p>
+<p><img src="mapping-sdp-variables_files/figure-html5/unnamed-chunk-6-2.png" width="624" /></p>
 </div>
 <p>The building-block approach of <code>ggplot2</code> (“Grammar of Graphics”) also makes it really easy to layer different spatial features on the same map.</p>
 <div class="layout-chunk" data-layout="l-body">
@@ -1651,33 +1670,27 @@ First 10 features:
   <span class='fu'>geom_sf</span><span class='op'>(</span>data <span class='op'>=</span> <span class='va'>gps</span><span class='op'>)</span>
 </code></pre>
 </div>
-<p><img src="mapping-sdp-variables_files/figure-html5/unnamed-chunk-5-1.png" width="624" /></p>
+<p><img src="mapping-sdp-variables_files/figure-html5/unnamed-chunk-7-1.png" width="624" /></p>
 </div>
 <h2 id="merge-gps-and-sdp-data">Merge GPS and SDP Data</h2>
-<p>To map the EA-level variables constructed in the last post, we need to merge the <code>sdp</code> data and the <code>gps</code> data by <code>EA_ID</code>. First, let’s rename the <code>EASEARVED</code> variable to match the GPS data and then use a <code>dplyr::right_join</code> to merge in the SDP data. We need to use a <code>right_join()</code> because the sf object must be listed first in our join command to retain the sf class, but we want to ensure that all rows from <code>sdp</code> are preserved.</p>
+<p>To map the EA-level variables constructed in the last post, we need to merge the <code>bf_merged</code> data and the <code>gps</code> data by <code>EA_ID</code>. First, let’s rename the <code>EASEARVED</code> variable to match the GPS data and then use a <code>dplyr::right_join</code> to merge in the SDP data. We need to use a <code>right_join()</code> because the sf object must be listed first in our join command to retain the sf class, but we want to ensure that all rows from <code>bf_merged</code> are preserved.</p>
 <aside>
 Remember, the SDP data contains information from both 2017 and 2018, while the GPS data has a single observation per EA.
 </aside>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
-<pre><code><span class='co'># rename to be consistent with GPS data</span>
-<span class='va'>sdp</span> <span class='op'>&lt;-</span> <span class='va'>sdp</span> <span class='op'>%&gt;%</span>
-  <span class='fu'>rename</span><span class='op'>(</span>
-    EA_ID <span class='op'>=</span> <span class='va'>EASERVED</span> 
-  <span class='op'>)</span>
+<pre><code><span class='va'>bf_ea</span> <span class='op'>&lt;-</span> <span class='fu'>right_join</span><span class='op'>(</span><span class='va'>gps</span>, <span class='va'>bf_ea</span>, by <span class='op'>=</span> <span class='st'>"EAID"</span><span class='op'>)</span>
 
-<span class='va'>sdp</span> <span class='op'>&lt;-</span> <span class='fu'>right_join</span><span class='op'>(</span><span class='va'>gps</span>, <span class='va'>sdp</span>, by <span class='op'>=</span> <span class='st'>"EA_ID"</span><span class='op'>)</span>
-
-<span class='va'>sdp</span> <span class='co'># now the sdp data is an sf object</span>
+<span class='va'>bf_ea</span> <span class='co'># now the bf_ea data is an sf object</span>
 </code></pre>
 </div>
-<pre><code>Simple feature collection with 149 features and 20 fields
+<pre><code>Simple feature collection with 149 features and 22 fields
 geometry type:  POINT
 dimension:      XY
 bbox:           xmin: -5.18865 ymin: 9.883331 xmax: 1.634087 ymax: 14.39679
 geographic CRS: WGS 84
-# A tibble: 149 x 21
-   PMACC PMAYEAR REGION EA_ID DATUM                  geometry  YEAR
+# A tibble: 149 x 23
+   PMACC PMAYEAR REGION  EAID DATUM                  geometry  YEAR
    &lt;chr&gt;   &lt;dbl&gt; &lt;chr&gt;  &lt;dbl&gt; &lt;chr&gt;               &lt;POINT [°]&gt; &lt;int&gt;
  1 BF       2017 5. ce…  7610 WGS84      (-1.065238 12.93839)  2017
  2 BF       2017 5. ce…  7610 WGS84      (-1.065238 12.93839)  2018
@@ -1689,29 +1702,29 @@ geographic CRS: WGS 84
  8 BF       2017 8. est  7243 WGS84      (0.3797186 12.07097)  2018
  9 BF       2017 6. ce…  7026 WGS84      (-2.366313 12.26087)  2017
 10 BF       2017 6. ce…  7026 WGS84      (-2.366313 12.26087)  2018
-# … with 139 more rows, and 14 more variables: N_SDP &lt;int&gt;,
-#   N_SDP_INT &lt;int&gt;, HOSPITAL &lt;int&gt;, HCENTER &lt;int&gt;, PHARM &lt;int&gt;, …</code></pre>
+# … with 139 more rows, and 16 more variables: N_SDP &lt;dbl&gt;,
+#   N_SDP_INT &lt;dbl&gt;, HOSPITAL &lt;dbl&gt;, HCENTER &lt;dbl&gt;, PHARM &lt;dbl&gt;, …</code></pre>
 </div>
 <h2 id="map-sdp-data">Map SDP data</h2>
-<p>Remember, the <code>sdp</code> data contains information from 2017 &amp; 2018 for the same EA, which can clog up the map depending on how we use this information. To start out, let’s use only the 2017 data and add information about the number of service delivery providers that serve a given EA (<code>N_SDP</code>). By passing <code>N_SDP</code> to the size aesthetic, we can more easily visualize how EAs vary in their access to service delivery providers.</p>
+<p>Remember, the <code>bf_merged</code> data contains information from 2017 &amp; 2018 for the same EA, which can clog up the map depending on how we use this information. To start out, let’s use only the 2017 data and add information about the number of service delivery providers that serve a given EA (<code>N_SDP</code>). By passing <code>N_SDP</code> to the size aesthetic, we can more easily visualize how EAs vary in their access to service delivery providers.</p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
-<pre><code><span class='va'>sdp2017</span> <span class='op'>&lt;-</span> <span class='va'>sdp</span> <span class='op'>%&gt;%</span>
+<pre><code><span class='va'>bf_ea2017</span> <span class='op'>&lt;-</span> <span class='va'>bf_ea</span> <span class='op'>%&gt;%</span>
   <span class='fu'><a href='https://rdrr.io/r/stats/filter.html'>filter</a></span><span class='op'>(</span><span class='va'>YEAR</span> <span class='op'>==</span> <span class='fl'>2017</span><span class='op'>)</span>
 
 <span class='fu'>ggplot</span><span class='op'>(</span><span class='op'>)</span> <span class='op'>+</span>
   <span class='fu'>geom_sf</span><span class='op'>(</span>data <span class='op'>=</span> <span class='va'>bf_1</span><span class='op'>)</span> <span class='op'>+</span>
-  <span class='fu'>geom_sf</span><span class='op'>(</span>data <span class='op'>=</span> <span class='va'>sdp2017</span>, 
+  <span class='fu'>geom_sf</span><span class='op'>(</span>data <span class='op'>=</span> <span class='va'>bf_ea2017</span>, 
           <span class='fu'>aes</span><span class='op'>(</span>size <span class='op'>=</span> <span class='va'>N_SDP</span><span class='op'>)</span>,
           alpha <span class='op'>=</span> <span class='fl'>0.4</span><span class='op'>)</span> 
 </code></pre>
 </div>
-<p><img src="mapping-sdp-variables_files/figure-html5/unnamed-chunk-7-1.png" width="624" /></p>
+<p><img src="mapping-sdp-variables_files/figure-html5/unnamed-chunk-9-1.png" width="624" /></p>
 </div>
 <p>From the map, it looks like there may be a few locations where there EAs are both close together and served by many SDPs, which are likely in urban areas. For example, the capital of Burkina Faso, Ouagadougou, is in the center of the map where there are a number of EAs on top of each other. But, it’s a little hard to see the variation in size when there are so many values for <code>N_SDP</code> and so many EAs on top of each other. Let’s do two things to make this more readable. First, we’ll create smaller categories of the <code>N_SDP</code> variable, and second, we’ll map the <code>STRATA</code> variable to the color aesthetic.</p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
-<pre><code><span class='va'>sdp2017</span> <span class='op'>&lt;-</span> <span class='va'>sdp2017</span> <span class='op'>%&gt;%</span>
+<pre><code><span class='va'>bf_ea2017</span> <span class='op'>&lt;-</span> <span class='va'>bf_ea2017</span> <span class='op'>%&gt;%</span>
   <span class='fu'>mutate</span><span class='op'>(</span>
     N_SDP_CAT <span class='op'>=</span> <span class='fu'>case_when</span><span class='op'>(</span>
       <span class='va'>N_SDP</span> <span class='op'>&lt;=</span> <span class='fl'>2</span> <span class='op'>~</span> <span class='fl'>1</span>,
@@ -1721,28 +1734,48 @@ geographic CRS: WGS 84
                        levels <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='fl'>1</span>, <span class='fl'>2</span>, <span class='fl'>3</span><span class='op'>)</span>,
                        labels <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"Low"</span>, <span class='st'>"Mid"</span>, <span class='st'>"High"</span><span class='op'>)</span>,
                        ordered <span class='op'>=</span> <span class='cn'>T</span><span class='op'>)</span>, <span class='co'># needs to be an ORDERED factor to map to the size aesthetic</span>
-    MEAN_OUTDAY <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/ifelse.html'>ifelse</a></span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/NA.html'>is.na</a></span><span class='op'>(</span><span class='va'>MEAN_OUTDAY</span><span class='op'>)</span>, <span class='fl'>0</span>, <span class='va'>MEAN_OUTDAY</span><span class='op'>)</span>
+    MEAN_OUTDAY <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/ifelse.html'>ifelse</a></span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/NA.html'>is.na</a></span><span class='op'>(</span><span class='va'>MEAN_OUTDAY</span><span class='op'>)</span>, <span class='fl'>0</span>, <span class='va'>MEAN_OUTDAY</span><span class='op'>)</span>,
+    URBAN <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/factor.html'>factor</a></span><span class='op'>(</span><span class='va'>URBAN</span>, 
+                   levels <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='fl'>0</span>,<span class='fl'>1</span><span class='op'>)</span>,
+                   labels <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"Rural"</span>, <span class='st'>"Urban"</span><span class='op'>)</span><span class='op'>)</span>
   <span class='op'>)</span>
 
-<span class='va'>sdp2017</span> <span class='op'>&lt;-</span> <span class='va'>sdp2017</span> <span class='op'>%&gt;%</span>
-  <span class='fu'>mutate</span><span class='op'>(</span>STRATA <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/factor.html'>factor</a></span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/sample.html'>sample</a></span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='fl'>0</span>,<span class='fl'>1</span><span class='op'>)</span>, size <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/nrow.html'>nrow</a></span><span class='op'>(</span><span class='va'>sdp2017</span><span class='op'>)</span>, replace <span class='op'>=</span> <span class='cn'>T</span><span class='op'>)</span><span class='op'>)</span><span class='op'>)</span>
 
-<span class='fu'>ggplot</span><span class='op'>(</span><span class='op'>)</span> <span class='op'>+</span>
-  <span class='fu'>geom_sf</span><span class='op'>(</span>data <span class='op'>=</span> <span class='va'>bf_1</span><span class='op'>)</span> <span class='op'>+</span>
-  <span class='fu'>geom_sf</span><span class='op'>(</span>data <span class='op'>=</span> <span class='va'>sdp2017</span>, 
-          <span class='fu'>aes</span><span class='op'>(</span>size <span class='op'>=</span> <span class='va'>N_SDP_CAT</span>,
-              color <span class='op'>=</span> <span class='va'>STRATA</span><span class='op'>)</span>,
-          alpha <span class='op'>=</span> <span class='fl'>0.4</span><span class='op'>)</span> <span class='op'>+</span>
-  <span class='fu'>scale_color_viridis_d</span><span class='op'>(</span><span class='op'>)</span> <span class='co'># this gives us some nicer colors than the ggplot defaults (the d is for a discrete variable)</span>
+<span class='co'># let's take a look at the distribution of this new categorical variable</span>
+<span class='va'>bf_ea2017</span> <span class='op'>%&gt;%</span> 
+  <span class='fu'><a href='https://rdrr.io/pkg/tabulator/man/tab.html'>tab</a></span><span class='op'>(</span><span class='va'>URBAN</span>, <span class='va'>N_SDP_CAT</span><span class='op'>)</span>
 </code></pre>
 </div>
-<p><img src="mapping-sdp-variables_files/figure-html5/unnamed-chunk-8-1.png" width="624" /></p>
+<pre><code>Simple feature collection with 5 features and 5 fields
+geometry type:  MULTIPOINT
+dimension:      XY
+bbox:           xmin: -5.18865 ymin: 9.883331 xmax: 1.634087 ymax: 14.39679
+geographic CRS: WGS 84
+# A tibble: 5 x 6
+  URBAN N_SDP_CAT     N                        geometry  prop cum_prop
+  &lt;fct&gt; &lt;ord&gt;     &lt;int&gt;                &lt;MULTIPOINT [°]&gt; &lt;dbl&gt;    &lt;dbl&gt;
+1 Rural Mid          29 ((-5.18865 11.54962), (-4.3401…  0.35     0.35
+2 Urban Mid          23 ((-5.178223 10.66001), (-4.781…  0.28     0.63
+3 Urban Low          15 ((-4.307564 11.18051), (-4.299…  0.18     0.81
+4 Rural Low          13 ((-4.969563 10.45619), (-4.804…  0.16     0.96
+5 Urban High          3 ((-4.262726 11.14746), (-1.528…  0.04     1   </code></pre>
+<div class="sourceCode">
+<pre><code><span class='fu'>ggplot</span><span class='op'>(</span><span class='op'>)</span> <span class='op'>+</span>
+  <span class='fu'>geom_sf</span><span class='op'>(</span>data <span class='op'>=</span> <span class='va'>bf_1</span><span class='op'>)</span> <span class='op'>+</span>
+  <span class='fu'>geom_sf</span><span class='op'>(</span>data <span class='op'>=</span> <span class='va'>bf_ea2017</span>, 
+          <span class='fu'>aes</span><span class='op'>(</span>size <span class='op'>=</span> <span class='va'>N_SDP_CAT</span>,
+              color <span class='op'>=</span> <span class='va'>URBAN</span><span class='op'>)</span>,
+          alpha <span class='op'>=</span> <span class='fl'>0.4</span><span class='op'>)</span> <span class='op'>+</span>
+  <span class='fu'>scale_color_viridis_d</span><span class='op'>(</span><span class='op'>)</span> 
+</code></pre>
 </div>
-<p>Urban areas are clearly served by more SDPs, which is not really surprising. But, what is the service environment like? Do urban areas have more stock-outs than rural areas? Do SDPs in urban areas offer a greater selection of family planning methods? Did the service environment change between 2017 and 2018? Mapping can shed a lot of light on these questions.</p>
+<p><img src="mapping-sdp-variables_files/figure-html5/unnamed-chunk-10-1.png" width="624" /></p>
+</div>
+<p>From this map we can see that urban areas are generally served by more SDPs – in fact, no rural EAs fall into the “High” category – although the difference is perhaps not as stark as one might have expected. But, what is the service environment like? Do urban areas have more stock-outs than rural areas? Do SDPs in urban areas offer a greater selection of family planning methods? Did the service environment change between 2017 and 2018? Mapping can shed a lot of light on these questions.</p>
 <p>Let’s look at the <code>NUM_METHODS_PROV</code> variable created in the last post. This variable captures the number of family planning methods provided by at least one SDP that serves a given EA.</p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
-<pre><code><span class='va'>sdp2017</span> <span class='op'>%&gt;%</span>
+<pre><code><span class='va'>bf_ea2017</span> <span class='op'>%&gt;%</span>
   <span class='fu'><a href='https://rdrr.io/pkg/tabulator/man/tab.html'>tab</a></span><span class='op'>(</span><span class='va'>NUM_METHODS_PROV</span><span class='op'>)</span> <span class='op'>%&gt;%</span>
   <span class='fu'>arrange</span><span class='op'>(</span><span class='va'>NUM_METHODS_PROV</span><span class='op'>)</span>
 </code></pre>
@@ -1754,7 +1787,7 @@ bbox:           xmin: -5.18865 ymin: 9.883331 xmax: 1.634087 ymax: 14.39679
 geographic CRS: WGS 84
 # A tibble: 5 x 5
   NUM_METHODS_PROV     N                       geometry  prop cum_prop
-             &lt;int&gt; &lt;int&gt;               &lt;MULTIPOINT [°]&gt; &lt;dbl&gt;    &lt;dbl&gt;
+             &lt;dbl&gt; &lt;int&gt;               &lt;MULTIPOINT [°]&gt; &lt;dbl&gt;    &lt;dbl&gt;
 1                8     2 ((-4.299839 11.18039), (-2.96…  0.02     1   
 2                9    13 ((-4.340111 11.8743), (-4.281…  0.16     0.92
 3               10    34 ((-5.18865 11.54962), (-4.969…  0.41     0.41
@@ -1764,7 +1797,7 @@ geographic CRS: WGS 84
 <p>Since there is not a large range of number of FP methods provided, let’s dichotomize this so we can map it to the <code>shape</code> aesthetic.</p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
-<pre><code><span class='va'>sdp2017</span> <span class='op'>&lt;-</span> <span class='va'>sdp2017</span> <span class='op'>%&gt;%</span>
+<pre><code><span class='va'>bf_ea2017</span> <span class='op'>&lt;-</span> <span class='va'>bf_ea2017</span> <span class='op'>%&gt;%</span>
   <span class='fu'>mutate</span><span class='op'>(</span>
     NUM_METHODS_CAT <span class='op'>=</span> <span class='fu'>case_when</span><span class='op'>(</span>
       <span class='va'>NUM_METHODS_PROV</span> <span class='op'>&lt;=</span> <span class='fl'>9</span> <span class='op'>~</span> <span class='fl'>1</span>,
@@ -1775,35 +1808,33 @@ geographic CRS: WGS 84
                        ordered <span class='op'>=</span> <span class='cn'>T</span><span class='op'>)</span>
   <span class='op'>)</span>
 
-<span class='co'># shape as categorical num methods, color as strata, and size as stockouts works pretty well</span>
-<span class='co'># shape as strata, size as num methods, and color as num stockouts also works well</span>
-<span class='co'># could try doing an interaction of strata &amp; num methods provided</span>
+
 <span class='fu'>ggplot</span><span class='op'>(</span><span class='op'>)</span> <span class='op'>+</span>
   <span class='fu'>geom_sf</span><span class='op'>(</span>data <span class='op'>=</span> <span class='va'>bf_1</span><span class='op'>)</span> <span class='op'>+</span>
-  <span class='fu'>geom_sf</span><span class='op'>(</span>data <span class='op'>=</span> <span class='va'>sdp2017</span>, 
+  <span class='fu'>geom_sf</span><span class='op'>(</span>data <span class='op'>=</span> <span class='va'>bf_ea2017</span>, 
           <span class='fu'>aes</span><span class='op'>(</span>size <span class='op'>=</span> <span class='va'>NUM_METHODS_CAT</span>,
-              shape <span class='op'>=</span> <span class='va'>STRATA</span>,
+              shape <span class='op'>=</span> <span class='va'>URBAN</span>,
               color <span class='op'>=</span> <span class='va'>NUM_METHODS_OUT3MO</span><span class='op'>)</span>,
           alpha <span class='op'>=</span> <span class='fl'>0.4</span><span class='op'>)</span> <span class='op'>+</span>
   <span class='fu'>scale_color_viridis_c</span><span class='op'>(</span><span class='op'>)</span> 
 </code></pre>
 </div>
-<p><img src="mapping-sdp-variables_files/figure-html5/unnamed-chunk-10-1.png" width="624" /></p>
+<p><img src="mapping-sdp-variables_files/figure-html5/unnamed-chunk-12-1.png" width="624" /></p>
 </div>
 <h1 id="putting-it-all-together">Putting it all together</h1>
 <p>Now we have a map that shows spatial variation in availability of different methods of family planning and prevalence of stock-outs, as well as demonstrates how these characteristic differ across urban vs. rural EAs. It’s super quick to make a basic map like this, but let’s clean up a few things to make it look nicer.</p>
-<div class="layout-chunk" data-layout="l-body">
+<div class="layout-chunk" data-layout="l-body-outset">
 <div class="sourceCode">
 <pre><code><span class='fu'>ggplot</span><span class='op'>(</span><span class='op'>)</span> <span class='op'>+</span>
   <span class='fu'>geom_sf</span><span class='op'>(</span>data <span class='op'>=</span> <span class='va'>bf_1</span>, fill <span class='op'>=</span> <span class='st'>"#f2f2f5"</span><span class='op'>)</span> <span class='op'>+</span>
-  <span class='fu'>geom_sf</span><span class='op'>(</span>data <span class='op'>=</span> <span class='va'>sdp2017</span>, 
+  <span class='fu'>geom_sf</span><span class='op'>(</span>data <span class='op'>=</span> <span class='va'>bf_ea2017</span>, 
           <span class='fu'>aes</span><span class='op'>(</span>size <span class='op'>=</span> <span class='va'>NUM_METHODS_CAT</span>,
-              shape <span class='op'>=</span> <span class='va'>STRATA</span>,
+              shape <span class='op'>=</span> <span class='va'>URBAN</span>,
               color <span class='op'>=</span> <span class='va'>NUM_METHODS_OUT3MO</span><span class='op'>)</span>,
           alpha <span class='op'>=</span> <span class='fl'>0.4</span><span class='op'>)</span> <span class='op'>+</span>
   <span class='fu'>scale_color_viridis_c</span><span class='op'>(</span>direction <span class='op'>=</span> <span class='op'>-</span><span class='fl'>1</span><span class='op'>)</span> <span class='op'>+</span> <span class='co'># reversing the direction makes the high #s stand out more</span>
   <span class='fu'>labs</span><span class='op'>(</span>title <span class='op'>=</span> <span class='st'>"Spatial Variation in Family Planning Service Environment"</span>,
-       subtitle <span class='op'>=</span> <span class='st'>"Burkina Faso 2017-2018"</span>,
+       subtitle <span class='op'>=</span> <span class='st'>"Burkina Faso 2017"</span>,
        caption <span class='op'>=</span> <span class='st'>"Source: IPUMS PMA"</span>,
        shape <span class='op'>=</span> <span class='st'>""</span>,
        size <span class='op'>=</span> <span class='st'>"Methods\nProvided"</span>,
@@ -1820,7 +1851,7 @@ geographic CRS: WGS 84
     axis.title.y <span class='op'>=</span> <span class='fu'>element_blank</span><span class='op'>(</span><span class='op'>)</span><span class='op'>)</span>
 </code></pre>
 </div>
-<img src="mapping-sdp-variables_files/figure-html5/unnamed-chunk-11-1.png" width="624" />
+<img src="mapping-sdp-variables_files/figure-html5/unnamed-chunk-13-1.png" width="672" />
 <div class="sourceCode">
 <pre><code><span class='co'># if you want to export your map, uncomment the following line of code</span>
 <span class='co'># ggsave(filename = "data/bf_fp_map.pdf", </span>
@@ -1828,10 +1859,10 @@ geographic CRS: WGS 84
 </code></pre>
 </div>
 </div>
-<p>This map suggests there is spatial correlation to the stockouts – with 2 regions responsible for the majority of EAs with stockouts. It also looks like these EAs tend to have more methods provided by the SDPs that serve them. Finally, let’s use both years of data and see if there is any temporal variation. To do this, we’ll use the original <code>sdp</code> dataset (instead of <code>sdp2017</code>) and re-create the smae <code>NUM_METHODS_CAT</code> factor variable that dichotomizes the <code>NUM_METHODS_PROV</code> variable. Then, we’ll use <code>facet_wrap()</code> to make a multi-panel plot, with one panel per year.</p>
+<p>This map suggests there is spatial correlation to the stockouts – with 2 regions responsible for the majority of EAs with stockouts. It also looks like these EAs tend to have more methods provided by the SDPs that serve them. Finally, let’s use both years of data and see if there is any temporal variation. To do this, we’ll use the original <code>bf_merged</code> dataset (instead of <code>sdp2017</code>) and re-create the smae <code>NUM_METHODS_CAT</code> factor variable that dichotomizes the <code>NUM_METHODS_PROV</code> variable. Then, we’ll use <code>facet_wrap()</code> to make a multi-panel plot, with one panel per year.</p>
 <div class="layout-chunk" data-layout="l-body-outset">
 <div class="sourceCode">
-<pre><code><span class='va'>sdp</span> <span class='op'>&lt;-</span> <span class='va'>sdp</span> <span class='op'>%&gt;%</span>
+<pre><code><span class='va'>bf_ea</span> <span class='op'>&lt;-</span> <span class='va'>bf_ea</span> <span class='op'>%&gt;%</span>
   <span class='fu'>mutate</span><span class='op'>(</span>
     NUM_METHODS_CAT <span class='op'>=</span> <span class='fu'>case_when</span><span class='op'>(</span>
       <span class='va'>NUM_METHODS_PROV</span> <span class='op'>&lt;=</span> <span class='fl'>9</span> <span class='op'>~</span> <span class='fl'>1</span>,
@@ -1840,16 +1871,16 @@ geographic CRS: WGS 84
                        levels <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='fl'>1</span>, <span class='fl'>2</span><span class='op'>)</span>,
                        labels <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"Low (&lt;=9)"</span>, <span class='st'>"High (&gt;9)"</span><span class='op'>)</span>,
                        ordered <span class='op'>=</span> <span class='cn'>T</span><span class='op'>)</span>,
-    STRATA <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/factor.html'>factor</a></span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/sample.html'>sample</a></span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='fl'>0</span>,<span class='fl'>1</span><span class='op'>)</span>, size <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/nrow.html'>nrow</a></span><span class='op'>(</span><span class='va'>sdp</span><span class='op'>)</span>, replace <span class='op'>=</span> <span class='cn'>T</span><span class='op'>)</span>,
-                    levels <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='fl'>0</span>,<span class='fl'>1</span><span class='op'>)</span>,
-                    labels <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"Urban"</span>, <span class='st'>"Rural"</span><span class='op'>)</span><span class='op'>)</span>
+    URBAN <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/factor.html'>factor</a></span><span class='op'>(</span><span class='va'>URBAN</span>, 
+                   levels <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='fl'>0</span>,<span class='fl'>1</span><span class='op'>)</span>,
+                   labels <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"Urban"</span>, <span class='st'>"Rural"</span><span class='op'>)</span><span class='op'>)</span>
   <span class='op'>)</span>
 
 <span class='fu'>ggplot</span><span class='op'>(</span><span class='op'>)</span> <span class='op'>+</span>
   <span class='fu'>geom_sf</span><span class='op'>(</span>data <span class='op'>=</span> <span class='va'>bf_1</span>, fill <span class='op'>=</span> <span class='st'>"#f2f2f5"</span><span class='op'>)</span> <span class='op'>+</span>
-  <span class='fu'>geom_sf</span><span class='op'>(</span>data <span class='op'>=</span> <span class='va'>sdp</span>, 
+  <span class='fu'>geom_sf</span><span class='op'>(</span>data <span class='op'>=</span> <span class='va'>bf_ea</span>, 
           <span class='fu'>aes</span><span class='op'>(</span>size <span class='op'>=</span> <span class='va'>NUM_METHODS_CAT</span>,
-              shape <span class='op'>=</span> <span class='va'>STRATA</span>,
+              shape <span class='op'>=</span> <span class='va'>URBAN</span>,
               color <span class='op'>=</span> <span class='va'>NUM_METHODS_OUT3MO</span><span class='op'>)</span>,
           alpha <span class='op'>=</span> <span class='fl'>0.4</span><span class='op'>)</span> <span class='op'>+</span>
   <span class='fu'>facet_wrap</span><span class='op'>(</span><span class='op'>~</span> <span class='va'>YEAR</span><span class='op'>)</span> <span class='op'>+</span>
@@ -1879,12 +1910,12 @@ geographic CRS: WGS 84
     legend.position <span class='op'>=</span> <span class='st'>"bottom"</span><span class='op'>)</span> 
 </code></pre>
 </div>
-<p><img src="mapping-sdp-variables_files/figure-html5/unnamed-chunk-12-1.png" width="672" /></p>
+<p><img src="mapping-sdp-variables_files/figure-html5/unnamed-chunk-14-1.png" width="672" /></p>
 </div>
-<p>Adding in the 2018 data demonstrates that the EAs facing more stockouts in 2017 are mostly not the same as those facing stockouts in 2018. <strong>But, there is still a spatial pattern to the stockouts in 2018.</strong> It also looks like some EAs have fewer family planning methods available from SDPs in 2018 than in 2017.</p>
+<p>with the 2018 data included, it looks like the service environment may have improved between 2017 and 2017 with fewer stockouts. However, it also looks the EAs that faced more stockouts in 2017 are not always the same as those facing stockouts in 2018. <strong>But, there is still a spatial pattern to the stockouts in 2018.</strong> It also looks like some EAs had fewer family planning methods available from SDPs in 2018 than in 2017, particularly in the western part of the country.</p>
 <p>Future posts may explore other supply-side factors that could influence the SDPs (and look at how these change over time) or examine demand-side factors, by merging in the individual-level data.</p>
 <p>As always, let us know what kinds of questions about fertility and family planning you’re answering – especially if you’re doing anything spatial!</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
 </div>
