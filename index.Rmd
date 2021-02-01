@@ -1,5 +1,0 @@
----
-title: "Data Analysis Hub"
-site: distill::distill_website
-listing: posts
----
